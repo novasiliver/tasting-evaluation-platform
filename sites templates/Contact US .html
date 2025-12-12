@@ -1,0 +1,272 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Metric</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #FAFAF9;
+        }
+        h1, h2, h3, h4, .font-heading {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        .glass {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+    </style>
+</head>
+<body class="text-stone-600 antialiased selection:bg-amber-100 selection:text-amber-900">
+
+    <!-- Navigation -->
+    <nav class="fixed top-4 left-4 right-4 z-50">
+        <div class="max-w-6xl mx-auto glass rounded-full px-6 h-16 flex items-center justify-between shadow-sm">
+            <a href="#" class="flex items-center gap-2 group">
+                <div class="h-8 w-8 bg-orange-600 rounded-full flex items-center justify-center text-white shadow-lg shadow-orange-500/30">
+                    <iconify-icon icon="lucide:chef-hat" width="16" height="16" style="stroke-width: 1.5"></iconify-icon>
+                </div>
+                <span class="text-stone-900 font-semibold tracking-tight text-lg font-heading">Metric</span>
+            </a>
+            
+            <div class="hidden md:flex items-center gap-8 text-sm font-medium text-stone-600">
+                <a href="#" class="hover:text-orange-600 transition-colors">About</a>
+                <a href="#" class="hover:text-orange-600 transition-colors">Services</a>
+                <a href="#" class="hover:text-orange-600 transition-colors">Awards</a>
+                <a href="#" class="text-orange-600">Contact</a>
+            </div>
+
+            <div class="flex items-center gap-3">
+                <a href="#" class="text-sm font-semibold px-5 py-2 bg-stone-900 text-white rounded-full hover:bg-stone-800 transition-all shadow-lg shadow-stone-900/20">
+                    Submit Product
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-40 pb-16 relative overflow-hidden">
+        <div class="absolute inset-0 -z-10">
+            <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-amber-100/50 rounded-[100%] blur-3xl"></div>
+        </div>
+
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white border border-stone-200 shadow-sm text-xs font-semibold text-stone-600 mb-8">
+                <iconify-icon icon="lucide:mail" width="14" class="text-amber-600" style="stroke-width: 1.5"></iconify-icon>
+                Get in Touch
+            </div>
+            
+            <h1 class="text-4xl md:text-5xl font-bold text-stone-900 tracking-tight leading-tight mb-6 font-heading">
+                Let's start a conversation
+            </h1>
+            
+            <p class="text-lg text-stone-500 leading-relaxed max-w-2xl mx-auto">
+                Have questions about our evaluation process? Interested in submitting a product? We're here to help. Reach out and our team will respond within 24 hours.
+            </p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="py-12 pb-24">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="grid lg:grid-cols-5 gap-12">
+                
+                <!-- Contact Form -->
+                <div class="lg:col-span-3">
+                    <div class="bg-white rounded-3xl border border-stone-200 p-8 md:p-10 shadow-sm">
+                        <h2 class="text-2xl font-semibold text-stone-900 tracking-tight mb-2 font-heading">Send us a message</h2>
+                        <p class="text-stone-500 text-sm mb-8">Fill out the form below and we'll get back to you shortly.</p>
+                        
+                        <form class="space-y-6">
+                            <!-- Name and Company Row -->
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <label for="name" class="block text-sm font-medium text-stone-700 mb-2">Full Name</label>
+                                    <input type="text" id="name" name="name" placeholder="John Smith" class="w-full px-4 py-3 bg-stone-50 border border-stone-200 rounded-xl text-stone-900 text-sm placeholder:text-stone-400 focus:outline-none focus:ring-2 focus:ring-amber-500/20 focus:border-amber-500 transition-all">
+                                </div>
+                                <div>
+                                    <label for="company" class="block text-sm font-medium text-stone-700 mb-2">Company</label>
+                                    <input type="text" id="company" name="company" placeholder="Acme Foods Inc." class="w-full px-4 py-3 bg-stone-50 border border-stone-200 rounded-xl text-stone-900 text-sm placeholder:text-stone-400 focus:outline-none focus:ring-2 focus:ring-amber-500/20 focus:border-amber-500 transition-all">
+                                </div>
+                            </div>
+
+                            <!-- Email -->
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-stone-700 mb-2">Email Address</label>
+                                <input type="email" id="email" name="email" placeholder="john@acmefoods.com" class="w-full px-4 py-3 bg-stone-50 border border-stone-200 rounded-xl text-stone-900 text-sm placeholder:text-stone-400 focus:outline-none focus:ring-2 focus:ring-amber-500/20 focus:border-amber-500 transition-all">
+                            </div>
+
+                            <!-- Subject -->
+                            <div>
+                                <label for="subject" class="block text-sm font-medium text-stone-700 mb-2">Subject</label>
+                                <div class="relative">
+                                    <select id="subject" name="subject" class="w-full px-4 py-3 bg-stone-50 border border-stone-200 rounded-xl text-stone-900 text-sm focus:outline-none focus:ring-2 focus:ring-amber-500/20 focus:border-amber-500 transition-all appearance-none cursor-pointer">
+                                        <option value="" class="text-stone-400">Select a topic</option>
+                                        <option value="evaluation">Product Evaluation Inquiry</option>
+                                        <option value="pricing">Pricing &amp; Packages</option>
+                                        <option value="partnership">Partnership Opportunities</option>
+                                        <option value="media">Media &amp; Press</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                    <iconify-icon icon="lucide:chevron-down" width="18" class="absolute right-4 top-1/2 -translate-y-1/2 text-stone-400 pointer-events-none" style="stroke-width: 1.5"></iconify-icon>
+                                </div>
+                            </div>
+
+                            <!-- Message -->
+                            <div>
+                                <label for="message" class="block text-sm font-medium text-stone-700 mb-2">Message</label>
+                                <textarea id="message" name="message" rows="5" placeholder="Tell us how we can help you..." class="w-full px-4 py-3 bg-stone-50 border border-stone-200 rounded-xl text-stone-900 text-sm placeholder:text-stone-400 focus:outline-none focus:ring-2 focus:ring-amber-500/20 focus:border-amber-500 transition-all resize-none"></textarea>
+                            </div>
+
+                            <!-- Submit Button -->
+                            <button type="submit" class="w-full md:w-auto px-8 py-4 bg-stone-900 text-white rounded-full font-semibold hover:bg-stone-800 transition-all shadow-lg shadow-stone-900/20 flex items-center justify-center gap-2">
+                                Send Message
+                                <iconify-icon icon="lucide:send" width="18" style="stroke-width: 1.5"></iconify-icon>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Company Information -->
+                <div class="lg:col-span-2 space-y-6">
+                    
+                    <!-- Quick Contact -->
+                    <div class="bg-white rounded-3xl border border-stone-200 p-8 shadow-sm">
+                        <h3 class="text-lg font-semibold text-stone-900 font-heading mb-6">Contact Information</h3>
+                        
+                        <div class="space-y-5">
+                            <div class="flex items-start gap-4">
+                                <div class="w-10 h-10 rounded-xl bg-amber-100 flex items-center justify-center shrink-0">
+                                    <iconify-icon icon="lucide:mail" width="18" class="text-amber-600" style="stroke-width: 1.5"></iconify-icon>
+                                </div>
+                                <div>
+                                    <p class="text-sm font-medium text-stone-900 mb-1">Email</p>
+                                    <a href="mailto:hello@metric.com" class="text-sm text-stone-500 hover:text-amber-600 transition-colors">hello@metric.com</a>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-4">
+                                <div class="w-10 h-10 rounded-xl bg-amber-100 flex items-center justify-center shrink-0">
+                                    <iconify-icon icon="lucide:phone" width="18" class="text-amber-600" style="stroke-width: 1.5"></iconify-icon>
+                                </div>
+                                <div>
+                                    <p class="text-sm font-medium text-stone-900 mb-1">Phone</p>
+                                    <a href="tel:+1-555-123-4567" class="text-sm text-stone-500 hover:text-amber-600 transition-colors">+1 (555) 123-4567</a>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-4">
+                                <div class="w-10 h-10 rounded-xl bg-amber-100 flex items-center justify-center shrink-0">
+                                    <iconify-icon icon="lucide:map-pin" width="18" class="text-amber-600" style="stroke-width: 1.5"></iconify-icon>
+                                </div>
+                                <div>
+                                    <p class="text-sm font-medium text-stone-900 mb-1">Address</p>
+                                    <p class="text-sm text-stone-500">
+                                        350 Innovation Drive<br>
+                                        Suite 200<br>
+                                        San Francisco, CA 94107
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Office Hours -->
+                    <div class="bg-white rounded-3xl border border-stone-200 p-8 shadow-sm">
+                        <h3 class="text-lg font-semibold text-stone-900 font-heading mb-6">Office Hours</h3>
+                        
+                        <div class="space-y-3">
+                            <div class="flex items-center justify-between py-2 border-b border-stone-100">
+                                <span class="text-sm text-stone-600">Monday – Friday</span>
+                                <span class="text-sm font-medium text-stone-900">9:00 AM – 6:00 PM</span>
+                            </div>
+                            <div class="flex items-center justify-between py-2 border-b border-stone-100">
+                                <span class="text-sm text-stone-600">Saturday</span>
+                                <span class="text-sm font-medium text-stone-900">10:00 AM – 2:00 PM</span>
+                            </div>
+                            <div class="flex items-center justify-between py-2">
+                                <span class="text-sm text-stone-600">Sunday</span>
+                                <span class="text-sm text-stone-400">Closed</span>
+                            </div>
+                        </div>
+
+                        <div class="mt-6 p-4 bg-amber-50 rounded-xl border border-amber-100">
+                            <div class="flex items-start gap-3">
+                                <iconify-icon icon="lucide:clock" width="18" class="text-amber-600 mt-0.5" style="stroke-width: 1.5"></iconify-icon>
+                                <p class="text-xs text-amber-800">
+                                    <span class="font-medium">Response Time:</span> We typically respond to all inquiries within 24 business hours.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Social Links -->
+                    <div class="bg-stone-900 rounded-3xl p-8">
+                        <h3 class="text-lg font-semibold text-white font-heading mb-4">Follow Us</h3>
+                        <p class="text-sm text-stone-400 mb-6">Stay updated with industry insights and award announcements.</p>
+                        
+                        <div class="flex items-center gap-3">
+                            <a href="#" class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors">
+                                <iconify-icon icon="lucide:linkedin" width="18" class="text-white" style="stroke-width: 1.5"></iconify-icon>
+                            </a>
+                            <a href="#" class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors">
+                                <iconify-icon icon="lucide:twitter" width="18" class="text-white" style="stroke-width: 1.5"></iconify-icon>
+                            </a>
+                            <a href="#" class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors">
+                                <iconify-icon icon="lucide:instagram" width="18" class="text-white" style="stroke-width: 1.5"></iconify-icon>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Teaser -->
+    <section class="py-16 bg-white border-y border-stone-100">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <div class="w-12 h-12 rounded-2xl bg-amber-100 flex items-center justify-center mx-auto mb-6">
+                <iconify-icon icon="lucide:help-circle" width="24" class="text-amber-600" style="stroke-width: 1.5"></iconify-icon>
+            </div>
+            <h2 class="text-2xl font-semibold text-stone-900 tracking-tight mb-3 font-heading">
+                Have questions?
+            </h2>
+            <p class="text-stone-500 mb-6 max-w-lg mx-auto">
+                Check out our frequently asked questions for quick answers about our evaluation process, pricing, and more.
+            </p>
+            <a href="#" class="inline-flex items-center gap-2 text-sm font-semibold text-amber-600 hover:text-amber-700 transition-colors">
+                View FAQ
+                <iconify-icon icon="lucide:arrow-right" width="16" style="stroke-width: 1.5"></iconify-icon>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-stone-100 py-12">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                <div class="flex items-center gap-2">
+                    <div class="h-8 w-8 bg-orange-600 rounded-full flex items-center justify-center text-white">
+                        <iconify-icon icon="lucide:chef-hat" width="16" height="16" style="stroke-width: 1.5"></iconify-icon>
+                    </div>
+                    <span class="text-stone-900 font-semibold tracking-tight text-lg font-heading">Metric</span>
+                </div>
+                
+                <div class="flex items-center gap-8 text-sm text-stone-500">
+                    <a href="#" class="hover:text-orange-600 transition-colors">Privacy</a>
+                    <a href="#" class="hover:text-orange-600 transition-colors">Terms</a>
+                    <a href="#" class="hover:text-orange-600 transition-colors">Methodology</a>
+                    <a href="#" class="hover:text-orange-600 transition-colors">Contact</a>
+                </div>
+                
+                <p class="text-xs text-stone-400">© 2024 Metric. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+
+</body></html>

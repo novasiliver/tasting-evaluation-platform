@@ -1,0 +1,218 @@
+// This is your Prisma schema file
+// Learn more: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+// User model - for producers and admins
+model User {
+  id            String        @id @default(cuid())
+  username      String        @unique
+  email         String        @unique
+  name          String
+  password      String
+  company       String?
+  phone         String?
+  country       String?
+  address       String?
+  website       String?
+  role          Role          @default(PRODUCER)
+  accountStatus AccountStatus @default(PENDING)
+  emailVerified DateTime?
+  image         String?
+  createdAt     DateTime      @default(now())
+  updatedAt     DateTime      @updatedAt
+
+  products Product[]
+  accounts Account[]
+  sessions Session[]
+
+  @@map("users")
+}
+
+enum Role {
+  PRODUCER
+  ADMIN
+}
+
+enum AccountStatus {
+  PENDING   // Waiting for admin approval
+  APPROVED  // Can submit products
+  REJECTED  // Cannot submit products
+}
+
+// NextAuth Account model
+model Account {
+  id                String  @id @default(cuid())
+  userId            String
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String? @db.Text
+  access_token      String? @db.Text
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String? @db.Text
+  session_state     String?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+  @@map("accounts")
+}
+
+// NextAuth Session model
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("sessions")
+}
+
+// NextAuth VerificationToken model
+model VerificationToken {
+  identifier String
+  token      String   @unique
+  expires    DateTime
+
+  @@unique([identifier, token])
+  @@map("verification_tokens")
+}
+
+// Category model - Olive Oil, Wine, Specialty Foods
+model Category {
+  id          String    @id @default(cuid())
+  name        String    @unique
+  slug        String    @unique
+  description String?   @db.Text
+  imageUrl    String?
+  isActive    Boolean   @default(true)
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  products Product[]
+
+  @@map("categories")
+}
+
+// Product submission model
+model Product {
+  id                String        @id @default(cuid())
+  userId            String
+  categoryId        String
+  name              String
+  brand             String?
+  description       String        @db.Text
+  ingredients       String?       @db.Text
+  productionCountry String?
+  productionRegion  String?
+  vintage           String?
+  alcoholContent    String?
+  volume            String?
+  packaging         String?
+  imageUrl          String?
+  status            ProductStatus @default(PENDING)
+  submittedAt       DateTime      @default(now())
+  updatedAt         DateTime      @updatedAt
+
+  user        User         @relation(fields: [userId], references: [id], onDelete: Cascade)
+  category    Category     @relation(fields: [categoryId], references: [id])
+  evaluation  Evaluation?
+  certificate Certificate?
+
+  @@index([userId])
+  @@index([categoryId])
+  @@index([status])
+  @@map("products")
+}
+
+enum ProductStatus {
+  PENDING
+  UNDER_REVIEW
+  EVALUATED
+  CERTIFIED
+  REJECTED
+}
+
+// Evaluation results model
+model Evaluation {
+  id              String   @id @default(cuid())
+  productId       String   @unique
+  overallScore    Float    // Keep for backward compatibility
+  totalScore      Float?   // New field matching form
+  tasteScore      Float
+  aromaScore      Float
+  textureScore    Float?
+  appearanceScore Float?
+  aftertasteScore Float?   // New field from form
+  harmonyScore    Float?   // New field from form
+  judgeNotes      String?  @db.Text
+  tastingNotes    String?  @db.Text // New field from form
+  technicalNotes  String?  @db.Text // New field from form
+  recommendations String?  @db.Text // New field from form
+  strengths       String?  @db.Text
+  improvements    String?  @db.Text
+  attributes      String?  @db.Text // JSON string for quality attributes
+  evaluatedBy     String?
+  judgeId         String?  // New field matching API
+  evaluatedAt     DateTime @default(now())
+  evaluationDate  DateTime? // New field matching API (can use evaluatedAt)
+  updatedAt       DateTime @updatedAt
+
+  product Product @relation(fields: [productId], references: [id], onDelete: Cascade)
+
+  @@map("evaluations")
+}
+
+// Certificate model
+model Certificate {
+  id                String     @id @default(cuid())
+  productId         String     @unique
+  certificateNumber String     @unique
+  awardLevel        AwardLevel
+  overallScore      Float
+  issueDate         DateTime   @default(now())
+  validUntil        DateTime?
+  pdfUrl            String?
+  isPublished       Boolean    @default(false)
+  createdAt         DateTime   @default(now())
+  updatedAt         DateTime   @updatedAt
+
+  product Product @relation(fields: [productId], references: [id], onDelete: Cascade)
+
+  @@map("certificates")
+}
+
+enum AwardLevel {
+  NONE
+  BRONZE
+  SILVER
+  GOLD
+  GRAND_GOLD
+}
+
+// Contact form submissions
+model Contact {
+  id        String   @id @default(cuid())
+  name      String
+  company   String?
+  email     String
+  phone     String?
+  subject   String
+  message   String   @db.Text
+  status    String   @default("new") // new, read, replied
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("contacts")
+}

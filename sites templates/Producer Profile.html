@@ -1,0 +1,171 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings | ProducerHub</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        /* Custom form styling refinements */
+        input:focus, textarea:focus { outline: none; box-shadow: 0 0 0 2px rgba(24, 24, 27, 0.1); border-color: #52525b; }
+        .sidebar-link.active { background-color: #f4f4f5; color: #18181b; font-weight: 500; }
+    </style>
+<link id="all-fonts-link-font-geist" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-geist">.font-geist { font-family: 'Geist', sans-serif !important; }</style><link id="all-fonts-link-font-roboto" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-roboto">.font-roboto { font-family: 'Roboto', sans-serif !important; }</style><link id="all-fonts-link-font-montserrat" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-montserrat">.font-montserrat { font-family: 'Montserrat', sans-serif !important; }</style><link id="all-fonts-link-font-poppins" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-poppins">.font-poppins { font-family: 'Poppins', sans-serif !important; }</style><link id="all-fonts-link-font-playfair" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;900&amp;display=swap"><style id="all-fonts-style-font-playfair">.font-playfair { font-family: 'Playfair Display', serif !important; }</style><link id="all-fonts-link-font-instrument-serif" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:wght@400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-instrument-serif">.font-instrument-serif { font-family: 'Instrument Serif', serif !important; }</style><link id="all-fonts-link-font-merriweather" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&amp;display=swap"><style id="all-fonts-style-font-merriweather">.font-merriweather { font-family: 'Merriweather', serif !important; }</style><link id="all-fonts-link-font-bricolage" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-bricolage">.font-bricolage { font-family: 'Bricolage Grotesque', sans-serif !important; }</style><link id="all-fonts-link-font-jakarta" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap"><style id="all-fonts-style-font-jakarta">.font-jakarta { font-family: 'Plus Jakarta Sans', sans-serif !important; }</style><link id="all-fonts-link-font-manrope" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&amp;display=swap"><style id="all-fonts-style-font-manrope">.font-manrope { font-family: 'Manrope', sans-serif !important; }</style><link id="all-fonts-link-font-space-grotesk" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-space-grotesk">.font-space-grotesk { font-family: 'Space Grotesk', sans-serif !important; }</style><link id="all-fonts-link-font-work-sans" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700;800&amp;display=swap"><style id="all-fonts-style-font-work-sans">.font-work-sans { font-family: 'Work Sans', sans-serif !important; }</style><link id="all-fonts-link-font-pt-serif" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&amp;display=swap"><style id="all-fonts-style-font-pt-serif">.font-pt-serif { font-family: 'PT Serif', serif !important; }</style><link id="all-fonts-link-font-geist-mono" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-geist-mono">.font-geist-mono { font-family: 'Geist Mono', monospace !important; }</style><link id="all-fonts-link-font-space-mono" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&amp;display=swap"><style id="all-fonts-style-font-space-mono">.font-space-mono { font-family: 'Space Mono', monospace !important; }</style><link id="all-fonts-link-font-quicksand" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-quicksand">.font-quicksand { font-family: 'Quicksand', sans-serif !important; }</style><link id="all-fonts-link-font-nunito" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800&amp;display=swap"><style id="all-fonts-style-font-nunito">.font-nunito { font-family: 'Nunito', sans-serif !important; }</style></head>
+<body class="antialiased min-h-screen flex flex-col text-zinc-600 bg-zinc-50 translate-x-16">
+
+    <!-- Main Layout -->
+    <main class="flex-grow sm:px-6 w-full max-w-5xl mx-auto px-4 py-10 gap-x-10">
+        
+        <header class="mb-8">
+            <h1 class="text-2xl font-semibold text-zinc-900 tracking-tight">Settings</h1>
+            <p class="text-sm text-zinc-500 mt-1">Manage your producer profile and account preferences.</p>
+        </header>
+
+        <div class="flex flex-col lg:flex-row">
+            
+            <!-- Sidebar Navigation -->
+            
+
+            <!-- Form Content -->
+            <div class="flex-grow space-y-8">
+                
+                <!-- Branding Section (Logo Required) -->
+                <section class="bg-white border-zinc-200 border rounded-xl pt-6 pr-6 pb-6 pl-6 shadow-sm">
+                    <div class="flex items-start justify-between mb-6">
+                        <div class="">
+                            <h2 class="text-base font-semibold text-zinc-900">Branding</h2>
+                            <p class="text-xs text-zinc-500 mt-0.5">Update your company logo and cover image.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center gap-6">
+                        <!-- Logo Upload -->
+                        <div class="relative group">
+                            <div class="w-20 h-20 rounded-full bg-zinc-50 border border-zinc-200 flex items-center justify-center overflow-hidden">
+                                <span class="text-xl font-serif text-zinc-400">P</span>
+                                <!-- Image Preview (Hidden by default or overlay) -->
+                            </div>
+                            <button class="absolute -bottom-1 -right-1 w-7 h-7 bg-white border border-zinc-200 rounded-full flex items-center justify-center shadow-sm text-zinc-500 hover:text-zinc-900 transition-colors">
+                                <iconify-icon icon="lucide:camera" width="12"></iconify-icon>
+                            </button>
+                        </div>
+                        
+                        <div class="flex-1">
+                            <div class="border-2 border-dashed border-zinc-200 rounded-lg p-4 flex flex-col items-center justify-center text-center hover:bg-zinc-50 transition-colors cursor-pointer group">
+                                <iconify-icon icon="lucide:upload-cloud" class="text-zinc-300 group-hover:text-zinc-400 mb-2 transition-colors" width="20"></iconify-icon>
+                                <span class="text-xs font-medium text-zinc-700">Click to upload logo</span>
+                                <span class="text-[10px] text-zinc-400 mt-0.5">SVG, PNG, JPG (max. 800x400px)</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Personal Information Section -->
+                <section class="bg-white border border-zinc-200 rounded-xl p-6 shadow-sm">
+                    <div class="mb-6">
+                        <h2 class="text-base font-semibold text-zinc-900">Personal Information</h2>
+                        <p class="text-xs text-zinc-500 mt-0.5">Contact details and public profile info.</p>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                        <div class="space-y-1.5">
+                            <label class="text-xs font-medium text-zinc-700">Full Name <span class="text-red-500">*</span></label>
+                            <input type="text" value="producer1" class="w-full px-3 py-2 bg-white border border-zinc-200 rounded-md text-sm text-zinc-900 placeholder-zinc-400 transition-all">
+                        </div>
+
+                        <div class="space-y-1.5">
+                            <label class="text-xs font-medium text-zinc-700">Email Address <span class="text-red-500">*</span></label>
+                            <input type="email" value="producer1@outlook.com" class="w-full px-3 py-2 bg-white border border-zinc-200 rounded-md text-sm text-zinc-900 placeholder-zinc-400 transition-all">
+                        </div>
+
+                        <div class="space-y-1.5">
+                            <label class="text-xs font-medium text-zinc-700">Company Name</label>
+                            <div class="relative">
+                                <span class="absolute left-3 top-1/2 -translate-y-1/2 text-zinc-400">
+                                    <iconify-icon icon="lucide:building-2" width="14"></iconify-icon>
+                                </span>
+                                <input type="text" value="producer1" class="w-full pl-9 pr-3 py-2 bg-white border border-zinc-200 rounded-md text-sm text-zinc-900 placeholder-zinc-400 transition-all">
+                            </div>
+                        </div>
+
+                        <div class="space-y-1.5">
+                            <label class="text-xs font-medium text-zinc-700">Phone Number</label>
+                            <div class="relative">
+                                <span class="absolute left-3 top-1/2 -translate-y-1/2 text-zinc-400">
+                                    <iconify-icon icon="lucide:phone" width="14"></iconify-icon>
+                                </span>
+                                <input type="tel" value="+1 232312312" class="w-full pl-9 pr-3 py-2 bg-white border border-zinc-200 rounded-md text-sm text-zinc-900 placeholder-zinc-400 transition-all">
+                            </div>
+                        </div>
+
+                        <!-- Extended Info -->
+                        <div class="space-y-1.5">
+                            <label class="text-xs font-medium text-zinc-700">Website</label>
+                            <div class="relative">
+                                <span class="absolute left-3 top-1/2 -translate-y-1/2 text-zinc-400">
+                                    <iconify-icon icon="lucide:globe" width="14"></iconify-icon>
+                                </span>
+                                <input type="url" placeholder="https://example.com" class="w-full pl-9 pr-3 py-2 bg-white border border-zinc-200 rounded-md text-sm text-zinc-900 placeholder-zinc-400 transition-all">
+                            </div>
+                        </div>
+
+                        <div class="space-y-1.5">
+                            <label class="text-xs font-medium text-zinc-700">Location</label>
+                            <div class="relative">
+                                <span class="absolute left-3 top-1/2 -translate-y-1/2 text-zinc-400">
+                                    <iconify-icon icon="lucide:map-pin" width="14"></iconify-icon>
+                                </span>
+                                <input type="text" placeholder="City, Country" class="w-full pl-9 pr-3 py-2 bg-white border border-zinc-200 rounded-md text-sm text-zinc-900 placeholder-zinc-400 transition-all">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-5 space-y-1.5">
+                        <label class="text-xs font-medium text-zinc-700">Bio / Description</label>
+                        <textarea rows="3" class="w-full px-3 py-2 bg-white border border-zinc-200 rounded-md text-sm text-zinc-900 placeholder-zinc-400 transition-all resize-y" placeholder="Tell us about your production company..."></textarea>
+                        <p class="text-[10px] text-zinc-400 text-right">0/500 characters</p>
+                    </div>
+                </section>
+
+                <!-- Change Password Section -->
+                <section class="bg-white border border-zinc-200 rounded-xl p-6 shadow-sm">
+                    <div class="mb-6">
+                        <h2 class="text-base font-semibold text-zinc-900">Change Password</h2>
+                        <p class="text-xs text-zinc-500 mt-0.5">Ensure your account is secure with a strong password.</p>
+                    </div>
+
+                    <div class="space-y-4 max-w-lg">
+                        <div class="space-y-1.5">
+                            <label class="text-xs font-medium text-zinc-700">Current Password</label>
+                            <input type="password" placeholder="••••••••" class="w-full px-3 py-2 bg-white border border-zinc-200 rounded-md text-sm text-zinc-900 placeholder-zinc-400 transition-all">
+                        </div>
+
+                        <div class="grid grid-cols-2 gap-5">
+                            <div class="space-y-1.5">
+                                <label class="text-xs font-medium text-zinc-700">New Password</label>
+                                <input type="password" class="w-full px-3 py-2 bg-white border border-zinc-200 rounded-md text-sm text-zinc-900 placeholder-zinc-400 transition-all">
+                            </div>
+                            <div class="space-y-1.5">
+                                <label class="text-xs font-medium text-zinc-700">Confirm Password</label>
+                                <input type="password" class="w-full px-3 py-2 bg-white border border-zinc-200 rounded-md text-sm text-zinc-900 placeholder-zinc-400 transition-all">
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Action Bar -->
+                <div class="flex items-center justify-end gap-3 pt-4 border-t border-zinc-200">
+                    <button class="px-4 py-2 text-xs font-medium text-zinc-600 hover:text-zinc-900 bg-transparent rounded-md transition-colors">Cancel</button>
+                    <!-- Using Amber/Orange tone similar to user reference for the primary action -->
+                    <button class="px-4 py-2 text-xs font-medium text-white bg-amber-600 hover:bg-amber-700 rounded-md shadow-sm transition-all flex items-center gap-2">
+                        <iconify-icon icon="lucide:save" width="14"></iconify-icon>
+                        Save Changes
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+</body></html>

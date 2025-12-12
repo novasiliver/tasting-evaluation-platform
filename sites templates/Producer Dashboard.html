@@ -1,0 +1,298 @@
+<html lang="en"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Producer Dashboard | Tastecert</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+body { font-family: 'Inter', sans-serif; }
+</style><link id="all-fonts-link-font-geist" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-geist">.font-geist { font-family: 'Geist', sans-serif !important; }</style><link id="all-fonts-link-font-roboto" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-roboto">.font-roboto { font-family: 'Roboto', sans-serif !important; }</style><link id="all-fonts-link-font-montserrat" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-montserrat">.font-montserrat { font-family: 'Montserrat', sans-serif !important; }</style><link id="all-fonts-link-font-poppins" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-poppins">.font-poppins { font-family: 'Poppins', sans-serif !important; }</style><link id="all-fonts-link-font-playfair" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;900&amp;display=swap"><style id="all-fonts-style-font-playfair">.font-playfair { font-family: 'Playfair Display', serif !important; }</style><link id="all-fonts-link-font-instrument-serif" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:wght@400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-instrument-serif">.font-instrument-serif { font-family: 'Instrument Serif', serif !important; }</style><link id="all-fonts-link-font-merriweather" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&amp;display=swap"><style id="all-fonts-style-font-merriweather">.font-merriweather { font-family: 'Merriweather', serif !important; }</style><link id="all-fonts-link-font-bricolage" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-bricolage">.font-bricolage { font-family: 'Bricolage Grotesque', sans-serif !important; }</style><link id="all-fonts-link-font-jakarta" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap"><style id="all-fonts-style-font-jakarta">.font-jakarta { font-family: 'Plus Jakarta Sans', sans-serif !important; }</style><link id="all-fonts-link-font-manrope" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&amp;display=swap"><style id="all-fonts-style-font-manrope">.font-manrope { font-family: 'Manrope', sans-serif !important; }</style><link id="all-fonts-link-font-space-grotesk" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-space-grotesk">.font-space-grotesk { font-family: 'Space Grotesk', sans-serif !important; }</style><link id="all-fonts-link-font-work-sans" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700;800&amp;display=swap"><style id="all-fonts-style-font-work-sans">.font-work-sans { font-family: 'Work Sans', sans-serif !important; }</style><link id="all-fonts-link-font-pt-serif" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&amp;display=swap"><style id="all-fonts-style-font-pt-serif">.font-pt-serif { font-family: 'PT Serif', serif !important; }</style><link id="all-fonts-link-font-geist-mono" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-geist-mono">.font-geist-mono { font-family: 'Geist Mono', monospace !important; }</style><link id="all-fonts-link-font-space-mono" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&amp;display=swap"><style id="all-fonts-style-font-space-mono">.font-space-mono { font-family: 'Space Mono', monospace !important; }</style><link id="all-fonts-link-font-quicksand" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-quicksand">.font-quicksand { font-family: 'Quicksand', sans-serif !important; }</style><link id="all-fonts-link-font-nunito" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800&amp;display=swap"><style id="all-fonts-style-font-nunito">.font-nunito { font-family: 'Nunito', sans-serif !important; }</style></head>
+<body class="bg-zinc-50 text-zinc-600 antialiased min-h-screen">
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-6 lg:px-8 py-8">
+        
+        <!-- Welcome Section -->
+        <div class="mb-8">
+            <h1 class="text-2xl font-semibold text-zinc-900 tracking-tight mb-1">Welcome back, Mediterranean Farms</h1>
+            <p class="text-sm text-zinc-500">Here's an overview of your certification activity and product status.</p>
+        </div>
+
+        <!-- Overview Cards -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+            <!-- Total Products -->
+            <div class="bg-white rounded-xl border border-zinc-200/80 p-5 hover:shadow-md hover:border-zinc-300 transition-all">
+                <div class="flex items-start justify-between mb-4">
+                    <div class="w-10 h-10 rounded-lg bg-zinc-100 flex items-center justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" class="text-zinc-600" style="stroke-width: 1.5" data-icon-set="lucide" data-lucide="package"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M11 21.73a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73zm1 .27V12"></path><path d="M3.29 7L12 12l8.71-5M7.5 4.27l9 5.15"></path></g></svg>
+                    </div>
+                    <span class="inline-flex items-center gap-1 text-xs font-medium text-emerald-600">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" class="" style="stroke-width: 1.5" data-icon-set="lucide" data-lucide="trending-up"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M16 7h6v6"></path><path d="m22 7l-8.5 8.5l-5-5L2 17"></path></g></svg>
+                        +3
+                    </span>
+                </div>
+                <p class="text-2xl font-semibold text-zinc-900 tracking-tight mb-1">24</p>
+                <p class="text-sm text-zinc-500">Total Products Submitted</p>
+            </div>
+
+            <!-- Under Evaluation -->
+            <div class="bg-white rounded-xl border border-zinc-200/80 p-5 hover:shadow-md hover:border-zinc-300 transition-all">
+                <div class="flex items-start justify-between mb-4">
+                    <div class="w-10 h-10 rounded-lg bg-blue-50 flex items-center justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" class="text-blue-600" style="stroke-width: 1.5" data-icon-set="lucide" data-lucide="clock"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M12 6v6l4 2"></path><circle cx="12" cy="12" r="10"></circle></g></svg>
+                    </div>
+                    <span class="inline-flex items-center gap-1 px-2 py-0.5 text-xs font-medium text-blue-600 bg-blue-50 rounded-full">
+                        In Progress
+                    </span>
+                </div>
+                <p class="text-2xl font-semibold text-zinc-900 tracking-tight mb-1">5</p>
+                <p class="text-sm text-zinc-500">Products Under Evaluation</p>
+            </div>
+
+            <!-- Awarded Products -->
+            <div class="bg-white rounded-xl border border-zinc-200/80 p-5 hover:shadow-md hover:border-zinc-300 transition-all">
+                <div class="flex items-start justify-between mb-4">
+                    <div class="w-10 h-10 rounded-lg bg-amber-50 flex items-center justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" class="text-amber-600" style="stroke-width: 1.5" data-icon-set="lucide" data-lucide="trophy"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M10 14.66v1.626a2 2 0 0 1-.976 1.696A5 5 0 0 0 7 21.978m7-7.318v1.626a2 2 0 0 0 .976 1.696A5 5 0 0 1 17 21.978M18 9h1.5a1 1 0 0 0 0-5H18M4 22h16"></path><path d="M6 9a6 6 0 0 0 12 0V3a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1zm0 0H4.5a1 1 0 0 1 0-5H6"></path></g></svg>
+                    </div>
+                    <div class="flex items-center gap-1">
+                        <span class="w-2 h-2 rounded-full bg-amber-400"></span>
+                        <span class="w-2 h-2 rounded-full bg-zinc-400"></span>
+                        <span class="w-2 h-2 rounded-full bg-amber-600"></span>
+                    </div>
+                </div>
+                <p class="text-2xl font-semibold text-zinc-900 tracking-tight mb-1">18</p>
+                <p class="text-sm text-zinc-500">Awarded Products</p>
+            </div>
+
+            <!-- Pending Actions -->
+            <div class="bg-white rounded-xl border border-zinc-200/80 p-5 hover:shadow-md hover:border-zinc-300 transition-all">
+                <div class="flex items-start justify-between mb-4">
+                    <div class="w-10 h-10 rounded- items-center justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" class="text-orange-600" style="stroke-width: 1.5" data-icon-set="lucide" data-lucide="alert-circle"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M12 8v4m0 4h.01"></path></g></svg>
+                    </div>
+                    <span class="inline-flex items-center gap-1 px-2 py-0.5 text-xs font-medium text-orange-600 bg-orange-50 rounded-full">
+                        Action Required
+                    </span>
+                </div>
+                <p class="text-2xl font-semibold text-zinc-900 tracking-tight mb-1">3</p>
+                <p class="text-sm text-zinc-500">Pending Actions</p>
+            </div>
+        </div>
+
+        <!-- Quick Actions -->
+        <div class="bg-white rounded-xl border border-zinc-200/80 p-6 mb-8">
+            <h2 class="text-sm font-semibold text-zinc-900 mb-4">Quick Actions</h2>
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-3">
+                <button class="flex items-center gap-3 p-4 bg-gradient-to-br from-amber-500 to-orange-600 rounded-xl text-white hover:from-amber-600 hover:to-orange-700 transition-all group">
+                    <div class="w-10 h-10 rounded-lg bg-white/20 flex items-center justify-center group-hover:bg-white/30 transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" class="" style="stroke-width: 1.5" data-icon-set="lucide" data-lucide="plus"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14m-7-7v14"></path></svg>
+                    </div>
+                    <div class="text-left">
+                        <p class="text-sm font-medium">Submit New Product</p>
+                        <p class="text-xs text-white/70">Start certification</p>
+                    </div>
+                </button>
+
+                <button class="flex items-center gap-3 p-4 bg-zinc-50 rounded-xl hover:bg-zinc-100 transition-colors group">
+                    <div class="w-10 h-10 rounded-lg bg-white border border-zinc-200 flex items-center justify-center group-hover:border-zinc-300 transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" class="text-zinc-600" style="stroke-width: 1.5" data-icon-set="lucide" data-lucide="package-search"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M21 10V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l2-1.14M7.5 4.27l9 5.15"></path><path d="M3.29 7L12 12l8.71-5M12 22V12"></path><circle cx="18.5" cy="15.5" r="2.5"></circle><path d="M20.27 17.27L22 19"></path></g></svg>
+                    </div>
+                    <div class="text-left">
+                        <p class="text-sm font-medium text-zinc-900">View My Products</p>
+                        <p class="text-xs text-zinc-500">Manage submissions</p>
+                    </div>
+                </button>
+
+                <button class="flex items-center gap-3 p-4 bg-zinc-50 rounded-xl hover:bg-zinc-100 transition-colors group">
+                    <div class="w-10 h-10 rounded-lg bg-white border border-zinc-200 flex items-center justify-center group-hover:border-zinc-300 transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" class="text-zinc-600" style="stroke-width: 1.5" data-icon-set="lucide" data-lucide="file-badge"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M13 22h5a2 2 0 0 0 2-2V8a2.4 2.4 0 0 0-.706-1.706l-3.588-3.588A2.4 2.4 0 0 0 14 2H6a2 2 0 0 0-2 2v3.3"></path><path d="M14 2v5a1 1 0 0 0 1 1h5M7.69 16.479l1.29 4.88a.5.5 0 0 1-.698.591l-1.843-.849a1 1 0 0 0-.879.001l-1.846.85a.5.5 0 0 1-.692-.593l1.29-4.88"></path><circle cx="6" cy="14" r="3"></circle></g></svg>
+                    </div>
+                    <div class="text-left">
+                        <p class="text-sm font-medium text-zinc-900">Check Certificates</p>
+                        <p class="text-xs text-zinc-500">Download &amp; share</p>
+                    </div>
+                </button>
+
+                <button class="flex items-center gap-3 p-4 bg-zinc-50 rounded-xl hover:bg-zinc-100 transition-colors group">
+                    <div class="w-10 h-10 rounded-lg bg-white border border-zinc-200 flex items-center justify-center group-hover:border-zinc-300 transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" class="text-zinc-600" style="stroke-width: 1.5" data-icon-set="lucide" data-lucide="user-cog"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M10 15H6a4 4 0 0 0-4 4v2m12.305-4.47l.923-.382m0-2.296l-.923-.383m2.547-1.241l-.383-.923m.383 6.467l-.383.924m2.679-6.468l.383-.923m-.001 7.391l-.382-.924m1.624-3.92l.924-.383m-.924 2.679l.924.383"></path><circle cx="18" cy="15" r="3"></circle><circle cx="9" cy="7" r="4"></circle></g></svg>
+                    </div>
+                    <div class="text-left">
+                        <p class="text-sm font-medium text-zinc-900">Update Profile</p>
+                        <p class="text-xs text-zinc-500">Edit company info</p>
+                    </div>
+                </button>
+            </div>
+        </div>
+
+        <!-- Main Grid -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            
+            <!-- Recent Activity -->
+            <div class="lg:col-span-2 bg-white rounded-xl border border-zinc-200/80">
+                <div class="flex items-center justify-between p-5 border-b border-zinc-100">
+                    <h2 class="text-sm font-semibold text-zinc-900">Recent Activity</h2>
+                    <a href="#" class="text-xs font-medium text-amber-600 hover:text-amber-700 transition-colors">View All</a>
+                </div>
+                <div class="divide-y divide-zinc-100">
+                    <!-- Activity Item 1 -->
+                    <div class="p-5 hover:bg-zinc-50/50 transition-colors">
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-full bg-emerald-50 flex items-center justify-center flex-shrink-0">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" class="text-emerald-600" style="stroke-width: 1.5" data-icon-set="lucide" data-lucide="trophy"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M10 14.66v1.626a2 2 0 0 1-.976 1.696A5 5 0 0 0 7 21.978m7-7.318v1.626a2 2 0 0 0 .976 1.696A5 5 0 0 1 17 21.978M18 9h1.5a1 1 0 0 0 0-5H18M4 22h16"></path><path d="M6 9a6 6 0 0 0 12 0V3a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1zm0 0H4.5a1 1 0 0 1 0-5H6"></path></g></svg>
+                            </div>
+                            <div class="flex-1 min-w-0">
+                                <div class="flex items-start justify-between gap-4">
+                                    <div>
+                                        <p class="text-sm font-medium text-zinc-900">Gold Award Received</p>
+                                        <p class="text-sm text-zinc-500 mt-0.5">Your "Artisan Olive Oil Reserve" has been awarded Gold certification</p>
+                                    </div>
+                                    <span class="text-xs text-zinc-400 whitespace-nowrap">2 hours ago</span>
+                                </div>
+                                <div class="flex items-center gap-2 mt-3">
+                                    <span class="inline-flex items-center gap-1 px-2 py-1 bg-amber-50 text-amber-700 text-xs font-medium rounded-full">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" class="" style="stroke-width: 1.5" data-icon-set="lucide" data-lucide="trophy"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M10 14.66v1.626a2 2 0 0 1-.976 1.696A5 5 0 0 0 7 21.978m7-7.318v1.626a2 2 0 0 0 .976 1.696A5 5 0 0 1 17 21.978M18 9h1.5a1 1 0 0 0 0-5H18M4 22h16"></path><path d="M6 9a6 6 0 0 0 12 0V3a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1zm0 0H4.5a1 1 0 0 1 0-5H6"></path></g></svg>
+                                        Gold
+                                    </span>
+                                    <span class="text-xs text-zinc-400">Score: 94/100</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Activity Item 2 -->
+                    <div class="p-5 hover:bg-zinc-50/50 transition-colors">
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center flex-shrink-0">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" class="text-blue-600" style="stroke-width: 1.5" data-icon-set="lucide" data-lucide="microscope"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18h8M3 22h18m-7 0a7 7 0 1 0 0-14h-1m-4 6h2m-2-2a2 2 0 0 1-2-2V6h6v4a2 2 0 0 1-2 2Zm3-6V3a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v3"></path></svg>
+                            </div>
+                            <div class="flex-1 min-w-0">
+                                <div class="flex items-start justify-between gap-4">
+                                    <div>
+                                        <p class="text-sm font-medium text-zinc-900">Evaluation Started</p>
+                                        <p class="text-sm text-zinc-500 mt-0.5">Your "Premium Balsamic Vinegar" has entere                    </p></div>
+                                    <span class="text-xs text-zinc-400 whitespace-nowrap">1 day ago</span>
+                                </div>
+                                <div class="flex items-center gap-2 mt-3">
+                                    <span class="inline-flex items-center gap-1 px-2 py-1 bg-blue-50 text-blue-700 text-xs font-medium rounded-full">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" class="" style="stroke-width: 1.5" data-icon-set="lucide" data-lucide="clock"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M12 6v6l4 2"></path><circle cx="12" cy="12" r="10"></circle></g></svg>
+                                        Under Review
+                                    </span>
+                                    <span class="text-xs text-zinc-400">Est. completion: 5 days</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Activity Item 3 -->
+                    <div class="p-5 hover:bg-zinc-50/50 transition-colors">
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-full bg-zinc-100 flex items-center justify-center flex-shrink-0">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" class="text-zinc-600" style="stroke-width: 1.5" data-icon-set="lucide" data-lucide="package-plus"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M16 16h6m-3-3v6m2-9V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l2-1.14M7.5 4.27l9 5.15"></path><path d="M3.29 7L12 12l8.71-5M12 22V12"></path></g></svg>
+                            </div>
+                            <div class="flex-1 min-w-0">
+                                <div class="flex items-start justify-between gap-4">
+                                    <div>
+                                        <p class="text-sm font-medium text-zinc-900">New Submission</p>
+                                        <p class="text-sm text-zinc-500 mt-0.5">You submitted "Organic Extra Virgin Olive Oil 2024" for certification</p>
+                                    </div>
+                                    <span class="text-xs text-zinc-400 whitespace-nowrap">2 days ago</span>
+                                </div>
+                                <div class="flex items-center gap-2 mt-3">
+                                    <span class="inline-flex items-center gap-1 px-2 py-1 bg-zinc-100 text-zinc-600 text-xs font-medium rounded-full">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" class="" style="stroke-width: 1.5" data-icon-set="lucide" data-lucide="hourglass"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 22h14M5 2h14m-2 20v-4.172a2 2 0 0 0-.586-1.414L12 12l-4.414 4.414A2 2 0 0 0 7 17.828V22M7 2v4.172a2 2 0 0 0 .586 1.414L12 12l4.414-4.414A2 2 0 0 0 17 6.172V2"></path></svg>
+                                        Pending Review
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Activity Item 4 -->
+                    <div class="p-5 hover:bg-zinc-50/50 transition-colors">
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-full bg-orange-50 flex items-center justify-center flex-shrink-0">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" class="text-orange-600" style="stroke-width: 1.5" data-icon-set="lucide" data-lucide="alert-triangle"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m21.73 18l-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3M12 9v4m0 4h.01"></path></svg>
+                            </div>
+                            <div class="flex-1 min-w-0">
+                                <div class="flex items-start justify-between gap-4">
+                                    <div>
+                                        <p class="text-sm font-medium text-zinc-900">Action Required</p>
+                                        <p class="text-sm text-zinc-500 mt-0.5">Additional documentation needed for "Aged Feta Cheese" submission</p>
+                                    </div>
+                                    <span class="text-xs text-zinc-400 whitespace-nowrap">3 days ago</span>
+                                </div>
+                                <div class="flex items-center gap-3 mt-3">
+                                    <button class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-orange-600 text-white text-xs font-medium rounded-lg hover:bg-orange-700 transition-colors">
+                                        <iconify-icon icon="lucide:upload" width="12" style="stroke-width: 1.5"></iconify-icon>
+                                        Upload Documents
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Sidebar -->
+            <div class="space-y-6">
+                
+                <!-- Certification Progress -->
+                <div class="bg-white rounded-xl border border-zinc-200/80 p-5">
+                    <h2 class="text-sm font-semibold text-zinc-900 mb-4">Certification Progress</h2>
+                    
+                    <!-- Progress Chart Placeholder -->
+                    <div class="relative mb">
+                        <div class="flex items-center justify-center">
+                            <svg class="w-32 h-32 transform -rotate-90" viewBox="0 0 120 120">
+                                <circle cx="60" cy="60" r="50" fill="none" stroke="#f4f4f5" stroke-width="10"></circle>
+                                <circle cx="60" cy="60" r="50" fill="none" stroke="url(#gradient)" stroke-width="10" stroke-linecap="round" stroke-dasharray="314" stroke-dashoffset="62.8"></circle>
+                                <defs>
+                                    <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                        <stop offset="0%" style="stop-color:#f59e0b"></stop>
+                                        <stop offset="100%" style="stop-color:#ea&lt;/linearGradient&gt;
+                                &lt;/svg&gt;
+                            &lt;div class=" absolute="" inset-0="" flex="" flex-col="" items-center="" justify-center"="">
+                                </stop></linearGradient></defs></svg><span class="text-2xl font-semibold text-zinc-900">80%</span>
+                                <span class="text-xs text-zinc-500">Success Rate</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Stats -->
+                    <div class="space-y-3">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-2">
+                                <span class="w-2 h-2 rounded-full bg-amber-400"></span>
+                                <span class="text-sm text-zinc-600">Gold Awards</span>
+                            </div>
+                            <span class="text-sm font-medium text-zinc-900">8</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-2">
+                                <span class="w-2 h-2 rounded-full bg-zinc-400"></span>
+                                <span class="text-sm text-zinc-600">Silver Awards</span>
+                            </div>
+                            <span class="text-sm font-medium text-zinc-900">6</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-2">
+                                <span class="w-2 h-2 rounded-full bg-amber-700"></span>
+                                <span class="text-sm text-zinc-600">Bronze Awards</span>
+                            </div>
+                            <span class="text-sm font-medium text-zinc-900">4</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Evaluation Timeline -->
+                
+
+                <!-- Upcoming Deadlines -->
+                
+        </div>
+
+    </main>
+
+</body></html>

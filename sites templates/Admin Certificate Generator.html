@@ -1,0 +1,824 @@
+<html lang="en"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Certificate Generator | Tastecert</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+body {
+font-family: 'Inter', sans-serif;
+}
+.custom-select {
+background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+background-position: right 0.75rem center;
+background-repeat: no-repeat;
+background-size: 1.25em 1.25em;
+}
+.certificate-preview {
+background: linear-gradient(135deg, #fefce8 0%, #fef3c7 50%, #fde68a 100%);
+}
+.certificate-border {
+border: 3px solid;
+border-image: linear-gradient(135deg, #d97706, #f59e0b, #fbbf24, #f59e0b, #d97706) 1;
+}
+.gold-gradient {
+background: linear-gradient(135deg, #d97706, #f59e0b, #fbbf24);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+background-clip: text;
+}
+.badge-upload:hover .upload-overlay {
+opacity: 1;
+}
+@media print {
+.no-print {
+display: none !important;
+}
+.print-only {
+display: block !important;
+}
+}
+</style></head>
+<body class="bg-zinc-50 text-zinc-600 antialiased min-h-screen">
+
+    <div class="flex min-h-screen">
+        <!-- Sidebar -->
+        <aside class="w-60 bg-white border-r border-zinc-200/80 flex flex-col fixed h-full z-40 no-print">
+            <!-- Logo -->
+            <div class="p-5 border-b border-zinc-100">
+                <a href="#" class="flex items-center gap-2.5">
+                    <div class="w-8 h-8 bg-gradient-to-br from-amber-500 to-orange-600 rounded-lg flex items-center justify-center">
+                        <iconify-icon icon="lucide:award" width="16" class="text-white" style="stroke-width: 1.5"></iconify-icon>
+                    </div>
+                    <span class="text-zinc-900 font-semibold tracking-tight">Tastecert</span>
+                </a>
+            </div>
+
+            <!-- Navigation -->
+            <nav class="flex-1 p-3 overflow-y-auto">
+                <div class="space-y-0.5">
+                    <a href="#" class="flex items-center gap-2.5 px-3 py-2 rounded-lg text-sm font-medium text-zinc-600 hover:bg-zinc-50 transition-colors">
+                        <iconify-icon icon="lucide:layout-grid" width="18" style="stroke-width: 1.5" class="text-zinc-400"></iconify-icon>
+                        Overview
+                    </a>
+                    <a href="#" class="flex items-center gap-2.5 px-3 py-2 rounded-lg text-sm font-medium text-zinc-600 hover:bg-zinc-50 transition-colors">
+                        <iconify-icon icon="lucide:users" width="18" style="stroke-width: 1.5" class="text-zinc-400"></iconify-icon>
+                        Producers
+                    </a>
+                    <a href="#" class="flex items-center gap-2.5 px-3 py-2 rounded-lg text-sm font-medium text-zinc-600 hover:bg-zinc-50 transition-colors">
+                        <iconify-icon icon="lucide:package" width="18" style="stroke-width: 1.5" class="text-zinc-400"></iconify-icon>
+                        Products
+                    </a>
+                    <a href="#" class="flex items-center gap-2.5 px-3 py-2 rounded-lg text-sm font-medium text-zinc-600 hover:bg-zinc-50 transition-colors">
+                        <iconify-icon icon="lucide:trophy" width="18" style="stroke-width: 1.5" class="text-zinc-400"></iconify-icon>
+                        Awards
+                    </a>
+                    <a href="#" class="flex items-center gap-2.5 px-3 py-2 rounded-lg text-sm font-medium text-zinc-600 hover:bg-zinc-50 transition-colors">
+                        <iconify-icon icon="lucide:scroll-text" width="18" style="stroke-width: 1.5" class="text-zinc-400"></iconify-icon>
+                        Certificates
+                    </a>
+                    <a href="#" class="flex items-center gap-2.5 px-3 py-2 rounded-lg text-sm font-medium bg-zinc-900 text-white">
+                        <iconify-icon icon="lucide:wand-2" width="18" style="stroke-width: 1.5"></iconify-icon>
+                        Generator
+                    </a>
+                </div>
+
+                <div class="mt-6 pt-6 border-t border-zinc-100">
+                    <p class="px-3 mb-2 text-xs font-medium text-zinc-400 uppercase tracking-wider">System</p>
+                    <div class="space-y-0.5">
+                        <a href="#" class="flex items-center gap-2.5 px-3 py-2 rounded-lg text-sm font-medium text-zinc-600 hover:bg-zinc-50 transition-colors">
+                            <iconify-icon icon="lucide:settings" width="18" style="stroke-width: 1.5" class="text-zinc-400"></iconify-icon>
+                            Settings
+                        </a>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- User -->
+            <div class="p-3 border-t border-zinc-100">
+                <div class="flex items-center gap-2.5 p-2 rounded-lg hover:bg-zinc-50 transition-colors cursor-pointer">
+                    <div class="w-8 h-8 rounded-full bg-gradient-to-br from-zinc-700 to-zinc-900 flex items-center justify-center text-white text-xs font-medium">
+                        AD
+                    </div>
+                    <div class="flex-1 min-w-0">
+                        <p class="text-sm font-medium text-zinc-900 truncate">Admin</p>
+                        <p class="text-xs text-zinc-400 truncate">admin@tastecert.com</p>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="flex-1 ml-60">
+            <!-- Header -->
+            <header class="bg-white border-b border-zinc-200/80 sticky top-0 z-30 no-print">
+                <div class="flex items-center justify-between px-8 h-14">
+                    <div class="flex items-center gap-3">
+                        <h1 class="text-base font-semibold text-zinc-900">Certificate Generator</h1>
+                        <span class="px-2 py-0.5 text-xs font-medium text-amber-700 bg-amber-50 rounded-full">Live Preview</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <button onclick="resetForm()" class="flex items-center gap-2 px-4 py-2 text-sm font-medium text-zinc-600 bg-white border border-zinc-200 rounded-lg hover:bg-zinc-50 transition-colors">
+                            <iconify-icon icon="lucide:rotate-ccw" width="16" style="stroke-width: 1.5"></iconify-icon>
+                            Reset
+                        </button>
+                        <button onclick="generateCertificate()" class="flex items-center gap-2 px-4 py-2 text-sm font-medium text-white bg-zinc-900 rounded-lg hover:bg-zinc-800 transition-colors">
+                            <iconify-icon icon="lucide:sparkles" width="16" style="stroke-width: 1.5"></iconify-icon>
+                            Generate Certificate
+                        </button>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Content -->
+            <div class="flex h-[calc(100vh-56px)]">
+                <!-- Left Panel - Form -->
+                <div class="w-96 border-r border-zinc-200/80 bg-white overflow-y-auto no-print">
+                    <div class="p-6">
+                        <h2 class="text-sm font-semibold text-zinc-900 mb-1">Certificate Details</h2>
+                        <p class="text-xs text-zinc-500 mb-6">Configure the certificate settings below</p>
+
+                        <!-- Product Selection -->
+                        <div class="mb-6">
+                            <label class="block text-sm font-medium text-zinc-700 mb-2">
+                                Select Product <span class="text-red-500">*</span>
+                            </label>
+                            <div class="relative">
+                                <select id="productSelect" onchange="updatePreview()" class="custom-select w-full px-4 py-2.5 text-sm border border-zinc-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500/20 focus:border-amber-500 transition-colors appearance-none bg-white pr-10">
+                                    <option value="">Choose a product...</option>
+                                    <option value="prod-001" data-producer="Tuscany Hills Olive Co." data-category="Extra Virgin Olive Oil" data-score="9.2">Premium Extra Virgin Olive Oil</option>
+                                    <option value="prod-002" data-producer="Château Bordeaux" data-category="Red Wine" data-score="8.7">Grand Cru Classé 2019</option>
+                                    <option value="prod-003" data-producer="Alpine Cheese Masters" data-category="Artisan Cheese" data-score="8.9">Aged Gruyère Reserve</option>
+                                    <option value="prod-004" data-producer="Mediterranean Delights" data-category="Balsamic Vinegar" data-score="9.0">25-Year Aged Balsamic</option>
+                                    <option value="prod-005" data-producer="Nordic Smokehouse" data-category="Smoked Salmon" data-score="8.5">Wild Atlantic Salmon</option>
+                                </select>
+                            </div>
+                            <div id="productInfo" class="mt-3 hidden">
+                                <div class="p-3 bg-zinc-50 rounded-lg border border-zinc-100">
+                                    <div class="flex items-start gap-3">
+                                        <div class="w-10 h-10 rounded-lg bg-amber-100 flex items-center justify-center flex-shrink-0">
+                                            <iconify-icon icon="lucide:package" width="18" class="text-amber-600" style="stroke-width: 1.5"></iconify-icon>
+                                        </div>
+                                        <div class="flex-1 min-w-0">
+                                            <p id="selectedProductName" class="text-sm font-medium text-zinc-900 truncate">Product Name</p>
+                                            <p id="selectedProducer" class="text-xs text-zinc-500">Producer Name</p>
+                                            <div class="flex items-center gap-3 mt-2">
+                                                <span id="selectedCategory" class="text-xs text-zinc-500 flex items-center gap-1">
+                                                    <iconify-icon icon="lucide:tag" width="12" style="stroke-width: 1.5"></iconify-icon>
+                                                    Category
+                                                </span>
+                                                <span id="selectedScore" class="text-xs text-amber-600 font-medium flex items-center gap-1">
+                                                    <iconify-icon icon="lucide:star" width="12" style="stroke-width: 1.5"></iconify-icon>
+                                                    Score
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Template Selection -->
+                        <div class="mb-6">
+                            <label class="block text-sm font-medium text-zinc-700 mb-2">
+                                Certificate Template <span class="text-red-500">*</span>
+                            </label>
+                            <div class="grid grid-cols-2 gap-3">
+                                <label class="template-option cursor-pointer">
+                                    <input type="radio" name="template" value="grand-gold" class="sr-only peer" onchange="updatePreview()">
+                                    <div class="p-3 border-2 border-zinc-200 rounded-xl hover:border-zinc-300 peer-checked:border-amber-500 peer-checked:bg-amber-50/50 transition-all">
+                                        <div class="w-full aspect-[3/4] bg-gradient-to-br from-yellow-50 to-yellow-100 rounded-lg mb-2 flex items-center justify-center">
+                                            <div class="w-8 h-8 rounded-full bg-gradient-to-br from-yellow-400 to-yellow-600 flex items-center justify-center">
+                                                <iconify-icon icon="lucide:award" width="16" class="text-yellow-900" style="stroke-width: 1.5"></iconify-icon>
+                                            </div>
+                                        </div>
+                                        <p class="text-xs font-medium text-zinc-900 text-center">Grand Gold</p>
+                                        <p class="text-xs text-zinc-400 text-center">9.0+</p>
+                                    </div>
+                                </label>
+                                <label class="template-option cursor-pointer">
+                                    <input type="radio" name="template" value="gold" class="sr-only peer" onchange="updatePreview()" checked="">
+                                    <div class="p-3 border-2 border-zinc-200 rounded-xl hover:border-zinc-300 peer-checked:border-amber-500 peer-checked:bg-amber-50/50 transition-all">
+                                        <div class="w-full aspect-[3/4] bg-gradient-to-br from-amber-50 to-amber-100 rounded-lg mb-2 flex items-center justify-center">
+                                            <div class="w-8 h-8 rounded-full bg-gradient-to-br from-amber-400 to-amber-600 flex items-center justify-center">
+                                                <iconify-icon icon="lucide:award" width="16" class="text-white" style="stroke-width: 1.5"></iconify-icon>
+                                            </div>
+                                        </div>
+                                        <p class="text-xs font-medium text-zinc-900 text-center">Gold</p>
+                                        <p class="text-xs text-zinc-400 text-center">8.0 - 8.9</p>
+                                    </div>
+                                </label>
+                                <label class="template-option cursor-pointer">
+                                    <input type="radio" name="template" value="silver" class="sr-only peer" onchange="updatePreview()">
+                                    <div class="p-3 border-2 border-zinc-200 rounded-xl hover:border-zinc-300 peer-checked:border-amber-500 peer-checked:bg-amber-50/50 transition-all">
+                                        <div class="w-full aspect-[3/4] bg-gradient-to-br from-zinc-100 to-zinc-200 rounded-lg mb-2 flex items-center justify-center">
+                                            <div class="w-8 h-8 rounded-full bg-gradient-to-br from-zinc-300 to-zinc-500 flex items-center justify-center">
+                                                <iconify-icon icon="lucide:award" width="16" class="text-white" style="stroke-width: 1.5"></iconify-icon>
+                                            </div>
+                                        </div>
+                                        <p class="text-xs font-medium text-zinc-900 text-center">Silver</p>
+                                        <p class="text-xs text-zinc-400 text-center">7.0 - 7.9</p>
+                                    </div>
+                                </label>
+                                <label class="template-option cursor-pointer">
+                                    <input type="radio" name="template" value="bronze" class="sr-only peer" onchange="updatePreview()">
+                                    <div class="p-3 border-2 border-zinc-200 rounded-xl hover:border-zinc-300 peer-checked:border-amber-500 peer-checked:bg-amber-50/50 transition-all">
+                                        <div class="w-full aspect-[3/4] bg-gradient-to-br from-orange-50 to-orange-100 rounded-lg mb-2 flex items-center justify-center">
+                                            <div class="w-8 h-8 rounded-full bg-gradient-to-br from-orange-400 to-orange-600 flex items-center justify-center">
+                                                <iconify-icon icon="lucide:award" width="16" class="text-orange-900" style="stroke-width: 1.5"></iconify-icon>
+                                            </div>
+                                        </div>
+                                        <p class="text-xs font-medium text-zinc-900 text-center">Bronze</p>
+                                        <p class="text-xs text-zinc-400 text-center">6.0 - 6.9</p>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Issue Date -->
+                        <div class="mb-6">
+                            <label class="block text-sm font-medium text-zinc-700 mb-2">
+                                Issue Date <span class="text-red-500">*</span>
+                            </label>
+                            <div class="relative">
+                                <iconify-icon icon="lucide:calendar" width="16" class="absolute left-3 top-1/2 -translate-y-1/2 text-zinc-400" style="stroke-width: 1.5"></iconify-icon>
+                                <input type="date" id="issueDate" onchange="updatePreview()" class="w-full pl-10 pr-4 py-2.5 text-sm border border-zinc-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500/20 focus:border-amber-500 transition-colors">
+                            </div>
+                        </div>
+
+                        <!-- Certificate ID -->
+                        <div class="mb-6">
+                            <label class="block text-sm font-medium text-zinc-700 mb-2">
+                                Certificate ID <span class="text-red-500">*</span>
+                            </label>
+                            <div class="flex gap-2">
+                                <div class="relative flex-1">
+                                    <iconify-icon icon="lucide:hash" width="16" class="absolute left-3 top-1/2 -translate-y-1/2 text-zinc-400" style="stroke-width: 1.5"></iconify-icon>
+                                    <input type="text" id="certificateId" oninput="updatePreview()" placeholder="e.g., TC-2024-001234" class="w-full pl-10 pr-4 py-2.5 text-sm border border-zinc-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500/20 focus:border-amber-500 transition-colors">
+                                </div>
+                                <button onclick="generateId()" class="px-3 py-2.5 text-sm font-medium text-zinc-600 bg-zinc-100 rounded-lg hover:bg-zinc-200 transition-colors" title="Auto-generate ID">
+                                    <iconify-icon icon="lucide:wand-2" width="16" style="stroke-width: 1.5"></iconify-icon>
+                                </button>
+                            </div>
+                            <p class="text-xs text-zinc-400 mt-1.5">Unique identifier for this certificate</p>
+                        </div>
+
+                        <!-- Award Badge Upload -->
+                        <div class="mb-6">
+                            <label class="block text-sm font-medium text-zinc-700 mb-2">
+                                Award Badge
+                            </label>
+                            <div class="badge-upload relative">
+                                <div id="badgeUploadArea" class="border-2 border-dashed border-zinc-200 rounded-xl p-6 text-center hover:border-amber-400 hover:bg-amber-50/30 transition-colors cursor-pointer" onclick="document.getElementById('badgeInput').click()">
+                                    <input type="file" id="badgeInput" accept="image/*" class="hidden" onchange="handleBadgeUpload(event)">
+                                    <div id="badgePlaceholder">
+                                        <div class="w-12 h-12 rounded-full bg-zinc-100 flex items-center justify-center mx-auto mb-3">
+                                            <iconify-icon icon="lucide:image-plus" width="24" class="text-zinc-400" style="stroke-width: 1.5"></iconify-icon>
+                                        </div>
+                                        <p class="text-sm font-medium text-zinc-600 mb-1">Upload badge image</p>
+                                        <p class="text-xs text-zinc-400">PNG, SVG or JPG (max 2MB)</p>
+                                    </div>
+                                    <div id="badgePreviewContainer" class="hidden">
+                                        <img id="badgePreviewImg" class="w-20 h-20 object-contain mx-auto mb-2" src="" alt="Badge preview">
+                                        <p id="badgeFileName" class="text-xs text-zinc-500 truncate"></p>
+                                    </div>
+                                </div>
+                                <button id="removeBadgeBtn" onclick="removeBadge(event)" class="hidden absolute -top-2 -right-2 w-6 h-6 bg-red-500 text-white rounded-full flex items-center justify-center hover:bg-red-600 transition-colors">
+                                    <iconify-icon icon="lucide:x" width="14" style="stroke-width: 1.5"></iconify-icon>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Additional Options -->
+                        <div class="mb-6">
+                            <label class="block text-sm font-medium text-zinc-700 mb-3">Additional Options</label>
+                            <div class="space-y-3">
+                                <label class="flex items-center gap-3 cursor-pointer group">
+                                    <div class="relative">
+                                        <input type="checkbox" id="includeQR" checked="" onchange="updatePreview()" class="sr-only peer">
+                                        <div class="w-5 h-5 border-2 border-zinc-300 rounded peer-checked:border-amber-500 peer-checked:bg-amber-500 transition-colors">
+                                            <iconify-icon icon="lucide:check" width="14" class="text-white absolute top-0.5 left-0.5 opacity-0 peer-checked:opacity-100 transition-opacity" style="stroke-width: 2"></iconify-icon>
+                                        </div>
+                                    </div>
+                                    <span class="text-sm text-zinc-700 group-hover:text-zinc-900 transition-colors">Include QR verification code</span>
+                                </label>
+                                <label class="flex items-center gap-3 cursor-pointer group">
+                                    <div class="relative">
+                                        <input type="checkbox" id="includeScore" checked="" onchange="updatePreview()" class="sr-only peer">
+                                        <div class="w-5 h-5 border-2 border-zinc-300 rounded peer-checked:border-amber-500 peer-checked:bg-amber-500 transition-colors">
+                                            <iconify-icon icon="lucide:check" width="14" class="text-white absolute top-0.5 left-0.5 opacity-0 peer-checked:opacity-100 transition-opacity" style="stroke-width: 2"></iconify-icon>
+                                        </div>
+                                    </div>
+                                    <span class="text-sm text-zinc-700 group-hover:text-zinc-900 transition-colors">Display score on certificate</span>
+                                </label>
+                                <label class="flex items-center gap-3 cursor-pointer group">
+                                    <div class="relative">
+                                        <input type="checkbox" id="includeCategory" checked="" onchange="updatePreview()" class="sr-only peer">
+                                        <div class="w-5 h-5 border-2 border-zinc-300 rounded peer-checked:border-amber-500 peer-checked:bg-amber-500 transition-colors">
+                                            <iconify-icon icon="lucide:check" width="14" class="text-white absolute top-0.5 left-0.5 opacity-0 peer-checked:opacity-100 transition-opacity" style="stroke-width: 2"></iconify-icon>
+                                        </div>
+                                    </div>
+                                    <span class="text-sm text-zinc-700 group-hover:text-zinc-900 transition-colors">Show product category</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Custom Message -->
+                        <div class="mb-6">
+                            <label class="block text-sm font-medium text-zinc-700 mb-2">
+                                Custom Message <span class="text-zinc-400 font-normal">(optional)</span>
+                            </label>
+                            <textarea id="customMessage" oninput="updatePreview()" rows="2" placeholder="Add a personalized message..." class="w-full px-4 py-2.5 text-sm border border-zinc-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500/20 focus:border-amber-500 transition-colors resize-none">In recognition of exceptional quality and excellence in artisan food production.</textarea>
+                            <p class="text-xs text-zinc-400 mt-1.5"><span id="charCount">72</span>/200 characters</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Panel - Live Preview -->
+                <div class="flex-1 bg-zinc-100 overflow-y-auto p-8">
+                    <div class="flex items-center justify-between mb-6 no-print">
+                        <div class="flex items-center gap-2">
+                            <div class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></div>
+                            <span class="text-sm font-medium text-zinc-600">Live Preview</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <button onclick="downloadCertificate()" class="flex items-center gap-2 px-3 py-1.5 text-xs font-medium text-zinc-600 bg-white border border-zinc-200 rounded-lg hover:bg-zinc-50 transition-colors">
+                                <iconify-icon icon="lucide:download" width="14" style="stroke-width: 1.5"></iconify-icon>
+                                Download PDF
+                            </button>
+                            <button onclick="window.print()" class="flex items-center gap-2 px-3 py-1.5 text-xs font-medium text-zinc-600 bg-white border border-zinc-200 rounded-lg hover:bg-zinc-50 transition-colors">
+                                <iconify-icon icon="lucide:printer" width="14" style="stroke-width: 1.5"></iconify-icon>
+                                Print
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Certificate Preview -->
+                    <div class="flex justify-center">
+                        <div id="certificatePreview" class="w-full max-w-2xl aspect-[1/1.414] bg-white rounded-xl shadow-2xl overflow-hidden relative">
+                            <!-- Certificate Content -->
+                            <div id="certificateContent" class="absolute inset-4 border-4 border-amber-300 rounded-lg p-8 flex flex-col items-center" style="background: linear-gradient(180deg, #fffbeb 0%, #fef3c7 100%);">
+                                
+                                <!-- Decorative Corners -->
+                                <div class="absolute top-2 left-2 w-16 h-16 border-l-4 border-t-4 border-amber-400 rounded-tl-lg"></div>
+                                <div class="absolute top-2 right-2 w-16 h-16 border-r-4 border-t-4 border-amber-400 rounded-tr-lg"></div>
+                                <div class="absolute bottom-2 left-2 w-16 h-16 border-l-4 border-b-4 border-amber-400 rounded-bl-lg"></div>
+                                <div class="absolute bottom-2 right-2 w-16 h-16 border-r-4 border-b-4 border-amber-400 rounded-br-lg"></div>
+
+                                <!-- Header -->
+                                <div class="text-center mb-4">
+                                    <div class="flex items-center justify-center gap-2 mb-2">
+                                        <div class="w-8 h-8 bg-gradient-to-br from-amber-500 to-orange-600 rounded-lg flex items-center justify-center">
+                                            <iconify-icon icon="lucide:award" width="16" class="text-white" style="stroke-width: 1.5"></iconify-icon>
+                                        </div>
+                                        <span class="text-lg font-semibold text-zinc-800 tracking-tight">Tastecert</span>
+                                    </div>
+                                    <p class="text-xs text-zinc-500 tracking-widest uppercase">International Food Quality Awards</p>
+                                </div>
+
+                                <!-- Award Badge -->
+                                <div id="awardBadgeContainer" class="relative mb-4">
+                                    <div id="defaultBadge" class="w-24 h-24 rounded-full bg-gradient-to-br from-amber-400 via-amber-500 to-amber-600 flex items-center justify-center shadow-lg">
+                                        <div class="w-20 h-20 rounded-full bg-gradient-to-br from-amber-300 to-amber-500 flex items-center justify-center border-2 border-amber-200">
+                                            <iconify-icon id="awardIcon" icon="lucide:award" width="40" class="text-amber-900" style="stroke-width: 1.5"></iconify-icon>
+                                        </div>
+                                    </div>
+                                    <img id="customBadgePreview" class="hidden w-24 h-24 object-contain" src="" alt="Award Badge">
+                                </div>
+
+                                <!-- Certificate Title -->
+                                <p class="text-sm text-zinc-500 tracking-widest uppercase mb-1">Certificate of</p>
+                                <h2 id="awardTitle" class="text-3xl font-bold tracking-tight mb-4" style="background: linear-gradient(135deg, #d97706, #f59e0b, #fbbf24); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">GOLD AWARD</h2>
+
+                                <!-- Recipient -->
+                                <p class="text-sm text-zinc-500 mb-1">Awarded to</p>
+                                <h3 id="productNamePreview" class="text-xl font-semibold text-zinc-900 text-center mb-1">Select a Product</h3>
+                                <p id="producerNamePreview" class="text-sm text-zinc-600 mb-1">by Producer Name</p>
+                                <p id="categoryPreview" class="text-xs text-zinc-400 mb-4">Category</p>
+
+                                <!-- Score Badge -->
+                                <div id="scoreBadge" class="flex items-center gap-2 px-4 py-2 bg-white/80 rounded-full shadow-sm border border-amber-200 mb-4">
+                                    <iconify-icon icon="lucide:star" width="16" class="text-amber-500" style="stroke-width: 1.5"></iconify-icon>
+                                    <span class="text-sm font-semibold text-zinc-800">Score: <span id="scoreValue">--</span>/10</span>
+                                </div>
+
+                                <!-- Custom Message -->
+                                <p id="messagePreview" class="text-sm text-zinc-600 text-center max-w-md mb-6 leading-relaxed">
+                                    In recognition of exceptional quality and excellence in artisan food production.
+                                </p>
+
+                                <!-- Signatures -->
+                                <div class="flex items-center justify-center gap-12 mb-4">
+                                    <div class="text-center">
+                                        <div class="w-20 h-12 border-b-2 border-zinc-300 mb-2 flex items-center justify-center">
+                                            <span class="text-zinc-400 italic text-lg font-serif">J. Smith</span>
+                                        </div>
+                                        <p class="text-xs text-zinc-500">Chief Judge</p>
+                                    </div>
+                                    <div class="text-center">
+                                        <div class="w-16 h-16 rounded-full bg-zinc-100 flex items-center justify-center border-2 border-zinc-200">
+                                            <iconify-icon icon="lucide:stamp" width="28" class="text-zinc-400" style="stroke-width: 1.5"></iconify-icon>
+                                        </div>
+                                        <p class="text-xs text-zinc-500 mt-1">Official Seal</p>
+                                    </div>
+                                    <div class="text-center">
+                                        <div class="w-20 h-12 border-b-2 border-zinc-300 mb-2 flex items-center justify-center">
+                                            <span class="text-zinc-400 italic text-lg font-serif">M. Chen</span>
+                                        </div>
+                                        <p class="text-xs text-zinc-500">Director</p>
+                                    </div>
+                                </div>
+
+                                <!-- Footer -->
+                                <div class="mt-auto flex items-center justify-between w-full pt-4 border-t border-amber-200">
+                                    <div class="text-left">
+                                        <p class="text-xs text-zinc-500">Issue Date</p>
+                                        <p id="issueDatePreview" class="text-sm font-medium text-zinc-700">--/--/----</p>
+                                    </div>
+                                    <div id="qrCodeContainer" class="w-16 h-16 bg-white p-1 rounded border border-zinc-200">
+                                        <div class="w-full h-full bg-zinc-100 flex items-center justify-center">
+                                            <iconify-icon icon="lucide:qr-code" width="32" class="text-zinc-400" style="stroke-width: 1.5"></iconify-icon>
+                                        </div>
+                                    </div>
+                                    <div class="text-right">
+                                        <p class="text-xs text-zinc-500">Certificate ID</p>
+                                        <p id="certIdPreview" class="text-sm font-medium text-zinc-700 font-mono">TC-0000-000000</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quick Stats -->
+                    <div class="grid grid-cols-3 gap-4 mt-8 max-w-2xl mx-auto no-print">
+                        <div class="bg-white rounded-xl p-4 border border-zinc-200">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-lg bg-amber-50 flex items-center justify-center">
+                                    <iconify-icon icon="lucide:file-check" width="20" class="text-amber-600" style="stroke-width: 1.5"></iconify-icon>
+                                </div>
+                                <div>
+                                    <p class="text-lg font-semibold text-zinc-900">1,247</p>
+                                    <p class="text-xs text-zinc-500">Total Generated</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-white rounded-xl p-4 border border-zinc-200">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-lg bg-emerald-50 flex items-center justify-center">
+                                    <iconify-icon icon="lucide:send" width="20" class="text-emerald-600" style="stroke-width: 1.5"></iconify-icon>
+                                </div>
+                                <div>
+                                    <p class="text-lg font-semibold text-zinc-900">892</p>
+                                    <p class="text-xs text-zinc-500">Sent to Recipients</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-white rounded-xl p-4 border border-zinc-200">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-lg bg-blue-50 flex items-center justify-center">
+                                    <iconify-icon icon="lucide:scan" width="20" class="text-blue-600" style="stroke-width: 1.5"></iconify-icon>
+                                </div>
+                                <div>
+                                    <p class="text-lg font-semibold text-zinc-900">3,421</p>
+                                    <p class="text-xs text-zinc-500">QR Verifications</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Success Modal -->
+    <div id="successModal" class="fixed inset-0 bg-zinc-900/70 z-50 hidden items-center justify-center p-4">
+        <div class="bg-white rounded-2xl max-w-md w-full overflow-hidden shadow-2xl transform scale-95 opacity-0 transition-all duration-200" id="successModalContent">
+            <div class="p-8 text-center">
+                <div class="w-16 h-16 rounded-full bg-emerald-100 flex items-center justify-center mx-auto mb-4">
+                    <iconify-icon icon="lucide:check-circle" width="36" class="text-emerald-600" style="stroke-width: 1.5"></iconify-icon>
+                </div>
+                <h2 class="text-xl font-semibold text-zinc-900 tracking-tight mb-2">Certificate Generated!</h2>
+                <p class="text-sm text-zinc-500 mb-6">Your certificate has been successfully created and is ready for download or distribution.</p>
+                
+                <div class="bg-zinc-50 rounded-xl p-4 mb-6">
+                    <div class="flex items-center justify-between text-sm">
+                        <span class="text-zinc-500">Certificate ID</span>
+                        <span id="generatedCertId" class="font-mono font-medium text-zinc-900">TC-2024-001234</span>
+                    </div>
+                </div>
+
+                <div class="flex flex-col gap-3">
+                    <button onclick="downloadCertificate()" class="w-full flex items-center justify-center gap-2 px-4 py-3 text-sm font-medium text-white bg-zinc-900 rounded-lg hover:bg-zinc-800 transition-colors">
+                        <iconify-icon icon="lucide:download" width="18" style="stroke-width: 1.5"></iconify-icon>
+                        Download Certificate
+                    </button>
+                    <button onclick="sendToRecipient()" class="w-full flex items-center justify-center gap-2 px-4 py-3 text-sm font-medium text-zinc-700 bg-white border border-zinc-200 rounded-lg hover:bg-zinc-50 transition-colors">
+                        <iconify-icon icon="lucide:mail" width="18" style="stroke-width: 1.5"></iconify-icon>
+                        Send to Producer
+                    </button>
+                    <button onclick="closeSuccessModal()" class="w-full px-4 py-2 text-sm font-medium text-zinc-500 hover:text-zinc-700 transition-colors">
+                        Create Another
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast -->
+    <div id="toast" class="fixed bottom-6 right-6 transform translate-y-20 opacity-0 transition-all duration-300 z-50 no-print">
+        <div class="flex items-center gap-3 px-4 py-3 bg-zinc-900 text-white rounded-lg shadow-lg">
+            <iconify-icon id="toastIcon" icon="lucide:check-circle" width="18" style="stroke-width: 1.5"></iconify-icon>
+            <span id="toastMessage" class="text-sm font-medium">Action completed</span>
+        </div>
+    </div>
+
+    <script>
+        // Template colors configuration
+        const templateConfig = {
+            'grand-gold': {
+                title: 'GRAND GOLD AWARD',
+                borderColor: '#eab308',
+                bgGradient: 'linear-gradient(180deg, #fefce8 0%, #fef9c3 100%)',
+                badgeFrom: '#facc15',
+                badgeTo: '#ca8a04',
+                textGradient: 'linear-gradient(135deg, #a16207, #ca8a04, #eab308)'
+            },
+            'gold': {
+                title: 'GOLD AWARD',
+                borderColor: '#f59e0b',
+                bgGradient: 'linear-gradient(180deg, #fffbeb 0%, #fef3c7 100%)',
+                badgeFrom: '#fbbf24',
+                badgeTo: '#d97706',
+                textGradient: 'linear-gradient(135deg, #d97706, #f59e0b, #fbbf24)'
+            },
+            'silver': {
+                title: 'SILVER AWARD',
+                borderColor: '#9ca3af',
+                bgGradient: 'linear-gradient(180deg, #f9fafb 0%, #f3f4f6 100%)',
+                badgeFrom: '#d1d5db',
+                badgeTo: '#6b7280',
+                textGradient: 'linear-gradient(135deg, #4b5563, #6b7280, #9ca3af)'
+            },
+            'bronze': {
+                title: 'BRONZE AWARD',
+                borderColor: '#f97316',
+                bgGradient: 'linear-gradient(180deg, #fff7ed 0%, #ffedd5 100%)',
+                badgeFrom: '#fb923c',
+                badgeTo: '#c2410c',
+                textGradient: 'linear-gradient(135deg, #c2410c, #ea580c, #f97316)'
+            }
+        };
+
+        // Initialize with today's date
+        document.addEventListener('DOMContentLoaded', function() {
+            const today = new Date().toISOString().split('T')[0];
+            document.getElementById('issueDate').value = today;
+            generateId();
+            updatePreview();
+        });
+
+        // Generate unique certificate ID
+        function generateId() {
+            const year = new Date().getFullYear();
+            const random = Math.floor(100000 + Math.random() * 900000);
+            const certId = `TC-${year}-${random}`;
+            document.getElementById('certificateId').value = certId;
+            updatePreview();
+        }
+
+        // Update character count
+        document.getElementById('customMessage').addEventListener('input', function() {
+            document.getElementById('charCount').textContent = this.value.length;
+        });
+
+        // Handle badge upload
+        function handleBadgeUpload(event) {
+            const file = event.target.files[0];
+            if (file) {
+                if (file.size > 2 * 1024 * 1024) {
+                    showToast('File size must be less than 2MB', 'lucide:alert-circle');
+                    return;
+                }
+                
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    document.getElementById('badgePlaceholder').classList.add('hidden');
+                    document.getElementById('badgePreviewContainer').classList.remove('hidden');
+                    document.getElementById('badgePreviewImg').src = e.target.result;
+                    document.getElementById('badgeFileName').textContent = file.name;
+                    document.getElementById('removeBadgeBtn').classList.remove('hidden');
+                    
+                    // Update certificate preview
+                    document.getElementById('defaultBadge').classList.add('hidden');
+                    document.getElementById('customBadgePreview').classList.remove('hidden');
+                    document.getElementById('customBadgePreview').src = e.target.result;
+                };
+                reader.readAsDataURL(file);
+            }
+        }
+
+        // Remove badge
+        function removeBadge(event) {
+            event.stopPropagation();
+            document.getElementById('badgeInput').value = '';
+            document.getElementById('badgePlaceholder').classList.remove('hidden');
+            document.getElementById('badgePreviewContainer').classList.add('hidden');
+            document.getElementById('removeBadgeBtn').classList.add('hidden');
+            
+            document.getElementById('defaultBadge').classList.remove('hidden');
+            document.getElementById('customBadgePreview').classList.add('hidden');
+        }
+
+        // Update preview
+        function updatePreview() {
+            const productSelect = document.getElementById('productSelect');
+            const selectedOption = productSelect.options[productSelect.selectedIndex];
+            const template = document.querySelector('input[name="template"]:checked')?.value || 'gold';
+            const issueDate = document.getElementById('issueDate').value;
+            const certId = document.getElementById('certificateId').value;
+            const customMessage = document.getElementById('customMessage').value;
+            const includeQR = document.getElementById('includeQR').checked;
+            const includeScore = document.getElementById('includeScore').checked;
+            const includeCategory = document.getElementById('includeCategory').checked;
+
+            // Update template styling
+            const config = templateConfig[template];
+            const certContent = document.getElementById('certificateContent');
+            certContent.style.background = config.bgGradient;
+            certContent.style.borderColor = config.borderColor;
+            
+            // Update corners
+            document.querySelectorAll('#certificateContent > div:nth-child(-n+4)').forEach(corner => {
+                corner.style.borderColor = config.borderColor;
+            });
+
+            // Update award title
+            const awardTitle = document.getElementById('awardTitle');
+            awardTitle.textContent = config.title;
+            awardTitle.style.background = config.textGradient;
+            awardTitle.style.webkitBackgroundClip = 'text';
+            awardTitle.style.webkitTextFillColor = 'transparent';
+
+            // Update default badge colors
+            const defaultBadge = document.getElementById('defaultBadge');
+            defaultBadge.style.background = `linear-gradient(135deg, ${config.badgeFrom}, ${config.badgeTo})`;
+
+            // Update product info
+            if (selectedOption.value) {
+                document.getElementById('productInfo').classList.remove('hidden');
+                document.getElementById('selectedProductName').textContent = selectedOption.text;
+                document.getElementById('selectedProducer').textContent = selectedOption.dataset.producer;
+                document.getElementById('selectedCategory').innerHTML = `<iconify-icon icon="lucide:tag" width="12" style="stroke-width: 1.5"></iconify-icon> ${selectedOption.dataset.category}`;
+                document.getElementById('selectedScore').innerHTML = `<iconify-icon icon="lucide:star" width="12" style="stroke-width: 1.5"></iconify-icon> ${selectedOption.dataset.score}`;
+                
+                // Update certificate preview
+                document.getElementById('productNamePreview').textContent = selectedOption.text;
+                document.getElementById('producerNamePreview').textContent = `by ${selectedOption.dataset.producer}`;
+                document.getElementById('categoryPreview').textContent = selectedOption.dataset.category;
+                document.getElementById('scoreValue').textContent = selectedOption.dataset.score;
+            } else {
+                document.getElementById('productInfo').classList.add('hidden');
+                document.getElementById('productNamePreview').textContent = 'Select a Product';
+                document.getElementById('producerNamePreview').textContent = 'by Producer Name';
+                document.getElementById('categoryPreview').textContent = 'Category';
+                document.getElementById('scoreValue').textContent = '--';
+            }
+
+            // Update date
+            if (issueDate) {
+                const dateObj = new Date(issueDate);
+                const formattedDate = dateObj.toLocaleDateString('en-US', { 
+                    year: 'numeric', 
+                    month: 'long', 
+                    day: 'numeric' 
+                });
+                document.getElementById('issueDatePreview').textContent = formattedDate;
+            }
+
+            // Update certificate ID
+            document.getElementById('certIdPreview').textContent = certId || 'TC-0000-000000';
+
+            // Update custom message
+            document.getElementById('messagePreview').textContent = customMessage || 'In recognition of exceptional quality and excellence in artisan food production.';
+
+            // Toggle QR code
+            document.getElementById('qrCodeContainer').style.display = includeQR ? 'block' : 'none';
+
+            // Toggle score
+            document.getElementById('scoreBadge').style.display = includeScore ? 'flex' : 'none';
+
+            // Toggle category
+            document.getElementById('categoryPreview').style.display = includeCategory ? 'block' : 'none';
+        }
+
+        // Reset form
+        function resetForm() {
+            document.getElementById('productSelect').value = '';
+            document.querySelector('input[name="template"][value="gold"]').checked = true;
+            document.getElementById('issueDate').value = new Date().toISOString().split('T')[0];
+            generateId();
+            document.getElementById('customMessage').value = 'In recognition of exceptional quality and excellence in artisan food production.';
+            document.getElementById('charCount').textContent = '72';
+            document.getElementById('includeQR').checked = true;
+            document.getElementById('includeScore').checked = true;
+            document.getElementById('includeCategory').checked = true;
+            removeBadge(new Event('click'));
+            updatePreview();
+            showToast('Form has been reset', 'lucide:rotate-ccw');
+        }
+
+        // Generate certificate
+        function generateCertificate() {
+            const productSelect = document.getElementById('productSelect');
+            const certId = document.getElementById('certificateId').value;
+            const issueDate = document.getElementById('issueDate').value;
+
+            // Validation
+            if (!productSelect.value) {
+                showToast('Please select a product', 'lucide:alert-circle');
+                productSelect.focus();
+                return;
+            }
+            if (!certId) {
+                showToast('Please enter a certificate ID', 'lucide:alert-circle');
+                document.getElementById('certificateId').focus();
+                return;
+            }
+            if (!issueDate) {
+                showToast('Please select an issue date', 'lucide:alert-circle');
+                document.getElementById('issueDate').focus();
+                return;
+            }
+
+            // Show success modal
+            document.getElementById('generatedCertId').textContent = certId;
+            const modal = document.getElementById('successModal');
+            const content = document.getElementById('successModalContent');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            
+            setTimeout(() => {
+                content.classList.remove('scale-95', 'opacity-0');
+                content.classList.add('scale-100', 'opacity-100');
+            }, 10);
+        }
+
+        // Close success modal
+        function closeSuccessModal() {
+            const modal = document.getElementById('successModal');
+            const content = document.getElementById('successModalContent');
+            content.classList.add('scale-95', 'opacity-0');
+            content.classList.remove('scale-100', 'opacity-100');
+            
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+            }, 200);
+        }
+
+        // Download certificate
+        function downloadCertificate() {
+            showToast('Certificate downloaded successfully', 'lucide:download');
+            closeSuccessModal();
+        }
+
+        // Send to recipient
+        function sendToRecipient() {
+            showToast('Certificate sent to producer', 'lucide:mail');
+            closeSuccessModal();
+        }
+
+        // Show toast
+        function showToast(message, icon = 'lucide:check-circle') {
+            const toast = document.getElementById('toast');
+            document.getElementById('toastMessage').textContent = message;
+            document.getElementById('toastIcon').setAttribute('icon', icon);
+            toast.classList.remove('translate-y-20', 'opacity-0');
+            toast.classList.add('translate-y-0', 'opacity-100');
+            
+            setTimeout(() => {
+                toast.classList.add('translate-y-20', 'opacity-0');
+                toast.classList.remove('translate-y-0', 'opacity-100');
+            }, 3000);
+        }
+
+        // Close modal on backdrop click
+        document.getElementById('successModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeSuccessModal();
+            }
+        });
+
+        // Keyboard shortcuts
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeSuccessModal();
+            }
+            if ((e.ctrlKey || e.metaKey) && e.key === 'Enter') {
+                generateCertificate();
+            }
+        });
+    </script>
+
+
+</body></html>

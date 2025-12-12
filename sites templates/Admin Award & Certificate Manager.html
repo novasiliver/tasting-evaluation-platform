@@ -1,0 +1,1047 @@
+<html lang="en"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Award &amp; Certificate Manager | Tastecert</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+body {
+font-family: 'Inter', sans-serif;
+}
+.modal-overlay {
+opacity: 0;
+visibility: hidden;
+transition: all 0.2s ease;
+}
+.modal-overlay.show {
+opacity: 1;
+visibility: visible;
+}
+.modal-content {
+transform: scale(0.95) translateY(10px);
+transition: all 0.2s ease;
+}
+.modal-overlay.show .modal-content {
+transform: scale(1) translateY(0);
+}
+.template-card:hover .template-actions {
+opacity: 1;
+}
+.dropdown-content {
+display: none;
+}
+.dropdown-content.show {
+display: block;
+}
+</style></head>
+<body class="bg-zinc-50 text-zinc-600 antialiased min-h-screen">
+
+    <div class="flex min-h-screen">
+        <!-- Sidebar -->
+        <aside class="w-60 bg-white border-r border-zinc-200/80 flex flex-col fixed h-full">
+            <!-- Logo -->
+            <div class="p-5 border-b border-zinc-100">
+                <a href="#" class="flex items-center gap-2.5">
+                    <div class="w-8 h-8 bg-gradient-to-br from-amber-500 to-orange-600 rounded-lg flex items-center justify-center">
+                        <iconify-icon icon="lucide:award" width="16" class="text-white" stroke-width="1.5"></iconify-icon>
+                    </div>
+                    <span class="text-zinc-900 font-semibold tracking-tight">Tastecert</span>
+                </a>
+            </div>
+
+            <!-- Navigation -->
+            <nav class="flex-1 p-3 overflow-y-auto">
+                <div class="space-y-0.5">
+                    <a href="#" class="flex items-center gap-2.5 px-3 py-2 rounded-lg text-sm font-medium text-zinc-600 hover:bg-zinc-50 transition-colors">
+                        <iconify-icon icon="lucide:layout-grid" width="18" stroke-width="1.5" class="text-zinc-400"></iconify-icon>
+                        Overview
+                    </a>
+                    <a href="#" class="flex items-center gap-2.5 px-3 py-2 rounded-lg text-sm font-medium text-zinc-600 hover:bg-zinc-50 transition-colors">
+                        <iconify-icon icon="lucide:users" width="18" stroke-width="1.5" class="text-zinc-400"></iconify-icon>
+                        Producers
+                    </a>
+                    <a href="#" class="flex items-center gap-2.5 px-3 py-2 rounded-lg text-sm font-medium text-zinc-600 hover:bg-zinc-50 transition-colors">
+                        <iconify-icon icon="lucide:file-check" width="18" stroke-width="1.5" class="text-zinc-400"></iconify-icon>
+                        Submissions
+                    </a>
+                    <a href="#" class="flex items-center gap-2.5 px-3 py-2 rounded-lg text-sm font-medium text-zinc-600 hover:bg-zinc-50 transition-colors">
+                        <iconify-icon icon="lucide:package" width="18" stroke-width="1.5" class="text-zinc-400"></iconify-icon>
+                        Products
+                    </a>
+                    <a href="#" class="flex items-center gap-2.5 px-3 py-2 rounded-lg text-sm font-medium text-zinc-600 hover:bg-zinc-50 transition-colors">
+                        <iconify-icon icon="lucide:trophy" width="18" stroke-width="1.5" class="text-zinc-400"></iconify-icon>
+                        Awards
+                    </a>
+                    <a href="#" class="flex items-center gap-2.5 px-3 py-2 rounded-lg text-sm font-medium bg-zinc-900 text-white">
+                        <iconify-icon icon="lucide:scroll-text" width="18" stroke-width="1.5"></iconify-icon>
+                        Certificates
+                        <span class="ml-auto text-xs font-medium text-amber-400 bg-amber-950 px-1.5 py-0.5 rounded">8</span>
+                    </a>
+                </div>
+
+                <div class="mt-6 pt-6 border-t border-zinc-100">
+                    <p class="px-3 mb-2 text-xs font-medium text-zinc-400 uppercase tracking-wider">System</p>
+                    <div class="space-y-0.5">
+                        <a href="#" class="flex items-center gap-2.5 px-3 py-2 rounded-lg text-sm font-medium text-zinc-600 hover:bg-zinc-50 transition-colors">
+                            <iconify-icon icon="lucide:bar-chart-2" width="18" stroke-width="1.5" class="text-zinc-400"></iconify-icon>
+                            Analytics
+                        </a>
+                        <a href="#" class="flex items-center gap-2.5 px-3 py-2 rounded-lg text-sm font-medium text-zinc-600 hover:bg-zinc-50 transition-colors">
+                            <iconify-icon icon="lucide:settings" width="18" stroke-width="1.5" class="text-zinc-400"></iconify-icon>
+                            Settings
+                        </a>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- User -->
+            <div class="p-3 border-t border-zinc-100">
+                <div class="flex items-center gap-2.5 p-2 rounded-lg hover:bg-zinc-50 transition-colors cursor-pointer">
+                    <div class="w-8 h-8 rounded-full bg-gradient-to-br from-zinc-700 to-zinc-900 flex items-center justify-center text-white text-xs font-medium">
+                        AD
+                    </div>
+                    <div class="flex-1 min-w-0">
+                        <p class="text-sm font-medium text-zinc-900 truncate">Admin</p>
+                        <p class="text-xs text-zinc-400 truncate">admin@tastecert.com</p>
+                    </div>
+                    <iconify-icon icon="lucide:log-out" width="16" class="text-zinc-400" stroke-width="1.5"></iconify-icon>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="flex-1 ml-60">
+            <!-- Header -->
+            <header class="bg-white border-b border-zinc-200/80 sticky top-0 z-30">
+                <div class="flex items-center justify-between px-8 h-14">
+                    <div class="flex items-center gap-3">
+                        <h1 class="text-base font-semibold text-zinc-900">Award &amp; Certificate Manager</h1>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <div class="relative">
+                            <iconify-icon icon="lucide:search" width="16" class="absolute left-3 top-1/2 -translate-y-1/2 text-zinc-400" stroke-width="1.5"></iconify-icon>
+                            <input type="text" placeholder="Search templates..." class="w-64 pl-9 pr-4 py-2 text-sm border border-zinc-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500/20 focus:border-amber-500 transition-colors">
+                        </div>
+                        <button onclick="openUploadModal()" class="flex items-center gap-2 px-4 py-2 text-sm font-medium text-white bg-zinc-900 rounded-lg hover:bg-zinc-800 transition-colors">
+                            <iconify-icon icon="lucide:plus" width="16" stroke-width="1.5"></iconify-icon>
+                            Upload Template
+                        </button>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Content -->
+            <div class="p-8">
+                <!-- Stats -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+                    <div class="bg-white rounded-xl border border-zinc-200/80 p-5">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-xs font-medium text-zinc-500">Total Templates</span>
+                            <div class="w-8 h-8 rounded-lg bg-violet-50 flex items-center justify-center">
+                                <iconify-icon icon="lucide:file-stack" width="16" class="text-violet-600" stroke-width="1.5"></iconify-icon>
+                            </div>
+                        </div>
+                        <p class="text-2xl font-semibold text-zinc-900 tracking-tight">8</p>
+                    </div>
+                    <div class="bg-white rounded-xl border border-zinc-200/80 p-5">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-xs font-medium text-zinc-500">Award Certificates</span>
+                            <div class="w-8 h-8 rounded-lg bg-amber-50 flex items-center justify-center">
+                                <iconify-icon icon="lucide:trophy" width="16" class="text-amber-600" stroke-width="1.5"></iconify-icon>
+                            </div>
+                        </div>
+                        <p class="text-2xl font-semibold text-zinc-900 tracking-tight">5</p>
+                    </div>
+                    <div class="bg-white rounded-xl border border-zinc-200/80 p-5">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-xs font-medium text-zinc-500">Quality Certificates</span>
+                            <div class="w-8 h-8 rounded-lg bg-emerald-50 flex items-center justify-center">
+                                <iconify-icon icon="lucide:badge-check" width="16" class="text-emerald-600" stroke-width="1.5"></iconify-icon>
+                            </div>
+                        </div>
+                        <p class="text-2xl font-semibold text-zinc-900 tracking-tight">3</p>
+                    </div>
+                    <div class="bg-white rounded-xl border border-zinc-200/80 p-5">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-xs font-medium text-zinc-500">Issued This Month</span>
+                            <div class="w-8 h-8 rounded-lg bg-blue-50 flex items-center justify-center">
+                                <iconify-icon icon="lucide:send" width="16" class="text-blue-600" stroke-width="1.5"></iconify-icon>
+                            </div>
+                        </div>
+                        <p class="text-2xl font-semibold text-zinc-900 tracking-tight">124</p>
+                    </div>
+                </div>
+
+                <!-- Filter Tabs -->
+                <div class="flex items-center gap-6 mb-6 border-b border-zinc-200">
+                    <button class="pb-3 text-sm font-medium text-zinc-900 border-b-2 border-zinc-900 -mb-px">All Templates</button>
+                    <button class="pb-3 text-sm font-medium text-zinc-500 hover:text-zinc-700 transition-colors">Award Certificates</button>
+                    <button class="pb-3 text-sm font-medium text-zinc-500 hover:text-zinc-700 transition-colors">Quality Certificates</button>
+                    <button class="pb-3 text-sm font-medium text-zinc-500 hover:text-zinc-700 transition-colors">Archived</button>
+                </div>
+
+                <!-- Templates Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                    
+                    <!-- Template Card 1 - Grand Gold -->
+                    <div class="template-card bg-white rounded-xl border border-zinc-200/80 overflow-hidden group hover:shadow-lg hover:border-zinc-300 transition-all duration-200">
+                        <div class="relative aspect-[3/4] bg-gradient-to-br from-yellow-50 via-amber-50 to-yellow-100 flex items-center justify-center p-6 cursor-pointer" onclick="openPreviewModal('grand-gold')">
+                            <!-- Certificate Preview -->
+                            <div class="w-full h-full bg-white rounded-lg shadow-sm border border-yellow-200 p-4 flex flex-col items-center justify-center relative overflow-hidden">
+                                <div class="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-yellow-400 via-yellow-300 to-yellow-400"></div>
+                                <div class="w-12 h-12 rounded-full bg-gradient-to-br from-yellow-300 to-yellow-500 flex items-center justify-center mb-3 shadow-lg">
+                                    <iconify-icon icon="lucide:award" width="24" class="text-yellow-800" stroke-width="1.5"></iconify-icon>
+                                </div>
+                                <p class="text-xs font-semibold text-yellow-800 tracking-tight text-center">GRAND GOLD</p>
+                                <p class="text-xs text-yellow-600 mt-1">AWARD</p>
+                                <div class="mt-3 space-y-1 w-full px-2">
+                                    <div class="h-1.5 bg-zinc-100 rounded w-full"></div>
+                                    <div class="h-1.5 bg-zinc-100 rounded w-3/4 mx-auto"></div>
+                                    <div class="h-1.5 bg-zinc-100 rounded w-1/2 mx-auto"></div>
+                                </div>
+                                <div class="absolute bottom-3 left-0 right-0 flex justify-center gap-4">
+                                    <div class="w-6 h-6 rounded-full bg-zinc-100"></div>
+                                    <div class="w-6 h-6 rounded-full bg-zinc-100"></div>
+                                </div>
+                            </div>
+                            <!-- Hover Actions -->
+                            <div class="template-actions absolute inset-0 bg-zinc-900/60 opacity-0 flex items-center justify-center gap-3 transition-opacity">
+                                <button class="w-10 h-10 rounded-full bg-white flex items-center justify-center hover:bg-zinc-100 transition-colors">
+                                    <iconify-icon icon="lucide:eye" width="18" class="text-zinc-700" stroke-width="1.5"></iconify-icon>
+                                </button>
+                                <button onclick="event.stopPropagation(); openEditModal('grand-gold')" class="w-10 h-10 rounded-full bg-white flex items-center justify-center hover:bg-zinc-100 transition-colors">
+                                    <iconify-icon icon="lucide:pencil" width="18" class="text-zinc-700" stroke-width="1.5"></iconify-icon>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <div class="flex items-start justify-between mb-2">
+                                <div>
+                                    <h3 class="text-sm font-semibold text-zinc-900">Grand Gold Award</h3>
+                                    <p class="text-xs text-zinc-500 mt-0.5">Award Certificate</p>
+                                </div>
+                                <span class="inline-flex items-center px-2 py-0.5 text-xs font-medium text-yellow-700 bg-yellow-50 rounded">Active</span>
+                            </div>
+                            <div class="flex items-center justify-between pt-3 border-t border-zinc-100">
+                                <div class="flex items-center gap-3 text-xs text-zinc-400">
+                                    <span class="flex items-center gap-1">
+                                        <iconify-icon icon="lucide:send" width="12" stroke-width="1.5"></iconify-icon>
+                                        48 issued
+                                    </span>
+                                </div>
+                                <div class="relative">
+                                    <button onclick="event.stopPropagation(); toggleDropdown('dropdown-1')" class="w-7 h-7 rounded-md hover:bg-zinc-100 flex items-center justify-center transition-colors">
+                                        <iconify-icon icon="lucide:more-horizontal" width="16" class="text-zinc-400" stroke-width="1.5"></iconify-icon>
+                                    </button>
+                                    <div id="dropdown-1" class="dropdown-content absolute right-0 bottom-full mb-2 w-36 bg-white border border-zinc-200 rounded-lg shadow-lg z-20">
+                                        <div class="p-1">
+                                            <button onclick="openPreviewModal('grand-gold')" class="w-full text-left px-3 py-2 text-sm text-zinc-700 hover:bg-zinc-50 rounded-md transition-colors flex items-center gap-2">
+                                                <iconify-icon icon="lucide:eye" width="14" stroke-width="1.5"></iconify-icon>
+                                                Preview
+                                            </button>
+                                            <button onclick="openEditModal('grand-gold')" class="w-full text-left px-3 py-2 text-sm text-zinc-700 hover:bg-zinc-50 rounded-md transition-colors flex items-center gap-2">
+                                                <iconify-icon icon="lucide:pencil" width="14" stroke-width="1.5"></iconify-icon>
+                                                Edit
+                                            </button>
+                                            <button class="w-full text-left px-3 py-2 text-sm text-zinc-700 hover:bg-zinc-50 rounded-md transition-colors flex items-center gap-2">
+                                                <iconify-icon icon="lucide:copy" width="14" stroke-width="1.5"></iconify-icon>
+                                                Duplicate
+                                            </button>
+                                            <button onclick="openDeleteModal('grand-gold')" class="w-full text-left px-3 py-2 text-sm text-red-600 hover:bg-red-50 rounded-md transition-colors flex items-center gap-2">
+                                                <iconify-icon icon="lucide:trash-2" width="14" stroke-width="1.5"></iconify-icon>
+                                                Delete
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Template Card 2 - Gold -->
+                    <div class="template-card bg-white rounded-xl border border-zinc-200/80 overflow-hidden group hover:shadow-lg hover:border-zinc-300 transition-all duration-200">
+                        <div class="relative aspect-[3/4] bg-gradient-to-br from-amber-50 via-orange-50 to-amber-100 flex items-center justify-center p-6 cursor-pointer" onclick="openPreviewModal('gold')">
+                            <div class="w-full h-full bg-white rounded-lg shadow-sm border border-amber-200 p-4 flex flex-col items-center justify-center relative overflow-hidden">
+                                <div class="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-amber-400 via-amber-300 to-amber-400"></div>
+                                <div class="w-12 h-12 rounded-full bg-gradient-to-br from-amber-400 to-amber-600 flex items-center justify-center mb-3 shadow-lg">
+                                    <iconify-icon icon="lucide:award" width="24" class="text-white" stroke-width="1.5"></iconify-icon>
+                                </div>
+                                <p class="text-xs font-semibold text-amber-800 tracking-tight text-center">GOLD</p>
+                                <p class="text-xs text-amber-600 mt-1">AWARD</p>
+                                <div class="mt-3 space-y-1 w-full px-2">
+                                    <div class="h-1.5 bg-zinc-100 rounded w-full"></div>
+                                    <div class="h-1.5 bg-zinc-100 rounded w-3/4 mx-auto"></div>
+                                    <div class="h-1.5 bg-zinc-100 rounded w-1/2 mx-auto"></div>
+                                </div>
+                                <div class="absolute bottom-3 left-0 right-0 flex justify-center gap-4">
+                                    <div class="w-6 h-6 rounded-full bg-zinc-100"></div>
+                                    <div class="w-6 h-6 rounded-full bg-zinc-100"></div>
+                                </div>
+                            </div>
+                            <div class="template-actions absolute inset-0 bg-zinc-900/60 opacity-0 flex items-center justify-center gap-3 transition-opacity">
+                                <button class="w-10 h-10 rounded-full bg-white flex items-center justify-center hover:bg-zinc-100 transition-colors">
+                                    <iconify-icon icon="lucide:eye" width="18" class="text-zinc-700" stroke-width="1.5"></iconify-icon>
+                                </button>
+                                <button onclick="event.stopPropagation(); openEditModal('gold')" class="w-10 h-10 rounded-full bg-white flex items-center justify-center hover:bg-zinc-100 transition-colors">
+                                    <iconify-icon icon="lucide:pencil" width="18" class="text-zinc-700" stroke-width="1.5"></iconify-icon>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <div class="flex items-start justify-between mb-2">
+                                <div>
+                                    <h3 class="text-sm font-semibold text-zinc-900">Gold Award</h3>
+                                    <p class="text-xs text-zinc-500 mt-0.5">Award Certificate</p>
+                                </div>
+                                <span class="inline-flex items-center px-2 py-0.5 text-xs font-medium text-amber-700 bg-amber-50 rounded">Active</span>
+                            </div>
+                            <div class="flex items-center justify-between pt-3 border-t border-zinc-100">
+                                <div class="flex items-center gap-3 text-xs text-zinc-400">
+                                    <span class="flex items-center gap-1">
+                                        <iconify-icon icon="lucide:send" width="12" stroke-width="1.5"></iconify-icon>
+                                        156 issued
+                                    </span>
+                                </div>
+                                <div class="relative">
+                                    <button onclick="event.stopPropagation(); toggleDropdown('dropdown-2')" class="w-7 h-7 rounded-md hover:bg-zinc-100 flex items-center justify-center transition-colors">
+                                        <iconify-icon icon="lucide:more-horizontal" width="16" class="text-zinc-400" stroke-width="1.5"></iconify-icon>
+                                    </button>
+                                    <div id="dropdown-2" class="dropdown-content absolute right-0 bottom-full mb-2 w-36 bg-white border border-zinc-200 rounded-lg shadow-lg z-20">
+                                        <div class="p-1">
+                                            <button onclick="openPreviewModal('gold')" class="w-full text-left px-3 py-2 text-sm text-zinc-700 hover:bg-zinc-50 rounded-md transition-colors flex items-center gap-2">
+                                                <iconify-icon icon="lucide:eye" width="14" stroke-width="1.5"></iconify-icon>
+                                                Preview
+                                            </button>
+                                            <button onclick="openEditModal('gold')" class="w-full text-left px-3 py-2 text-sm text-zinc-700 hover:bg-zinc-50 rounded-md transition-colors flex items-center gap-2">
+                                                <iconify-icon icon="lucide:pencil" width="14" stroke-width="1.5"></iconify-icon>
+                                                Edit
+                                            </button>
+                                            <button class="w-full text-left px-3 py-2 text-sm text-zinc-700 hover:bg-zinc-50 rounded-md transition-colors flex items-center gap-2">
+                                                <iconify-icon icon="lucide:copy" width="14" stroke-width="1.5"></iconify-icon>
+                                                Duplicate
+                                            </button>
+                                            <button onclick="openDeleteModal('gold')" class="w-full text-left px-3 py-2 text-sm text-red-600 hover:bg-red-50 rounded-md transition-colors flex items-center gap-2">
+                                                <iconify-icon icon="lucide:trash-2" width="14" stroke-width="1.5"></iconify-icon>
+                                                Delete
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Template Card 3 - Silver -->
+                    <div class="template-card bg-white rounded-xl border border-zinc-200/80 overflow-hidden group hover:shadow-lg hover:border-zinc-300 transition-all duration-200">
+                        <div class="relative aspect-[3/4] bg-gradient-to-br from-zinc-100 via-slate-50 to-zinc-100 flex items-center justify-center p-6 cursor-pointer" onclick="openPreviewModal('silver')">
+                            <div class="w-full h-full bg-white rounded-lg shadow-sm border border-zinc-200 p-4 flex flex-col items-center justify-center relative overflow-hidden">
+                                <div class="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-zinc-400 via-zinc-300 to-zinc-400"></div>
+                                <div class="w-12 h-12 rounded-full bg-gradient-to-br from-zinc-300 to-zinc-500 flex items-center justify-center mb-3 shadow-lg">
+                                    <iconify-icon icon="lucide:award" width="24" class="text-white" stroke-width="1.5"></iconify-icon>
+                                </div>
+                                <p class="text-xs font-semibold text-zinc-700 tracking-tight text-center">SILVER</p>
+                                <p class="text-xs text-zinc-500 mt-1">AWARD</p>
+                                <div class="mt-3 space-y-1 w-full px-2">
+                                    <div class="h-1.5 bg-zinc-100 rounded w-full"></div>
+                                    <div class="h-1.5 bg-zinc-100 rounded w-3/4 mx-auto"></div>
+                                    <div class="h-1.5 bg-zinc-100 rounded w-1/2 mx-auto"></div>
+                                </div>
+                                <div class="absolute bottom-3 left-0 right-0 flex justify-center gap-4">
+                                    <div class="w-6 h-6 rounded-full bg-zinc-100"></div>
+                                    <div class="w-6 h-6 rounded-full bg-zinc-100"></div>
+                                </div>
+                            </div>
+                            <div class="template-actions absolute inset-0 bg-zinc-900/60 opacity-0 flex items-center justify-center gap-3 transition-opacity">
+                                <button class="w-10 h-10 rounded-full bg-white flex items-center justify-center hover:bg-zinc-100 transition-colors">
+                                    <iconify-icon icon="lucide:eye" width="18" class="text-zinc-700" stroke-width="1.5"></iconify-icon>
+                                </button>
+                                <button onclick="event.stopPropagation(); openEditModal('silver')" class="w-10 h-10 rounded-full bg-white flex items-center justify-center hover:bg-zinc-100 transition-colors">
+                                    <iconify-icon icon="lucide:pencil" width="18" class="text-zinc-700" stroke-width="1.5"></iconify-icon>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <div class="flex items-start justify-between mb-2">
+                                <div>
+                                    <h3 class="text-sm font-semibold text-zinc-900">Silver Award</h3>
+                                    <p class="text-xs text-zinc-500 mt-0.5">Award Certificate</p>
+                                </div>
+                                <span class="inline-flex items-center px-2 py-0.5 text-xs font-medium text-zinc-600 bg-zinc-100 rounded">Active</span>
+                            </div>
+                            <div class="flex items-center justify-between pt-3 border-t border-zinc-100">
+                                <div class="flex items-center gap-3 text-xs text-zinc-400">
+                                    <span class="flex items-center gap-1">
+                                        <iconify-icon icon="lucide:send" width="12" stroke-width="1.5"></iconify-icon>
+                                        203 issued
+                                    </span>
+                                </div>
+                                <div class="relative">
+                                    <button onclick="event.stopPropagation(); toggleDropdown('dropdown-3')" class="w-7 h-7 rounded-md hover:bg-zinc-100 flex items-center justify-center transition-colors">
+                                        <iconify-icon icon="lucide:more-horizontal" width="16" class="text-zinc-400" stroke-width="1.5"></iconify-icon>
+                                    </button>
+                                    <div id="dropdown-3" class="dropdown-content absolute right-0 bottom-full mb-2 w-36 bg-white border border-zinc-200 rounded-lg shadow-lg z-20">
+                                        <div class="p-1">
+                                            <button onclick="openPreviewModal('silver')" class="w-full text-left px-3 py-2 text-sm text-zinc-700 hover:bg-zinc-50 rounded-md transition-colors flex items-center gap-2">
+                                                <iconify-icon icon="lucide:eye" width="14" stroke-width="1.5"></iconify-icon>
+                                                Preview
+                                            </button>
+                                            <button onclick="openEditModal('silver')" class="w-full text-left px-3 py-2 text-sm text-zinc-700 hover:bg-zinc-50 rounded-md transition-colors flex items-center gap-2">
+                                                <iconify-icon icon="lucide:pencil" width="14" stroke-width="1.5"></iconify-icon>
+                                                Edit
+                                            </button>
+                                            <button class="w-full text-left px-3 py-2 text-sm text-zinc-700 hover:bg-zinc-50 rounded-md transition-colors flex items-center gap-2">
+                                                <iconify-icon icon="lucide:copy" width="14" stroke-width="1.5"></iconify-icon>
+                                                Duplicate
+                                            </button>
+                                            <button onclick="openDeleteModal('silver')" class="w-full text-left px-3 py-2 text-sm text-red-600 hover:bg-red-50 rounded-md transition-colors flex items-center gap-2">
+                                                <iconify-icon icon="lucide:trash-2" width="14" stroke-width="1.5"></iconify-icon>
+                                                Delete
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Template Card 4 - Bronze -->
+                    <div class="template-card bg-white rounded-xl border border-zinc-200/80 overflow-hidden group hover:shadow-lg hover:border-zinc-300 transition-all duration-200">
+                        <div class="relative aspect-[3/4] bg-gradient-to-br from-orange-50 via-amber-50 to-orange-100 flex items-center justify-center p-6 cursor-pointer" onclick="openPreviewModal('bronze')">
+                            <div class="w-full h-full bg-white rounded-lg shadow-sm border border-orange-200 p-4 flex flex-col items-center justify-center relative overflow-hidden">
+                                <div class="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-orange-400 via-orange-300 to-orange-400"></div>
+                                <div class="w-12 h-12 rounded-full bg-gradient-to-br from-orange-300 to-orange-500 flex items-center justify-center mb-3 shadow-lg">
+                                    <iconify-icon icon="lucide:award" width="24" class="text-orange-900" stroke-width="1.5"></iconify-icon>
+                                </div>
+                                <p class="text-xs font-semibold text-orange-800 tracking-tight text-center">BRONZE</p>
+                                <p class="text-xs text-orange-600 mt-1">AWARD</p>
+                                <div class="mt-3 space-y-1 w-full px-2">
+                                    <div class="h-1.5 bg-zinc-100 rounded w-full"></div>
+                                    <div class="h-1.5 bg-zinc-100 rounded w-3/4 mx-auto"></div>
+                                    <div class="h-1.5 bg-zinc-100 rounded w-1/2 mx-auto"></div>
+                                </div>
+                                <div class="absolute bottom-3 left-0 right-0 flex justify-center gap-4">
+                                    <div class="w-6 h-6 rounded-full bg-zinc-100"></div>
+                                    <div class="w-6 h-6 rounded-full bg-zinc-100"></div>
+                                </div>
+                            </div>
+                            <div class="template-actions absolute inset-0 bg-zinc-900/60 opacity-0 flex items-center justify-center gap-3 transition-opacity">
+                                <button class="w-10 h-10 rounded-full bg-white flex items-center justify-center hover:bg-zinc-100 transition-colors">
+                                    <iconify-icon icon="lucide:eye" width="18" class="text-zinc-700" stroke-width="1.5"></iconify-icon>
+                                </button>
+                                <button onclick="event.stopPropagation(); openEditModal('bronze')" class="w-10 h-10 rounded-full bg-white flex items-center justify-center hover:bg-zinc-100 transition-colors">
+                                    <iconify-icon icon="lucide:pencil" width="18" class="text-zinc-700" stroke-width="1.5"></iconify-icon>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <div class="flex items-start justify-between mb-2">
+                                <div>
+                                    <h3 class="text-sm font-semibold text-zinc-900">Bronze Award</h3>
+                                    <p class="text-xs text-zinc-500 mt-0.5">Award Certificate</p>
+                                </div>
+                                <span class="inline-flex items-center px-2 py-0.5 text-xs font-medium text-orange-700 bg-orange-50 rounded">Active</span>
+                            </div>
+                            <div class="flex items-center justify-between pt-3 border-t border-zinc-100">
+                                <div class="flex items-center gap-3 text-xs text-zinc-400">
+                                    <span class="flex items-center gap-1">
+                                        <iconify-icon icon="lucide:send" width="12" stroke-width="1.5"></iconify-icon>
+                                        89 issued
+                                    </span>
+                                </div>
+                                <div class="relative">
+                                    <button onclick="event.stopPropagation(); toggleDropdown('dropdown-4')" class="w-7 h-7 rounded-md hover:bg-zinc-100 flex items-center justify-center transition-colors">
+                                        <iconify-icon icon="lucide:more-horizontal" width="16" class="text-zinc-400" stroke-width="1.5"></iconify-icon>
+                                    </button>
+                                    <div id="dropdown-4" class="dropdown-content absolute right-0 bottom-full mb-2 w-36 bg-white border border-zinc-200 rounded-lg shadow-lg z-20">
+                                        <div class="p-1">
+                                            <button onclick="openPreviewModal('bronze')" class="w-full text-left px-3 py-2 text-sm text-zinc-700 hover:bg-zinc-50 rounded-md transition-colors flex items-center gap-2">
+                                                <iconify-icon icon="lucide:eye" width="14" stroke-width="1.5"></iconify-icon>
+                                                Preview
+                                            </button>
+                                            <button onclick="openEditModal('bronze')" class="w-full text-left px-3 py-2 text-sm text-zinc-700 hover:bg-zinc-50 rounded-md transition-colors flex items-center gap-2">
+                                                <iconify-icon icon="lucide:pencil" width="14" stroke-width="1.5"></iconify-icon>
+                                                Edit
+                                            </button>
+                                            <button class="w-full text-left px-3 py-2 text-sm text-zinc-700 hover:bg-zinc-50 rounded-md transition-colors flex items-center gap-2">
+                                                <iconify-icon icon="lucide:copy" width="14" stroke-width="1.5"></iconify-icon>
+                                                Duplicate
+                                            </button>
+                                            <button onclick="openDeleteModal('bronze')" class="w-full text-left px-3 py-2 text-sm text-red-600 hover:bg-red-50 rounded-md transition-colors flex items-center gap-2">
+                                                <iconify-icon icon="lucide:trash-2" width="14" stroke-width="1.5"></iconify-icon>
+                                                Delete
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Template Card 5 - Excellence -->
+                    <div class="template-card bg-white rounded-xl border border-zinc-200/80 overflow-hidden group hover:shadow-lg hover:border-zinc-300 transition-all duration-200">
+                        <div class="relative aspect-[3/4] bg-gradient-to-br from-emerald-50 via-teal-50 to-emerald-100 flex items-center justify-center p-6 cursor-pointer" onclick="openPreviewModal('excellence')">
+                            <div class="w-full h-full bg-white rounded-lg shadow-sm border border-emerald-200 p-4 flex flex-col items-center justify-center relative overflow-hidden">
+                                <div class="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-emerald-500 via-emerald-400 to-emerald-500"></div>
+                                <div class="w-12 h-12 rounded-full bg-gradient-to-br from-emerald-400 to-emerald-600 flex items-center justify-center mb-3 shadow-lg">
+                                    <iconify-icon icon="lucide:badge-check" width="24" class="text-white" stroke-width="1.5"></iconify-icon>
+                                </div>
+                                <p class="text-xs font-semibold text-emerald-800 tracking-tight text-center">EXCELLENCE</p>
+                                <p class="text-xs text-emerald-600 mt-1">CERTIFICATE</p>
+                                <div class="mt-3 space-y-1 w-full px-2">
+                                    <div class="h-1.5 bg-zinc-100 rounded w-full"></div>
+                                    <div class="h-1.5 bg-zinc-100 rounded w-3/4 mx-auto"></div>
+                                    <div class="h-1.5 bg-zinc-100 rounded w-1/2 mx-auto"></div>
+                                </div>
+                                <div class="absolute bottom-3 left-0 right-0 flex justify-center gap-4">
+                                    <div class="w-6 h-6 rounded-full bg-zinc-100"></div>
+                                    <div class="w-6 h-6 rounded-full bg-zinc-100"></div>
+                                </div>
+                            </div>
+                            <div class="template-actions absolute inset-0 bg-zinc-900/60 opacity-0 flex items-center justify-center gap-3 transition-opacity">
+                                <button class="w-10 h-10 rounded-full bg-white flex items-center justify-center hover:bg-zinc-100 transition-colors">
+                                    <iconify-icon icon="lucide:eye" width="18" class="text-zinc-700" stroke-width="1.5"></iconify-icon>
+                                </button>
+                                <button onclick="event.stopPropagation(); openEditModal('excellence')" class="w-10 h-10 rounded-full bg-white flex items-center justify-center hover:bg-zinc-100 transition-colors">
+                                    <iconify-icon icon="lucide:pencil" width="18" class="text-zinc-700" stroke-width="1.5"></iconify-icon>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <div class="flex items-start justify-between mb-2">
+                                <div>
+                                    <h3 class="text-sm font-semibold text-zinc-900">Excellence Certificate</h3>
+                                    <p class="text-xs text-zinc-500 mt-0.5">Quality Certificate</p>
+                                </div>
+                                <span class="inline-flex items-center px-2 py-0.5 text-xs font-medium text-emerald-700 bg-emerald-50 rounded">Active</span>
+                            </div>
+                            <div class="flex items-center justify-between pt-3 border-t border-zinc-100">
+                                <div class="flex items-center gap-3 text-xs text-zinc-400">
+                                    <span class="flex items-center gap-1">
+                                        <iconify-icon icon="lucide:send" width="12" stroke-width="1.5"></iconify-icon>
+                                        67 issued
+                                    </span>
+                                </div>
+                                <div class="relative">
+                                    <button onclick="event.stopPropagation(); toggleDropdown('dropdown-5')" class="w-7 h-7 rounded-md hover:bg-zinc-100 flex items-center justify-center transition-colors">
+                                        <iconify-icon icon="lucide:more-horizontal" width="16" class="text-zinc-400" stroke-width="1.5"></iconify-icon>
+                                    </button>
+                                    <div id="dropdown-5" class="dropdown-content absolute right-0 bottom-full mb-2 w-36 bg-white border border-zinc-200 rounded-lg shadow-lg z-20">
+                                        <div class="p-1">
+                                            <button onclick="openPreviewModal('excellence')" class="w-full text-left px-3 py-2 text-sm text-zinc-700 hover:bg-zinc-50 rounded-md transition-colors flex items-center gap-2">
+                                                <iconify-icon icon="lucide:eye" width="14" stroke-width="1.5"></iconify-icon>
+                                                Preview
+                                            </button>
+                                            <button onclick="openEditModal('excellence')" class="w-full text-left px-3 py-2 text-sm text-zinc-700 hover:bg-zinc-50 rounded-md transition-colors flex items-center gap-2">
+                                                <iconify-icon icon="lucide:pencil" width="14" stroke-width="1.5"></iconify-icon>
+                                                Edit
+                                            </button>
+                                            <button class="w-full text-left px-3 py-2 text-sm text-zinc-700 hover:bg-zinc-50 rounded-md transition-colors flex items-center gap-2">
+                                                <iconify-icon icon="lucide:copy" width="14" stroke-width="1.5"></iconify-icon>
+                                                Duplicate
+                                            </button>
+                                            <button onclick="openDeleteModal('excellence')" class="w-full text-left px-3 py-2 text-sm text-red-600 hover:bg-red-50 rounded-md transition-colors flex items-center gap-2">
+                                                <iconify-icon icon="lucide:trash-2" width="14" stroke-width="1.5"></iconify-icon>
+                                                Delete
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Template Card 6 - Quality Seal -->
+                    <div class="template-card bg-white rounded-xl border border-zinc-200/80 overflow-hidden group hover:shadow-lg hover:border-zinc-300 transition-all duration-200">
+                        <div class="relative aspect-[3/4] bg-gradient-to-br from-blue-50 via-indigo-50 to-blue-100 flex items-center justify-center p-6 cursor-pointer" onclick="openPreviewModal('quality')">
+                            <div class="w-full h-full bg-white rounded-lg shadow-sm border border-blue-200 p-4 flex flex-col items-center justify-center relative overflow-hidden">
+                                <div class="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-blue-500 via-blue-400 to-blue-500"></div>
+                                <div class="w-12 h-12 rounded-full bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center mb-3 shadow-lg">
+                                    <iconify-icon icon="lucide:shield-check" width="24" class="text-white" stroke-width="1.5"></iconify-icon>
+                                </div>
+                                <p class="text-xs font-semibold text-blue-800 tracking-tight text-center">QUALITY SEAL</p>
+                                <p class="text-xs text-blue-600 mt-1">CERTIFICATE</p>
+                                <div class="mt-3 space-y-1 w-full px-2">
+                                    <div class="h-1.5 bg-zinc-100 rounded w-full"></div>
+                                    <div class="h-1.5 bg-zinc-100 rounded w-3/4 mx-auto"></div>
+                                    <div class="h-1.5 bg-zinc-100 rounded w-1/2 mx-auto"></div>
+                                </div>
+                                <div class="absolute bottom-3 left-0 right-0 flex justify-center gap-4">
+                                    <div class="w-6 h-6 rounded-full bg-zinc-100"></div>
+                                    <div class="w-6 h-6 rounded-full bg-zinc-100"></div>
+                                </div>
+                            </div>
+                            <div class="template-actions absolute inset-0 bg-zinc-900/60 opacity-0 flex items-center justify-center gap-3 transition-opacity">
+                                <button class="w-10 h-10 rounded-full bg-white flex items-center justify-center hover:bg-zinc-100 transition-colors">
+                                    <iconify-icon icon="lucide:eye" width="18" class="text-zinc-700" stroke-width="1.5"></iconify-icon>
+                                </button>
+                                <button onclick="event.stopPropagation(); openEditModal('quality')" class="w-10 h-10 rounded-full bg-white flex items-center justify-center hover:bg-zinc-100 transition-colors">
+                                    <iconify-icon icon="lucide:pencil" width="18" class="text-zinc-700" stroke-width="1.5"></iconify-icon>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <div class="flex items-start justify-between mb-2">
+                                <div>
+                                    <h3 class="text-sm font-semibold text-zinc-900">Quality Seal</h3>
+                                    <p class="text-xs text-zinc-500 mt-0.5">Quality Certificate</p>
+                                </div>
+                                <span class="inline-flex items-center px-2 py-0.5 text-xs font-medium text-blue-700 bg-blue-50 rounded">Active</span>
+                            </div>
+                            <div class="flex items-center justify-between pt-3 border-t border-zinc-100">
+                                <div class="flex items-center gap-3 text-xs text-zinc-400">
+                                    <span class="flex items-center gap-1">
+                                        <iconify-icon icon="lucide:send" width="12" stroke-width="1.5"></iconify-icon>
+                                        234 issued
+                                    </span>
+                                </div>
+                                <div class="relative">
+                                    <button onclick="event.stopPropagation(); toggleDropdown('dropdown-6')" class="w-7 h-7 rounded-md hover:bg-zinc-100 flex items-center justify-center transition-colors">
+                                        <iconify-icon icon="lucide:more-horizontal" width="16" class="text-zinc-400" stroke-width="1.5"></iconify-icon>
+                                    </button>
+                                    <div id="dropdown-6" class="dropdown-content absolute right-0 bottom-full mb-2 w-36 bg-white border border-zinc-200 rounded-lg shadow-lg z-20">
+                                        <div class="p-1">
+                                            <button onclick="openPreviewModal('quality')" class="w-full text-left px-3 py-2 text-sm text-zinc-700 hover:bg-zinc-50 rounded-md transition-colors flex items-center gap-2">
+                                                <iconify-icon icon="lucide:eye" width="14" stroke-width="1.5"></iconify-icon>
+                                                Preview
+                                            </button>
+                                            <button onclick="openEditModal('quality')" class="w-full text-left px-3 py-2 text-sm text-zinc-700 hover:bg-zinc-50 rounded-md transition-colors flex items-center gap-2">
+                                                <iconify-icon icon="lucide:pencil" width="14" stroke-width="1.5"></iconify-icon>
+                                                Edit
+                                            </button>
+                                            <button class="w-full text-left px-3 py-2 text-sm text-zinc-700 hover:bg-zinc-50 rounded-md transition-colors flex items-center gap-2">
+                                                <iconify-icon icon="lucide:copy" width="14" stroke-width="1.5"></iconify-icon>
+                                                Duplicate
+                                            </button>
+                                            <button onclick="openDeleteModal('quality')" class="w-full text-left px-3 py-2 text-sm text-red-600 hover:bg-red-50 rounded-md transition-colors flex items-center gap-2">
+                                                <iconify-icon icon="lucide:trash-2" width="14" stroke-width="1.5"></iconify-icon>
+                                                Delete
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Template Card 7 - Origin Verified -->
+                    <div class="template-card bg-white rounded-xl border border-zinc-200/80 overflow-hidden group hover:shadow-lg hover:border-zinc-300 transition-all duration-200">
+                        <div class="relative aspect-[3/4] bg-gradient-to-br from-violet-50 via-purple-50 to-violet-100 flex items-center justify-center p-6 cursor-pointer" onclick="openPreviewModal('origin')">
+                            <div class="w-full h-full bg-white rounded-lg shadow-sm border border-violet-200 p-4 flex flex-col items-center justify-center relative overflow-hidden">
+                                <div class="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-violet-500 via-violet-400 to-violet-500"></div>
+                                <div class="w-12 h-12 rounded-full bg-gradient-to-br from-violet-400 to-violet-600 flex items-center justify-center mb-3 shadow-lg">
+                                    <iconify-icon icon="lucide:map-pin" width="24" class="text-white" stroke-width="1.5"></iconify-icon>
+                                </div>
+                                <p class="text-xs font-semibold text-violet-800 tracking-tight text-center">ORIGIN VERIFIED</p>
+                                <p class="text-xs text-violet-600 mt-1">CERTIFICATE</p>
+                                <div class="mt-3 space-y-1 w-full px-2">
+                                    <div class="h-1.5 bg-zinc-100 rounded w-full"></div>
+                                    <div class="h-1.5 bg-zinc-100 rounded w-3/4 mx-auto"></div>
+                                    <div class="h-1.5 bg-zinc-100 rounded w-1/2 mx-auto"></div>
+                                </div>
+                                <div class="absolute bottom-3 left-0 right-0 flex justify-center gap-4">
+                                    <div class="w-6 h-6 rounded-full bg-zinc-100"></div>
+                                    <div class="w-6 h-6 rounded-full bg-zinc-100"></div>
+                                </div>
+                            </div>
+                            <div class="template-actions absolute inset-0 bg-zinc-900/60 opacity-0 flex items-center justify-center gap-3 transition-opacity">
+                                <button class="w-10 h-10 rounded-full bg-white flex items-center justify-center hover:bg-zinc-100 transition-colors">
+                                    <iconify-icon icon="lucide:eye" width="18" class="text-zinc-700" stroke-width="1.5"></iconify-icon>
+                                </button>
+                                <button onclick="event.stopPropagation(); openEditModal('origin')" class="w-10 h-10 rounded-full bg-white flex items-center justify-center hover:bg-zinc-100 transition-colors">
+                                    <iconify-icon icon="lucide:pencil" width="18" class="text-zinc-700" stroke-width="1.5"></iconify-icon>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <div class="flex items-start justify-between mb-2">
+                                <div>
+                                    <h3 class="text-sm font-semibold text-zinc-900">Origin Verified</h3>
+                                    <p class="text-xs text-zinc-500 mt-0.5">Quality Certificate</p>
+                                </div>
+                                <span class="inline-flex items-center px-2 py-0.5 text-xs font-medium text-violet-700 bg-violet-50 rounded">Active</span>
+                            </div>
+                            <div class="flex items-center justify-between pt-3 border-t border-zinc-100">
+                                <div class="flex items-center gap-3 text-xs text-zinc-400">
+                                    <span class="flex items-center gap-1">
+                                        <iconify-icon icon="lucide:send" width="12" stroke-width="1.5"></iconify-icon>
+                                        112 issued
+                                    </span>
+                                </div>
+                                <div class="relative">
+                                    <button onclick="event.stopPropagation(); toggleDropdown('dropdown-7')" class="w-7 h-7 rounded-md hover:bg-zinc-100 flex items-center justify-center transition-colors">
+                                        <iconify-icon icon="lucide:more-horizontal" width="16" class="text-zinc-400" stroke-width="1.5"></iconify-icon>
+                                    </button>
+                                    <div id="dropdown-7" class="dropdown-content absolute right-0 bottom-full mb-2 w-36 bg-white border border-zinc-200 rounded-lg shadow-lg z-20">
+                                        <div class="p-1">
+                                            <button onclick="openPreviewModal('origin')" class="w-full text-left px-3 py-2 text-sm text-zinc-700 hover:bg-zinc-50 rounded-md transition-colors flex items-center gap-2">
+                                                <iconify-icon icon="lucide:eye" width="14" stroke-width="1.5"></iconify-icon>
+                                                Preview
+                                            </button>
+                                            <button onclick="openEditModal('origin')" class="w-full text-left px-3 py-2 text-sm text-zinc-700 hover:bg-zinc-50 rounded-md transition-colors flex items-center gap-2">
+                                                <iconify-icon icon="lucide:pencil" width="14" stroke-width="1.5"></iconify-icon>
+                                                Edit
+                                            </button>
+                                            <button class="w-full text-left px-3 py-2 text-sm text-zinc-700 hover:bg-zinc-50 rounded-md transition-colors flex items-center gap-2">
+                                                <iconify-icon icon="lucide:copy" width="14" stroke-width="1.5"></iconify-icon>
+                                                Duplicate
+                                            </button>
+                                            <button onclick="openDeleteModal('origin')" class="w-full text-left px-3 py-2 text-sm text-red-600 hover:bg-red-50 rounded-md transition-colors flex items-center gap-2">
+                                                <iconify-icon icon="lucide:trash-2" width="14" stroke-width="1.5"></iconify-icon>
+                                                Delete
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Template Card 8 - Special Mention (Archived) -->
+                    <div class="template-card bg-white rounded-xl border border-zinc-200/80 overflow-hidden group hover:shadow-lg hover:border-zinc-300 transition-all duration-200 opacity-60">
+                        <div class="relative aspect-[3/4] bg-gradient-to-br from-zinc-100 via-zinc-50 to-zinc-100 flex items-center justify-center p-6 cursor-pointer" onclick="openPreviewModal('special')">
+                            <div class="w-full h-full bg-white rounded-lg shadow-sm border border-zinc-200 p-4 flex flex-col items-center justify-center relative overflow-hidden">
+                                <div class="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-zinc-400 via-zinc-300 to-zinc-400"></div>
+                                <div class="w-12 h-12 rounded-full bg-gradient-to-br from-zinc-300 to-zinc-500 flex items-center justify-center mb-3 shadow-lg">
+                                    <iconify-icon icon="lucide:star" width="24" class="text-white" stroke-width="1.5"></iconify-icon>
+                                </div>
+                                <p class="text-xs font-semibold text-zinc-600 tracking-tight text-center">SPECIAL</p>
+                                <p class="text-xs text-zinc-500 mt-1">MENTION</p>
+                                <div class="mt-3 space-y-1 w-full px-2">
+                                    <div class="h-1.5 bg-zinc-100 rounded w-full"></div>
+                                    <div class="h-1.5 bg-zinc-100 rounded w-3/4 mx-auto"></div>
+                                    <div class="h-1.5 bg-zinc-100 rounded w-1/2 mx-auto"></div>
+                                </div>
+                                <div class="absolute bottom-3 left-0 right-0 flex justify-center gap-4">
+                                    <div class="w-6 h-6 rounded-full bg-zinc-100"></div>
+                                    <div class="w-6 h-6 rounded-full bg-zinc-100"></div>
+                                </div>
+                            </div>
+                            <div class="template-actions absolute inset-0 bg-zinc-900/60 opacity-0 flex items-center justify-center gap-3 transition-opacity">
+                                <button class="w-10 h-10 rounded-full bg-white flex items-center justify-center hover:bg-zinc-100 transition-colors">
+                                    <iconify-icon icon="lucide:eye" width="18" class="text-zinc-700" stroke-width="1.5"></iconify-icon>
+                                </button>
+                                <button onclick="event.stopPropagation(); openEditModal('special')" class="w-10 h-10 rounded-full bg-white flex items-center justify-center hover:bg-zinc-100 transition-colors">
+                                    <iconify-icon icon="lucide:pencil" width="18" class="text-zinc-700" stroke-width="1.5"></iconify-icon>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <div class="flex items-start justify-between mb-2">
+                                <div>
+                                    <h3 class="text-sm font-semibold text-zinc-900">Special Mention</h3>
+                                    <p class="text-xs text-zinc-500 mt-0.5">Award Certificate</p>
+                                </div>
+                                <span class="inline-flex items-center px-2 py-0.5 text-xs font-medium text-zinc-500 bg-zinc-100 rounded">Archived</span>
+                            </div>
+                            <div class="flex items-center justify-between pt-3 border-t border-zinc-100">
+                                <div class="flex items-center gap-3 text-xs text-zinc-400">
+                                    <span class="flex items-center gap-1">
+                                        <iconify-icon icon="lucide:send" width="12" stroke-width="1.5"></iconify-icon>
+                                        45 issued
+                                    </span>
+                                </div>
+                                <div class="relative">
+                                    <button onclick="event.stopPropagation(); toggleDropdown('dropdown-8')" class="w-7 h-7 rounded-md hover:bg-zinc-100 flex items-center justify-center transition-colors">
+                                        <iconify-icon icon="lucide:more-horizontal" width="16" class="text-zinc-400" stroke-width="1.5"></iconify-icon>
+                                    </button>
+                                    <div id="dropdown-8" class="dropdown-content absolute right-0 bottom-full mb-2 w-36 bg-white border border-zinc-200 rounded-lg shadow-lg z-20">
+                                        <div class="p-1">
+                                            <button onclick="openPreviewModal('special')" class="w-full text-left px-3 py-2 text-sm text-zinc-700 hover:bg-zinc-50 rounded-md transition-colors flex items-center gap-2">
+                                                <iconify-icon icon="lucide:eye" width="14" stroke-width="1.5"></iconify-icon>
+                                                Preview
+                                            </button>
+                                            <button class="w-full text-left px-3 py-2 text-sm text-zinc-700 hover:bg-zinc-50 rounded-md transition-colors flex items-center gap-2">
+                                                <iconify-icon icon="lucide:archive-restore" width="14" stroke-width="1.5"></iconify-icon>
+                                                Restore
+                                            </button>
+                                            <button onclick="openDeleteModal('special')" class="w-full text-left px-3 py-2 text-sm text-red-600 hover:bg-red-50 rounded-md transition-colors flex items-center gap-2">
+                                                <iconify-icon icon="lucide:trash-2" width="14" stroke-width="1.5"></iconify-icon>
+                                                Delete
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Preview Modal -->
+    <div id="previewModal" class="modal-overlay fixed inset-0 bg-zinc-900/70 z-50 flex items-center justify-center p-4">
+        <div class="modal-content bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-hidden shadow-2xl">
+            <div class="flex items-center justify-between px-6 py-4 border-b border-zinc-100">
+                <div class="flex items-center gap-3">
+                    <div id="previewIconBg" class="w-10 h-10 rounded-xl bg-amber-50 flex items-center justify-center">
+                        <iconify-icon id="previewIcon" icon="lucide:award" width="20" class="text-amber-600" stroke-width="1.5"></iconify-icon>
+                    </div>
+                    <div>
+                        <h2 id="previewTitle" class="text-lg font-semibold text-zinc-900 tracking-tight">Gold Award Certificate</h2>
+                        <p id="previewSubtitle" class="text-sm text-zinc-500">Award Certificate Template</p>
+                    </div>
+                </div>
+                <button onclick="closePreviewModal()" class="w-8 h-8 rounded-lg hover:bg-zinc-100 flex items-center justify-center transition-colors">
+                    <iconify-icon icon="lucide:x" width="18" class="text-zinc-500" stroke-width="1.5"></iconify-icon>
+                </button>
+            </div>
+            <div class="flex flex-col lg:flex-row">
+                <!-- Certificate Preview -->
+                <div class="flex-1 p-8 bg-zinc-50 flex items-center justify-center">
+                    <div id="certificatePreview" class="w-full max-w-md aspect-[3/4] bg-white rounded-xl shadow-lg border border-amber-200 p-8 flex flex-col items-center justify-center relative overflow-hidden">
+                        <div class="absolute top-0 left-0 right-0 h-3 bg-gradient-to-r from-amber-400 via-amber-300 to-amber-400"></div>
+                        <div class="absolute top-4 left-4 w-16 h-16 border-l-2 border-t-2 border-amber-200"></div>
+                        <div class="absolute top-4 right-4 w-16 h-16 border-r-2 border-t-2 border-amber-200"></div>
+                        <div class="absolute bottom-4 left-4 w-16 h-16 border-l-2 border-b-2 border-amber-200"></div>
+                        <div class="absolute bottom-4 right-4 w-16 h-16 border-r-2 border-b-2 border-amber-200"></div>
+                        
+                        <div class="w-20 h-20 rounded-full bg-gradient-to-br from-amber-400 to-amber-600 flex items-center justify-center mb-6 shadow-lg">
+                            <iconify-icon icon="lucide:award" width="40" class="text-white" stroke-width="1.5"></iconify-icon>
+                        </div>
+                        
+                        <p class="text-sm text-zinc-400 tracking-widest uppercase mb-2">Certificate of</p>
+                        <h3 id="certAwardName" class="text-2xl font-semibold text-amber-600 tracking-tight mb-6">GOLD AWARD</h3>
+                        
+                        <p class="text-sm text-zinc-500 mb-2">Awarded to</p>
+                        <p class="text-lg font-medium text-zinc-900 mb-1">[Product Name]</p>
+                        <p class="text-sm text-zinc-500 mb-6">by [Producer Name]</p>
+                        
+                        <p class="text-sm text-zinc-500 text-center max-w-xs mb-6">
+                            In recognition of exceptional quality and excellence in the category of artisan food products.
+                        </p>
+                        
+                        <div class="flex items-center gap-8 mt-auto">
+                            <div class="text-center">
+                                <div class="w-16 h-16 rounded-full bg-zinc-100 flex items-center justify-center mb-2">
+                                    <iconify-icon icon="lucide:stamp" width="24" class="text-zinc-400" stroke-width="1.5"></iconify-icon>
+                                </div>
+                                <p class="text-xs text-zinc-400">Official Seal</p>
+                            </div>
+                            <div class="text-center">
+                                <div class="w-16 h-16 rounded-full bg-zinc-100 flex items-center justify-center mb-2">
+                                    <iconify-icon icon="lucide:pen-tool" width="24" class="text-zinc-400" stroke-width="1.5"></iconify-icon>
+                                </div>
+                                <p class="text-xs text-zinc-400">Signature</p>
+                            </div>
+                        </div>
+                        
+                        <p class="absolute bottom-6 text-xs text-zinc-400">[Date] • Certificate ID: [ID]</p>
+                    </div>
+                </div>
+                
+                <!-- Template Info -->
+                <div class="w-full lg:w-80 p-6 border-t lg:border-t-0 lg:border-l border-zinc-100">
+                    <h4 class="text-sm font-semibold text-zinc-900 mb-4">Template Details</h4>
+                    <div class="space-y-4">
+                        <div>
+                            <p class="text-xs text-zinc-400 mb-1">Template ID</p>
+                            <p class="text-sm font-medium text-zinc-700">TPL-GOLD-001</p>
+                        </div>
+                        <div>
+                            <p class="text-xs text-zinc-400 mb-1">Category</p>
+                            <p class="text-sm font-medium text-zinc-700">Award Certificate</p>
+                        </div>
+                        <div>
+                            <p class="text-xs text-zinc-400 mb-1">Score Range</p>
+                            <p class="text-sm font-medium text-zinc-700">8.0 - 8.9</p>
+                        </div>
+                        <div>
+                            <p class="text-xs text-zinc-400 mb-1">Created</p>
+                            <p class="text-sm font-medium text-zinc-700">Dec 15, 2023</p>
+                        </div>
+                        <div>
+                            <p class="text-xs text-zinc-400 mb-1">Last Modified</p>
+                            <p class="text-sm font-medium text-zinc-700">Jan 10, 2024</p>
+                        </div>
+                        <div>
+                            <p class="text-xs text-zinc-400 mb-1">Total Issued</p>
+                            <p class="text-sm font-medium text-zinc-700">156 certificates</p>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-6 pt-6 border-t border-zinc-100 space-y-3">
+                        <button class="w-full flex items-center justify-center gap-2 px-4 py-2.5 text-sm font-medium text-zinc-700 bg-white border border-zinc-200 rounded-lg hover:bg-zinc-50 transition-colors">
+                            <iconify-icon icon="lucide:download" width="16" stroke-width="1.5"></iconify-icon>
+                            Download Template
+                        </button>
+                        <button onclick="closePreviewModal(); openEditModal('gold')" class="w-full flex items-center justify-center gap-2 px-4 py-2.5 text-sm font-medium text-white bg-zinc-900 rounded-lg hover:bg-zinc-800 transition-colors">
+                            <iconify-icon icon="lucide:pencil" width="16" stroke-width="1.5"></iconify-icon>
+                            Edit Template
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Upload Modal -->
+    <div id="uploadModal" class="modal-overlay fixed inset-0 bg-zinc-900/70 z-50 flex items-center justify-center p-4">
+        <div class="modal-content bg-white rounded-2xl max-w-lg w-full overflow-hidden shadow-2xl">
+            <div class="flex items-center justify-between px-6 py-4 border-b border-zinc-100">
+                <h2 class="text-lg font-semibold text-zinc-900 tracking-tight">Upload New Template</h2>
+                <button onclick="closeUploadModal()" class="w-8 h-8 rounded-lg hover:bg-zinc-100 flex items-center justify-center transition-colors">
+                    <iconify-icon icon="lucide:x" width="18" class="text-zinc-500" stroke-width="1.5"></iconify-icon>
+                </button>
+            </div>
+            <div class="p-6">
+                <!-- Upload Area -->
+                <div class="border-2 border-dashed border-zinc-200 rounded-xl p-8 text-center hover:border-amber-400 hover:bg-amber-50/30 transition-colors cursor-pointer mb-6">
+                    <div class="w-14 h-14 rounded-full bg-zinc-100 flex items-center justify-center mx-auto mb-4">
+                        <iconify-icon icon="lucide:upload-cloud" width="28" class="text-zinc-400" stroke-width="1.5"></iconify-icon>
+                    </div>
+                    <p class="text-sm font-medium text-zinc-700 mb-1">Drop your template file here</p>
+                    <p class="text-xs text-zinc-400 mb-3">or click to browse</p>
+                    <p class="text-xs text-zinc-400">Supports PDF, PNG, SVG (Max 10MB)</p>
+                </div>
+                
+                <!-- Form Fields -->
+                <div class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-medium text-zinc-700 mb-2">Template Name</label>
+                        <input type="text" placeholder="e.g., Platinum Award Certificate" class="w-full px-4 py-2.5 text-sm border border-zinc-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500/20 focus:border-amber-500 transition-colors">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-zinc-700 mb-2">Category</label>
+                        <div class="relative">
+                            <select class="w-full px-4 py-2.5 text-sm border border-zinc-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500/20 focus:border-amber-500 transition-colors appearance-none bg-white">
+                                <option>Award Certificate</option>
+                                <option>Quality Certificate</option>
+                            </select>
+                            <iconify-icon icon="lucide:chevron-down" width="16" class="absolute right-3 top-1/2 -translate-y-1/2 text-zinc-400 pointer-events-none" stroke-width="1.5"></iconify-icon>
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-zinc-700 mb-2">Score Range (if applicable)</label>
+                        <div class="flex items-center gap-3">
+                            <input type="number" placeholder="Min" class="flex-1 px-4 py-2.5 text-sm border border-zinc-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500/20 focus:border-amber-500 transition-colors">
+                            <span class="text-zinc-400">–</span>
+                            <input type="number" placeholder="Max" class="flex-1 px-4 py-2.5 text-sm border border-zinc-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500/20 focus:border-amber-500 transition-colors">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-zinc-700 mb-2">Description</label>
+                        <textarea rows="2" placeholder="Brief description of this template..." class="w-full px-4 py-2.5 text-sm border border-zinc-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500/20 focus:border-amber-500 transition-colors resize-none"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="flex items-center justify-end gap-3 px-6 py-4 border-t border-zinc-100 bg-zinc-50">
+                <button onclick="closeUploadModal()" class="px-4 py-2.5 text-sm font-medium text-zinc-700 bg-white border border-zinc-200 rounded-lg hover:bg-zinc-50 transition-colors">
+                    Cancel
+                </button>
+                <button onclick="closeUploadModal(); showToast('Template uploaded successfully')" class="px-4 py-2.5 text-sm font-medium text-white bg-zinc-900 rounded-lg hover:bg-zinc-800 transition-colors">
+                    Upload Template
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Delete Confirmation Modal -->
+    <div id="deleteModal" class="modal-overlay fixed inset-0 bg-zinc-900/70 z-50 flex items-center justify-center p-4">
+        <div class="modal-content bg-white rounded-2xl max-w-md w-full overflow-hidden shadow-2xl">
+            <div class="p-6 text-center">
+                <div class="w-14 h-14 rounded-full bg-red-50 flex items-center justify-center mx-auto mb-4">
+                    <iconify-icon icon="lucide:trash-2" width="28" class="text-red-500" stroke-width="1.5"></iconify-icon>
+                </div>
+                <h2 class="text-lg font-semibold text-zinc-900 tracking-tight mb-2">Delete Template?</h2>
+                <p class="text-sm text-zinc-500 mb-6">This action cannot be undone. All associated data will be permanently removed.</p>
+                <div class="flex items-center justify-center gap-3">
+                    <button onclick="closeDeleteModal()" class="px-5 py-2.5 text-sm font-medium text-zinc-700 bg-white border border-zinc-200 rounded-lg hover:bg-zinc-50 transition-colors">
+                        Cancel
+                    </button>
+                    <button onclick="closeDeleteModal(); showToast('Template deleted', 'lucide:trash-2')" class="px-5 py-2.5 text-sm font-medium text-white bg-red-600 rounded-lg hover:bg-red-700 transition-colors">
+                        Delete Template
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="fixed bottom-6 right-6 transform translate-y-20 opacity-0 transition-all duration-300 z-50">
+        <div class="flex items-center gap-3 px-4 py-3 bg-zinc-900 text-white rounded-lg shadow-lg">
+            <iconify-icon id="toastIcon" icon="lucide:check-circle" width="18" stroke-width="1.5"></iconify-icon>
+            <span id="toastMessage" class="text-sm font-medium">Action completed</span>
+        </div>
+    </div>
+
+    <script>
+        function toggleDropdown(id) {
+            // Close all other dropdowns first
+            document.querySelectorAll('.dropdown-content').forEach(d => {
+                if (d.id !== id) d.classList.remove('show');
+            });
+            document.getElementById(id).classList.toggle('show');
+        }
+
+        function openPreviewModal(type) {
+            document.getElementById('previewModal').classList.add('show');
+        }
+
+        function closePreviewModal() {
+            document.getElementById('previewModal').classList.remove('show');
+        }
+
+        function openUploadModal() {
+            document.getElementById('uploadModal').classList.add('show');
+        }
+
+        function closeUploadModal() {
+            document.getElementById('uploadModal').classList.remove('show');
+        }
+
+        function openEditModal(type) {
+            // For demo, just open upload modal
+            openUploadModal();
+        }
+
+        function openDeleteModal(type) {
+            document.getElementById('deleteModal').classList.add('show');
+        }
+
+        function closeDeleteModal() {
+            document.getElementById('deleteModal').classList.remove('show');
+        }
+
+        function showToast(message, icon = 'lucide:check-circle') {
+            const toast = document.getElementById('toast');
+            document.getElementById('toastMessage').textContent = message;
+            document.getElementById('toastIcon').setAttribute('icon', icon);
+            toast.classList.remove('translate-y-20', 'opacity-0');
+            toast.classList.add('translate-y-0', 'opacity-100');
+            
+            setTimeout(() => {
+                toast.classList.add('translate-y-20', 'opacity-0');
+                toast.classList.remove('translate-y-0', 'opacity-100');
+            }, 3000);
+        }
+
+        // Close dropdowns when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!e.target.closest('[onclick*="toggleDropdown"]') && !e.target.closest('.dropdown-content')) {
+                document.querySelectorAll('.dropdown-content').forEach(d => d.classList.remove('show'));
+            }
+        });
+
+        // Close modals on overlay click
+        document.querySelectorAll('.modal-overlay').forEach(modal => {
+            modal.addEventListener('click', function(e) {
+                if (e.target === this) {
+                    this.classList.remove('show');
+                }
+            });
+        });
+
+        // Close modals on Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                document.querySelectorAll('.modal-overlay').forEach(modal => {
+                    modal.classList.remove('show');
+                });
+            }
+        });
+    </script>
+
+
+</body></html>

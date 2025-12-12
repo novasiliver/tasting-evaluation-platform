@@ -1,0 +1,608 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Winners Gallery | Tastecert</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .modal-backdrop { backdrop-filter: blur(8px); }
+    </style>
+</head>
+<body class="bg-zinc-50 text-zinc-600 antialiased min-h-screen">
+
+    <!-- Header -->
+    <header class="bg-white border-b border-zinc-200/80 sticky top-0 z-40">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo -->
+                <a href="#" class="flex items-center gap-2.5">
+                    <div class="w-8 h-8 bg-gradient-to-br from-amber-500 to-orange-600 rounded-lg flex items-center justify-center">
+                        <iconify-icon icon="lucide:award" width="16" class="text-white" style="stroke-width: 1.5"></iconify-icon>
+                    </div>
+                    <span class="text-zinc-900 font-semibold tracking-tight">Tastecert</span>
+                </a>
+
+                <!-- Navigation -->
+                <nav class="hidden md:flex items-center gap-8">
+                    <a href="#" class="text-sm text-zinc-500 hover:text-zinc-900 transition-colors">Home</a>
+                    <a href="#" class="text-sm font-medium text-zinc-900">Winners Gallery</a>
+                    <a href="#" class="text-sm text-zinc-500 hover:text-zinc-900 transition-colors">About</a>
+                    <a href="#" class="text-sm text-zinc-500 hover:text-zinc-900 transition-colors">For Producers</a>
+                </nav>
+
+                <!-- CTA -->
+                <div class="flex items-center gap-3">
+                    <a href="#" class="hidden sm:inline-flex text-sm font-medium text-zinc-600 hover:text-zinc-900 transition-colors">Sign In</a>
+                    <a href="#" class="inline-flex items-center gap-2 px-4 py-2 bg-zinc-900 text-white text-sm font-medium rounded-lg hover:bg-zinc-800 transition-colors">
+                        Submit Product
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-b from-amber-50/50 to-white border-b border-zinc-100">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 py-16 lg:py-20">
+            <div class="text-center max-w-3xl mx-auto">
+                <div class="inline-flex items-center gap-2 px-3 py-1.5 bg-amber-100 rounded-full mb-6">
+                    <iconify-icon icon="lucide:trophy" width="14" class="text-amber-600" style="stroke-width: 1.5"></iconify-icon>
+                    <span class="text-xs font-medium text-amber-700">Award-Winning Excellence</span>
+                </div>
+                <h1 class="text-4xl lg:text-5xl font-semibold text-zinc-900 tracking-tight mb-4">Winners Gallery</h1>
+                <p class="text-lg text-zinc-500 leading-relaxed">Discover exceptional products recognized for their outstanding quality, craftsmanship, and taste by our expert panel of judges.</p>
+            </div>
+
+            <!-- Stats -->
+            <div class="flex flex-wrap justify-center gap-8 lg:gap-16 mt-12">
+                <div class="text-center">
+                    <p class="text-3xl font-semibold text-zinc-900 tracking-tight">892</p>
+                    <p class="text-sm text-zinc-500 mt-1">Awarded Products</p>
+                </div>
+                <div class="text-center">
+                    <p class="text-3xl font-semibold text-zinc-900 tracking-tight">1,284</p>
+                    <p class="text-sm text-zinc-500 mt-1">Certified Producers</p>
+                </div>
+                <div class="text-center">
+                    <p class="text-3xl font-semibold text-zinc-900 tracking-tight">24</p>
+                    <p class="text-sm text-zinc-500 mt-1">Categories</p>
+                </div>
+                <div class="text-center">
+                    <p class="text-3xl font-semibold text-zinc-900 tracking-tight">47</p>
+                    <p class="text-sm text-zinc-500 mt-1">Countries</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filters Section -->
+    <section class="bg-white border-b border-zinc-200/80 sticky top-16 z-30">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 py-4">
+            <div class="flex flex-col lg:flex-row lg:items-center gap-4">
+                <!-- Search -->
+                <div class="relative flex-1 max-w-md">
+                    <iconify-icon icon="lucide:search" width="18" class="absolute left-3 top-1/2 -translate-y-1/2 text-zinc-400" style="stroke-width: 1.5"></iconify-icon>
+                    <input type="text" id="searchInput" placeholder="Search products or producers..." class="w-full pl-10 pr-4 py-2.5 text-sm border border-zinc-200 rounded-lg bg-zinc-50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-amber-500/20 focus:border-amber-500 transition-all">
+                </div>
+
+                <!-- Filters -->
+                <div class="flex flex-wrap items-center gap-3">
+                    <!-- Category Filter -->
+                    <div class="relative">
+                        <select id="categoryFilter" class="appearance-none pl-4 pr-10 py-2.5 text-sm border border-zinc-200 rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-amber-500/20 focus:border-amber-500 cursor-pointer">
+                            <option value="">All Categories</option>
+                            <option value="olive-oil">Olive Oil</option>
+                            <option value="wine">Wine</option>
+                            <option value="cheese">Cheese</option>
+                            <option value="chocolate">Chocolate</option>
+                            <option value="honey">Honey</option>
+                            <option value="coffee">Coffee</option>
+                            <option value="spirits">Spirits</option>
+                            <option value="seafood">Seafood</option>
+                        </select>
+                        <iconify-icon icon="lucide:chevron-down" width="16" class="absolute right-3 top-1/2 -translate-y-1/2 text-zinc-400 pointer-events-none" style="stroke-width: 1.5"></iconify-icon>
+                    </div>
+
+                    <!-- Award Filter -->
+                    <div class="relative">
+                        <select id="awardFilter" class="appearance-none pl-4 pr-10 py-2.5 text-sm border border-zinc-200 rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-amber-500/20 focus:border-amber-500 cursor-pointer">
+                            <option value="">All Awards</option>
+                            <option value="gold">Gold</option>
+                            <option value="silver">Silver</option>
+                            <option value="bronze">Bronze</option>
+                        </select>
+                        <iconify-icon icon="lucide:chevron-down" width="16" class="absolute right-3 top-1/2 -translate-y-1/2 text-zinc-400 pointer-events-none" style="stroke-width: 1.5"></iconify-icon>
+                    </div>
+
+                    <!-- Year Filter -->
+                    <div class="relative">
+                        <select id="yearFilter" class="appearance-none pl-4 pr-10 py-2.5 text-sm border border-zinc-200 rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-amber-500/20 focus:border-amber-500 cursor-pointer">
+                            <option value="">All Years</option>
+                            <option value="2024">2024</option>
+                            <option value="2023">2023</option>
+                            <option value="2022">2022</option>
+                            <option value="2021">2021</option>
+                        </select>
+                        <iconify-icon icon="lucide:chevron-down" width="16" class="absolute right-3 top-1/2 -translate-y-1/2 text-zinc-400 pointer-events-none" style="stroke-width: 1.5"></iconify-icon>
+                    </div>
+
+                    <!-- Reset Filters -->
+                    <button onclick="resetFilters()" class="inline-flex items-center gap-1.5 px-3 py-2.5 text-sm text-zinc-500 hover:text-zinc-700 transition-colors">
+                        <iconify-icon icon="lucide:x" width="16" style="stroke-width: 1.5"></iconify-icon>
+                        Reset
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Grid -->
+    <section class="py-12">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <!-- Results Count -->
+            <div class="flex items-center justify-between mb-8">
+                <p class="text-sm text-zinc-500"><span id="resultsCount" class="font-medium text-zinc-900">12</span> award-winning products</p>
+                <div class="relative">
+                    <select class="appearance-none pl-4 pr-10 py-2 text-sm border border-zinc-200 rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-amber-500/20 cursor-pointer">
+                        <option>Most Recent</option>
+                        <option>Highest Rated</option>
+                        <option>A-Z</option>
+                    </select>
+                    <iconify-icon icon="lucide:chevron-down" width="16" class="absolute right-3 top-1/2 -translate-y-1/2 text-zinc-400 pointer-events-none" style="stroke-width: 1.5"></iconify-icon>
+                </div>
+            </div>
+
+            <!-- Grid -->
+            <div id="productsGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                <!-- Product cards will be rendered here -->
+            </div>
+
+            <!-- Load More -->
+            <div class="text-center mt-12">
+                <button class="inline-flex items-center gap-2 px-6 py-3 border border-zinc-200 rounded-lg text-sm font-medium text-zinc-700 hover:bg-zinc-50 transition-colors">
+                    <iconify-icon icon="lucide:plus" width="18" style="stroke-width: 1.5"></iconify-icon>
+                    Load More Products
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-zinc-200/80 mt-12">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 py-12">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+                <div class="flex items-center gap-2.5">
+                    <div class="w-8 h-8 bg-gradient-to-br from-amber-500 to-orange-600 rounded-lg flex items-center justify-center">
+                        <iconify-icon icon="lucide:award" width="16" class="text-white" style="stroke-width: 1.5"></iconify-icon>
+                    </div>
+                    <span class="text-zinc-900 font-semibold tracking-tight">Tastecert</span>
+                </div>
+                <p class="text-sm text-zinc-400">© 2024 Tastecert. All rights reserved.</p>
+                <div class="flex items-center gap-6">
+                    <a href="#" class="text-sm text-zinc-500 hover:text-zinc-900 transition-colors">Privacy</a>
+                    <a href="#" class="text-sm text-zinc-500 hover:text-zinc-900 transition-colors">Terms</a>
+                    <a href="#" class="text-sm text-zinc-500 hover:text-zinc-900 transition-colors">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Product Detail Modal -->
+    <div id="productModal" class="fixed inset-0 z-50 hidden">
+        <div class="modal-backdrop absolute inset-0 bg-zinc-900/60" onclick="closeModal()"></div>
+        <div class="absolute inset-4 md:inset-8 lg:inset-16 flex items-center justify-center pointer-events-none">
+            <div class="bg-white rounded-2xl shadow-2xl max-w-4xl w-full max-h-full overflow-y-auto pointer-events-auto">
+                <div id="modalContent">
+                    <!-- Modal content will be rendered here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Product data
+        const products = [
+            {
+                id: 1,
+                name: "Artisan Olive Oil Reserve",
+                producer: "Mediterranean Farms",
+                category: "olive-oil",
+                categoryLabel: "Olive Oil",
+                award: "gold",
+                year: "2024",
+                image: "https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?w=400&h=400&fit=crop",
+                summary: "A premium extra virgin olive oil with exceptional fruity notes and a peppery finish.",
+                description: "This exceptional extra virgin olive oil is produced from hand-picked Koroneiki olives grown in the sun-drenched groves of Southern Greece. Cold-pressed within hours of harvest to preserve its vibrant character, this oil exhibits complex fruity notes of fresh grass and artichoke, balanced by a pleasant bitterness and a lingering peppery finish.",
+                score: 94,
+                origin: "Greece",
+                certDate: "March 15, 2024",
+                judges: ["Maria Gonzalez", "Pierre Dubois", "Anna Schmidt"]
+            },
+            {
+                id: 2,
+                name: "Reserve Cabernet 2021",
+                producer: "Napa Valley Winery",
+                category: "wine",
+                categoryLabel: "Wine",
+                award: "gold",
+                year: "2024",
+                image: "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=400&h=400&fit=crop",
+                summary: "A full-bodied Cabernet Sauvignon with rich dark fruit flavors and elegant tannins.",
+                description: "This Reserve Cabernet Sauvignon showcases the best of Napa Valley terroir. Aged for 22 months in French oak barrels, it presents deep aromas of blackcurrant, cedar, and vanilla. The palate is rich and layered with dark fruit, chocolate, and subtle spice notes, supported by velvety tannins and a long, sophisticated finish.",
+                score: 96,
+                origin: "USA",
+                certDate: "February 28, 2024",
+                judges: ["Robert Chen", "Sophie Martin", "James Wilson"]
+            },
+            {
+                id: 3,
+                name: "Aged Parmesan 24 Months",
+                producer: "Italian Dairy Co.",
+                category: "cheese",
+                categoryLabel: "Cheese",
+                award: "gold",
+                year: "2024",
+                image: "https://images.unsplash.com/photo-1486297678162-eb2a19b0a32d?w=400&h=400&fit=crop",
+                summary: "A traditionally aged Parmigiano-Reggiano with crystalline texture and complex umami flavor.",
+                description: "Crafted in the heart of Emilia-Romagna using traditional methods passed down through generations, this 24-month aged Parmigiano-Reggiano exemplifies Italian cheesemaking at its finest. The paste is golden and granular with distinctive crystalline structures, offering intense umami flavors with notes of dried fruit, toasted nuts, and a subtle caramel sweetness.",
+                score: 95,
+                origin: "Italy",
+                certDate: "January 20, 2024",
+                judges: ["Marco Rossi", "Emma Thompson", "Hans Mueller"]
+            },
+            {
+                id: 4,
+                name: "Single Origin Dark 72%",
+                producer: "Artisan Confections",
+                category: "chocolate",
+                categoryLabel: "Chocolate",
+                award: "silver",
+                year: "2024",
+                image: "https://images.unsplash.com/photo-1606312619070-d48b4c652a52?w=400&h=400&fit=crop",
+                summary: "A refined dark chocolate with distinct floral and red fruit notes from Peruvian cacao.",
+                description: "Made from rare Criollo cacao beans sourced from a single estate in Peru's Amazon region, this 72% dark chocolate reveals extraordinary complexity. The careful fermentation and slow roasting process brings out delicate floral aromatics, bright notes of raspberry and cherry, and a clean, lingering finish with hints of citrus zest.",
+                score: 91,
+                origin: "Peru",
+                certDate: "March 5, 2024",
+                judges: ["Claire Dubois", "Michael Park", "Isabella Costa"]
+            },
+            {
+                id: 5,
+                name: "Wild Mountain Honey",
+                producer: "Alpine Apiaries",
+                category: "honey",
+                categoryLabel: "Honey",
+                award: "gold",
+                year: "2023",
+                image: "https://images.unsplash.com/photo-1587049352846-4a222e784d38?w=400&h=400&fit=crop",
+                summary: "A raw, unfiltered honey with complex floral notes from high-altitude alpine meadows.",
+                description: "Harvested from beehives placed in pristine alpine meadows above 2,000 meters, this exceptional raw honey captures the essence of mountain wildflowers. Completely unprocessed and unfiltered, it retains all natural enzymes and pollen, offering a complex flavor profile with notes of wildflowers, herbs, and a subtle menthol freshness unique to high-altitude honey.",
+                score: 93,
+                origin: "Switzerland",
+                certDate: "September 12, 2023",
+                judges: ["Thomas Brenner", "Lisa Anderson", "Yuki Tanaka"]
+            },
+            {
+                id: 6,
+                name: "Estate Blend Espresso",
+                producer: "Highland Roasters",
+                category: "coffee",
+                categoryLabel: "Coffee",
+                award: "silver",
+                year: "2024",
+                image: "https://images.unsplash.com/photo-1559056199-641a0ac8b55e?w=400&h=400&fit=crop",
+                summary: "A meticulously crafted espresso blend with rich crema and notes of dark chocolate.",
+                description: "This signature espresso blend combines beans from three exceptional origins: Ethiopian Yirgacheffe, Colombian Huila, and Brazilian Santos. Medium-dark roasted in small batches, it produces a thick, golden crema and delivers a balanced cup with prominent dark chocolate notes, subtle berry undertones, and a smooth, caramel finish perfect for espresso-based drinks.",
+                score: 89,
+                origin: "Multi-Origin",
+                certDate: "February 10, 2024",
+                judges: ["David Kim", "Sarah Mitchell", "Andrea Colombo"]
+            },
+            {
+                id: 7,
+                name: "Small Batch Bourbon",
+                producer: "Heritage Distillery",
+                category: "spirits",
+                categoryLabel: "Spirits",
+                award: "gold",
+                year: "2023",
+                image: "https://images.unsplash.com/photo-1527281400683-1aae777175f8?w=400&h=400&fit=crop",
+                summary: "A handcrafted bourbon with rich caramel and vanilla notes, aged 8 years in charred oak.",
+                description: "Distilled from a proprietary mash bill of corn, rye, and malted barley, this small batch bourbon is aged for 8 years in newly charred American white oak barrels. The extended maturation develops deep amber color and complex flavors of caramel, vanilla bean, toasted oak, and baking spices, with a long, warming finish that exemplifies Kentucky craftsmanship.",
+                score: 94,
+                origin: "USA",
+                certDate: "November 8, 2023",
+                judges: ["William Hayes", "Jennifer Brown", "Patrick O'Brien"]
+            },
+            {
+                id: 8,
+                name: "Wild Caught Smoked Salmon",
+                producer: "Coastal Seafood Co.",
+                category: "seafood",
+                categoryLabel: "Seafood",
+                award: "bronze",
+                year: "2024",
+                image: "https://images.unsplash.com/photo-1599084993091-1cb5c0721cc6?w=400&h=400&fit=crop",
+                summary: "Sustainably caught salmon, traditionally smoked over alder wood for delicate flavor.",
+                description: "Sourced from the pristine waters of Alaska and processed within hours of catch, this wild sockeye salmon is dry-cured with sea salt and raw sugar, then cold-smoked over alder wood for 18 hours. The result is silky, melt-in-your-mouth texture with a delicate smoky flavor that enhances rather than masks the salmon's natural richness.",
+                score: 86,
+                origin: "USA",
+                certDate: "January 15, 2024",
+                judges: ["Karen White", "Erik Johansson", "Mei Lin"]
+            },
+            {
+                id: 9,
+                name: "Gran Reserva EVOO",
+                producer: "Andalusian Estates",
+                category: "olive-oil",
+                categoryLabel: "Olive Oil",
+                award: "silver",
+                year: "2023",
+                image: "https://images.unsplash.com/photo-1509621996-55c5e5f8accc?w=400&h=400&fit=crop",
+                summary: "A robust Spanish olive oil with intense herbaceous notes and a bold, peppery kick.",
+                description: "Produced from centuries-old Picual olive trees in the hills of Jaén, this Gran Reserva extra virgin olive oil is harvested early when the olives are still green, capturing maximum polyphenols and fresh flavors. Bold and robust, it offers intense notes of fresh-cut grass, green tomato, and artichoke, with a pronounced peppery finish that lingers on the palate.",
+                score: 90,
+                origin: "Spain",
+                certDate: "October 22, 2023",
+                judges: ["Carlos Mendez", "Francesca Romano", "Oliver Grant"]
+            },
+            {
+                id: 10,
+                name: "Vintage Port 2018",
+                producer: "Douro Valley Cellars",
+                category: "wine",
+                categoryLabel: "Wine",
+                award: "gold",
+                year: "2023",
+                image: "https://images.unsplash.com/photo-1586370434639-0fe43b2d32e6?w=400&h=400&fit=crop",
+                summary: "An exceptional vintage port with layers of dark fruit, chocolate, and elegant aging potential.",
+                description: "Declared as an exceptional vintage year, this Port is made from a field blend of traditional Douro varieties including Touriga Nacional and Touriga Franca. Deep purple in color with extraordinary concentration, it offers layers of blackberry, plum, dark chocolate, and violet aromatics. Structured tannins and vibrant acidity promise decades of graceful aging.",
+                score: 97,
+                origin: "Portugal",
+                certDate: "December 5, 2023",
+                judges: ["Antonio Silva", "Margaret Chen", "Paul Roberts"]
+            },
+            {
+                id: 11,
+                name: "Aged Gruyère Reserve",
+                producer: "Swiss Alpine Dairy",
+                category: "cheese",
+                categoryLabel: "Cheese",
+                award: "bronze",
+                year: "2024",
+                image: "https://images.unsplash.com/photo-1552767059-ce182ead6c1b?w=400&h=400&fit=crop",
+                summary: "A nutty, complex Swiss cheese aged 18 months with subtle sweet undertones.",
+                description: "Produced in the traditional manner using raw milk from cows grazing on alpine pastures, this Gruyère is aged for 18 months in natural caves. The extended aging develops a firm, slightly granular texture and complex flavors of toasted hazelnuts, brown butter, and caramelized onion, with sweet undertones and a long, savory finish.",
+                score: 87,
+                origin: "Switzerland",
+                certDate: "February 18, 2024",
+                judges: ["Heinrich Weber", "Anne Dupont", "Richard Taylor"]
+            },
+            {
+                id: 12,
+                name: "Manuka Honey UMF 20+",
+                producer: "New Zealand Apiaries",
+                category: "honey",
+                categoryLabel: "Honey",
+                award: "gold",
+                year: "2024",
+                image: "https://images.unsplash.com/photo-1558642452-9d2a7deb7f62?w=400&h=400&fit=crop",
+                summary: "A rare, high-grade Manuka honey with exceptional purity and therapeutic properties.",
+                description: "Harvested from remote Manuka forests in New Zealand's East Cape region, this UMF 20+ certified honey represents the pinnacle of Manuka quality. Its thick, creamy texture and distinctive earthy, herbaceous flavor are complemented by natural antibacterial properties. Each batch is independently tested and certified for authenticity and potency.",
+                score: 95,
+                origin: "New Zealand",
+                certDate: "March 1, 2024",
+                judges: ["Rachel Green", "Takeshi Yamamoto", "Emily Watson"]
+            }
+        ];
+
+        // Render products
+        function renderProducts(filteredProducts) {
+            const grid = document.getElementById('productsGrid');
+            document.getElementById('resultsCount').textContent = filteredProducts.length;
+            
+            if (filteredProducts.length === 0) {
+                grid.innerHTML = `
+                    <div class="col-span-full text-center py-16">
+                        <iconify-icon icon="lucide:search-x" width="48" class="text-zinc-300 mb-4" style="stroke-width: 1.5"></iconify-icon>
+                        <p class="text-zinc-500">No products found matching your criteria.</p>
+                        <button onclick="resetFilters()" class="mt-4 text-sm font-medium text-amber-600 hover:text-amber-700">Reset filters</button>
+                    </div>
+                `;
+                return;
+            }
+
+            grid.innerHTML = filteredProducts.map(product => `
+                <div onclick="openModal(${product.id})" class="group bg-white rounded-xl border border-zinc-200/80 overflow-hidden hover:shadow-lg hover:border-zinc-300 transition-all cursor-pointer">
+                    <div class="aspect-square relative overflow-hidden bg-zinc-100">
+                        <img src="${product.image}" alt="${product.name}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute top-3 left-3">
+                            ${getAwardBadge(product.award)}
+                        </div>
+                        <div class="absolute top-3 right-3 px-2 py-1 bg-white/90 backdrop-blur-sm rounded-full">
+                            <span class="text-xs font-medium text-zinc-600">${product.year}</span>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <div class="flex items-center gap-2 mb-2">
+                            <span class="text-xs font-medium text-amber-600 bg-amber-50 px-2 py-0.5 rounded-full">${product.categoryLabel}</span>
+                        </div>
+                        <h3 class="text-sm font-semibold text-zinc-900 mb-1 group-hover:text-amber-600 transition-colors">${product.name}</h3>
+                        <p class="text-xs text-zinc-500 mb-3">${product.producer}</p>
+                        <p class="text-xs text-zinc-400 line-clamp-2 leading-relaxed">${product.summary}</p>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Get award badge HTML
+        function getAwardBadge(award) {
+            const badges = {
+                gold: `<span class="inline-flex items-center gap-1 px-2.5 py-1 bg-gradient-to-r from-amber-400 to-yellow-500 text-white text-xs font-semibold rounded-full shadow-sm">
+                    <iconify-icon icon="lucide:trophy" width="12" style="stroke-width: 1.5"></iconify-icon>
+                    Gold
+                </span>`,
+                silver: `<span class="inline-flex items-center gap-1 px-2.5 py-1 bg-gradient-to-r from-zinc-400 to-zinc-500 text-white text-xs font-semibold rounded-full shadow-sm">
+                    <iconify-icon icon="lucide:trophy" width="12" style="stroke-width: 1.5"></iconify-icon>
+                    Silver
+                </span>`,
+                bronze: `<span class="inline-flex items-center gap-1 px-2.5 py-1 bg-gradient-to-r from-amber-600 to-amber-700 text-white text-xs font-semibold rounded-full shadow-sm">
+                    <iconify-icon icon="lucide:trophy" width="12" style="stroke-width: 1.5"></iconify-icon>
+                    Bronze
+                </span>`
+            };
+            return badges[award] || '';
+        }
+
+        // Filter products
+        function filterProducts() {
+            const search = document.getElementById('searchInput').value.toLowerCase();
+            const category = document.getElementById('categoryFilter').value;
+            const award = document.getElementById('awardFilter').value;
+            const year = document.getElementById('yearFilter').value;
+
+            const filtered = products.filter(product => {
+                const matchesSearch = !search || 
+                    product.name.toLowerCase().includes(search) || 
+                    product.producer.toLowerCase().includes(search);
+                const matchesCategory = !category || product.category === category;
+                const matchesAward = !award || product.award === award;
+                const matchesYear = !year || product.year === year;
+
+                return matchesSearch && matchesCategory && matchesAward && matchesYear;
+            });
+
+            renderProducts(filtered);
+        }
+
+        // Reset filters
+        function resetFilters() {
+            document.getElementById('searchInput').value = '';
+            document.getElementById('categoryFilter').value = '';
+            document.getElementById('awardFilter').value = '';
+            document.getElementById('yearFilter').value = '';
+            renderProducts(products);
+        }
+
+        // Open modal
+        function openModal(productId) {
+            const product = products.find(p => p.id === productId);
+            if (!product) return;
+
+            const modal = document.getElementById('productModal');
+            const content = document.getElementById('modalContent');
+
+            content.innerHTML = `
+                <div class="relative">
+                    <!-- Close button -->
+                    <button onclick="closeModal()" class="absolute top-4 right-4 z-10 w-10 h-10 rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center hover:bg-white transition-colors shadow-sm">
+                        <iconify-icon icon="lucide:x" width="20" class="text-zinc-600" style="stroke-width: 1.5"></iconify-icon>
+                    </button>
+
+                    <div class="grid grid-cols-1 lg:grid-cols-2">
+                        <!-- Image -->
+                        <div class="aspect-square lg:aspect-auto lg:h-full bg-zinc-100 relative">
+                            <img src="${product.image}" alt="${product.name}" class="w-full h-full object-cover">
+                            <div class="absolute bottom-4 left-4">
+                                ${getAwardBadge(product.award)}
+                            </div>
+                        </div>
+
+                        <!-- Content -->
+                        <div class="p-6 lg:p-8">
+                            <div class="flex items-center gap-2 mb-3">
+                                <span class="text-xs font-medium text-amber-600 bg-amber-50 px-2.5 py-1 rounded-full">${product.categoryLabel}</span>
+                                <span class="text-xs text-zinc-400">•</span>
+                                <span class="text-xs text-zinc-500">${product.year}</span>
+                            </div>
+
+                            <h2 class="text-2xl font-semibold text-zinc-900 tracking-tight mb-2">${product.name}</h2>
+                            <p class="text-sm text-zinc-500 mb-6">By ${product.producer}</p>
+
+                            <!-- Score -->
+                            <div class="flex items-center gap-4 p-4 bg-zinc-50 rounded-xl mb-6">
+                                <div class="w-16 h-16 rounded-full bg-gradient-to-br from-amber-400 to-orange-500 flex items-center justify-center">
+                                    <span class="text-xl font-bold text-white">${product.score}</span>
+                                </div>
+                                <div>
+                                    <p class="text-sm font-semibold text-zinc-900">Quality Score</p>
+                                    <p class="text-xs text-zinc-500">Rated by expert panel</p>
+                                </div>
+                            </div>
+
+                            <!-- Description -->
+                            <div class="mb-6">
+                                <h3 class="text-sm font-semibold text-zinc-900 mb-2">About this product</h3>
+                                <p class="text-sm text-zinc-600 leading-relaxed">${product.description}</p>
+                            </div>
+
+                            <!-- Details -->
+                            <div class="grid grid-cols-2 gap-4 mb-6">
+                                <div class="p-3 bg-zinc-50 rounded-lg">
+                                    <p class="text-xs text-zinc-400 mb-1">Origin</p>
+                                    <p class="text-sm font-medium text-zinc-900">${product.origin}</p>
+                                </div>
+                                <div class="p-3 bg-zinc-50 rounded-lg">
+                                    <p class="text-xs text-zinc-400 mb-1">Certified</p>
+                                    <p class="text-sm font-medium text-zinc-900">${product.certDate}</p>
+                                </div>
+                            </div>
+
+                            <!-- Judges -->
+                            <div class="mb-6">
+                                <h3 class="text-sm font-semibold text-zinc-900 mb-3">Judging Panel</h3>
+                                <div class="flex flex-wrap gap-2">
+                                    ${product.judges.map(judge => `
+                                        <span class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-zinc-100 rounded-full text-xs text-zinc-600">
+                                            <iconify-icon icon="lucide:user" width="12" style="stroke-width: 1.5"></iconify-icon>
+                                            ${judge}
+                                        </span>
+                                    `).join('')}
+                                </div>
+                            </div>
+
+                            <!-- Actions -->
+                            <div class="flex items-center gap-3">
+                                <button class="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 bg-zinc-900 text-white text-sm font-medium rounded-lg hover:bg-zinc-800 transition-colors">
+                                    <iconify-icon icon="lucide:download" width="16" style="stroke-width: 1.5"></iconify-icon>
+                                    View Certificate
+                                </button>
+                                <button class="w-10 h-10 border border-zinc-200 rounded-lg flex items-center justify-center hover:bg-zinc-50 transition-colors">
+                                    <iconify-icon icon="lucide:share-2" width="18" class="text-zinc-500" style="stroke-width: 1.5"></iconify-icon>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        // Close modal
+        function closeModal() {
+            const modal = document.getElementById('productModal');
+            modal.classList.add('hidden');
+            document.body.style.overflow = '';
+        }
+
+        // Event listeners
+        document.getElementById('searchInput').addEventListener('input', filterProducts);
+        document.getElementById('categoryFilter').addEventListener('change', filterProducts);
+        document.getElementById('awardFilter').addEventListener('change', filterProducts);
+        document.getElementById('yearFilter').addEventListener('change', filterProducts);
+
+        // Close modal on escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeModal();
+        });
+
+        // Initial render
+        renderProducts(products);
+    </script>
+
+
+</body></html>
