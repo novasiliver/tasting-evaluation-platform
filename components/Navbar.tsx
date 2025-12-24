@@ -30,23 +30,22 @@ export default function Navbar() {
   }, [isUserMenuOpen]);
 
   const navLinks = [
-    { href: '/about', label: 'About' },
     { href: '/services', label: 'Services' },
-    { href: '/awards', label: 'Awards' },
-    { href: '/winners', label: 'Winners' },
+    { href: '/about', label: 'About Us' },
+    { href: '/winners', label: 'Directory' },
     { href: '/contact', label: 'Contact' },
   ];
 
   const isActive = (href: string) => pathname === href;
 
   return (
-    <nav className="fixed top-4 left-4 right-4 z-50">
-      <div className="max-w-6xl mx-auto glass rounded-full px-6 h-16 flex items-center justify-between shadow-sm">
-        <Link href="/" className="flex items-center gap-2 group">
-          <div className="h-8 w-8 bg-orange-600 rounded-full flex items-center justify-center text-white shadow-lg shadow-orange-500/30">
-            <iconify-icon icon="lucide:award" width="16" height="16" style={{ strokeWidth: 1.5 } as React.CSSProperties}></iconify-icon>
+    <nav className="sticky top-0 z-50 bg-[#FDFBF7]/95 backdrop-blur-md border-b border-stone-200">
+      <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+        <Link href="/" className="flex items-center gap-2.5 group">
+          <div className="w-9 h-9 bg-olive text-white rounded-lg flex items-center justify-center shadow-sm group-hover:bg-[#465a26] transition-colors">
+            <iconify-icon icon="lucide:award" width="20" style={{ strokeWidth: 1.5 } as React.CSSProperties}></iconify-icon>
           </div>
-          <span className="text-stone-900 font-semibold tracking-tight text-lg font-heading">Tastecert</span>
+          <span className="font-serif text-xl tracking-tight font-medium text-stone-900">Tastecert</span>
         </Link>
         
         {/* Desktop Navigation */}
@@ -56,7 +55,7 @@ export default function Navbar() {
               key={link.href}
               href={link.href}
               className={`transition-colors ${
-                isActive(link.href) ? 'text-orange-600' : 'hover:text-orange-600'
+                isActive(link.href) ? 'text-[#1C1917]' : 'hover:text-[#1C1917]'
               }`}
             >
               {link.label}
@@ -64,15 +63,15 @@ export default function Navbar() {
           ))}
         </div>
 
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-4">
           {session ? (
             // Logged in user menu
             <div className="relative" ref={userMenuRef}>
               <button
                 onClick={() => setIsUserMenuOpen(!isUserMenuOpen)}
-                className="hidden md:flex items-center gap-2 px-4 py-2 bg-white border border-stone-200 rounded-full hover:bg-stone-50 transition-colors"
+                className="hidden md:flex items-center gap-2 px-4 py-2 bg-white border border-stone-200 rounded-lg hover:bg-stone-50 transition-colors"
               >
-                <div className="w-7 h-7 rounded-full bg-gradient-to-br from-orange-400 to-orange-600 flex items-center justify-center text-white text-xs font-semibold">
+                <div className="w-7 h-7 rounded-full bg-olive flex items-center justify-center text-white text-xs font-semibold">
                   {(session.user.name || session.user.email || 'U')[0].toUpperCase()}
                 </div>
                 <span className="text-sm font-medium text-stone-700">{session.user.name || 'Account'}</span>
@@ -151,11 +150,11 @@ export default function Navbar() {
           ) : (
             // Not logged in - show sign in and submit buttons
             <>
-              <Link href="/auth/signin" className="hidden md:block text-sm font-medium text-stone-700 hover:text-orange-600 transition-colors">
-                Sign In
+              <Link href="/auth/signin" className="hidden sm:block text-sm font-medium text-stone-600 hover:text-[#1C1917] transition-colors">
+                Login
               </Link>
-              <Link href="/submit" className="text-sm font-semibold px-5 py-2 bg-stone-900 text-white rounded-full hover:bg-stone-800 transition-all shadow-lg shadow-stone-900/20">
-                Submit Product
+              <Link href="/submit" className="bg-[#1C1917] hover:bg-stone-800 text-white px-5 py-2.5 rounded-lg text-sm font-medium transition-all shadow-sm">
+                Get Certified
               </Link>
             </>
           )}
@@ -181,16 +180,16 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       {isOpen && (
-        <div className="md:hidden mt-2">
-          <div className="glass rounded-2xl px-4 py-3 space-y-1 shadow-sm">
+        <div className="md:hidden border-t border-stone-200 bg-[#FDFBF7]">
+          <div className="px-6 py-4 space-y-1">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
                 className={`block px-3 py-2 text-base font-medium rounded-lg transition-colors ${
                   isActive(link.href) 
-                    ? 'text-orange-600 bg-orange-50/50' 
-                    : 'text-stone-700 hover:text-orange-600 hover:bg-stone-50/50'
+                    ? 'text-[#1C1917] bg-stone-100' 
+                    : 'text-stone-600 hover:text-[#1C1917] hover:bg-stone-50'
                 }`}
                 onClick={() => setIsOpen(false)}
               >
@@ -202,7 +201,7 @@ export default function Navbar() {
                 <>
                   <Link
                     href={session.user.role === 'ADMIN' ? '/admin' : '/dashboard'}
-                    className="block px-3 py-2 text-base font-medium rounded-lg text-stone-700 hover:text-orange-600 hover:bg-stone-50/50 transition-colors"
+                    className="block px-3 py-2 text-base font-medium rounded-lg text-stone-600 hover:text-[#1C1917] hover:bg-stone-50 transition-colors"
                     onClick={() => setIsOpen(false)}
                   >
                     {session.user.role === 'ADMIN' ? 'Admin Dashboard' : 'My Dashboard'}
@@ -218,13 +217,22 @@ export default function Navbar() {
                   </button>
                 </>
               ) : (
-                <Link
-                  href="/auth/signin"
-                  className="block px-3 py-2 text-base font-medium rounded-lg text-stone-700 hover:text-orange-600 hover:bg-stone-50/50 transition-colors"
-                  onClick={() => setIsOpen(false)}
-                >
-                  Sign In
-                </Link>
+                <>
+                  <Link
+                    href="/auth/signin"
+                    className="block px-3 py-2 text-base font-medium rounded-lg text-stone-600 hover:text-[#1C1917] hover:bg-stone-50 transition-colors"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    Login
+                  </Link>
+                  <Link
+                    href="/submit"
+                    className="block px-3 py-2 text-base font-medium rounded-lg bg-[#1C1917] text-white hover:bg-stone-800 transition-colors"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    Get Certified
+                  </Link>
+                </>
               )}
             </div>
           </div>
@@ -233,4 +241,3 @@ export default function Navbar() {
     </nav>
   );
 }
-

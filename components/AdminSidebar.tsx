@@ -51,14 +51,14 @@ export default function AdminSidebar() {
   };
 
   return (
-    <aside className="w-60 bg-white border-r border-zinc-200/80 flex flex-col fixed h-full z-40">
+    <aside className="w-60 bg-white border-r border-stone-200 flex flex-col fixed h-full z-40">
       {/* Logo */}
-      <div className="p-5 border-b border-zinc-100">
+      <div className="p-5 border-b border-stone-100">
         <Link href="/admin" className="flex items-center gap-2.5">
-          <div className="w-8 h-8 bg-gradient-to-br from-amber-500 to-orange-600 rounded-lg flex items-center justify-center">
+          <div className="w-8 h-8 bg-olive rounded-lg flex items-center justify-center shadow-sm">
             <iconify-icon icon="lucide:award" width="16" className="text-white" style={{ strokeWidth: 1.5 } as React.CSSProperties}></iconify-icon>
           </div>
-          <span className="text-zinc-900 font-semibold tracking-tight">Tastecert</span>
+          <span className="text-stone-900 font-serif font-semibold tracking-tight">Tastecert</span>
         </Link>
       </div>
 
@@ -71,19 +71,19 @@ export default function AdminSidebar() {
               href={item.href}
               className={`flex items-center gap-2.5 px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
                 isActive(item.href)
-                  ? 'bg-zinc-900 text-white'
-                  : 'text-zinc-600 hover:bg-zinc-50'
+                  ? 'bg-olive text-white'
+                  : 'text-stone-600 hover:bg-stone-50'
               }`}
             >
               <iconify-icon
                 icon={item.icon}
                 width="18"
                 style={{ strokeWidth: 1.5 } as React.CSSProperties}
-                className={isActive(item.href) ? '' : 'text-zinc-400'}
+                className={isActive(item.href) ? '' : 'text-stone-400'}
               ></iconify-icon>
               {item.label}
               {item.count && (
-                <span className="ml-auto text-xs font-medium text-amber-600 bg-amber-50 px-1.5 py-0.5 rounded">
+                <span className="ml-auto text-xs font-medium text-gold bg-amber-50 px-1.5 py-0.5 rounded">
                   {item.count}
                 </span>
               )}
@@ -91,8 +91,8 @@ export default function AdminSidebar() {
           ))}
         </div>
 
-        <div className="mt-6 pt-6 border-t border-zinc-100">
-          <p className="px-3 mb-2 text-xs font-medium text-zinc-400 uppercase tracking-wider">System</p>
+        <div className="mt-6 pt-6 border-t border-stone-100">
+          <p className="px-3 mb-2 text-xs font-medium text-stone-400 uppercase tracking-wider">System</p>
           <div className="space-y-0.5">
             {systemItems.map((item) => (
               <Link
@@ -100,15 +100,15 @@ export default function AdminSidebar() {
                 href={item.href}
                 className={`flex items-center gap-2.5 px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
                   isActive(item.href)
-                    ? 'bg-zinc-900 text-white'
-                    : 'text-zinc-600 hover:bg-zinc-50'
+                    ? 'bg-olive text-white'
+                    : 'text-stone-600 hover:bg-stone-50'
                 }`}
               >
                 <iconify-icon
                   icon={item.icon}
                   width="18"
                   style={{ strokeWidth: 1.5 } as React.CSSProperties}
-                  className={isActive(item.href) ? '' : 'text-zinc-400'}
+                  className={isActive(item.href) ? '' : 'text-stone-400'}
                 ></iconify-icon>
                 {item.label}
               </Link>
@@ -118,19 +118,19 @@ export default function AdminSidebar() {
       </nav>
 
       {/* User */}
-      <div className="p-3 border-t border-zinc-100">
+      <div className="p-3 border-t border-stone-100">
         <button
           onClick={() => signOut({ callbackUrl: '/auth/signin' })}
-          className="w-full flex items-center gap-2.5 p-2 rounded-lg hover:bg-zinc-50 transition-colors cursor-pointer"
+          className="w-full flex items-center gap-2.5 p-2 rounded-lg hover:bg-stone-50 transition-colors cursor-pointer"
         >
-          <div className="w-8 h-8 rounded-full bg-gradient-to-br from-zinc-700 to-zinc-900 flex items-center justify-center text-white text-xs font-medium">
+          <div className="w-8 h-8 rounded-full bg-olive flex items-center justify-center text-white text-xs font-medium">
             AD
           </div>
           <div className="flex-1 min-w-0 text-left">
-            <p className="text-sm font-medium text-zinc-900 truncate">Admin</p>
-            <p className="text-xs text-zinc-400 truncate">admin@tastecert.com</p>
+            <p className="text-sm font-medium text-stone-900 truncate">Admin</p>
+            <p className="text-xs text-stone-400 truncate">admin@tastecert.com</p>
           </div>
-          <iconify-icon icon="lucide:log-out" width="16" className="text-zinc-400" style={{ strokeWidth: 1.5 } as React.CSSProperties}></iconify-icon>
+          <iconify-icon icon="lucide:log-out" width="16" className="text-stone-400" style={{ strokeWidth: 1.5 } as React.CSSProperties}></iconify-icon>
         </button>
       </div>
     </aside>

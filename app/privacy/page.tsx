@@ -18,7 +18,7 @@ export default function PrivacyPolicyPage() {
       <section className="pt-36 pb-12 md:pt-40 md:pb-16">
         <div className="max-w-3xl mx-auto px-6">
           <div className="flex items-center gap-2 text-sm text-stone-400 mb-6">
-            <Link href="/" className="hover:text-orange-600 transition-colors">Home</Link>
+            <Link href="/" className="hover:text-olive-600 transition-colors">Home</Link>
             <iconify-icon icon="lucide:chevron-right" width="14" style={{ strokeWidth: 1.5 } as React.CSSProperties}></iconify-icon>
             <span className="text-stone-600">Privacy Policy</span>
           </div>
@@ -44,21 +44,21 @@ export default function PrivacyPolicyPage() {
         <div className="max-w-3xl mx-auto px-6">
           <div className="bg-white rounded-2xl border border-stone-100 p-6">
             <h2 className="text-sm font-semibold text-stone-900 mb-4 font-heading flex items-center gap-2">
-              <iconify-icon icon="lucide:list" width="16" style={{ strokeWidth: 1.5 } as React.CSSProperties} className="text-orange-600"></iconify-icon>
+              <iconify-icon icon="lucide:list" width="16" style={{ strokeWidth: 1.5 } as React.CSSProperties} className="text-olive-600"></iconify-icon>
               Table of Contents
             </h2>
             <nav className="grid grid-cols-1 md:grid-cols-2 gap-2">
-              <a href="#information-we-collect" className="text-sm text-stone-500 hover:text-orange-600 transition-colors py-1">1. Information We Collect</a>
-              <a href="#how-we-use" className="text-sm text-stone-500 hover:text-orange-600 transition-colors py-1">2. How We Use Your Information</a>
-              <a href="#information-sharing" className="text-sm text-stone-500 hover:text-orange-600 transition-colors py-1">3. Information Sharing</a>
-              <a href="#data-retention" className="text-sm text-stone-500 hover:text-orange-600 transition-colors py-1">4. Data Retention</a>
-              <a href="#your-rights" className="text-sm text-stone-500 hover:text-orange-600 transition-colors py-1">5. Your Rights</a>
-              <a href="#cookies" className="text-sm text-stone-500 hover:text-orange-600 transition-colors py-1">6. Cookies & Tracking</a>
-              <a href="#security" className="text-sm text-stone-500 hover:text-orange-600 transition-colors py-1">7. Security</a>
-              <a href="#international" className="text-sm text-stone-500 hover:text-orange-600 transition-colors py-1">8. International Transfers</a>
-              <a href="#children" className="text-sm text-stone-500 hover:text-orange-600 transition-colors py-1">9. Children's Privacy</a>
-              <a href="#changes" className="text-sm text-stone-500 hover:text-orange-600 transition-colors py-1">10. Changes to This Policy</a>
-              <a href="#contact" className="text-sm text-stone-500 hover:text-orange-600 transition-colors py-1">11. Contact Us</a>
+              <a href="#information-we-collect" className="text-sm text-stone-500 hover:text-olive-600 transition-colors py-1">1. Information We Collect</a>
+              <a href="#how-we-use" className="text-sm text-stone-500 hover:text-olive-600 transition-colors py-1">2. How We Use Your Information</a>
+              <a href="#information-sharing" className="text-sm text-stone-500 hover:text-olive-600 transition-colors py-1">3. Information Sharing</a>
+              <a href="#data-retention" className="text-sm text-stone-500 hover:text-olive-600 transition-colors py-1">4. Data Retention</a>
+              <a href="#your-rights" className="text-sm text-stone-500 hover:text-olive-600 transition-colors py-1">5. Your Rights</a>
+              <a href="#cookies" className="text-sm text-stone-500 hover:text-olive-600 transition-colors py-1">6. Cookies & Tracking</a>
+              <a href="#security" className="text-sm text-stone-500 hover:text-olive-600 transition-colors py-1">7. Security</a>
+              <a href="#international" className="text-sm text-stone-500 hover:text-olive-600 transition-colors py-1">8. International Transfers</a>
+              <a href="#children" className="text-sm text-stone-500 hover:text-olive-600 transition-colors py-1">9. Children's Privacy</a>
+              <a href="#changes" className="text-sm text-stone-500 hover:text-olive-600 transition-colors py-1">10. Changes to This Policy</a>
+              <a href="#contact" className="text-sm text-stone-500 hover:text-olive-600 transition-colors py-1">11. Contact Us</a>
             </nav>
           </div>
         </div>
@@ -70,10 +70,10 @@ export default function PrivacyPolicyPage() {
           <div className="prose prose-stone max-w-none">
             
             {/* Introduction */}
-            <div className="bg-orange-50 border border-orange-100 rounded-2xl p-6 mb-10">
+            <div className="bg-olive-50 border border-olive-100 rounded-2xl p-6 mb-10">
               <div className="flex gap-4">
-                <div className="w-10 h-10 rounded-full bg-orange-100 flex items-center justify-center shrink-0">
-                  <iconify-icon icon="lucide:shield" width="20" className="text-orange-600" style={{ strokeWidth: 1.5 } as React.CSSProperties}></iconify-icon>
+                <div className="w-10 h-10 rounded-full bg-olive-100 flex items-center justify-center shrink-0">
+                  <iconify-icon icon="lucide:shield" width="20" className="text-olive-600" style={{ strokeWidth: 1.5 } as React.CSSProperties}></iconify-icon>
                 </div>
                 <div>
                   <h3 className="text-base font-semibold text-stone-900 mb-2 font-heading">Our Commitment to Privacy</h3>
@@ -98,7 +98,7 @@ export default function PrivacyPolicyPage() {
               <div className="space-y-4">
                 <div className="bg-white rounded-xl border border-stone-100 p-5">
                   <h4 className="text-sm font-semibold text-stone-900 mb-2 font-heading flex items-center gap-2">
-                    <iconify-icon icon="lucide:user" width="16" className="text-orange-600" style={{ strokeWidth: 1.5 } as React.CSSProperties}></iconify-icon>
+                    <iconify-icon icon="lucide:user" width="16" className="text-olive-600" style={{ strokeWidth: 1.5 } as React.CSSProperties}></iconify-icon>
                     Personal Information
                   </h4>
                   <ul className="text-sm text-stone-600 space-y-2">
@@ -178,8 +178,8 @@ export default function PrivacyPolicyPage() {
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="flex items-start gap-3 p-4 bg-white rounded-xl border border-stone-100">
-                  <div className="w-8 h-8 rounded-lg bg-orange-50 flex items-center justify-center shrink-0">
-                    <iconify-icon icon="lucide:package" width="16" className="text-orange-600" style={{ strokeWidth: 1.5 } as React.CSSProperties}></iconify-icon>
+                  <div className="w-8 h-8 rounded-lg bg-olive-50 flex items-center justify-center shrink-0">
+                    <iconify-icon icon="lucide:package" width="16" className="text-olive-600" style={{ strokeWidth: 1.5 } as React.CSSProperties}></iconify-icon>
                   </div>
                   <div>
                     <h4 className="text-sm font-semibold text-stone-900 font-heading">Service Delivery</h4>
@@ -310,7 +310,7 @@ export default function PrivacyPolicyPage() {
                 <h2 className="text-xl font-semibold text-stone-900 tracking-tight font-heading">Cookies & Tracking</h2>
               </div>
               <p className="text-stone-600 leading-relaxed">
-                We use cookies and similar tracking technologies to collect information about your browsing activities. For more details, please see our <Link href="/cookies" className="text-orange-600 hover:underline">Cookie Policy</Link>.
+                We use cookies and similar tracking technologies to collect information about your browsing activities. For more details, please see our <Link href="/cookies" className="text-olive-600 hover:underline">Cookie Policy</Link>.
               </p>
             </div>
 
@@ -365,15 +365,15 @@ export default function PrivacyPolicyPage() {
               <div className="bg-white rounded-xl border border-stone-100 p-5">
                 <div className="space-y-3 text-sm">
                   <div className="flex items-center gap-2">
-                    <iconify-icon icon="lucide:mail" width="16" className="text-orange-600" style={{ strokeWidth: 1.5 } as React.CSSProperties}></iconify-icon>
-                    <a href="mailto:privacy@tastecert.com" className="text-orange-600 hover:underline">privacy@tastecert.com</a>
+                    <iconify-icon icon="lucide:mail" width="16" className="text-olive-600" style={{ strokeWidth: 1.5 } as React.CSSProperties}></iconify-icon>
+                    <a href="mailto:privacy@tastecert.com" className="text-olive-600 hover:underline">privacy@tastecert.com</a>
                   </div>
                   <div className="flex items-center gap-2">
-                    <iconify-icon icon="lucide:phone" width="16" className="text-orange-600" style={{ strokeWidth: 1.5 } as React.CSSProperties}></iconify-icon>
+                    <iconify-icon icon="lucide:phone" width="16" className="text-olive-600" style={{ strokeWidth: 1.5 } as React.CSSProperties}></iconify-icon>
                     <span className="text-stone-600">+1 (555) 123-4567</span>
                   </div>
                   <div className="flex items-start gap-2">
-                    <iconify-icon icon="lucide:map-pin" width="16" className="text-orange-600 mt-0.5" style={{ strokeWidth: 1.5 } as React.CSSProperties}></iconify-icon>
+                    <iconify-icon icon="lucide:map-pin" width="16" className="text-olive-600 mt-0.5" style={{ strokeWidth: 1.5 } as React.CSSProperties}></iconify-icon>
                     <span className="text-stone-600">Tastecert, Inc.<br />New York, NY</span>
                   </div>
                 </div>

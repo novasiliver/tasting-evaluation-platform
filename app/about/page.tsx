@@ -1,12 +1,12 @@
-import Image from 'next/image';
+import Link from 'next/link';
 
 export const metadata = {
   title: 'About Us | Tastecert',
-  description: 'Premium quality certification for specialty food products. Expert-led evaluation process you can trust.',
-  keywords: ['about tastecert', 'quality certification', 'product evaluation experts', 'independent certification'],
+  description: 'The science behind every flavor. We combine sensory expertise with chemical analysis to build the world\'s most trusted food quality database.',
+  keywords: ['about tastecert', 'quality certification', 'food science', 'sensory analysis'],
   openGraph: {
-    title: 'About Tastecert - Premium Quality Certification',
-    description: 'Independent certification for exceptional specialty products.',
+    title: 'About Us - Tastecert',
+    description: 'The science behind every flavor.',
     type: 'website',
   },
 };
@@ -15,383 +15,245 @@ export default function AboutPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="pt-40 pb-20 relative overflow-hidden">
-        <div className="absolute inset-0 -z-10">
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-orange-100/50 rounded-[100%] blur-3xl"></div>
-        </div>
-
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white border border-stone-200 shadow-sm text-xs font-semibold text-stone-600 mb-8">
-            <iconify-icon icon="lucide:info" width="14" style={{ strokeWidth: 1.5 } as React.CSSProperties}></iconify-icon>
-            About Tastecert
+      <section className="relative pt-24 pb-20 px-6 mesh-bg border-b border-stone-200">
+        <div className="max-w-4xl mx-auto text-center">
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white border border-stone-200 mb-8 shadow-sm">
+            <span className="w-2 h-2 rounded-full bg-olive"></span>
+            <span className="text-xs font-semibold uppercase tracking-widest text-stone-600">Founded 2012</span>
           </div>
           
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-stone-900 tracking-tight leading-tight mb-6 font-heading">
-            The authority on specialty product excellence
+          <h1 className="font-serif text-5xl md:text-7xl text-[#1C1917] leading-[1.05] tracking-tight mb-8">
+            The science behind<br/>every flavor.
           </h1>
           
-          <p className="text-lg md:text-xl text-stone-500 leading-relaxed max-w-2xl mx-auto">
-            We provide prestigious certification for exceptional olive oils, wines, and gourmet foods—delivering independent evaluation that producers trust and consumers recognize.
+          <p className="text-lg md:text-xl text-stone-600 font-light leading-relaxed max-w-2xl mx-auto mb-12">
+            We exist to provide an objective truth in a subjective world. By combining sensory expertise with chemical analysis, we are building the world's most trusted food quality database.
           </p>
+
+          {/* Abstract Visual: The "Spectrum" */}
+          <div className="flex justify-center gap-1 h-16 items-end max-w-xs mx-auto opacity-80">
+            <div className="w-1 bg-olive h-8 rounded-full"></div>
+            <div className="w-1 bg-olive/80 h-12 rounded-full"></div>
+            <div className="w-1 bg-olive/60 h-6 rounded-full"></div>
+            <div className="w-1 bg-gold h-16 rounded-full mx-2"></div>
+            <div className="w-1 bg-[#1C1917]/60 h-10 rounded-full"></div>
+            <div className="w-1 bg-[#1C1917]/40 h-5 rounded-full"></div>
+            <div className="w-1 bg-[#1C1917]/20 h-8 rounded-full"></div>
+          </div>
+          <p className="text-xs text-stone-400 mt-4 font-mono">Sensory Data Spectrum v2.0</p>
         </div>
       </section>
 
-      {/* Mission Section */}
-      <section className="py-20">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div>
-              <span className="text-xs font-semibold uppercase tracking-widest text-orange-600 mb-4 block">Our Mission</span>
-              <h2 className="text-3xl md:text-4xl font-semibold text-stone-900 tracking-tight mb-6 font-heading">
-                Elevating craftsmanship through certification
-              </h2>
-              <p className="text-stone-500 leading-relaxed mb-6">
-                Tastecert exists to create a trusted, transparent standard for certifying exceptional specialty products. We believe every producer deserves fair assessment, and every consumer deserves honest information about the quality of what they buy.
-              </p>
-              <p className="text-stone-500 leading-relaxed mb-8">
-                Our organization operates independently from manufacturers, retailers, and advertisers. We have no financial stake in the products we evaluate—our only commitment is to accuracy and integrity.
-              </p>
-              
-              <div className="flex flex-wrap gap-4">
-                <div className="flex items-center gap-2 px-4 py-2 bg-white rounded-full border border-stone-200 text-sm font-medium text-stone-700">
-                  <iconify-icon icon="lucide:shield-check" width="16" className="text-green-600" style={{ strokeWidth: 1.5 } as React.CSSProperties}></iconify-icon>
-                  100% Independent
-                </div>
-                <div className="flex items-center gap-2 px-4 py-2 bg-white rounded-full border border-stone-200 text-sm font-medium text-stone-700">
-                  <iconify-icon icon="lucide:eye-off" width="16" className="text-blue-600" style={{ strokeWidth: 1.5 } as React.CSSProperties}></iconify-icon>
-                  Blind Testing
-                </div>
-                <div className="flex items-center gap-2 px-4 py-2 bg-white rounded-full border border-stone-200 text-sm font-medium text-stone-700">
-                  <iconify-icon icon="lucide:award" width="16" className="text-orange-600" style={{ strokeWidth: 1.5 } as React.CSSProperties}></iconify-icon>
-                  ISO Certified
-                </div>
-              </div>
+      {/* Stats Grid */}
+      <section className="border-b border-stone-200 bg-white">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 divide-x divide-stone-100">
+            <div className="py-12 pr-6">
+              <div className="text-4xl font-serif text-[#1C1917] mb-1">12k+</div>
+              <div className="text-xs font-semibold uppercase tracking-wide text-stone-500">Products Certified</div>
             </div>
+            <div className="py-12 px-6">
+              <div className="text-4xl font-serif text-[#1C1917] mb-1">85</div>
+              <div className="text-xs font-semibold uppercase tracking-wide text-stone-500">Countries Served</div>
+            </div>
+            <div className="py-12 px-6">
+              <div className="text-4xl font-serif text-[#1C1917] mb-1">400+</div>
+              <div className="text-xs font-semibold uppercase tracking-wide text-stone-500">Expert Sommeliers</div>
+            </div>
+            <div className="py-12 pl-6">
+              <div className="text-4xl font-serif text-[#1C1917] mb-1">99.9%</div>
+              <div className="text-xs font-semibold uppercase tracking-wide text-stone-500">Analysis Accuracy</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Mission & Methodology */}
+      <section className="py-24 px-6 bg-[#FDFBF7]">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-16 items-start">
             
-            <div className="relative">
-              <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl shadow-stone-900/10 relative">
-                <Image src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?q=80&w=2670&auto=format&fit=crop" alt="Premium wine evaluation and certification" fill className="object-cover" />
+            {/* Left: Narrative */}
+            <div>
+              <h2 className="font-serif text-3xl md:text-4xl text-[#1C1917] tracking-tight mb-6">
+                Bridging the gap between artisanal craft and laboratory precision.
+              </h2>
+              <div className="space-y-6 text-stone-600 leading-relaxed">
+                <p>
+                  Traditionally, taste has been a matter of opinion. One critic's gold medal is another's pass. At Tastecert, we recognized that while taste is personal, quality is measurable.
+                </p>
+                <p>
+                  Founded by a coalition of food chemists and Michelin-star sommeliers, we developed the <strong>Tastecert Index™</strong>. This proprietary methodology digitizes flavor profiles, allowing brands to maintain consistency and consumers to trust what they buy.
+                </p>
               </div>
-              <div className="absolute -bottom-6 -left-6 bg-white p-5 rounded-xl shadow-lg border border-stone-100">
-                <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 rounded-full bg-orange-100 flex items-center justify-center text-orange-600">
-                    <iconify-icon icon="lucide:users" width="24" style={{ strokeWidth: 1.5 } as React.CSSProperties}></iconify-icon>
-                  </div>
-                  <div>
-                    <div className="text-2xl font-bold text-stone-900 font-heading">50+</div>
-                    <div className="text-xs text-stone-500">Certified Panelists</div>
-                  </div>
+
+              <div className="mt-10 flex gap-4">
+                <div className="flex items-center gap-2 text-sm font-medium text-olive">
+                  <iconify-icon icon="lucide:check-circle" width="16"></iconify-icon>
+                  <span>ISO 9001 Certified</span>
+                </div>
+                <div className="flex items-center gap-2 text-sm font-medium text-olive">
+                  <iconify-icon icon="lucide:check-circle" width="16"></iconify-icon>
+                  <span>Independent Labs</span>
                 </div>
               </div>
             </div>
+
+            {/* Right: The Bento Grid (No images) */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {/* Card 1 */}
+              <div className="bg-white p-6 rounded-xl border border-stone-200 shadow-sm hover:shadow-md transition-shadow">
+                <div className="w-10 h-10 bg-stone-50 rounded-lg flex items-center justify-center text-[#1C1917] mb-4">
+                  <iconify-icon icon="lucide:flask-conical" width="20"></iconify-icon>
+                </div>
+                <h3 className="font-serif text-lg text-[#1C1917] mb-2">Chemical Profiling</h3>
+                <p className="text-sm text-stone-500 leading-relaxed">
+                  Gas chromatography mass spectrometry identifies over 2,000 volatile compounds.
+                </p>
+              </div>
+
+              {/* Card 2 */}
+              <div className="bg-white p-6 rounded-xl border border-stone-200 shadow-sm hover:shadow-md transition-shadow">
+                <div className="w-10 h-10 bg-stone-50 rounded-lg flex items-center justify-center text-[#1C1917] mb-4">
+                  <iconify-icon icon="lucide:brain-circuit" width="20"></iconify-icon>
+                </div>
+                <h3 className="font-serif text-lg text-[#1C1917] mb-2">AI Benchmarking</h3>
+                <p className="text-sm text-stone-500 leading-relaxed">
+                  Our neural networks compare samples against a historical dataset of award-winning products.
+                </p>
+              </div>
+
+              {/* Card 3 */}
+              <div className="bg-white p-6 rounded-xl border border-stone-200 shadow-sm hover:shadow-md transition-shadow sm:col-span-2">
+                <div className="w-10 h-10 bg-stone-50 rounded-lg flex items-center justify-center text-[#1C1917] mb-4">
+                  <iconify-icon icon="lucide:users" width="20"></iconify-icon>
+                </div>
+                <h3 className="font-serif text-lg text-[#1C1917] mb-2">Blind Panel Testing</h3>
+                <p className="text-sm text-stone-500 leading-relaxed max-w-md">
+                  The human element remains crucial. Double-blind tests with certified sensory experts calibrate our digital findings to ensure emotional resonance.
+                </p>
+              </div>
+            </div>
+
           </div>
         </div>
       </section>
 
-      {/* What We Evaluate */}
-      <section className="py-20 bg-white border-y border-stone-100">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="text-center max-w-2xl mx-auto mb-16">
-            <span className="text-xs font-semibold uppercase tracking-widest text-orange-600 mb-4 block">What We Evaluate</span>
-            <h2 className="text-3xl md:text-4xl font-semibold text-stone-900 tracking-tight mb-4 font-heading">
-              Food & beverage products of all kinds
-            </h2>
-            <p className="text-stone-500">
-              From artisan producers to global brands, we evaluate a wide range of consumable products with the same rigorous standards.
+      {/* Core Values / Culture */}
+      <section className="py-24 px-6 border-t border-stone-200 dot-pattern">
+        <div className="max-w-3xl mx-auto text-center mb-16">
+          <h2 className="font-serif text-3xl text-[#1C1917] tracking-tight mb-4">Our Principles</h2>
+          <p className="text-stone-600">Guided by accuracy, driven by passion.</p>
+        </div>
+
+        <div className="max-w-5xl mx-auto grid md:grid-cols-3 gap-8">
+          {/* Value 1 */}
+          <div className="group">
+            <div className="h-1 w-12 bg-olive mb-6 group-hover:w-full transition-all duration-500 ease-out"></div>
+            <h3 className="text-lg font-medium text-[#1C1917] mb-3">Absolute Neutrality</h3>
+            <p className="text-sm text-stone-500 leading-relaxed">
+              We accept no funding from food manufacturers for our rankings. Our certification process is entirely blind and data-dependent.
             </p>
           </div>
-
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            <div className="group p-6 bg-stone-50 rounded-2xl border border-stone-100 hover:border-orange-200 hover:bg-orange-50/30 transition-all cursor-default">
-              <div className="w-12 h-12 rounded-xl bg-white border border-stone-200 flex items-center justify-center mb-4 group-hover:border-orange-200 transition-colors">
-                <iconify-icon icon="lucide:coffee" width="24" className="text-stone-600 group-hover:text-orange-600 transition-colors" style={{ strokeWidth: 1.5 } as React.CSSProperties}></iconify-icon>
-              </div>
-              <h3 className="font-semibold text-stone-900 mb-2 font-heading">Beverages</h3>
-              <p className="text-sm text-stone-500">Coffee, tea, juices, soft drinks, water, energy drinks</p>
-            </div>
-
-            <div className="group p-6 bg-stone-50 rounded-2xl border border-stone-100 hover:border-orange-200 hover:bg-orange-50/30 transition-all cursor-default">
-              <div className="w-12 h-12 rounded-xl bg-white border border-stone-200 flex items-center justify-center mb-4 group-hover:border-orange-200 transition-colors">
-                <iconify-icon icon="lucide:wine" width="24" className="text-stone-600 group-hover:text-orange-600 transition-colors" style={{ strokeWidth: 1.5 } as React.CSSProperties}></iconify-icon>
-              </div>
-              <h3 className="font-semibold text-stone-900 mb-2 font-heading">Alcohol</h3>
-              <p className="text-sm text-stone-500">Wine, beer, spirits, cider, ready-to-drink cocktails</p>
-            </div>
-
-            <div className="group p-6 bg-stone-50 rounded-2xl border border-stone-100 hover:border-orange-200 hover:bg-orange-50/30 transition-all cursor-default">
-              <div className="w-12 h-12 rounded-xl bg-white border border-stone-200 flex items-center justify-center mb-4 group-hover:border-orange-200 transition-colors">
-                <iconify-icon icon="lucide:milk" width="24" className="text-stone-600 group-hover:text-orange-600 transition-colors" style={{ strokeWidth: 1.5 } as React.CSSProperties}></iconify-icon>
-              </div>
-              <h3 className="font-semibold text-stone-900 mb-2 font-heading">Dairy & Alternatives</h3>
-              <p className="text-sm text-stone-500">Milk, cheese, yogurt, plant-based alternatives</p>
-            </div>
-
-            <div className="group p-6 bg-stone-50 rounded-2xl border border-stone-100 hover:border-orange-200 hover:bg-orange-50/30 transition-all cursor-default">
-              <div className="w-12 h-12 rounded-xl bg-white border border-stone-200 flex items-center justify-center mb-4 group-hover:border-orange-200 transition-colors">
-                <iconify-icon icon="lucide:cookie" width="24" className="text-stone-600 group-hover:text-orange-600 transition-colors" style={{ strokeWidth: 1.5 } as React.CSSProperties}></iconify-icon>
-              </div>
-              <h3 className="font-semibold text-stone-900 mb-2 font-heading">Snacks & Sweets</h3>
-              <p className="text-sm text-stone-500">Chocolate, confectionery, chips, crackers, nuts</p>
-            </div>
-
-            <div className="group p-6 bg-stone-50 rounded-2xl border border-stone-100 hover:border-orange-200 hover:bg-orange-50/30 transition-all cursor-default">
-              <div className="w-12 h-12 rounded-xl bg-white border border-stone-200 flex items-center justify-center mb-4 group-hover:border-orange-200 transition-colors">
-                <iconify-icon icon="lucide:salad" width="24" className="text-stone-600 group-hover:text-orange-600 transition-colors" style={{ strokeWidth: 1.5 } as React.CSSProperties}></iconify-icon>
-              </div>
-              <h3 className="font-semibold text-stone-900 mb-2 font-heading">Prepared Foods</h3>
-              <p className="text-sm text-stone-500">Sauces, soups, ready meals, dressings, spreads</p>
-            </div>
-
-            <div className="group p-6 bg-stone-50 rounded-2xl border border-stone-100 hover:border-orange-200 hover:bg-orange-50/30 transition-all cursor-default">
-              <div className="w-12 h-12 rounded-xl bg-white border border-stone-200 flex items-center justify-center mb-4 group-hover:border-orange-200 transition-colors">
-                <iconify-icon icon="lucide:wheat" width="24" className="text-stone-600 group-hover:text-orange-600 transition-colors" style={{ strokeWidth: 1.5 } as React.CSSProperties}></iconify-icon>
-              </div>
-              <h3 className="font-semibold text-stone-900 mb-2 font-heading">Bakery & Grains</h3>
-              <p className="text-sm text-stone-500">Bread, pastries, cereals, pasta, flour products</p>
-            </div>
-
-            <div className="group p-6 bg-stone-50 rounded-2xl border border-stone-100 hover:border-orange-200 hover:bg-orange-50/30 transition-all cursor-default">
-              <div className="w-12 h-12 rounded-xl bg-white border border-stone-200 flex items-center justify-center mb-4 group-hover:border-orange-200 transition-colors">
-                <iconify-icon icon="lucide:beef" width="24" className="text-stone-600 group-hover:text-orange-600 transition-colors" style={{ strokeWidth: 1.5 } as React.CSSProperties}></iconify-icon>
-              </div>
-              <h3 className="font-semibold text-stone-900 mb-2 font-heading">Proteins</h3>
-              <p className="text-sm text-stone-500">Meat, seafood, plant-based proteins, deli products</p>
-            </div>
-
-            <div className="group p-6 bg-stone-50 rounded-2xl border border-stone-100 hover:border-orange-200 hover:bg-orange-50/30 transition-all cursor-default">
-              <div className="w-12 h-12 rounded-xl bg-white border border-stone-200 flex items-center justify-center mb-4 group-hover:border-orange-200 transition-colors">
-                <iconify-icon icon="lucide:droplets" width="24" className="text-stone-600 group-hover:text-orange-600 transition-colors" style={{ strokeWidth: 1.5 } as React.CSSProperties}></iconify-icon>
-              </div>
-              <h3 className="font-semibold text-stone-900 mb-2 font-heading">Oils & Condiments</h3>
-              <p className="text-sm text-stone-500">Olive oil, vinegar, honey, spices, seasonings</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Our Process - continuing in next message due to length */}
-      <section className="py-20">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="text-center max-w-2xl mx-auto mb-16">
-            <span className="text-xs font-semibold uppercase tracking-widest text-orange-600 mb-4 block">Our Process</span>
-            <h2 className="text-3xl md:text-4xl font-semibold text-stone-900 tracking-tight mb-4 font-heading">
-              How we evaluate products
-            </h2>
-            <p className="text-stone-500">
-              Every product goes through a structured, multi-stage evaluation designed to deliver accurate, reproducible results.
+          {/* Value 2 */}
+          <div className="group">
+            <div className="h-1 w-12 bg-gold mb-6 group-hover:w-full transition-all duration-500 ease-out"></div>
+            <h3 className="text-lg font-medium text-[#1C1917] mb-3">Scientific Rigor</h3>
+            <p className="text-sm text-stone-500 leading-relaxed">
+              Methodologies are peer-reviewed annually. We maintain partnerships with 12 leading food science universities.
             </p>
           </div>
-
-          <div className="space-y-6">
-            {/* Step 1 */}
-            <div className="bg-white rounded-2xl border border-stone-200 p-8 md:p-10">
-              <div className="flex flex-col md:flex-row gap-8">
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-full bg-orange-600 text-white flex items-center justify-center text-lg font-bold font-heading shrink-0">
-                    1
-                  </div>
-                </div>
-                <div className="flex-1">
-                  <h3 className="text-xl font-semibold text-stone-900 mb-3 font-heading">Sample Receipt & Anonymization</h3>
-                  <p className="text-stone-500 leading-relaxed mb-4">
-                    Products arrive at our facility and are immediately logged into our tracking system. All identifying information—brand names, packaging, origin details—is removed. Each sample receives a randomized code, ensuring our panelists never know what they're evaluating.
-                  </p>
-                  <div className="flex flex-wrap gap-3">
-                    <span className="px-3 py-1 bg-stone-100 rounded-full text-xs font-medium text-stone-600">Chain of custody documented</span>
-                    <span className="px-3 py-1 bg-stone-100 rounded-full text-xs font-medium text-stone-600">Temperature-controlled storage</span>
-                    <span className="px-3 py-1 bg-stone-100 rounded-full text-xs font-medium text-stone-600">Double-blind coding</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Step 2 */}
-            <div className="bg-white rounded-2xl border border-stone-200 p-8 md:p-10">
-              <div className="flex flex-col md:flex-row gap-8">
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-full bg-orange-600 text-white flex items-center justify-center text-lg font-bold font-heading shrink-0">
-                    2
-                  </div>
-                </div>
-                <div className="flex-1">
-                  <h3 className="text-xl font-semibold text-stone-900 mb-3 font-heading">Expert Sensory Panel Evaluation</h3>
-                  <p className="text-stone-500 leading-relaxed mb-4">
-                    Our trained sensory panelists—certified under ISO 8586 standards—evaluate each product across multiple attributes: appearance, aroma, taste, texture, and aftertaste. Panelists work independently in controlled booths with standardized lighting and temperature to eliminate environmental bias.
-                  </p>
-                  <div className="flex flex-wrap gap-3">
-                    <span className="px-3 py-1 bg-stone-100 rounded-full text-xs font-medium text-stone-600">ISO 8586 certified panelists</span>
-                    <span className="px-3 py-1 bg-stone-100 rounded-full text-xs font-medium text-stone-600">Controlled evaluation environment</span>
-                    <span className="px-3 py-1 bg-stone-100 rounded-full text-xs font-medium text-stone-600">Standardized scoring scales</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Step 3 */}
-            <div className="bg-white rounded-2xl border border-stone-200 p-8 md:p-10">
-              <div className="flex flex-col md:flex-row gap-8">
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-full bg-orange-600 text-white flex items-center justify-center text-lg font-bold font-heading shrink-0">
-                    3
-                  </div>
-                </div>
-                <div className="flex-1">
-                  <h3 className="text-xl font-semibold text-stone-900 mb-3 font-heading">Laboratory Analysis</h3>
-                  <p className="text-stone-500 leading-relaxed mb-4">
-                    Alongside human evaluation, our laboratory conducts instrumental analysis using spectroscopy, chromatography, and other validated methods. This quantifies key compounds—sugars, acids, volatile aromatics—providing objective data that complements sensory findings.
-                  </p>
-                  <div className="flex flex-wrap gap-3">
-                    <span className="px-3 py-1 bg-stone-100 rounded-full text-xs font-medium text-stone-600">Chemical composition analysis</span>
-                    <span className="px-3 py-1 bg-stone-100 rounded-full text-xs font-medium text-stone-600">Validated lab methods</span>
-                    <span className="px-3 py-1 bg-stone-100 rounded-full text-xs font-medium text-stone-600">Quantitative measurements</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Step 4 */}
-            <div className="bg-white rounded-2xl border border-stone-200 p-8 md:p-10">
-              <div className="flex flex-col md:flex-row gap-8">
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-full bg-orange-600 text-white flex items-center justify-center text-lg font-bold font-heading shrink-0">
-                    4
-                  </div>
-                </div>
-                <div className="flex-1">
-                  <h3 className="text-xl font-semibold text-stone-900 mb-3 font-heading">Scoring & Report Generation</h3>
-                  <p className="text-stone-500 leading-relaxed mb-4">
-                    Panel scores are aggregated using statistical methods that identify and account for outliers. Combined with lab data, we generate a comprehensive quality score (0–100) along with detailed attribute breakdowns. Products meeting quality thresholds receive our certification seal.
-                  </p>
-                  <div className="flex flex-wrap gap-3">
-                    <span className="px-3 py-1 bg-stone-100 rounded-full text-xs font-medium text-stone-600">Statistical validation</span>
-                    <span className="px-3 py-1 bg-stone-100 rounded-full text-xs font-medium text-stone-600">Clear scoring criteria</span>
-                    <span className="px-3 py-1 bg-stone-100 rounded-full text-xs font-medium text-stone-600">Actionable insights</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Why Trust Us */}
-      <section className="py-20 bg-stone-900 text-white">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="text-center max-w-2xl mx-auto mb-16">
-            <span className="text-xs font-semibold uppercase tracking-widest text-orange-400 mb-4 block">Why Trust Tastecert</span>
-            <h2 className="text-3xl md:text-4xl font-semibold tracking-tight mb-4 font-heading">
-              Fair, independent, and reliable
-            </h2>
-            <p className="text-stone-400">
-              Our evaluation process is designed to eliminate bias and deliver results you can confidently use for business decisions.
+          {/* Value 3 */}
+          <div className="group">
+            <div className="h-1 w-12 bg-[#1C1917] mb-6 group-hover:w-full transition-all duration-500 ease-out"></div>
+            <h3 className="text-lg font-medium text-[#1C1917] mb-3">Global Accessibility</h3>
+            <p className="text-sm text-stone-500 leading-relaxed">
+              Taste is a universal language. Our standards adapt to regional palates while maintaining a unified quality baseline.
             </p>
           </div>
+        </div>
+      </section>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="p-8 rounded-2xl bg-white/5 border border-white/10">
-              <div className="w-12 h-12 rounded-xl bg-orange-600/20 flex items-center justify-center mb-6">
-                <iconify-icon icon="lucide:ban" width="24" className="text-orange-400" style={{ strokeWidth: 1.5 } as React.CSSProperties}></iconify-icon>
+      {/* Leadership */}
+      <section className="py-24 px-6 bg-white border-t border-stone-200">
+        <div className="max-w-4xl mx-auto">
+          <div className="flex flex-col md:flex-row justify-between items-end mb-12">
+            <h2 className="font-serif text-3xl text-[#1C1917] tracking-tight">Leadership</h2>
+            <Link href="/about" className="text-sm font-medium text-olive hover:text-[#465a26] mt-4 md:mt-0 flex items-center gap-1">
+              View all board members <iconify-icon icon="lucide:arrow-right" width="16"></iconify-icon>
+            </Link>
+          </div>
+
+          <div className="divide-y divide-stone-100 border-t border-b border-stone-100">
+            {/* Member 1 */}
+            <div className="group py-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4 hover:bg-stone-50/50 transition-colors px-4 -mx-4 rounded-lg">
+              <div className="flex items-center gap-4">
+                <div className="w-10 h-10 rounded-full bg-olive/10 text-olive flex items-center justify-center text-sm font-bold font-serif">
+                  DR
+                </div>
+                <div>
+                  <h3 className="text-[#1C1917] font-medium">Dr. Eleanor Vance</h3>
+                  <p className="text-sm text-stone-500">Chief Scientific Officer</p>
+                </div>
               </div>
-              <h3 className="text-lg font-semibold mb-3 font-heading">No Pay-to-Play</h3>
-              <p className="text-stone-400 text-sm leading-relaxed">
-                Evaluation fees cover testing costs only. Payment never influences scores. A product that doesn't meet standards won't receive certification regardless of the fee paid.
-              </p>
+              <div className="flex items-center gap-6">
+                <span className="text-xs text-stone-400 font-mono">PhD, Molecular Gastronomy</span>
+                <iconify-icon icon="lucide:linkedin" className="text-stone-300 group-hover:text-[#0077b5] transition-colors" width="18"></iconify-icon>
+              </div>
             </div>
 
-            <div className="p-8 rounded-2xl bg-white/5 border border-white/10">
-              <div className="w-12 h-12 rounded-xl bg-blue-600/20 flex items-center justify-center mb-6">
-                <iconify-icon icon="lucide:eye-off" width="24" className="text-blue-400" style={{ strokeWidth: 1.5 } as React.CSSProperties}></iconify-icon>
+            {/* Member 2 */}
+            <div className="group py-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4 hover:bg-stone-50/50 transition-colors px-4 -mx-4 rounded-lg">
+              <div className="flex items-center gap-4">
+                <div className="w-10 h-10 rounded-full bg-gold/10 text-gold flex items-center justify-center text-sm font-bold font-serif">
+                  JM
+                </div>
+                <div>
+                  <h3 className="text-[#1C1917] font-medium">Julian Moreau</h3>
+                  <p className="text-sm text-stone-500">Head of Sensory Analysis</p>
+                </div>
               </div>
-              <h3 className="text-lg font-semibold mb-3 font-heading">True Blind Testing</h3>
-              <p className="text-stone-400 text-sm leading-relaxed">
-                Panelists never see brand names, packaging, or price points. They evaluate products purely on sensory merit—what they see, smell, taste, and feel.
-              </p>
+              <div className="flex items-center gap-6">
+                <span className="text-xs text-stone-400 font-mono">Master Sommelier</span>
+                <iconify-icon icon="lucide:linkedin" className="text-stone-300 group-hover:text-[#0077b5] transition-colors" width="18"></iconify-icon>
+              </div>
             </div>
 
-            <div className="p-8 rounded-2xl bg-white/5 border border-white/10">
-              <div className="w-12 h-12 rounded-xl bg-green-600/20 flex items-center justify-center mb-6">
-                <iconify-icon icon="lucide:scale" width="24" className="text-green-400" style={{ strokeWidth: 1.5 } as React.CSSProperties}></iconify-icon>
+            {/* Member 3 */}
+            <div className="group py-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4 hover:bg-stone-50/50 transition-colors px-4 -mx-4 rounded-lg">
+              <div className="flex items-center gap-4">
+                <div className="w-10 h-10 rounded-full bg-[#1C1917]/5 text-[#1C1917] flex items-center justify-center text-sm font-bold font-serif">
+                  AK
+                </div>
+                <div>
+                  <h3 className="text-[#1C1917] font-medium">Sarah Chen</h3>
+                  <p className="text-sm text-stone-500">VP of Operations</p>
+                </div>
               </div>
-              <h3 className="text-lg font-semibold mb-3 font-heading">Standardized Criteria</h3>
-              <p className="text-stone-400 text-sm leading-relaxed">
-                Every product category has defined evaluation criteria developed by food scientists. The same standards apply whether you're a startup or a multinational.
-              </p>
-            </div>
-
-            <div className="p-8 rounded-2xl bg-white/5 border border-white/10">
-              <div className="w-12 h-12 rounded-xl bg-purple-600/20 flex items-center justify-center mb-6">
-                <iconify-icon icon="lucide:rotate-ccw" width="24" className="text-purple-400" style={{ strokeWidth: 1.5 } as React.CSSProperties}></iconify-icon>
+              <div className="flex items-center gap-6">
+                <span className="text-xs text-stone-400 font-mono">MBA, Supply Chain</span>
+                <iconify-icon icon="lucide:linkedin" className="text-stone-300 group-hover:text-[#0077b5] transition-colors" width="18"></iconify-icon>
               </div>
-              <h3 className="text-lg font-semibold mb-3 font-heading">Reproducible Results</h3>
-              <p className="text-stone-400 text-sm leading-relaxed">
-                We use statistical validation to ensure consistency. If we tested your product again under the same conditions, you'd get the same score within a defined margin.
-              </p>
-            </div>
-
-            <div className="p-8 rounded-2xl bg-white/5 border border-white/10">
-              <div className="w-12 h-12 rounded-xl bg-amber-600/20 flex items-center justify-center mb-6">
-                <iconify-icon icon="lucide:building" width="24" className="text-amber-400" style={{ strokeWidth: 1.5 } as React.CSSProperties}></iconify-icon>
-              </div>
-              <h3 className="text-lg font-semibold mb-3 font-heading">No Industry Ownership</h3>
-              <p className="text-stone-400 text-sm leading-relaxed">
-                Tastecert is not owned or funded by producers, retailers, or trade associations. We answer only to our mission of providing honest evaluation.
-              </p>
-            </div>
-
-            <div className="p-8 rounded-2xl bg-white/5 border border-white/10">
-              <div className="w-12 h-12 rounded-xl bg-rose-600/20 flex items-center justify-center mb-6">
-                <iconify-icon icon="lucide:file-check" width="24" className="text-rose-400" style={{ strokeWidth: 1.5 } as React.CSSProperties}></iconify-icon>
-              </div>
-              <h3 className="text-lg font-semibold mb-3 font-heading">Transparent Methodology</h3>
-              <p className="text-stone-400 text-sm leading-relaxed">
-                Our evaluation criteria, scoring methods, and certification thresholds are publicly documented. We believe accountability requires transparency.
-              </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section className="py-20 bg-white border-b border-stone-100">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
-            <div className="text-center">
-              <div className="text-4xl md:text-5xl font-bold text-stone-900 font-heading mb-2">12K+</div>
-              <div className="text-sm text-stone-500 font-medium">Products Evaluated</div>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl md:text-5xl font-bold text-stone-900 font-heading mb-2">50+</div>
-              <div className="text-sm text-stone-500 font-medium">Certified Panelists</div>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl md:text-5xl font-bold text-stone-900 font-heading mb-2">28</div>
-              <div className="text-sm text-stone-500 font-medium">Countries Served</div>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl md:text-5xl font-bold text-stone-900 font-heading mb-2">8</div>
-              <div className="text-sm text-stone-500 font-medium">Years of Operation</div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section className="py-20 bg-stone-50">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <h2 className="text-3xl md:text-4xl font-semibold text-stone-900 tracking-tight mb-4 font-heading">
-            Ready to evaluate your product?
-          </h2>
-          <p className="text-stone-500 mb-8 max-w-xl mx-auto">
-            Submit your food or beverage product for independent evaluation. Get clear, actionable results and—if you qualify—a certification seal trusted by retailers worldwide.
+      {/* CTA Section */}
+      <section className="py-24 px-6 bg-[#1C1917] text-white">
+        <div className="max-w-4xl mx-auto text-center">
+          <iconify-icon icon="lucide:award" width="48" className="text-gold mb-6 opacity-80"></iconify-icon>
+          <h2 className="font-serif text-3xl md:text-5xl tracking-tight mb-6">Join the standard.</h2>
+          <p className="text-stone-400 text-lg mb-10 max-w-xl mx-auto">
+            Demonstrate your commitment to quality with the world's most rigorous taste certification.
           </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a href="/submit" className="w-full sm:w-auto px-8 py-4 bg-orange-600 text-white rounded-full font-semibold hover:bg-orange-500 transition-colors">
-              Submit Your Product
-            </a>
-            <a href="/contact" className="w-full sm:w-auto px-8 py-4 bg-white text-stone-700 border border-stone-200 rounded-full font-semibold hover:bg-stone-50 transition-colors flex items-center justify-center gap-2">
-              <iconify-icon icon="lucide:mail" width="18" style={{ strokeWidth: 1.5 } as React.CSSProperties}></iconify-icon>
-              Contact Us
-            </a>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link href="/submit" className="bg-gold hover:bg-[#b08d4b] text-white px-8 py-3.5 rounded-lg text-sm font-semibold transition-all">
+              Apply for Certification
+            </Link>
+            <Link href="/contact" className="bg-transparent border border-stone-700 hover:bg-stone-800 text-white px-8 py-3.5 rounded-lg text-sm font-semibold transition-all">
+              Contact Sales
+            </Link>
           </div>
         </div>
       </section>

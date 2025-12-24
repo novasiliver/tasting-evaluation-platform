@@ -176,11 +176,11 @@ export default function ProducerDashboard() {
       case 'evaluation':
         return 'bg-blue-50 text-blue-600';
       case 'submission':
-        return 'bg-zinc-100 text-zinc-600';
+        return 'bg-stone-100 text-stone-600';
       case 'action':
-        return 'bg-orange-50 text-orange-600';
+        return 'bg-olive-50 text-olive-600';
       default:
-        return 'bg-zinc-100 text-zinc-600';
+        return 'bg-stone-100 text-stone-600';
     }
   };
 
@@ -189,15 +189,15 @@ export default function ProducerDashboard() {
     : 0;
 
   return (
-    <div className="min-h-screen bg-zinc-50">
+    <div className="min-h-screen bg-stone-50">
       {/* Content */}
       <main className="max-w-7xl mx-auto px-6 lg:px-8 py-8">
         {/* Welcome Section */}
         <div className="mb-8">
-          <h1 className="text-2xl font-semibold text-zinc-900 tracking-tight mb-1">
+          <h1 className="text-2xl font-semibold text-stone-900 tracking-tight mb-1">
             Welcome back, {session?.user?.company || session?.user?.name || 'Producer'}
           </h1>
-          <p className="text-sm text-zinc-500">
+          <p className="text-sm text-stone-500">
             Here's an overview of your certification activity and product status.
           </p>
         </div>
@@ -205,10 +205,10 @@ export default function ProducerDashboard() {
         {/* Overview Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
           {/* Total Products */}
-          <div className="bg-white rounded-xl border border-zinc-200/80 p-5 hover:shadow-md hover:border-zinc-300 transition-all">
+          <div className="bg-white rounded-xl border border-stone-200/80 p-5 hover:shadow-md hover:border-stone-300 transition-all">
             <div className="flex items-start justify-between mb-4">
-              <div className="w-10 h-10 rounded-lg bg-zinc-100 flex items-center justify-center">
-                <iconify-icon icon="lucide:package" width="20" className="text-zinc-600" style={{ strokeWidth: 1.5 } as React.CSSProperties}></iconify-icon>
+              <div className="w-10 h-10 rounded-lg bg-stone-100 flex items-center justify-center">
+                <iconify-icon icon="lucide:package" width="20" className="text-stone-600" style={{ strokeWidth: 1.5 } as React.CSSProperties}></iconify-icon>
               </div>
               {stats.totalProducts > 0 && (
                 <span className="inline-flex items-center gap-1 text-xs font-medium text-emerald-600">
@@ -217,14 +217,14 @@ export default function ProducerDashboard() {
                 </span>
               )}
             </div>
-            <p className="text-2xl font-semibold text-zinc-900 tracking-tight mb-1">
+            <p className="text-2xl font-semibold text-stone-900 tracking-tight mb-1">
               {isLoading ? '...' : stats.totalProducts}
             </p>
-            <p className="text-sm text-zinc-500">Total Products Submitted</p>
+            <p className="text-sm text-stone-500">Total Products Submitted</p>
           </div>
 
           {/* Under Evaluation */}
-          <div className="bg-white rounded-xl border border-zinc-200/80 p-5 hover:shadow-md hover:border-zinc-300 transition-all">
+          <div className="bg-white rounded-xl border border-stone-200/80 p-5 hover:shadow-md hover:border-stone-300 transition-all">
             <div className="flex items-start justify-between mb-4">
               <div className="w-10 h-10 rounded-lg bg-blue-50 flex items-center justify-center">
                 <iconify-icon icon="lucide:clock" width="20" className="text-blue-600" style={{ strokeWidth: 1.5 } as React.CSSProperties}></iconify-icon>
@@ -235,56 +235,56 @@ export default function ProducerDashboard() {
                 </span>
               )}
             </div>
-            <p className="text-2xl font-semibold text-zinc-900 tracking-tight mb-1">
+            <p className="text-2xl font-semibold text-stone-900 tracking-tight mb-1">
               {isLoading ? '...' : stats.underEvaluation}
             </p>
-            <p className="text-sm text-zinc-500">Products Under Evaluation</p>
+            <p className="text-sm text-stone-500">Products Under Evaluation</p>
           </div>
 
           {/* Awarded Products */}
-          <div className="bg-white rounded-xl border border-zinc-200/80 p-5 hover:shadow-md hover:border-zinc-300 transition-all">
+          <div className="bg-white rounded-xl border border-stone-200/80 p-5 hover:shadow-md hover:border-stone-300 transition-all">
             <div className="flex items-start justify-between mb-4">
-              <div className="w-10 h-10 rounded-lg bg-amber-50 flex items-center justify-center">
-                <iconify-icon icon="lucide:trophy" width="20" className="text-amber-600" style={{ strokeWidth: 1.5 } as React.CSSProperties}></iconify-icon>
+              <div className="w-10 h-10 rounded-lg bg-gold-50 flex items-center justify-center">
+                <iconify-icon icon="lucide:trophy" width="20" className="text-gold-600" style={{ strokeWidth: 1.5 } as React.CSSProperties}></iconify-icon>
               </div>
               <div className="flex items-center gap-1">
-                <span className="w-2 h-2 rounded-full bg-amber-400"></span>
-                <span className="w-2 h-2 rounded-full bg-zinc-400"></span>
-                <span className="w-2 h-2 rounded-full bg-amber-600"></span>
+                <span className="w-2 h-2 rounded-full bg-gold-400"></span>
+                <span className="w-2 h-2 rounded-full bg-stone-400"></span>
+                <span className="w-2 h-2 rounded-full bg-gold-600"></span>
               </div>
             </div>
-            <p className="text-2xl font-semibold text-zinc-900 tracking-tight mb-1">
+            <p className="text-2xl font-semibold text-stone-900 tracking-tight mb-1">
               {isLoading ? '...' : stats.awarded}
             </p>
-            <p className="text-sm text-zinc-500">Awarded Products</p>
+            <p className="text-sm text-stone-500">Awarded Products</p>
           </div>
 
           {/* Pending Actions */}
-          <div className="bg-white rounded-xl border border-zinc-200/80 p-5 hover:shadow-md hover:border-zinc-300 transition-all">
+          <div className="bg-white rounded-xl border border-stone-200/80 p-5 hover:shadow-md hover:border-stone-300 transition-all">
             <div className="flex items-start justify-between mb-4">
-              <div className="w-10 h-10 rounded-lg bg-orange-50 flex items-center justify-center">
-                <iconify-icon icon="lucide:alert-circle" width="20" className="text-orange-600" style={{ strokeWidth: 1.5 } as React.CSSProperties}></iconify-icon>
+              <div className="w-10 h-10 rounded-lg bg-olive-50 flex items-center justify-center">
+                <iconify-icon icon="lucide:alert-circle" width="20" className="text-olive-600" style={{ strokeWidth: 1.5 } as React.CSSProperties}></iconify-icon>
               </div>
               {stats.pending > 0 && (
-                <span className="inline-flex items-center gap-1 px-2 py-0.5 text-xs font-medium text-orange-600 bg-orange-50 rounded-full">
+                <span className="inline-flex items-center gap-1 px-2 py-0.5 text-xs font-medium text-olive-600 bg-olive-50 rounded-full">
                   Action Required
                 </span>
               )}
             </div>
-            <p className="text-2xl font-semibold text-zinc-900 tracking-tight mb-1">
+            <p className="text-2xl font-semibold text-stone-900 tracking-tight mb-1">
               {isLoading ? '...' : stats.pending}
             </p>
-            <p className="text-sm text-zinc-500">Pending Actions</p>
+            <p className="text-sm text-stone-500">Pending Actions</p>
           </div>
         </div>
 
         {/* Quick Actions */}
-        <div className="bg-white rounded-xl border border-zinc-200/80 p-6 mb-8">
-          <h2 className="text-sm font-semibold text-zinc-900 mb-4">Quick Actions</h2>
+        <div className="bg-white rounded-xl border border-stone-200/80 p-6 mb-8">
+          <h2 className="text-sm font-semibold text-stone-900 mb-4">Quick Actions</h2>
           <div className="grid grid-cols-2 lg:grid-cols-3 gap-3">
             <Link
               href="/submit"
-              className="flex items-center gap-3 p-4 bg-gradient-to-br from-amber-500 to-orange-600 rounded-xl text-white hover:from-amber-600 hover:to-orange-700 transition-all group"
+              className="flex items-center gap-3 p-4 bg-gradient-to-br from-gold-500 to-olive-600 rounded-xl text-white hover:from-gold-600 hover:to-olive-700 transition-all group"
             >
               <div className="w-10 h-10 rounded-lg bg-white/20 flex items-center justify-center group-hover:bg-white/30 transition-colors">
                 <iconify-icon icon="lucide:plus" width="20" style={{ strokeWidth: 1.5 } as React.CSSProperties}></iconify-icon>
@@ -297,27 +297,27 @@ export default function ProducerDashboard() {
 
             <Link
               href="/dashboard/products"
-              className="flex items-center gap-3 p-4 bg-zinc-50 rounded-xl hover:bg-zinc-100 transition-colors group"
+              className="flex items-center gap-3 p-4 bg-stone-50 rounded-xl hover:bg-stone-100 transition-colors group"
             >
-              <div className="w-10 h-10 rounded-lg bg-white border border-zinc-200 flex items-center justify-center group-hover:border-zinc-300 transition-colors">
-                <iconify-icon icon="lucide:package-search" width="20" className="text-zinc-600" style={{ strokeWidth: 1.5 } as React.CSSProperties}></iconify-icon>
+              <div className="w-10 h-10 rounded-lg bg-white border border-stone-200 flex items-center justify-center group-hover:border-stone-300 transition-colors">
+                <iconify-icon icon="lucide:package-search" width="20" className="text-stone-600" style={{ strokeWidth: 1.5 } as React.CSSProperties}></iconify-icon>
               </div>
               <div className="text-left">
-                <p className="text-sm font-medium text-zinc-900">View My Products</p>
-                <p className="text-xs text-zinc-500">Manage submissions</p>
+                <p className="text-sm font-medium text-stone-900">View My Products</p>
+                <p className="text-xs text-stone-500">Manage submissions</p>
               </div>
             </Link>
 
             <Link
               href="/dashboard/profile"
-              className="flex items-center gap-3 p-4 bg-zinc-50 rounded-xl hover:bg-zinc-100 transition-colors group"
+              className="flex items-center gap-3 p-4 bg-stone-50 rounded-xl hover:bg-stone-100 transition-colors group"
             >
-              <div className="w-10 h-10 rounded-lg bg-white border border-zinc-200 flex items-center justify-center group-hover:border-zinc-300 transition-colors">
-                <iconify-icon icon="lucide:user-cog" width="20" className="text-zinc-600" style={{ strokeWidth: 1.5 } as React.CSSProperties}></iconify-icon>
+              <div className="w-10 h-10 rounded-lg bg-white border border-stone-200 flex items-center justify-center group-hover:border-stone-300 transition-colors">
+                <iconify-icon icon="lucide:user-cog" width="20" className="text-stone-600" style={{ strokeWidth: 1.5 } as React.CSSProperties}></iconify-icon>
               </div>
               <div className="text-left">
-                <p className="text-sm font-medium text-zinc-900">Update Profile</p>
-                <p className="text-xs text-zinc-500">Edit company info</p>
+                <p className="text-sm font-medium text-stone-900">Update Profile</p>
+                <p className="text-xs text-stone-500">Edit company info</p>
               </div>
             </Link>
           </div>
@@ -326,26 +326,26 @@ export default function ProducerDashboard() {
         {/* Main Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {/* Recent Activity */}
-          <div className="lg:col-span-2 bg-white rounded-xl border border-zinc-200/80">
-            <div className="flex items-center justify-between p-5 border-b border-zinc-100">
-              <h2 className="text-sm font-semibold text-zinc-900">Recent Activity</h2>
-              <Link href="/dashboard/products" className="text-xs font-medium text-amber-600 hover:text-amber-700 transition-colors">
+          <div className="lg:col-span-2 bg-white rounded-xl border border-stone-200/80">
+            <div className="flex items-center justify-between p-5 border-b border-stone-100">
+              <h2 className="text-sm font-semibold text-stone-900">Recent Activity</h2>
+              <Link href="/dashboard/products" className="text-xs font-medium text-gold-600 hover:text-gold-700 transition-colors">
                 View All
               </Link>
             </div>
-            <div className="divide-y divide-zinc-100">
+            <div className="divide-y divide-stone-100">
               {isLoading ? (
                 <div className="p-12 text-center">
-                  <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-amber-600 mx-auto"></div>
+                  <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-gold-600 mx-auto"></div>
                 </div>
               ) : recentActivities.length === 0 ? (
                 <div className="p-12 text-center">
-                  <iconify-icon icon="lucide:inbox" width="48" className="text-zinc-300 mx-auto mb-4"></iconify-icon>
-                  <p className="text-sm text-zinc-500">No recent activity</p>
+                  <iconify-icon icon="lucide:inbox" width="48" className="text-stone-300 mx-auto mb-4"></iconify-icon>
+                  <p className="text-sm text-stone-500">No recent activity</p>
                 </div>
               ) : (
                 recentActivities.map((activity) => (
-                  <div key={activity.id} className="p-5 hover:bg-zinc-50/50 transition-colors">
+                  <div key={activity.id} className="p-5 hover:bg-stone-50/50 transition-colors">
                     <div className="flex items-start gap-4">
                       <div className={`w-10 h-10 rounded-full ${getActivityIconColor(activity.type)} flex items-center justify-center flex-shrink-0`}>
                         <iconify-icon icon={getActivityIcon(activity.type)} width="18" style={{ strokeWidth: 1.5 } as React.CSSProperties}></iconify-icon>
@@ -353,10 +353,10 @@ export default function ProducerDashboard() {
                       <div className="flex-1 min-w-0">
                         <div className="flex items-start justify-between gap-4">
                           <div>
-                            <p className="text-sm font-medium text-zinc-900">{activity.title}</p>
-                            <p className="text-sm text-zinc-500 mt-0.5">{activity.description}</p>
+                            <p className="text-sm font-medium text-stone-900">{activity.title}</p>
+                            <p className="text-sm text-stone-500 mt-0.5">{activity.description}</p>
                           </div>
-                          <span className="text-xs text-zinc-400 whitespace-nowrap">
+                          <span className="text-xs text-stone-400 whitespace-nowrap">
                             {formatTimestamp(activity.timestamp)}
                           </span>
                         </div>
@@ -364,16 +364,16 @@ export default function ProducerDashboard() {
                           <div className="flex items-center gap-2 mt-3">
                             {activity.awardLevel && (
                               <span className={`inline-flex items-center gap-1 px-2 py-1 ${
-                                activity.awardLevel === 'GOLD' ? 'bg-amber-50 text-amber-700' :
-                                activity.awardLevel === 'SILVER' ? 'bg-zinc-100 text-zinc-700' :
-                                'bg-orange-50 text-orange-700'
+                                activity.awardLevel === 'GOLD' ? 'bg-gold-50 text-gold-700' :
+                                activity.awardLevel === 'SILVER' ? 'bg-stone-100 text-stone-700' :
+                                'bg-olive-50 text-olive-700'
                               } text-xs font-medium rounded-full`}>
                                 <iconify-icon icon="lucide:trophy" width="12" style={{ strokeWidth: 1.5 } as React.CSSProperties}></iconify-icon>
                                 {activity.awardLevel.charAt(0) + activity.awardLevel.slice(1).toLowerCase()}
                               </span>
                             )}
                             {activity.score && (
-                              <span className="text-xs text-zinc-400">Score: {activity.score.toFixed(1)}/10</span>
+                              <span className="text-xs text-stone-400">Score: {activity.score.toFixed(1)}/10</span>
                             )}
                             {activity.status && !activity.awardLevel && (
                               <span className="inline-flex items-center gap-1 px-2 py-1 bg-blue-50 text-blue-700 text-xs font-medium rounded-full">
@@ -394,8 +394,8 @@ export default function ProducerDashboard() {
           {/* Right Sidebar */}
           <div className="space-y-6">
             {/* Certification Progress */}
-            <div className="bg-white rounded-xl border border-zinc-200/80 p-5">
-              <h2 className="text-sm font-semibold text-zinc-900 mb-4">Certification Progress</h2>
+            <div className="bg-white rounded-xl border border-stone-200/80 p-5">
+              <h2 className="text-sm font-semibold text-stone-900 mb-4">Certification Progress</h2>
               
               {/* Progress Chart */}
               <div className="relative mb-6">
@@ -421,8 +421,8 @@ export default function ProducerDashboard() {
                     </defs>
                   </svg>
                   <div className="absolute inset-0 flex flex-col items-center justify-center">
-                    <span className="text-2xl font-semibold text-zinc-900">{successRate}%</span>
-                    <span className="text-xs text-zinc-500">Success Rate</span>
+                    <span className="text-2xl font-semibold text-stone-900">{successRate}%</span>
+                    <span className="text-xs text-stone-500">Success Rate</span>
                   </div>
                 </div>
               </div>
@@ -431,24 +431,24 @@ export default function ProducerDashboard() {
               <div className="space-y-3">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-2">
-                    <span className="w-2 h-2 rounded-full bg-amber-400"></span>
-                    <span className="text-sm text-zinc-600">Gold Awards</span>
+                    <span className="w-2 h-2 rounded-full bg-gold-400"></span>
+                    <span className="text-sm text-stone-600">Gold Awards</span>
                   </div>
-                  <span className="text-sm font-medium text-zinc-900">{awardStats.gold}</span>
+                  <span className="text-sm font-medium text-stone-900">{awardStats.gold}</span>
                 </div>
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-2">
-                    <span className="w-2 h-2 rounded-full bg-zinc-400"></span>
-                    <span className="text-sm text-zinc-600">Silver Awards</span>
+                    <span className="w-2 h-2 rounded-full bg-stone-400"></span>
+                    <span className="text-sm text-stone-600">Silver Awards</span>
                   </div>
-                  <span className="text-sm font-medium text-zinc-900">{awardStats.silver}</span>
+                  <span className="text-sm font-medium text-stone-900">{awardStats.silver}</span>
                 </div>
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-2">
-                    <span className="w-2 h-2 rounded-full bg-amber-700"></span>
-                    <span className="text-sm text-zinc-600">Bronze Awards</span>
+                    <span className="w-2 h-2 rounded-full bg-gold-700"></span>
+                    <span className="text-sm text-stone-600">Bronze Awards</span>
                   </div>
-                  <span className="text-sm font-medium text-zinc-900">{awardStats.bronze}</span>
+                  <span className="text-sm font-medium text-stone-900">{awardStats.bronze}</span>
                 </div>
               </div>
             </div>

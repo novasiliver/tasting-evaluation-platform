@@ -18,7 +18,7 @@ export default function TermsPage() {
       <section className="pt-36 pb-12 md:pt-40 md:pb-16">
         <div className="max-w-3xl mx-auto px-6">
           <div className="flex items-center gap-2 text-sm text-stone-400 mb-6">
-            <Link href="/" className="hover:text-orange-600 transition-colors">Home</Link>
+            <Link href="/" className="hover:text-olive-600 transition-colors">Home</Link>
             <iconify-icon icon="lucide:chevron-right" width="14" style={{ strokeWidth: 1.5 } as React.CSSProperties}></iconify-icon>
             <span className="text-stone-600">Terms of Service</span>
           </div>
@@ -44,25 +44,25 @@ export default function TermsPage() {
         <div className="max-w-3xl mx-auto px-6">
           <div className="bg-white rounded-2xl border border-stone-100 p-6">
             <h2 className="text-sm font-semibold text-stone-900 mb-4 font-heading flex items-center gap-2">
-              <iconify-icon icon="lucide:list" width="16" style={{ strokeWidth: 1.5 } as React.CSSProperties} className="text-orange-600"></iconify-icon>
+              <iconify-icon icon="lucide:list" width="16" style={{ strokeWidth: 1.5 } as React.CSSProperties} className="text-olive-600"></iconify-icon>
               Table of Contents
             </h2>
             <nav className="grid grid-cols-1 md:grid-cols-2 gap-2">
-              <a href="#acceptance" className="text-sm text-stone-500 hover:text-orange-600 transition-colors py-1">1. Acceptance of Terms</a>
-              <a href="#services" className="text-sm text-stone-500 hover:text-orange-600 transition-colors py-1">2. Description of Services</a>
-              <a href="#accounts" className="text-sm text-stone-500 hover:text-orange-600 transition-colors py-1">3. User Accounts</a>
-              <a href="#submissions" className="text-sm text-stone-500 hover:text-orange-600 transition-colors py-1">4. Product Submissions</a>
-              <a href="#intellectual-property" className="text-sm text-stone-500 hover:text-orange-600 transition-colors py-1">5. Intellectual Property</a>
-              <a href="#confidentiality" className="text-sm text-stone-500 hover:text-orange-600 transition-colors py-1">6. Confidentiality</a>
-              <a href="#payment" className="text-sm text-stone-500 hover:text-orange-600 transition-colors py-1">7. Payment Terms</a>
-              <a href="#prohibited" className="text-sm text-stone-500 hover:text-orange-600 transition-colors py-1">8. Prohibited Uses</a>
-              <a href="#disclaimers" className="text-sm text-stone-500 hover:text-orange-600 transition-colors py-1">9. Disclaimers</a>
-              <a href="#limitation" className="text-sm text-stone-500 hover:text-orange-600 transition-colors py-1">10. Limitation of Liability</a>
-              <a href="#indemnification" className="text-sm text-stone-500 hover:text-orange-600 transition-colors py-1">11. Indemnification</a>
-              <a href="#termination" className="text-sm text-stone-500 hover:text-orange-600 transition-colors py-1">12. Termination</a>
-              <a href="#governing-law" className="text-sm text-stone-500 hover:text-orange-600 transition-colors py-1">13. Governing Law</a>
-              <a href="#changes-terms" className="text-sm text-stone-500 hover:text-orange-600 transition-colors py-1">14. Changes to Terms</a>
-              <a href="#contact-terms" className="text-sm text-stone-500 hover:text-orange-600 transition-colors py-1">15. Contact Information</a>
+              <a href="#acceptance" className="text-sm text-stone-500 hover:text-olive-600 transition-colors py-1">1. Acceptance of Terms</a>
+              <a href="#services" className="text-sm text-stone-500 hover:text-olive-600 transition-colors py-1">2. Description of Services</a>
+              <a href="#accounts" className="text-sm text-stone-500 hover:text-olive-600 transition-colors py-1">3. User Accounts</a>
+              <a href="#submissions" className="text-sm text-stone-500 hover:text-olive-600 transition-colors py-1">4. Product Submissions</a>
+              <a href="#intellectual-property" className="text-sm text-stone-500 hover:text-olive-600 transition-colors py-1">5. Intellectual Property</a>
+              <a href="#confidentiality" className="text-sm text-stone-500 hover:text-olive-600 transition-colors py-1">6. Confidentiality</a>
+              <a href="#payment" className="text-sm text-stone-500 hover:text-olive-600 transition-colors py-1">7. Payment Terms</a>
+              <a href="#prohibited" className="text-sm text-stone-500 hover:text-olive-600 transition-colors py-1">8. Prohibited Uses</a>
+              <a href="#disclaimers" className="text-sm text-stone-500 hover:text-olive-600 transition-colors py-1">9. Disclaimers</a>
+              <a href="#limitation" className="text-sm text-stone-500 hover:text-olive-600 transition-colors py-1">10. Limitation of Liability</a>
+              <a href="#indemnification" className="text-sm text-stone-500 hover:text-olive-600 transition-colors py-1">11. Indemnification</a>
+              <a href="#termination" className="text-sm text-stone-500 hover:text-olive-600 transition-colors py-1">12. Termination</a>
+              <a href="#governing-law" className="text-sm text-stone-500 hover:text-olive-600 transition-colors py-1">13. Governing Law</a>
+              <a href="#changes-terms" className="text-sm text-stone-500 hover:text-olive-600 transition-colors py-1">14. Changes to Terms</a>
+              <a href="#contact-terms" className="text-sm text-stone-500 hover:text-olive-600 transition-colors py-1">15. Contact Information</a>
             </nav>
           </div>
         </div>
@@ -121,8 +121,8 @@ export default function TermsPage() {
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="bg-white rounded-xl border border-stone-100 p-5">
-                  <div className="w-10 h-10 rounded-lg bg-orange-50 flex items-center justify-center mb-3">
-                    <iconify-icon icon="lucide:flask-conical" width="20" className="text-orange-600" style={{ strokeWidth: 1.5 } as React.CSSProperties}></iconify-icon>
+                  <div className="w-10 h-10 rounded-lg bg-olive-50 flex items-center justify-center mb-3">
+                    <iconify-icon icon="lucide:flask-conical" width="20" className="text-olive-600" style={{ strokeWidth: 1.5 } as React.CSSProperties}></iconify-icon>
                   </div>
                   <h4 className="text-sm font-semibold text-stone-900 mb-2 font-heading">Sensory Analysis</h4>
                   <p className="text-xs text-stone-500">Professional evaluation by certified expert panels.</p>
@@ -216,7 +216,7 @@ export default function TermsPage() {
 
               <div className="bg-white rounded-xl border border-stone-100 p-5 mb-4">
                 <h4 className="text-sm font-semibold text-stone-900 mb-3 font-heading flex items-center gap-2">
-                  <iconify-icon icon="lucide:package" width="16" className="text-orange-600" style={{ strokeWidth: 1.5 } as React.CSSProperties}></iconify-icon>
+                  <iconify-icon icon="lucide:package" width="16" className="text-olive-600" style={{ strokeWidth: 1.5 } as React.CSSProperties}></iconify-icon>
                   Product Requirements
                 </h4>
                 <ul className="text-sm text-stone-600 space-y-2">
@@ -360,15 +360,15 @@ export default function TermsPage() {
               <div className="bg-white rounded-xl border border-stone-100 p-5">
                 <div className="space-y-3 text-sm">
                   <div className="flex items-center gap-2">
-                    <iconify-icon icon="lucide:mail" width="16" className="text-orange-600" style={{ strokeWidth: 1.5 } as React.CSSProperties}></iconify-icon>
-                    <a href="mailto:legal@tastecert.com" className="text-orange-600 hover:underline">legal@tastecert.com</a>
+                    <iconify-icon icon="lucide:mail" width="16" className="text-olive-600" style={{ strokeWidth: 1.5 } as React.CSSProperties}></iconify-icon>
+                    <a href="mailto:legal@tastecert.com" className="text-olive-600 hover:underline">legal@tastecert.com</a>
                   </div>
                   <div className="flex items-center gap-2">
-                    <iconify-icon icon="lucide:phone" width="16" className="text-orange-600" style={{ strokeWidth: 1.5 } as React.CSSProperties}></iconify-icon>
+                    <iconify-icon icon="lucide:phone" width="16" className="text-olive-600" style={{ strokeWidth: 1.5 } as React.CSSProperties}></iconify-icon>
                     <span className="text-stone-600">+1 (555) 123-4567</span>
                   </div>
                   <div className="flex items-start gap-2">
-                    <iconify-icon icon="lucide:map-pin" width="16" className="text-orange-600 mt-0.5" style={{ strokeWidth: 1.5 } as React.CSSProperties}></iconify-icon>
+                    <iconify-icon icon="lucide:map-pin" width="16" className="text-olive-600 mt-0.5" style={{ strokeWidth: 1.5 } as React.CSSProperties}></iconify-icon>
                     <span className="text-stone-600">Tastecert, Inc.<br />New York, NY</span>
                   </div>
                 </div>

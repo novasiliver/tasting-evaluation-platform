@@ -67,12 +67,12 @@ export default function ContactPage() {
       {/* Hero Section */}
       <section className="pt-40 pb-16 relative overflow-hidden">
         <div className="absolute inset-0 -z-10">
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-amber-100/50 rounded-[100%] blur-3xl"></div>
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-gold-100/50 rounded-[100%] blur-3xl"></div>
         </div>
 
         <div className="max-w-4xl mx-auto px-6 text-center">
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white border border-stone-200 shadow-sm text-xs font-semibold text-stone-600 mb-8">
-            <iconify-icon icon="lucide:mail" width="14" className="text-amber-600" style={{ strokeWidth: 1.5 } as React.CSSProperties}></iconify-icon>
+            <iconify-icon icon="lucide:mail" width="14" className="text-gold-600" style={{ strokeWidth: 1.5 } as React.CSSProperties}></iconify-icon>
             Get in Touch
           </div>
           
@@ -102,30 +102,30 @@ export default function ContactPage() {
                   <div className="grid md:grid-cols-2 gap-6">
                     <div>
                       <label htmlFor="name" className="block text-sm font-medium text-stone-700 mb-2">Full Name</label>
-                      <input type="text" id="name" name="name" required value={formData.name} onChange={handleChange} placeholder="John Smith" className="w-full px-4 py-3 bg-stone-50 border border-stone-200 rounded-xl text-stone-900 text-sm placeholder:text-stone-400 focus:outline-none focus:ring-2 focus:ring-amber-500/20 focus:border-amber-500 transition-all" />
+                      <input type="text" id="name" name="name" required value={formData.name} onChange={handleChange} placeholder="John Smith" className="w-full px-4 py-3 bg-stone-50 border border-stone-200 rounded-xl text-stone-900 text-sm placeholder:text-stone-400 focus:outline-none focus:ring-2 focus:ring-gold-500/20 focus:border-gold-500 transition-all" />
                     </div>
                     <div>
                       <label htmlFor="company" className="block text-sm font-medium text-stone-700 mb-2">Company</label>
-                      <input type="text" id="company" name="company" value={formData.company} onChange={handleChange} placeholder="Acme Foods Inc." className="w-full px-4 py-3 bg-stone-50 border border-stone-200 rounded-xl text-stone-900 text-sm placeholder:text-stone-400 focus:outline-none focus:ring-2 focus:ring-amber-500/20 focus:border-amber-500 transition-all" />
+                      <input type="text" id="company" name="company" value={formData.company} onChange={handleChange} placeholder="Acme Foods Inc." className="w-full px-4 py-3 bg-stone-50 border border-stone-200 rounded-xl text-stone-900 text-sm placeholder:text-stone-400 focus:outline-none focus:ring-2 focus:ring-gold-500/20 focus:border-gold-500 transition-all" />
                     </div>
                   </div>
 
                   {/* Email */}
                   <div>
                     <label htmlFor="email" className="block text-sm font-medium text-stone-700 mb-2">Email Address</label>
-                    <input type="email" id="email" name="email" required value={formData.email} onChange={handleChange} placeholder="john@acmefoods.com" className="w-full px-4 py-3 bg-stone-50 border border-stone-200 rounded-xl text-stone-900 text-sm placeholder:text-stone-400 focus:outline-none focus:ring-2 focus:ring-amber-500/20 focus:border-amber-500 transition-all" />
+                    <input type="email" id="email" name="email" required value={formData.email} onChange={handleChange} placeholder="john@acmefoods.com" className="w-full px-4 py-3 bg-stone-50 border border-stone-200 rounded-xl text-stone-900 text-sm placeholder:text-stone-400 focus:outline-none focus:ring-2 focus:ring-gold-500/20 focus:border-gold-500 transition-all" />
                   </div>
 
                   {/* Phone */}
                   <div>
                     <label htmlFor="phone" className="block text-sm font-medium text-stone-700 mb-2">Phone Number</label>
-                    <input type="tel" id="phone" name="phone" value={formData.phone} onChange={handleChange} placeholder="+1 (555) 123-4567" className="w-full px-4 py-3 bg-stone-50 border border-stone-200 rounded-xl text-stone-900 text-sm placeholder:text-stone-400 focus:outline-none focus:ring-2 focus:ring-amber-500/20 focus:border-amber-500 transition-all" />
+                    <input type="tel" id="phone" name="phone" value={formData.phone} onChange={handleChange} placeholder="+1 (555) 123-4567" className="w-full px-4 py-3 bg-stone-50 border border-stone-200 rounded-xl text-stone-900 text-sm placeholder:text-stone-400 focus:outline-none focus:ring-2 focus:ring-gold-500/20 focus:border-gold-500 transition-all" />
                   </div>
 
                   {/* Subject */}
                   <div>
                     <label htmlFor="subject" className="block text-sm font-medium text-stone-700 mb-2">Subject</label>
-                    <select id="subject" name="subject" required value={formData.subject} onChange={handleChange} className="w-full px-4 py-3 bg-stone-50 border border-stone-200 rounded-xl text-stone-900 text-sm focus:outline-none focus:ring-2 focus:ring-amber-500/20 focus:border-amber-500 transition-all">
+                    <select id="subject" name="subject" required value={formData.subject} onChange={handleChange} className="w-full px-4 py-3 bg-stone-50 border border-stone-200 rounded-xl text-stone-900 text-sm focus:outline-none focus:ring-2 focus:ring-gold-500/20 focus:border-gold-500 transition-all">
                       <option value="">Select a subject</option>
                       <option value="general">General Inquiry</option>
                       <option value="pricing">Pricing Information</option>
@@ -139,7 +139,7 @@ export default function ContactPage() {
                   {/* Message */}
                   <div>
                     <label htmlFor="message" className="block text-sm font-medium text-stone-700 mb-2">Message</label>
-                    <textarea id="message" name="message" required rows={6} value={formData.message} onChange={handleChange} placeholder="Tell us how we can help you..." className="w-full px-4 py-3 bg-stone-50 border border-stone-200 rounded-xl text-stone-900 text-sm placeholder:text-stone-400 focus:outline-none focus:ring-2 focus:ring-amber-500/20 focus:border-amber-500 transition-all resize-none" />
+                    <textarea id="message" name="message" required rows={6} value={formData.message} onChange={handleChange} placeholder="Tell us how we can help you..." className="w-full px-4 py-3 bg-stone-50 border border-stone-200 rounded-xl text-stone-900 text-sm placeholder:text-stone-400 focus:outline-none focus:ring-2 focus:ring-gold-500/20 focus:border-gold-500 transition-all resize-none" />
                   </div>
 
                   {/* Error/Success Messages */}
@@ -158,7 +158,7 @@ export default function ContactPage() {
                   <button 
                     type="submit" 
                     disabled={isSubmitting}
-                    className="w-full py-4 bg-orange-600 text-white rounded-xl font-semibold hover:bg-orange-700 transition-colors shadow-lg shadow-orange-600/20 flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="w-full py-4 bg-olive-600 text-white rounded-xl font-semibold hover:bg-olive-700 transition-colors shadow-lg shadow-olive-600/20 flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
                   >
                     {isSubmitting ? (
                       <>
@@ -226,25 +226,25 @@ export default function ContactPage() {
                 <h3 className="text-lg font-semibold text-stone-900 tracking-tight mb-4 font-heading">Quick Links</h3>
                 <ul className="space-y-3">
                   <li>
-                    <a href="/submit" className="flex items-center gap-2 text-sm text-stone-600 hover:text-orange-600 transition-colors">
+                    <a href="/submit" className="flex items-center gap-2 text-sm text-stone-600 hover:text-olive-600 transition-colors">
                       <iconify-icon icon="lucide:arrow-right" width="14" style={{ strokeWidth: 2 } as React.CSSProperties}></iconify-icon>
                       Submit Your Product
                     </a>
                   </li>
                   <li>
-                    <a href="/services" className="flex items-center gap-2 text-sm text-stone-600 hover:text-orange-600 transition-colors">
+                    <a href="/services" className="flex items-center gap-2 text-sm text-stone-600 hover:text-olive-600 transition-colors">
                       <iconify-icon icon="lucide:arrow-right" width="14" style={{ strokeWidth: 2 } as React.CSSProperties}></iconify-icon>
                       View Our Services
                     </a>
                   </li>
                   <li>
-                    <a href="/awards" className="flex items-center gap-2 text-sm text-stone-600 hover:text-orange-600 transition-colors">
+                    <a href="/awards" className="flex items-center gap-2 text-sm text-stone-600 hover:text-olive-600 transition-colors">
                       <iconify-icon icon="lucide:arrow-right" width="14" style={{ strokeWidth: 2 } as React.CSSProperties}></iconify-icon>
                       Award Information
                     </a>
                   </li>
                   <li>
-                    <a href="/about" className="flex items-center gap-2 text-sm text-stone-600 hover:text-orange-600 transition-colors">
+                    <a href="/about" className="flex items-center gap-2 text-sm text-stone-600 hover:text-olive-600 transition-colors">
                       <iconify-icon icon="lucide:arrow-right" width="14" style={{ strokeWidth: 2 } as React.CSSProperties}></iconify-icon>
                       About Tastecert
                     </a>

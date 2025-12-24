@@ -178,12 +178,12 @@ export default function SubmitPage() {
       {/* Hero / Introduction */}
       <section className="pt-36 pb-16 relative overflow-hidden">
         <div className="absolute inset-0 -z-10">
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-amber-100/50 rounded-[100%] blur-3xl"></div>
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-gold-100/50 rounded-[100%] blur-3xl"></div>
         </div>
 
         <div className="max-w-3xl mx-auto px-6 text-center">
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white border border-stone-200 shadow-sm text-xs font-semibold text-stone-600 mb-6">
-            <iconify-icon icon="lucide:send" width="14" className="text-orange-600" style={{ strokeWidth: 1.5 } as React.CSSProperties}></iconify-icon>
+            <iconify-icon icon="lucide:send" width="14" className="text-olive-600" style={{ strokeWidth: 1.5 } as React.CSSProperties}></iconify-icon>
             Product Submission
           </div>
           
@@ -196,8 +196,8 @@ export default function SubmitPage() {
           </p>
 
           {status !== 'authenticated' && (
-            <div className="mb-6 p-4 bg-amber-50 border border-amber-200 rounded-lg">
-              <p className="text-sm text-amber-800">
+            <div className="mb-6 p-4 bg-gold-50 border border-gold-200 rounded-lg">
+              <p className="text-sm text-gold-800">
                 Please{' '}
                 <Link href="/auth/signin?callbackUrl=/submit" className="font-semibold underline">
                   sign in
@@ -250,7 +250,7 @@ export default function SubmitPage() {
                   value={formData.productName}
                   onChange={handleChange}
                   placeholder="e.g. Premium Extra Virgin Olive Oil"
-                  className="w-full px-4 py-3 rounded-xl border border-stone-200 text-sm text-stone-900 placeholder:text-stone-400 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all"
+                  className="w-full px-4 py-3 rounded-xl border border-stone-200 text-sm text-stone-900 placeholder:text-stone-400 focus:outline-none focus:ring-2 focus:ring-olive-500 focus:border-transparent transition-all"
                 />
               </div>
 
@@ -274,14 +274,14 @@ export default function SubmitPage() {
                           setImagePreview(null);
                           setFormData({ ...formData, imageUrl: '' });
                         }}
-                        className="absolute top-2 right-2 p-2 bg-white rounded-lg shadow-lg hover:bg-zinc-50 transition-colors"
+                        className="absolute top-2 right-2 p-2 bg-white rounded-lg shadow-lg hover:bg-stone-50 transition-colors"
                       >
-                        <iconify-icon icon="lucide:x" width="18" className="text-zinc-600" style={{ strokeWidth: 1.5 } as React.CSSProperties}></iconify-icon>
+                        <iconify-icon icon="lucide:x" width="18" className="text-stone-600" style={{ strokeWidth: 1.5 } as React.CSSProperties}></iconify-icon>
                       </button>
                     </div>
                   ) : (
                     <label className="block">
-                      <div className="border-2 border-dashed border-stone-300 rounded-xl p-8 text-center hover:border-orange-400 hover:bg-orange-50/30 transition-colors cursor-pointer">
+                      <div className="border-2 border-dashed border-stone-300 rounded-xl p-8 text-center hover:border-olive-400 hover:bg-olive-50/30 transition-colors cursor-pointer">
                         <div className="flex flex-col items-center gap-3">
                           <div className="w-12 h-12 rounded-full bg-stone-100 flex items-center justify-center">
                             <iconify-icon icon="lucide:image-plus" width="24" className="text-stone-400" style={{ strokeWidth: 1.5 } as React.CSSProperties}></iconify-icon>
@@ -317,7 +317,7 @@ export default function SubmitPage() {
                   value={formData.productDescription}
                   onChange={handleChange}
                   placeholder="Describe your product, its key features, production method, and unique characteristics..."
-                  className="w-full px-4 py-3 rounded-xl border border-stone-200 text-sm text-stone-900 placeholder:text-stone-400 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all resize-none"
+                  className="w-full px-4 py-3 rounded-xl border border-stone-200 text-sm text-stone-900 placeholder:text-stone-400 focus:outline-none focus:ring-2 focus:ring-olive-500 focus:border-transparent transition-all resize-none"
                 />
               </div>
 
@@ -332,7 +332,7 @@ export default function SubmitPage() {
                     required
                     value={formData.category}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 rounded-xl border border-stone-200 text-sm text-stone-900 appearance-none bg-white focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all cursor-pointer"
+                    className="w-full px-4 py-3 rounded-xl border border-stone-200 text-sm text-stone-900 appearance-none bg-white focus:outline-none focus:ring-2 focus:ring-olive-500 focus:border-transparent transition-all cursor-pointer"
                   >
                     <option value="">Select category</option>
                     {categories.map((cat) => (
@@ -352,7 +352,7 @@ export default function SubmitPage() {
                     value={formData.origin}
                     onChange={handleChange}
                     placeholder="e.g. Italy, Spain, USA"
-                    className="w-full px-4 py-3 rounded-xl border border-stone-200 text-sm text-stone-900 placeholder:text-stone-400 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all"
+                    className="w-full px-4 py-3 rounded-xl border border-stone-200 text-sm text-stone-900 placeholder:text-stone-400 focus:outline-none focus:ring-2 focus:ring-olive-500 focus:border-transparent transition-all"
                   />
                 </div>
               </div>
@@ -367,7 +367,7 @@ export default function SubmitPage() {
                   name="productionDate"
                   value={formData.productionDate}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 rounded-xl border border-stone-200 text-sm text-stone-900 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all"
+                  className="w-full px-4 py-3 rounded-xl border border-stone-200 text-sm text-stone-900 focus:outline-none focus:ring-2 focus:ring-olive-500 focus:border-transparent transition-all"
                 />
               </div>
 
@@ -382,7 +382,7 @@ export default function SubmitPage() {
                   value={formData.ingredients}
                   onChange={handleChange}
                   placeholder="List the main ingredients or components..."
-                  className="w-full px-4 py-3 rounded-xl border border-stone-200 text-sm text-stone-900 placeholder:text-stone-400 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all resize-none"
+                  className="w-full px-4 py-3 rounded-xl border border-stone-200 text-sm text-stone-900 placeholder:text-stone-400 focus:outline-none focus:ring-2 focus:ring-olive-500 focus:border-transparent transition-all resize-none"
                 />
               </div>
 
@@ -397,7 +397,7 @@ export default function SubmitPage() {
                   value={formData.certifications}
                   onChange={handleChange}
                   placeholder="e.g. Organic, PDO, PGI, Fair Trade"
-                  className="w-full px-4 py-3 rounded-xl border border-stone-200 text-sm text-stone-900 placeholder:text-stone-400 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all"
+                  className="w-full px-4 py-3 rounded-xl border border-stone-200 text-sm text-stone-900 placeholder:text-stone-400 focus:outline-none focus:ring-2 focus:ring-olive-500 focus:border-transparent transition-all"
                 />
               </div>
 
@@ -413,7 +413,7 @@ export default function SubmitPage() {
                     value={formData.volume}
                     onChange={handleChange}
                     placeholder="e.g. 500ml, 250g"
-                    className="w-full px-4 py-3 rounded-xl border border-stone-200 text-sm text-stone-900 placeholder:text-stone-400 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all"
+                    className="w-full px-4 py-3 rounded-xl border border-stone-200 text-sm text-stone-900 placeholder:text-stone-400 focus:outline-none focus:ring-2 focus:ring-olive-500 focus:border-transparent transition-all"
                   />
                 </div>
                 <div>
@@ -426,7 +426,7 @@ export default function SubmitPage() {
                     value={formData.alcoholContent}
                     onChange={handleChange}
                     placeholder="e.g. 13.5%"
-                    className="w-full px-4 py-3 rounded-xl border border-stone-200 text-sm text-stone-900 placeholder:text-stone-400 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all"
+                    className="w-full px-4 py-3 rounded-xl border border-stone-200 text-sm text-stone-900 placeholder:text-stone-400 focus:outline-none focus:ring-2 focus:ring-olive-500 focus:border-transparent transition-all"
                   />
                 </div>
               </div>
@@ -442,7 +442,7 @@ export default function SubmitPage() {
                   value={formData.storageInstructions}
                   onChange={handleChange}
                   placeholder="Temperature requirements, shelf life, special handling..."
-                  className="w-full px-4 py-3 rounded-xl border border-stone-200 text-sm text-stone-900 placeholder:text-stone-400 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all resize-none"
+                  className="w-full px-4 py-3 rounded-xl border border-stone-200 text-sm text-stone-900 placeholder:text-stone-400 focus:outline-none focus:ring-2 focus:ring-olive-500 focus:border-transparent transition-all resize-none"
                 />
               </div>
 
@@ -451,7 +451,7 @@ export default function SubmitPage() {
                 <button
                   type="submit"
                   disabled={loading || status !== 'authenticated'}
-                  className="w-full py-4 bg-orange-600 text-white rounded-xl font-semibold hover:bg-orange-700 transition-all shadow-lg shadow-orange-600/20 flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="w-full py-4 bg-olive-600 text-white rounded-xl font-semibold hover:bg-olive-700 transition-all shadow-lg shadow-olive-600/20 flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   {loading ? (
                     <>
@@ -467,7 +467,7 @@ export default function SubmitPage() {
                 </button>
                 <p className="text-xs text-stone-400 text-center mt-3">
                   By submitting, you agree to our{' '}
-                  <a href="/terms" className="text-orange-600 hover:underline">Terms & Conditions</a>
+                  <a href="/terms" className="text-olive-600 hover:underline">Terms & Conditions</a>
                 </p>
               </div>
             </form>

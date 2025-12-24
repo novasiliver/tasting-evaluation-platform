@@ -45,7 +45,7 @@ export default function SignInPage() {
         {/* Header */}
         <div className="text-center">
           <Link href="/" className="inline-flex items-center gap-2 mb-6">
-            <div className="h-12 w-12 bg-orange-600 rounded-full flex items-center justify-center text-white">
+            <div className="h-12 w-12 bg-olive-600 rounded-full flex items-center justify-center text-white">
               <iconify-icon icon="lucide:award" width="24" style={{ strokeWidth: 1.5 } as React.CSSProperties}></iconify-icon>
             </div>
             <span className="text-2xl font-bold text-stone-900 font-heading">Tastecert</span>
@@ -55,7 +55,7 @@ export default function SignInPage() {
           </h2>
           <p className="mt-2 text-sm text-stone-500">
             Or{' '}
-            <Link href="/auth/signup" className="font-medium text-orange-600 hover:text-orange-500">
+            <Link href="/auth/signup" className="font-medium text-olive-600 hover:text-olive-500">
               create a new account
             </Link>
           </p>
@@ -83,7 +83,7 @@ export default function SignInPage() {
                 required
                 value={formData.username}
                 onChange={(e) => setFormData({ ...formData, username: e.target.value })}
-                className="appearance-none relative block w-full px-4 py-3 border border-stone-200 placeholder-stone-400 text-stone-900 rounded-xl focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all"
+                className="appearance-none relative block w-full px-4 py-3 border border-stone-200 placeholder-stone-400 text-stone-900 rounded-xl focus:outline-none focus:ring-2 focus:ring-olive-500 focus:border-transparent transition-all"
                 placeholder="admin or your@email.com"
               />
             </div>
@@ -100,7 +100,7 @@ export default function SignInPage() {
                 required
                 value={formData.password}
                 onChange={(e) => setFormData({ ...formData, password: e.target.value })}
-                className="appearance-none relative block w-full px-4 py-3 border border-stone-200 placeholder-stone-400 text-stone-900 rounded-xl focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all"
+                className="appearance-none relative block w-full px-4 py-3 border border-stone-200 placeholder-stone-400 text-stone-900 rounded-xl focus:outline-none focus:ring-2 focus:ring-olive-500 focus:border-transparent transition-all"
                 placeholder="••••••••"
               />
             </div>
@@ -112,7 +112,7 @@ export default function SignInPage() {
                 id="remember-me"
                 name="remember-me"
                 type="checkbox"
-                className="h-4 w-4 text-orange-600 focus:ring-orange-500 border-stone-300 rounded"
+                className="h-4 w-4 text-olive-600 focus:ring-olive-500 border-stone-300 rounded"
               />
               <label htmlFor="remember-me" className="ml-2 block text-sm text-stone-700">
                 Remember me
@@ -120,7 +120,7 @@ export default function SignInPage() {
             </div>
 
             <div className="text-sm">
-              <a href="#" className="font-medium text-orange-600 hover:text-orange-500">
+              <a href="#" className="font-medium text-olive-600 hover:text-olive-500">
                 Forgot password?
               </a>
             </div>
@@ -129,7 +129,7 @@ export default function SignInPage() {
           <button
             type="submit"
             disabled={isLoading}
-            className="group relative w-full flex justify-center py-3 px-4 border border-transparent text-sm font-semibold rounded-xl text-white bg-orange-600 hover:bg-orange-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500 disabled:opacity-50 disabled:cursor-not-allowed transition-all"
+            className="group relative w-full flex justify-center py-3 px-4 border border-transparent text-sm font-semibold rounded-xl text-white bg-olive-600 hover:bg-olive-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-olive-500 disabled:opacity-50 disabled:cursor-not-allowed transition-all"
           >
             {isLoading ? (
               <>
@@ -148,7 +148,7 @@ export default function SignInPage() {
         {/* Footer */}
         <div className="text-center">
           <p className="text-sm text-stone-500">
-            <Link href="/" className="font-medium text-orange-600 hover:text-orange-500">
+            <Link href="/" className="font-medium text-olive-600 hover:text-olive-500">
               ← Back to home
             </Link>
           </p>

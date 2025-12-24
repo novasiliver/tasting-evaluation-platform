@@ -1,582 +1,660 @@
 <html lang="en"><head><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Culinary Sensory &amp; Analytics | Metric</title>
+<title>Tastecert | Independent Quality Certification</title>
 <script src="https://cdn.tailwindcss.com"></script>
-<script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.7/dist/iconify-icon.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;family=Inter:wght@300;400;500;600&amp;family=Great+Vibes&amp;family=Cinzel:wght@400;600&amp;display=swap" rel="stylesheet">
 <style>
 body {
 font-family: 'Inter', sans-serif;
-background-color: #FAFAF9;
+background-color: #FDFBF7;
+color: #44403C;
 }
-h1, h2, h3, h4, .font-heading {
-font-family: 'Plus Jakarta Sans', sans-serif;
+.font-serif { font-family: 'Lora', serif; }
+.font-display { font-family: 'Cinzel', serif; }
+.font-signature { font-family: 'Great Vibes', cursive; }
+/* Custom Colors */
+.text-olive { color: #556B2F; }
+.bg-olive { background-color: #556B2F; }
+.border-olive { border-color: #556B2F; }
+.text-gold { color: #C5A059; }
+.bg-gold { background-color: #C5A059; }
+.border-gold { border-color: #C5A059; }
+/* Certificate Specific Styles */
+.paper-texture {
+background-color: #FFFCF5;
+background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.05'/%3E%3C/svg%3E");
+box-shadow: 0 1px 3px rgba(0,0,0,0.05), 0 20px 40px -10px rgba(0,0,0,0.1);
 }
-.glass {
-background: rgba(255, 255, 255, 0.7);
-backdrop-filter: blur(20px);
--webkit-backdrop-filter: blur(20px);
-border: 1px solid rgba(255, 255, 255, 0.5);
+.gold-foil {
+background: radial-gradient(ellipse at center, #F8E7AE 0%, #C5A059 40%, #8C6A28 100%);
+box-shadow: inset 0 0 10px rgba(140, 106, 40, 0.5);
 }
-.glass-card {
-background: rgba(255, 255, 255, 0.9);
-backdrop-filter: blur(12px);
-box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
-}
-.badge-modern {
-background: linear-gradient(135deg, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0.1) 100%);
-backdrop-filter: blur(10px);
-border: 1px solid rgba(255,255,255,0.3);
-box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
-}
-.custom-toggle {
+.intricate-border {
+border: 1px solid #C5A059;
+outline: 2px solid #C5A059;
+outline-offset: 4px;
 position: relative;
-display: inline-block;
-width: 44px;
-height: 24px;
 }
-.custom-toggle input { opacity: 0; width: 0; height: 0; }
-.slider {
+.intricate-border::after {
+content: '';
 position: absolute;
-cursor: pointer;
-top: 0; left: 0; right: 0; bottom: 0;
-background-color: #e5e5e5;
-transition: .4s;
-border-radius: 34px;
+inset: 8px;
+border: 1px solid #E5D0A1;
+pointer-events: none;
 }
-.slider:before {
-position: absolute;
-content: "";
-height: 18px; width: 18px;
-left: 3px; bottom: 3px;
-background-color: white;
-transition: .4s;
-border-radius: 50%;
-box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+/* Timeline Connector */
+.timeline-line {
+background: repeating-linear-gradient(to bottom, #E7E5E4 0, #E7E5E4 6px, transparent 6px, transparent 12px);
 }
-input:checked + .slider { background-color: #ea580c; }
-input:checked + .slider:before { transform: translateX(20px); }
-.float-element { animation: float 6s ease-in-out infinite; }
-@keyframes float {
-0% { transform: translateY(0px); }
-50% { transform: translateY(-10px); }
-100% { transform: translateY(0px); }
-}
-</style><link id="all-fonts-link-font-geist" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-geist">.font-geist { font-family: 'Geist', sans-serif !important; }</style><link id="all-fonts-link-font-roboto" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-roboto">.font-roboto { font-family: 'Roboto', sans-serif !important; }</style><link id="all-fonts-link-font-montserrat" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-montserrat">.font-montserrat { font-family: 'Montserrat', sans-serif !important; }</style><link id="all-fonts-link-font-poppins" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-poppins">.font-poppins { font-family: 'Poppins', sans-serif !important; }</style><link id="all-fonts-link-font-playfair" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;900&amp;display=swap"><style id="all-fonts-style-font-playfair">.font-playfair { font-family: 'Playfair Display', serif !important; }</style><link id="all-fonts-link-font-instrument-serif" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:wght@400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-instrument-serif">.font-instrument-serif { font-family: 'Instrument Serif', serif !important; }</style><link id="all-fonts-link-font-merriweather" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&amp;display=swap"><style id="all-fonts-style-font-merriweather">.font-merriweather { font-family: 'Merriweather', serif !important; }</style><link id="all-fonts-link-font-bricolage" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-bricolage">.font-bricolage { font-family: 'Bricolage Grotesque', sans-serif !important; }</style><link id="all-fonts-link-font-jakarta" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap"><style id="all-fonts-style-font-jakarta">.font-jakarta { font-family: 'Plus Jakarta Sans', sans-serif !important; }</style><link id="all-fonts-link-font-manrope" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&amp;display=swap"><style id="all-fonts-style-font-manrope">.font-manrope { font-family: 'Manrope', sans-serif !important; }</style><link id="all-fonts-link-font-space-grotesk" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-space-grotesk">.font-space-grotesk { font-family: 'Space Grotesk', sans-serif !important; }</style><link id="all-fonts-link-font-work-sans" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700;800&amp;display=swap"><style id="all-fonts-style-font-work-sans">.font-work-sans { font-family: 'Work Sans', sans-serif !important; }</style><link id="all-fonts-link-font-pt-serif" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&amp;display=swap"><style id="all-fonts-style-font-pt-serif">.font-pt-serif { font-family: 'PT Serif', serif !important; }</style><link id="all-fonts-link-font-geist-mono" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-geist-mono">.font-geist-mono { font-family: 'Geist Mono', monospace !important; }</style><link id="all-fonts-link-font-space-mono" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&amp;display=swap"><style id="all-fonts-style-font-space-mono">.font-space-mono { font-family: 'Space Mono', monospace !important; }</style><link id="all-fonts-link-font-quicksand" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-quicksand">.font-quicksand { font-family: 'Quicksand', sans-serif !important; }</style><link id="all-fonts-link-font-nunito" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800&amp;display=swap"><style id="all-fonts-style-font-nunito">.font-nunito { font-family: 'Nunito', sans-serif !important; }</style></head>
-<body class="text-stone-600 antialiased selection:bg-orange-100 selection:text-orange-900">
+</style><link id="all-fonts-link-font-geist" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-geist">.font-geist { font-family: 'Geist', sans-serif !important; }</style><link id="all-fonts-link-font-roboto" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-roboto">.font-roboto { font-family: 'Roboto', sans-serif !important; }</style><link id="all-fonts-link-font-montserrat" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-montserrat">.font-montserrat { font-family: 'Montserrat', sans-serif !important; }</style><link id="all-fonts-link-font-poppins" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-poppins">.font-poppins { font-family: 'Poppins', sans-serif !important; }</style><link id="all-fonts-link-font-playfair" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;900&amp;display=swap"><style id="all-fonts-style-font-playfair">.font-playfair { font-family: 'Playfair Display', serif !important; }</style><link id="all-fonts-link-font-instrument-serif" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:wght@400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-instrument-serif">.font-instrument-serif { font-family: 'Instrument Serif', serif !important; }</style><link id="all-fonts-link-font-merriweather" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&amp;display=swap"><style id="all-fonts-style-font-merriweather">.font-merriweather { font-family: 'Merriweather', serif !important; }</style><link id="all-fonts-link-font-bricolage" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-bricolage">.font-bricolage { font-family: 'Bricolage Grotesque', sans-serif !important; }</style><link id="all-fonts-link-font-jakarta" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap"><style id="all-fonts-style-font-jakarta">.font-jakarta { font-family: 'Plus Jakarta Sans', sans-serif !important; }</style><link id="all-fonts-link-font-manrope" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&amp;display=swap"><style id="all-fonts-style-font-manrope">.font-manrope { font-family: 'Manrope', sans-serif !important; }</style><link id="all-fonts-link-font-space-grotesk" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-space-grotesk">.font-space-grotesk { font-family: 'Space Grotesk', sans-serif !important; }</style><link id="all-fonts-link-font-work-sans" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700;800&amp;display=swap"><style id="all-fonts-style-font-work-sans">.font-work-sans { font-family: 'Work Sans', sans-serif !important; }</style><link id="all-fonts-link-font-pt-serif" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&amp;display=swap"><style id="all-fonts-style-font-pt-serif">.font-pt-serif { font-family: 'PT Serif', serif !important; }</style><link id="all-fonts-link-font-geist-mono" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-geist-mono">.font-geist-mono { font-family: 'Geist Mono', monospace !important; }</style><link id="all-fonts-link-font-space-mono" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&amp;display=swap"><style id="all-fonts-style-font-space-mono">.font-space-mono { font-family: 'Space Mono', monospace !important; }</style><link id="all-fonts-link-font-quicksand" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-quicksand">.font-quicksand { font-family: 'Quicksand', sans-serif !important; }</style><link id="all-fonts-link-font-nunito" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800&amp;display=swap"><style id="all-fonts-style-font-nunito">.font-nunito { font-family: 'Nunito', sans-serif !important; }</style><link id="all-fonts-link-font-newsreader" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400..800&amp;display=swap"><style id="all-fonts-style-font-newsreader">.font-newsreader { font-family: 'Newsreader', serif !important; }</style><link id="all-fonts-link-font-google-sans-flex" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:wght@400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-google-sans-flex">.font-google-sans-flex { font-family: 'Google Sans Flex', sans-serif !important; }</style><link id="all-fonts-link-font-oswald" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-oswald">.font-oswald { font-family: 'Oswald', sans-serif !important; }</style><link id="all-fonts-link-font-dm-sans" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-dm-sans">.font-dm-sans { font-family: 'DM Sans', sans-serif !important; }</style></head>
+<body class="antialiased selection:bg-[#556B2F] selection:text-white">
 
     <!-- Navigation -->
-    <nav class="fixed top-4 left-4 right-4 z-50">
-        <div class="max-w-6xl mx-auto glass rounded-full px-6 h-16 flex items-center justify-between shadow-sm">
-            <a href="#" class="flex items-center gap-2 group">
-                <div class="h-8 w-8 bg-orange-600 rounded-full flex items-center justify-center text-white shadow-lg shadow-orange-500/30">
-                    <iconify-icon icon="lucide:chef-hat" width="16" height="16" stroke-width="1.5"></iconify-icon>
+    <nav class="sticky top-0 z-50 bg-[#FDFBF7]/95 backdrop-blur-md border-b border-stone-200">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-2.5">
+                <div class="w-9 h-9 bg-olive text-white rounded-lg flex items-center justify-center shadow-sm">
+                    <iconify-icon icon="lucide:award" width="20" stroke-width="1.5" class=""></iconify-icon>
                 </div>
-                <span class="text-stone-900 font-semibold tracking-tight text-lg font-heading">Metric</span>
-            </a>
+                <span class="font-serif text-xl tracking-tight font-medium text-stone-900">Tastecert</span>
+            </div>
             
             <div class="hidden md:flex items-center gap-8 text-sm font-medium text-stone-600">
-                <a href="#intro" class="hover:text-orange-600 transition-colors">What we do</a>
-                <a href="#tasting" class="hover:text-orange-600 transition-colors">Tasting Service</a>
-                <a href="#why" class="hover:text-orange-600 transition-colors">Why Metric</a>
-                <a href="#awards" class="hover:text-orange-600 transition-colors">Awards</a>
+                <a href="#" class="hover:text-stone-900 transition-colors">Evaluation</a>
+                <a href="#" class="hover:text-stone-900 transition-colors">Benefits</a>
+                <a href="#" class="hover:text-stone-900 transition-colors">Directory</a>
+                <a href="#" class="hover:text-stone-900 transition-colors">Contact</a>
             </div>
 
-            <div class="flex items-center gap-3">
-                <a href="#" class="hidden sm:block text-sm font-medium text-stone-500 hover:text-stone-900">Log in</a>
-                <a href="#submit" class="text-sm font-semibold px-5 py-2 bg-stone-900 text-white rounded-full hover:bg-stone-800 transition-all hover:scale-105 active:scale-95 shadow-lg shadow-stone-900/20">
-                    Submit Product
+            <div class="flex items-center gap-4">
+                <a href="#" class="hidden sm:block text-sm font-medium text-stone-600 hover:text-stone-900">Login</a>
+                <a href="#submit" class="bg-stone-900 hover:bg-stone-800 text-white px-5 py-2.5 rounded-lg text-sm font-medium transition-all shadow-sm">
+                    Get Certified
                 </a>
             </div>
         </div>
     </nav>
 
-    <!-- Hero / Introduction -->
-    <section id="intro" class="relative pt-40 pb-20 md:pt-48 md:pb-32 overflow-hidden">
-        <!-- Abstract gradient background -->
-        <div class="absolute inset-0 -z-10 bg-[#FAFAF9]">
-            <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[600px] bg-orange-200/30 rounded-[100%] blur-3xl opacity-60"></div>
-            <div class="absolute bottom-0 right-0 w-[800px] h-[600px] bg-blue-100/30 rounded-[100%] blur-3xl opacity-40"></div>
-        </div>
-
-        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 lg:gap-20 items-center">
-            <div class="relative z-10">
-                <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white border border-stone-100 shadow-sm text-xs font-semibold text-orange-600 mb-8">
-                    <span class="flex h-2 w-2 rounded-full bg-orange-500 animate-pulse"></span>
-                    Now supporting ISO 8586:2023
+    <!-- 1. Introduction -->
+    <header class="overflow-hidden pt-20 pr-6 pb-24 pl-6">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 max-w-7xl mr-auto ml-auto gap-x-16 gap-y-16 items-center">
+            <div class="space-y-8 max-w-xl">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-stone-200/50 text-stone-600 text-xs font-medium uppercase tracking-wider border border-stone-200">
+                    <span class="w-1.5 h-1.5 rounded-full bg-olive"></span>
+                    Global Standard
                 </div>
-                
-                <h1 class="text-5xl lg:text-7xl font-extrabold text-stone-900 tracking-tight leading-[1.1] mb-6 font-heading">
-                    Turn taste into <span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-amber-600">measurable proof.</span>
+                <h1 class="font-serif text-5xl lg:text-6xl text-stone-900 leading-[1.1] tracking-tight">
+                    Independent Certification for Exceptional Products
                 </h1>
-                
-                <p class="text-lg text-stone-500 leading-relaxed font-medium mb-8 max-w-lg">
-                    We analyze food and beverage products using expert sensory panels and lab instrumentation—delivering clear, decision-ready reports and a quality seal trusted by retailers.
+                <p class="text-lg text-stone-600 leading-relaxed font-light">
+                    Tastecert provides the definitive seal of quality for artisan producers. We connect traditional craftsmanship with modern market trust through rigorous, blind-tested evaluation and verified documentation.
                 </p>
-
-                <div class="grid grid-cols-2 gap-3 max-w-md mb-8">
-                    <div class="flex items-center gap-2 text-sm font-medium">
-                        <div class="w-6 h-6 rounded-full bg-orange-50 text-orange-600 flex items-center justify-center">
-                            <iconify-icon icon="lucide:flask-conical" width="14" stroke-width="1.5"></iconify-icon>
-                        </div>
-                        Human + Lab testing
-                    </div>
-                    <div class="flex items-center gap-2 text-sm font-medium">
-                        <div class="w-6 h-6 rounded-full bg-green-50 text-green-600 flex items-center justify-center">
-                            <iconify-icon icon="lucide:check-circle" width="14" stroke-width="1.5"></iconify-icon>
-                        </div>
-                        Retail-ready seal
-                    </div>
-                </div>
-
-                <div class="flex flex-col sm:flex-row items-center gap-4">
-                    <a href="#submit" class="w-full sm:w-auto px-8 py-4 bg-orange-600 text-white rounded-full font-semibold hover:bg-orange-500 transition-all hover:shadow-orange-500/25 hover:shadow-xl text-center">
-                        Submit Your Product
+                <div class="pt-2 flex flex-col sm:flex-row gap-4">
+                    <a href="#submit" class="inline-flex items-center justify-center bg-olive hover:bg-[#465a26] text-white px-8 py-3.5 rounded-lg text-base font-medium transition-all shadow-sm hover:shadow-md">
+                        Start Certification
                     </a>
-                    <a href="#tasting" class="w-full sm:w-auto px-8 py-4 bg-white text-stone-700 border border-stone-200 rounded-full font-semibold hover:bg-stone-50 transition-colors text-center flex items-center justify-center gap-2 shadow-sm">
-                        <iconify-icon icon="lucide:info" width="20" class="text-stone-400" stroke-width="1.5"></iconify-icon>
-                        How it works
+                    <a href="#works" class="inline-flex items-center justify-center bg-white border border-stone-200 hover:border-stone-300 text-stone-700 px-8 py-3.5 rounded-lg text-base font-medium transition-all">
+                        How it Works
                     </a>
                 </div>
-                
-                <div class="mt-10 flex items-center gap-4 text-sm font-medium text-stone-400">
-                    <span>Trusted by</span>
-                    <div class="flex gap-4 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
-                        <span class="font-heading font-semibold text-stone-800">Oatly</span>
-                        <span class="font-heading font-semibold text-stone-800">Nestlé</span>
-                        <span class="font-heading font-semibold text-stone-800">Danone</span>
+                <div class="flex items-center gap-6 pt-4 text-sm text-stone-500">
+                    <div class="flex items-center gap-2">
+                        <iconify-icon icon="lucide:check" class="text-olive"></iconify-icon>
+                        <span>ISO 9001 Compliant</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <iconify-icon icon="lucide:check" class="text-olive"></iconify-icon>
+                        <span>Global Recognition</span>
                     </div>
                 </div>
             </div>
-
-            <div class="relative">
-                <!-- Floating Card Stack with lab-focused image -->
-                <div class="relative z-10 w-full aspect-square md:aspect-[4/5] max-w-md mx-auto">
-                    <div class="absolute inset-0 rounded-[2rem] overflow-hidden shadow-2xl shadow-stone-900/10 border-4 border-white transform hover:scale-[1.02] transition-transform duration-500">
-                        <img src="https://images.unsplash.com/photo-1581093588401-83b5d5a1a44f?q=80&amp;w=2670&amp;auto=format&amp;fit=crop" alt="Laboratory pipette analyzing food sample" class="w-full h-full object-cover">
-                        <div class="absolute inset-0" style="background: linear-gradient(to top, rgba(0,0,0,0.4) 0%, transparent 100%);"></div>
-                    </div>
-
-                    <!-- Floating UI Widget: Taste Profile -->
-                    <div class="absolute -bottom-8 -left-8 right-8 bg-white p-5 rounded-2xl shadow-xl shadow-stone-900/10 border border-stone-100 float-element">
-                        <div class="flex items-center justify-between mb-4">
-                            <div class="flex items-center gap-3">
-                                <div class="w-10 h-10 rounded-full bg-orange-100 text-orange-600 flex items-center justify-center">
-                                    <iconify-icon icon="lucide:activity" width="20" stroke-width="1.5"></iconify-icon>
-                                </div>
-                                <div>
-                                    <h3 class="text-sm font-semibold text-stone-900 font-heading">Flavor Profile</h3>
-                                    <p class="text-xs text-stone-500">Sample B-92</p>
-                                </div>
-                            </div>
-                            <span class="text-xs font-semibold bg-green-100 text-green-700 px-2 py-1 rounded-md">98/100</span>
-                        </div>
-                        <div class="space-y-3">
-                            <div class="">
-                                <div class="flex justify-between text-[10px] font-semibold uppercase tracking-wider text-stone-400 mb-1">
-                                    <span>Umami</span>
-                                    <span>High</span>
-                                </div>
-                                <div class="h-2 bg-stone-100 rounded-full overflow-hidden">
-                                    <div class="h-full bg-orange-500 w-[85%] rounded-full"></div>
-                                </div>
-                            </div>
-                            <div class="">
-                                <div class="flex justify-between text-[10px] font-semibold uppercase tracking-wider text-stone-400 mb-1">
-                                    <span>Acidity</span>
-                                    <span>Balanced</span>
-                                </div>
-                                <div class="h-2 bg-stone-100 rounded-full overflow-hidden">
-                                    <div class="h-full bg-stone-800 w-[60%] rounded-full"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Floating Widget 2: Status -->
-                    <div class="absolute top-8 -right-6 bg-white/90 backdrop-blur px-4 py-3 rounded-xl shadow-lg border border-white/50 flex items-center gap-3 animate-bounce" style="animation-duration: 3s;">
-                        <div class="h-2 w-2 bg-green-500 rounded-full"></div>
-                        <span class="text-xs font-semibold text-stone-800">Lab Analysis Complete</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Tasting Service (short explanation with visual) -->
-    <section id="tasting" class="py-24 bg-white relative">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center max-w-2xl mx-auto mb-16">
-                <h2 class="text-3xl md:text-4xl font-semibold text-stone-900 tracking-tight mb-4 font-heading">Our Tasting Service, explained</h2>
-                <p class="text-stone-500 text-lg">
-                    A hybrid method: trained sensory panelists score taste, aroma, and texture while our lab quantifies key compounds. You receive a clear, ranked report and a quality grade.
-                </p>
-            </div>
-
             
-        </div>
-    </section>
-
-    <!-- Why companies work with us (reframed content) -->
-    <section id="why" class="py-24 bg-stone-50 border-y border-stone-100 overflow-hidden">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="grid lg:grid-cols-2 gap-16 items-center">
-                <div class="order-2 lg:order-1">
-                    <div class="relative">
-                        <div class="absolute inset-0 bg-gradient-to-tr from-orange-200 to-blue-200 rounded-3xl blur-2xl opacity-30 transform rotate-3"></div>
-                        <div class="relative bg-white rounded-2xl shadow-xl border border-stone-200/60 overflow-hidden">
-                            <div class="border-b border-stone-100 p-4 flex items-center justify-between bg-white">
-                                <div class="flex gap-2">
-                                    <div class="w-3 h-3 rounded-full bg-red-400/20 border border-red-400/50"></div>
-                                    <div class="w-3 h-3 rounded-full bg-yellow-400/20 border border-yellow-400/50"></div>
-                                    <div class="w-3 h-3 rounded-full bg-green-400/20 border border-green-400/50"></div>
-                                </div>
-                                <div class="px-3 py-1 bg-stone-50 rounded-md border border-stone-100">
-                                    <span class="text-[10px] font-mono text-stone-400">metric_analysis_v2.0</span>
-                                </div>
-                            </div>
-                            <div class="p-6">
-                                <div class="flex items-start gap-4 mb-8">
-                                    <div class="w-16 h-16 rounded-xl overflow-hidden bg-stone-100 shrink-0">
-                                        <img src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?q=80&amp;w=1887&amp;auto=format&amp;fit=crop" alt="Sample" class="w-full h-full object-cover">
-                                    </div>
-                                    <div class="flex-1">
-                                        <div class="flex justify-between items-start">
-                                            <div>
-                                                <h3 class="font-semibold text-stone-900">Vanilla Bean Extract</h3>
-                                                <p class="text-xs text-stone-500 mt-1">Batch #4029 • Madagascar Origin</p>
-                                            </div>
-                                            <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-green-50 text-green-700 text-xs font-semibold border border-green-100">
-                                                <iconify-icon icon="lucide:check-circle" width="12" stroke-width="1.5"></iconify-icon> Pass
-                                            </span>
-                                        </div>
-                                        <div class="mt-4 flex gap-4">
-                                            <div class="text-center px-3 py-2 rounded-lg bg-stone-50 border border-stone-100">
-                                                <div class="text-[10px] uppercase text-stone-400 font-semibold">Vanillin</div>
-                                                <div class="text-sm font-semibold text-stone-900">2.4%</div>
-                                            </div>
-                                            <div class="text-center px-3 py-2 rounded-lg bg-stone-50 border border-stone-100">
-                                                <div class="text-[10px] uppercase text-stone-400 font-semibold">Moisture</div>
-                                                <div class="text-sm font-semibold text-stone-900">28%</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="space-y-4">
-                                    <h4 class="text-xs font-semibold uppercase tracking-wider text-stone-400">Flavor Radar</h4>
-                                    <div class="space-y-3">
-                                        <div class="flex items-center gap-4">
-                                            <span class="text-xs font-medium text-stone-600 w-16">Sweet</span>
-                                            <div class="flex-1 h-2 bg-stone-100 rounded-full overflow-hidden">
-                                                <div class="w-[80%] h-full bg-stone-800 rounded-full"></div>
-                                            </div>
-                                        </div>
-                                        <div class="flex items-center gap-4">
-                                            <span class="text-xs font-medium text-stone-600 w-16">Floral</span>
-                                            <div class="flex-1 h-2 bg-stone-100 rounded-full overflow-hidden">
-                                                <div class="w-[92%] h-full bg-orange-500 rounded-full"></div>
-                                            </div>
-                                        </div>
-                                        <div class="flex items-center gap-4">
-                                            <span class="text-xs font-medium text-stone-600 w-16">Woody</span>
-                                            <div class="flex-1 h-2 bg-stone-100 rounded-full overflow-hidden">
-                                                <div class="w-[45%] h-full bg-stone-300 rounded-full"></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+            <div class="relative">
+                <div class="aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl bg-stone-100 relative z-10">
+                    <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/da6a5e12-2657-426e-8b86-6c8b45764c78_1600w.webp" alt="Artisan inspecting product quality in natural light" class="opacity-95 w-full h-full object-cover">
+                    <!-- Overlay Card -->
+                    <div class="absolute bottom-6 left-6 right-6 bg-white/95 backdrop-blur rounded-xl p-5 shadow-lg border border-white/50 flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-full bg-olive/10 text-olive flex items-center justify-center shrink-0">
+                            <iconify-icon icon="lucide:shield-check" width="24" stroke-width="1.5" class=""></iconify-icon>
+                        </div>
+                        <div class="">
+                            <p class="text-sm font-semibold text-stone-900">Verified Excellence</p>
+                            <p class="text-xs text-stone-500">Every product undergoes double-blind chemical &amp; sensory analysis.</p>
                         </div>
                     </div>
                 </div>
+                <!-- Decorative subtle element -->
+                <div class="absolute -top-6 -right-6 w-32 h-32 bg-olive/5 rounded-full blur-3xl -z-10"></div>
+                <div class="absolute -bottom-8 -left-8 w-64 h-64 bg-gold/10 rounded-full blur-3xl -z-10"></div>
+            </div>
+        </div>
+    </header>
 
-                <div class="order-1 lg:order-2">
-                    <h2 class="text-3xl md:text-4xl font-semibold text-stone-900 tracking-tight mb-6 font-heading">
-                        Why companies choose Metric
-                    </h2>
-                    <p class="text-stone-500 mb-8 leading-relaxed text-lg">
-                        We remove ambiguity from taste. Our combined human + instrument approach helps R&amp;D, marketing, and QA teams move faster with confidence.
+    <!-- 2. Official Documentation -->
+    <section class="py-24 bg-white border-y border-stone-200">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+                
+                <!-- Visual: Realistic Legal Certificate -->
+                <div class="relative order-2 lg:order-1 bg-stone-100 rounded-2xl p-8 lg:p-12 flex items-center justify-center">
+                    
+                    <!-- Certificate Container -->
+                    <div class="relative paper-texture w-full aspect-[1/1.3] md:aspect-[1/1.4] max-w-md mx-auto p-6 md:p-8 flex flex-col intricate-border shadow-xl transform rotate-1 transition hover:rotate-0 duration-500">
+                        
+                        <!-- Watermark -->
+                        <div class="absolute inset-0 flex items-center justify-center opacity-[0.03] pointer-events-none">
+                            <iconify-icon icon="lucide:award" width="200" height="200"></iconify-icon>
+                        </div>
+
+                        <!-- Certificate Header -->
+                        <div class="text-center border-b border-stone-200 pb-6 relative z-10">
+                            <div class="flex justify-center mb-3">
+                                <iconify-icon icon="lucide:award" class="text-stone-800" width="32"></iconify-icon>
+                            </div>
+                            <h2 class="font-display text-2xl md:text-3xl text-stone-900 uppercase tracking-widest font-semibold mb-2">Certificate</h2>
+                            <p class="font-serif text-sm text-stone-500 italic">of Quality &amp; Authenticity</p>
+                        </div>
+
+                        <!-- Certificate Body -->
+                        <div class="flex-grow flex flex-col justify-center text-center py-6 relative z-10 space-y-6">
+                            <p class="text-[10px] md:text-xs uppercase tracking-[0.2em] text-stone-400 font-medium">This document certifies that</p>
+                            
+                            <h3 class="font-serif text-2xl md:text-3xl text-stone-900 font-medium italic leading-tight">
+                                Highland Estate Reserve
+                            </h3>
+                            
+                            <p class="text-[10px] md:text-xs uppercase tracking-[0.2em] text-stone-400 font-medium">Produced by Green Valley Roasters</p>
+                            
+                            <div class="text-sm md:text-base text-stone-600 font-light leading-relaxed px-4">
+                                has successfully met the rigorous standards of the Tastecert Quality Institute, achieving a verified score of  in the Coffee (Single Origin) category.
+                            </div>
+                        </div>
+
+                        <!-- Certificate Footer -->
+                        <div class="mt-auto pt-6 border-t border-stone-200 relative z-10">
+                            <div class="grid grid-cols-2 gap-8 items-end">
+                                <div class="text-center">
+                                    <div class="h-12 flex items-end justify-center mb-1">
+                                        <span class="font-signature text-2xl md:text-3xl text-stone-800 transform -rotate-6 block">James Miller</span>
+                                    </div>
+                                    <div class="h-px w-full bg-stone-300"></div>
+                                    <p class="text-[9px] uppercase tracking-wider text-stone-400 mt-1">Director of Evaluation</p>
+                                </div>
+                                <div class="text-center">
+                                    <div class="h-12 flex items-end justify-center mb-1">
+                                        <span class="font-signature text-2xl md:text-3xl text-stone-800 block">Elena Ross</span>
+                                    </div>
+                                    <div class="h-px w-full bg-stone-300"></div>
+                                    <p class="text-[9px] uppercase tracking-wider text-stone-400 mt-1">Compliance Officer</p>
+                                </div>
+                            </div>
+
+                            <div class="mt-8 flex justify-between items-center">
+                                <div class="flex flex-col">
+                                    <span class="text-[9px] text-stone-400 uppercase tracking-wide">Registration No.</span>
+                                    <span class="font-mono text-xs text-stone-800">TC-2024-8892</span>
+                                </div>
+                                
+                                <!-- Gold Seal -->
+                                <div class="w-16 h-16 md:w-20 md:h-20 rounded-full gold-foil flex items-center justify-center shadow-lg relative -mr-2">
+                                    <div class="absolute inset-1 border border-white/30 rounded-full"></div>
+                                    <iconify-icon icon="lucide:ribbon" class="text-white/90 drop-shadow-md" width="32"></iconify-icon>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Text Content -->
+                <div class="order-1 lg:order-2 space-y-8">
+                    <h2 class="font-serif text-4xl text-stone-900 tracking-tight">Legally Binding Proof of Quality</h2>
+                    <p class="text-lg text-stone-600 leading-relaxed font-light">
+                        The Tastecert certificate is more than a marketing asset; it is a formal declaration of adherence to international quality standards. Each document is uniquely serialised, digitally verifiable, and signed by accredited sensory analysts.
                     </p>
                     
                     <div class="space-y-6">
                         <div class="flex gap-4">
-                            <div class="w-10 h-10 rounded-full bg-orange-50 text-orange-600 flex items-center justify-center shrink-0">
-                                <iconify-icon icon="lucide:rocket" width="20" stroke-width="1.5"></iconify-icon>
-                            </div>
-                            <div>
-                                <h4 class="font-semibold text-stone-900">Faster decisions</h4>
-                                <p class="text-sm text-stone-500 mt-1">Expedited option in 72h with clear pass/fail flags and prioritized actions.</p>
-                            </div>
-                        </div>
-                        <div class="flex gap-4">
-                            <div class="w-10 h-10 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center shrink-0">
-                                <iconify-icon icon="lucide:shield-check" width="20" stroke-width="1.5"></iconify-icon>
+                            <div class="mt-1 w-10 h-10 rounded-full bg-stone-100 flex items-center justify-center text-olive shrink-0 border border-stone-200">
+                                <iconify-icon icon="lucide:scale" width="20" stroke-width="1.5"></iconify-icon>
                             </div>
                             <div class="">
-                                <h4 class="font-semibold text-stone-900">Standards-compliant</h4>
-                                <p class="text-sm text-stone-500 mt-1">Trained panelists (ISO 8586) and validated lab methods for defensible claims.</p>
+                                <h4 class="font-medium text-stone-900 text-lg">Rigorous Compliance</h4>
+                                <p class="text-stone-600 mt-1">Aligned with ISO sensory analysis standards. Our process withstands scrutiny from global retailers.</p>
                             </div>
                         </div>
+                        
                         <div class="flex gap-4">
-                            <div class="w-10 h-10 rounded-full bg-green-50 text-green-600 flex items-center justify-center shrink-0">
-                                <iconify-icon icon="lucide:line-chart" width="20" stroke-width="1.5"></iconify-icon>
+                            <div class="mt-1 w-10 h-10 rounded-full bg-stone-100 flex items-center justify-center text-olive shrink-0 border border-stone-200">
+                                <iconify-icon icon="lucide:fingerprint" width="20" stroke-width="1.5"></iconify-icon>
                             </div>
                             <div class="">
-                                <h4 class="font-semibold text-stone-900">Actionable benchmarks</h4>
-                                <p class="text-sm text-stone-500 mt-1">Compare against category leaders and pinpoint which compounds drive flavor.</p>
+                                <h4 class="font-medium text-stone-900 text-lg">Anti-Counterfeit Protection</h4>
+                                <p class="text-stone-600 mt-1">Certificates feature unique QR verification codes linked to our immutable blockchain registry.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-4">
+                            <div class="mt-1 w-10 h-10 rounded-full bg-stone-100 flex items-center justify-center text-olive shrink-0 border border-stone-200">
+                                <iconify-icon icon="lucide:history" width="20" stroke-width="1.5"></iconify-icon>
+                            </div>
+                            <div class="">
+                                <h4 class="font-medium text-stone-900 text-lg">3-Year Validity</h4>
+                                <p class="text-stone-600 mt-1">Unlike one-off awards, our certification ensures sustained quality control with regular spot-checks.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Detailed How It Works -->
+    <section id="works" class="py-24 px-6 bg-[#FDFBF7]">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="font-serif text-3xl md:text-4xl text-stone-900 tracking-tight">Certification Process</h2>
+                <p class="text-stone-600 mt-4 max-w-2xl mx-auto font-light text-lg">A comprehensive four-week journey from submission to global recognition.</p>
+            </div>
+
+            <div class="relative">
+                <!-- Vertical Line (Desktop & Mobile) -->
+                <div class="absolute top-0 bottom-0 left-[27px] md:left-1/2 w-px timeline-line md:-translate-x-1/2"></div>
+
+                <div class="space-y-12">
+                    
+                    <!-- Step 1 -->
+                    <div class="relative grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-start group">
+                        <!-- Connector Dot -->
+                        <div class="absolute left-[27px] md:left-1/2 w-3 h-3 bg-stone-900 rounded-full border-2 border-[#FDFBF7] md:-translate-x-1/2 mt-6 z-10 shadow-sm"></div>
+                        
+                        <!-- Content Box (Left on Desktop) -->
+                        <div class="pl-16 md:pl-0 md:text-right md:pr-4">
+                            <span class="text-xs font-bold text-olive uppercase tracking-wider mb-2 block">Step 01 — Days 1-3</span>
+                            <h3 class="text-xl font-serif text-stone-900 font-medium mb-3">Application &amp; Pre-Screening</h3>
+                            <p class="text-stone-600 text-sm leading-relaxed mb-4">Submit your producer profile and product specifications via our secure portal. Our team reviews your eligibility and assigns a category specialist.</p>
+                            <div class="inline-flex items-center gap-2 px-3 py-1.5 bg-white border border-stone-200 rounded text-xs text-stone-500 shadow-sm">
+                                <iconify-icon icon="lucide:file-text" width="14"></iconify-icon> Requirements: Lab Reports, Origin Docs
+                            </div>
+                        </div>
+                        
+                        <!-- Icon Box (Right on Desktop) -->
+                        <div class="hidden md:flex justify-start pl-4">
+                            <div class="w-16 h-16 bg-white border border-stone-200 rounded-2xl flex items-center justify-center text-stone-900 shadow-sm group-hover:shadow-md transition-all group-hover:-translate-y-1">
+                                <iconify-icon icon="lucide:clipboard-check" width="28" stroke-width="1.2"></iconify-icon>
                             </div>
                         </div>
                     </div>
 
-                    <div class="mt-8">
-                        <a href="#submit" class="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-stone-900 text-white font-semibold hover:bg-stone-800 transition-colors">
-                            <iconify-icon icon="lucide:send" width="18" stroke-width="1.5"></iconify-icon>
-                            Start your analysis
-                        </a>
+                    <!-- Step 2 -->
+                    <div class="relative grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-start group">
+                        <!-- Connector Dot -->
+                        <div class="absolute left-[27px] md:left-1/2 w-3 h-3 bg-olive rounded-full border-2 border-[#FDFBF7] md:-translate-x-1/2 mt-6 z-10 shadow-sm"></div>
+                        
+                        <!-- Icon Box (Left on Desktop) -->
+                        <div class="hidden md:flex justify-end pr-4">
+                            <div class="w-16 h-16 bg-white border border-stone-200 rounded-2xl flex items-center justify-center text-olive shadow-sm group-hover:shadow-md transition-all group-hover:-translate-y-1">
+                                <iconify-icon icon="lucide:package-search" width="28" stroke-width="1.2"></iconify-icon>
+                            </div>
+                        </div>
+                        
+                        <!-- Content Box (Right on Desktop) -->
+                        <div class="pl-16 md:pl-4 md:text-left">
+                            <span class="text-xs font-bold text-olive uppercase tracking-wider mb-2 block">Step 02 — Days 4-10</span>
+                            <h3 class="text-xl font-serif text-stone-900 font-medium mb-3">Logistics &amp; Chain of Custody</h3>
+                            <p class="text-stone-600 text-sm leading-relaxed mb-4">You ship 3 randomized samples to our central laboratory. We employ strict cold-chain monitoring and anonymize samples upon arrival to ensure blind testing.</p>
+                            <div class="inline-flex items-center gap-2 px-3 py-1.5 bg-white border border-stone-200 rounded text-xs text-stone-500 shadow-sm">
+                                <iconify-icon icon="lucide:truck" width="14"></iconify-icon> Action: Ship 3 Units
+                            </div>
+                        </div>
                     </div>
+
+                    <!-- Step 3 -->
+                    <div class="relative grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-start group">
+                        <!-- Connector Dot -->
+                        <div class="absolute left-[27px] md:left-1/2 w-3 h-3 bg-stone-900 rounded-full border-2 border-[#FDFBF7] md:-translate-x-1/2 mt-6 z-10 shadow-sm"></div>
+                        
+                        <!-- Content Box (Left on Desktop) -->
+                        <div class="pl-16 md:pl-0 md:text-right md:pr-4">
+                            <span class="text-xs font-bold text-olive uppercase tracking-wider mb-2 block">Step 03 — Days 11-21</span>
+                            <h3 class="text-xl font-serif text-stone-900 font-medium mb-3">Sensory &amp; Chemical Analysis</h3>
+                            <p class="text-stone-600 text-sm leading-relaxed mb-4">Two parallel tests occur: a chemical purity test to verify ingredients, and a sensory panel (5 experts) evaluating taste, texture, and aroma against category benchmarks.</p>
+                            <div class="inline-flex items-center gap-2 px-3 py-1.5 bg-white border border-stone-200 rounded text-xs text-stone-500 shadow-sm">
+                                <iconify-icon icon="lucide:microscope" width="14"></iconify-icon> Outcome: Detailed Technical Report
+                            </div>
+                        </div>
+                        
+                        <!-- Icon Box (Right on Desktop) -->
+                        <div class="hidden md:flex justify-start pl-4">
+                            <div class="w-16 h-16 bg-white border border-stone-200 rounded-2xl flex items-center justify-center text-stone-900 shadow-sm group-hover:shadow-md transition-all group-hover:-translate-y-1">
+                                <iconify-icon icon="lucide:flask-conical" width="28" stroke-width="1.2"></iconify-icon>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 4 -->
+                    <div class="relative grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-start group">
+                        <!-- Connector Dot -->
+                        <div class="absolute left-[27px] md:left-1/2 w-3 h-3 bg-gold rounded-full border-2 border-[#FDFBF7] md:-translate-x-1/2 mt-6 z-10 shadow-sm ring-4 ring-gold/20"></div>
+                        
+                        <!-- Icon Box (Left on Desktop) -->
+                        <div class="hidden md:flex justify-end pr-4">
+                            <div class="w-16 h-16 bg-gradient-to-br from-stone-900 to-stone-700 rounded-2xl flex items-center justify-center text-white shadow-lg group-hover:shadow-xl transition-all group-hover:-translate-y-1">
+                                <iconify-icon icon="lucide:medal" width="28" stroke-width="1.2"></iconify-icon>
+                            </div>
+                        </div>
+                        
+                        <!-- Content Box (Right on Desktop) -->
+                        <div class="pl-16 md:pl-4 md:text-left">
+                            <span class="text-xs font-bold text-olive uppercase tracking-wider mb-2 block">Step 04 — Day 28</span>
+                            <h3 class="text-xl font-serif text-stone-900 font-medium mb-3">Certification &amp; Issuance</h3>
+                            <p class="text-stone-600 text-sm leading-relaxed mb-4">Products scoring above 85/100 are granted the Tastecert Seal. You receive digital assets, the physical certificate, and listing in our buyer directory.</p>
+                            <div class="inline-flex items-center gap-2 px-3 py-1.5 bg-white border border-stone-200 rounded text-xs text-stone-500 shadow-sm">
+                                <iconify-icon icon="lucide:check-circle-2" width="14"></iconify-icon> Deliverable: License &amp; Seal
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            
+            <div class="mt-16 text-center">
+                 <a href="#submit" class="inline-flex items-center justify-center gap-2 text-stone-900 font-medium border-b border-stone-900 pb-0.5 hover:text-olive hover:border-olive transition-colors">
+                    Download Detailed Methodology PDF <iconify-icon icon="lucide:arrow-right" width="16"></iconify-icon>
+                 </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Why Producers Choose Tastecert (Simplified from previous) -->
+    <section class="py-24 px-6 bg-[#FDFBF7] border-t border-stone-200">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <h2 class="font-serif text-3xl md:text-4xl text-stone-900 tracking-tight mb-4">Why Producers Choose Tastecert</h2>
+                <p class="text-stone-600 font-light text-lg">We help exceptional producers bridge the gap between craftsmanship and commercial success.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Card 1 -->
+                <div class="bg-white p-8 rounded-xl border border-stone-200 shadow-sm hover:shadow-md transition-shadow">
+                    <div class="w-12 h-12 bg-olive/5 text-olive rounded-lg flex items-center justify-center mb-6">
+                        <iconify-icon icon="lucide:handshake" width="24" stroke-width="1.5"></iconify-icon>
+                    </div>
+                    <h3 class="font-serif text-lg font-medium text-stone-900 mb-3">Trust from Buyers</h3>
+                    <p class="text-sm text-stone-600 leading-relaxed">Retailers and distributors use our registry to vet new suppliers, reducing friction in new partnerships.</p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-white p-8 rounded-xl border border-stone-200 shadow-sm hover:shadow-md transition-shadow">
+                    <div class="w-12 h-12 bg-stone-100 text-stone-600 rounded-lg flex items-center justify-center mb-6">
+                        <iconify-icon icon="lucide:eye" width="24" stroke-width="1.5"></iconify-icon>
+                    </div>
+                    <h3 class="font-serif text-lg font-medium text-stone-900 mb-3">Market Visibility</h3>
+                    <p class="text-sm text-stone-600 leading-relaxed">Stand out on crowded shelves. Our seal is a visual cue for quality that consumers recognize instantly.</p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-white p-8 rounded-xl border border-stone-200 shadow-sm hover:shadow-md transition-shadow">
+                    <div class="w-12 h-12 bg-gold/10 text-gold rounded-lg flex items-center justify-center mb-6">
+                        <iconify-icon icon="lucide:upload-cloud" width="24" stroke-width="1.5"></iconify-icon>
+                    </div>
+                    <h3 class="font-serif text-lg font-medium text-stone-900 mb-3">Simple Submission</h3>
+                    <p class="text-sm text-stone-600 leading-relaxed">Our digital platform makes the application process streamlined, handling logistics for samples efficiently.</p>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="bg-white p-8 rounded-xl border border-stone-200 shadow-sm hover:shadow-md transition-shadow">
+                    <div class="w-12 h-12 bg-stone-100 text-stone-600 rounded-lg flex items-center justify-center mb-6">
+                        <iconify-icon icon="lucide:trophy" width="24" stroke-width="1.5"></iconify-icon>
+                    </div>
+                    <h3 class="font-serif text-lg font-medium text-stone-900 mb-3">Reliable Recognition</h3>
+                    <p class="text-sm text-stone-600 leading-relaxed">Unlike marketing awards, our certification is data-backed and valid for 3 years, providing lasting value.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Awards / Quality Seal -->
-    <section id="awards" class="py-24 bg-stone-900 relative overflow-hidden">
-        <div class="absolute inset-0 opacity-10" style="background-image: linear-gradient(#333 1px, transparent 1px), linear-gradient(90deg, #333 1px, transparent 1px); background-size: 40px 40px;"></div>
-        <div class="absolute inset-0 bg-gradient-to-t from-stone-900 via-transparent to-transparent"></div>
-
-        <div class="max-w-7xl mx-auto px-6 relative z-10 text-center">
-            <h2 class="text-3xl font-semibold text-white tracking-tight mb-4 font-heading">Awards &amp; Quality Seal</h2>
-            <p class="text-stone-400 max-w-xl mx-auto mb-12">
-                Every product earns a score and corresponding seal. High performers receive tiered awards recognized by buyers and retailers.
-            </p>
-
-            <!-- Perfect Badge (primary) -->
-            <div class="flex justify-center mb-16">
-                <div class="relative">
-                    <div class="w-48 h-48 rounded-full bg-gradient-to-br from-amber-400 via-orange-500 to-amber-600 shadow-2xl flex items-center justify-center">
-                        <div class="w-[85%] h-[85%] rounded-full bg-stone-900/90 border border-white/20 flex flex-col items-center justify-center text-center">
-                            <div class="flex items-center gap-1 text-amber-300 mb-1">
-                                <iconify-icon icon="lucide:sparkles" width="16" stroke-width="1.5"></iconify-icon>
-                                <span class="text-xs font-semibold tracking-[0.2em]">METRIC</span>
-                                <iconify-icon icon="lucide:sparkles" width="16" stroke-width="1.5"></iconify-icon>
-                            </div>
-                            <span class="text-white text-2xl font-semibold tracking-tight font-heading">PERFECT</span>
-                            <span class="text-xs text-stone-300 mt-1 px-2 py-0.5 rounded-full border border-white/10">Score 98–100</span>
+    <!-- 5. Awards & Seal -->
+    <section class="py-24 bg-[#2C2C24] text-white overflow-hidden relative">
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div class="">
+                    <span class="text-gold font-medium tracking-wide text-sm uppercase">The Mark of Distinction</span>
+                    <h2 class="font-serif text-4xl lg:text-5xl tracking-tight mt-4 mb-6 text-[#F2F0E9]">A Symbol of Confirmed Quality</h2>
+                    <p class="text-lg text-stone-300 mb-8 font-light leading-relaxed">
+                        The Tastecert Seal is not sold; it is earned. Only products scoring above 85 points in our independent evaluation are granted the right to display this mark. It serves as a silent salesperson, communicating excellence before the package is even opened.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <div class="flex items-center gap-3 bg-white/5 border border-white/10 px-4 py-3 rounded-lg">
+                            <iconify-icon icon="lucide:package-check" class="text-gold" width="20"></iconify-icon>
+                            <span class="text-sm font-medium text-stone-200">Packaging License</span>
+                        </div>
+                        <div class="flex items-center gap-3 bg-white/5 border border-white/10 px-4 py-3 rounded-lg">
+                            <iconify-icon icon="lucide:monitor-check" class="text-gold" width="20"></iconify-icon>
+                            <span class="text-sm font-medium text-stone-200">Digital Badge</span>
+                        </div>
+                        <div class="flex items-center gap-3 bg-white/5 border border-white/10 px-4 py-3 rounded-lg">
+                            <iconify-icon icon="lucide:file-check" class="text-gold" width="20"></iconify-icon>
+                            <span class="text-sm font-medium text-stone-200">Printed Marketing</span>
                         </div>
                     </div>
-                    <div class="absolute inset-0 -z-10 blur-2xl rounded-full bg-amber-500/30"></div>
-                </div>
-            </div>
-
-            <p class="text-stone-400 max-w-2xl mx-auto mb-12">
-                The “Perfect” badge is reserved for products that deliver exceptional balance, intensity, and cleanliness across sensory and lab metrics.
-            </p>
-
-            <!-- Tiered badges -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 justify-items-center">
-                <!-- Gold -->
-                <div class="flex flex-col items-center gap-6 group">
-                    <div class="w-40 h-40 rounded-full badge-modern bg-gradient-to-br from-stone-100/20 to-stone-400/5 flex flex-col items-center justify-center text-center p-4 transform group-hover:-translate-y-2 transition-transform duration-500 relative">
-                        <div class="absolute inset-0 rounded-full border border-white/20"></div>
-                        <iconify-icon icon="lucide:trophy" class="text-orange-200 mb-2 drop-shadow-lg" width="28" stroke-width="1.5"></iconify-icon>
-                        <span class="text-xs uppercase tracking-[0.2em] font-semibold text-white/60 mb-1">Grade A</span>
-                        <span class="text-2xl font-semibold text-white tracking-tight font-heading">GOLD</span>
-                        <span class="text-[10px] font-medium text-white/40 mt-1 bg-white/10 px-2 py-0.5 rounded-full">Score 95–97</span>
-                    </div>
-                    <div>
-                        <h3 class="text-white font-semibold mb-1">Gold Distinction</h3>
-                        <p class="text-xs text-stone-500">Exceptional complexity.</p>
-                    </div>
-                </div>
-
-                <!-- Silver -->
-                <div class="flex flex-col items-center gap-6 group">
-                    <div class="w-40 h-40 rounded-full badge-modern bg-gradient-to-br from-slate-100/20 to-slate-400/5 flex flex-col items-center justify-center text-center p-4 transform group-hover:-translate-y-2 transition-transform duration-500 relative">
-                        <div class="absolute inset-0 rounded-full border border-white/20"></div>
-                        <iconify-icon icon="lucide:medal" class="text-slate-200 mb-2 drop-shadow-lg" width="28" stroke-width="1.5"></iconify-icon>
-                        <span class="text-xs uppercase tracking-[0.2em] font-semibold text-white/60 mb-1">Grade B</span>
-                        <span class="text-2xl font-semibold text-white tracking-tight font-heading">SILVER</span>
-                        <span class="text-[10px] font-medium text-white/40 mt-1 bg-white/10 px-2 py-0.5 rounded-full">Score 85–94</span>
-                    </div>
-                    <div>
-                        <h3 class="text-white font-semibold mb-1">Silver Distinction</h3>
-                        <p class="text-xs text-stone-500">Outstanding balance.</p>
-                    </div>
-                </div>
-
-                <!-- Bronze -->
-                <div class="flex flex-col items-center gap-6 group">
-                    <div class="w-40 h-40 rounded-full badge-modern bg-gradient-to-br from-orange-900/40 to-orange-800/10 flex flex-col items-center justify-center text-center p-4 transform group-hover:-translate-y-2 transition-transform duration-500 relative">
-                        <div class="absolute inset-0 rounded-full border border-white/20"></div>
-                        <iconify-icon icon="lucide:star" class="text-orange-300 mb-2 drop-shadow-lg" width="28" stroke-width="1.5"></iconify-icon>
-                        <span class="text-xs uppercase tracking-[0.2em] font-semibold text-white/60 mb-1">Grade C</span>
-                        <span class="text-2xl font-semibold text-white tracking-tight font-heading">BRONZE</span>
-                        <span class="text-[10px] font-medium text-white/40 mt-1 bg-white/10 px-2 py-0.5 rounded-full">Score 80–84</span>
-                    </div>
-                    <div>
-                        <h3 class="text-white font-semibold mb-1">Bronze Distinction</h3>
-                        <p class="text-xs text-stone-500">Market standard.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Process -->
-    <section class="py-24 bg-white">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="flex flex-col md:flex-row md:justify-between md:items-end mb-16 gap-6">
-                <div>
-                    <h2 class="text-3xl font-semibold text-stone-900 tracking-tight mb-2 font-heading">Simple Submission</h2>
-                    <p class="text-stone-500 text-base">From sample arrival to digital certification in 4 steps.</p>
                 </div>
                 
-                 <div class="flex items-center gap-3 bg-stone-50 p-2 pl-4 pr-3 rounded-full border border-stone-100 shadow-sm self-start md:self-auto">
-                    <span class="text-xs font-semibold text-stone-600">Standard</span>
-                    <label class="custom-toggle">
-                        <input type="checkbox">
-                        <span class="slider"></span>
-                    </label>
-                    <span class="text-xs font-semibold text-stone-400">Expedited (72h)</span>
-                </div>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
-                <!-- Step 1 -->
-                <div class="p-8 rounded-3xl border border-stone-100 hover:border-orange-200 hover:shadow-xl hover:shadow-orange-500/5 transition-all bg-white group cursor-default">
-                    <div class="flex items-center gap-3 mb-6">
-                        <div class="w-10 h-10 rounded-full bg-orange-50 flex items-center justify-center text-orange-600">
-                            <iconify-icon icon="lucide:package" width="22" stroke-width="1.5"></iconify-icon>
+                <div class="flex justify-center lg:justify-end">
+                    <!-- The Seal Visual -->
+                    <div class="relative w-72 h-72 rounded-full bg-[radial-gradient(circle_at_30%_30%,_#556B2F,_#3A4A20)] shadow-[0_0_60px_-15px_rgba(197,160,89,0.3)] flex items-center justify-center border-[8px] border-[#2C2C24] outline outline-1 outline-stone-600">
+                        <div class="absolute inset-3 rounded-full border border-white/20"></div>
+                        <div class="text-center text-[#F2F0E9]">
+                            <div class="flex justify-center mb-2">
+                                <iconify-icon icon="lucide:wheat" width="48" height="48" stroke-width="1" class="text-gold"></iconify-icon>
+                            </div>
+                            <h3 class="font-serif text-3xl font-medium tracking-wide">TASTECERT</h3>
+                            <div class="h-px w-16 bg-white/30 mx-auto my-2"></div>
+                            <p class="text-xs uppercase tracking-[0.2em] font-medium text-stone-300">Certified Quality</p>
+                            <p class="text-[10px] mt-2 text-stone-400">Est. 2012</p>
                         </div>
-                        <div class="w-9 h-9 rounded-full bg-stone-900 text-white flex items-center justify-center text-sm font-semibold">
-                            1
+                        
+                        <!-- Floating Badges -->
+                        <div class="absolute -right-4 top-10 bg-[#F2F0E9] text-[#2C2C24] px-4 py-2 rounded shadow-lg text-xs font-bold uppercase tracking-wide">
+                            Top 5%
                         </div>
-                    </div>
-                    <h3 class="text-lg font-semibold text-stone-900 mb-2 font-heading">Ship Samples</h3>
-                    <p class="text-sm text-stone-500 leading-relaxed">Send 3 units to our central lab. We handle temperature control.</p>
-                </div>
-
-                <!-- Step 2 -->
-                <div class="p-8 rounded-3xl border border-stone-100 hover:border-orange-200 hover:shadow-xl hover:shadow-orange-500/5 transition-all bg-white group cursor-default">
-                    <div class="flex items-center gap-3 mb-6">
-                        <div class="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center text-blue-600">
-                            <iconify-icon icon="lucide:eye-off" width="22" stroke-width="1.5"></iconify-icon>
-                        </div>
-                        <div class="w-9 h-9 rounded-full bg-stone-900 text-white flex items-center justify-center text-sm font-semibold">
-                            2
+                        <div class="absolute -left-4 bottom-10 bg-[#2C2C24] border border-stone-600 text-white px-4 py-2 rounded shadow-lg text-xs font-bold uppercase tracking-wide flex items-center gap-2">
+                            <iconify-icon icon="lucide:check" class="text-green-500"></iconify-icon> Verified
                         </div>
                     </div>
-                    <h3 class="text-lg font-semibold text-stone-900 mb-2 font-heading">Blind Prep</h3>
-                    <p class="text-sm text-stone-500 leading-relaxed">Samples are anonymized, coded, and prepped by lab techs.</p>
-                </div>
-
-                <!-- Step 3 -->
-                <div class="p-8 rounded-3xl border border-stone-100 hover:border-orange-200 hover:shadow-xl hover:shadow-orange-500/5 transition-all bg-white group cursor-default">
-                    <div class="flex items-center gap-3 mb-6">
-                        <div class="w-10 h-10 rounded-full bg-emerald-50 flex items-center justify-center text-emerald-600">
-                            <iconify-icon icon="lucide:flask-conical" width="22" stroke-width="1.5"></iconify-icon>
-                        </div>
-                        <div class="w-9 h-9 rounded-full bg-stone-900 text-white flex items-center justify-center text-sm font-semibold">
-                            3
-                        </div>
-                    </div>
-                    <h3 class="text-lg font-semibold text-stone-900 mb-2 font-heading">Analysis</h3>
-                    <p class="text-sm text-stone-500 leading-relaxed">Dual-phase testing: Human panel + chemical spectroscopy.</p>
-                </div>
-
-                <!-- Step 4 -->
-                <div class="p-8 rounded-3xl border border-stone-100 hover:border-orange-200 hover:shadow-xl hover:shadow-orange-500/5 transition-all bg-white group cursor-default">
-                    <div class="flex items-center gap-3 mb-6">
-                        <div class="w-10 h-10 rounded-full bg-purple-50 flex items-center justify-center text-purple-600">
-                            <iconify-icon icon="lucide:badge-check" width="22" stroke-width="1.5"></iconify-icon>
-                        </div>
-                        <div class="w-9 h-9 rounded-full bg-stone-900 text-white flex items-center justify-center text-sm font-semibold">
-                            4
-                        </div>
-                    </div>
-                    <h3 class="text-lg font-semibold text-stone-900 mb-2 font-heading">Results</h3>
-                    <p class="text-sm text-stone-500 leading-relaxed">Instant dashboard access and digital certification badges.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CTA: Invite to submit -->
-    <section id="submit" class="py-20 bg-stone-50 border-t border-stone-100">
-        <div class="max-w-6xl mx-auto px-6">
-            <div class="bg-white rounded-2xl border border-stone-100 p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8">
-                <div>
-                    <h3 class="text-2xl md:text-3xl font-semibold tracking-tight text-stone-900 font-heading">Ready to submit your product?</h3>
-                    <p class="text-stone-500 mt-2 text-lg">Get a clear, defensible report and a seal buyers understand.</p>
+    <!-- 6. Award-Winning Products -->
+    <section class="bg-[#FDFBF7] pt-24 pr-6 pb-24 pl-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row gap-6 mb-12 gap-x-6 gap-y-6 items-end justify-between">
+                <div class="">
+                    <h2 class="font-serif text-3xl md:text-4xl text-stone-900 tracking-tight">Award-Winning Products</h2>
+                    <p class="text-stone-600 mt-3 font-light">Discover recently certified excellence from around the globe.</p>
                 </div>
-                <div class="flex items-center gap-3">
-                    <a href="#" class="px-6 py-3 rounded-full bg-stone-900 text-white font-semibold hover:bg-stone-800 transition-colors">
-                        Start Submission
-                    </a>
-                    <a href="#tasting" class="px-6 py-3 rounded-full bg-white text-stone-700 border border-stone-200 font-semibold hover:bg-stone-50 transition-colors">
-                        Learn more
-                    </a>
+                <a href="#" class="text-olive hover:text-stone-900 font-medium text-sm flex items-center gap-1 transition-colors">
+                    View Full Directory <iconify-icon icon="lucide:arrow-right" width="16"></iconify-icon>
+                </a>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Product 1 -->
+                <div class="group bg-white rounded-xl overflow-hidden border border-stone-200 shadow-sm hover:shadow-md transition-all duration-300">
+                    <div class="aspect-[16/10] overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1524222717473-730000096953?w=1600&amp;q=80" alt="Coffee" class="group-hover:scale-105 transition-transform duration-700 w-full h-full object-cover">
+                        <div class="absolute top-4 right-4 bg-white/95 backdrop-blur px-3 py-1 rounded text-xs font-bold text-olive uppercase tracking-wide shadow-sm border border-stone-100">
+                            Gold Standard
+                        </div>
+                    </div>
+                    <div class="pt-6 pr-6 pb-6 pl-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <div class="">
+                                <h3 class="font-serif text-xl text-stone-900 font-medium">Single Origin Robusta</h3>
+                                <p class="text-sm text-stone-500 mt-1">Valley Heights Estate</p>
+                            </div>
+                        </div>
+                        <div class="mt-4 pt-4 border-t border-stone-100 flex items-center justify-between">
+                            <span class="text-xs font-medium text-stone-400 uppercase tracking-wider">Beverage / Coffee</span>
+                            <button class="text-stone-400 hover:text-olive transition-colors flex items-center gap-1 text-sm font-medium">
+                                View Certificate
+                            </button>
+                        </div>
+                    </div>
                 </div>
+
+                <!-- Product 2 -->
+                <div class="group bg-white rounded-xl overflow-hidden border border-stone-200 shadow-sm hover:shadow-md transition-all duration-300">
+                    <div class="aspect-[16/10] overflow-hidden relative">
+                        <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/df8bd7cd-7cbb-4b65-8e22-3e966cd83b1c_1600w.jpg" alt="Honey" class="group-hover:scale-105 transition-transform duration-700 w-full h-full object-cover">
+                        <div class="absolute top-4 right-4 bg-white/95 backdrop-blur px-3 py-1 rounded text-xs font-bold text-stone-800 uppercase tracking-wide shadow-sm border border-stone-100">
+                            Silver Standard
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <div>
+                                <h3 class="font-serif text-xl text-stone-900 font-medium">Wildflower Raw Honey</h3>
+                                <p class="text-sm text-stone-500 mt-1">Apiary Co-op No. 4</p>
+                            </div>
+                        </div>
+                        <div class="mt-4 pt-4 border-t border-stone-100 flex items-center justify-between">
+                            <span class="text-xs font-medium text-stone-400 uppercase tracking-wider">Pantry / Sweetener</span>
+                            <button class="text-stone-400 hover:text-olive transition-colors flex items-center gap-1 text-sm font-medium">
+                                View Certificate
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="group bg-white rounded-xl overflow-hidden border border-stone-200 shadow-sm hover:shadow-md transition-all duration-300">
+                    <div class="aspect-[16/10] overflow-hidden relative">
+                        <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/4376fa83-b9cb-4b88-b256-86cb4e040344_1600w.jpg" alt="Spices" class="group-hover:scale-105 transition-transform duration-700 w-full h-full object-cover">
+                        <div class="absolute top-4 right-4 bg-white/95 backdrop-blur px-3 py-1 rounded text-xs font-bold text-olive uppercase tracking-wide shadow-sm border border-stone-100">
+                            Platinum Standard
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <div>
+                                <h3 class="font-serif text-xl text-stone-900 font-medium">Organic Saffron Threads</h3>
+                                <p class="text-sm text-stone-500 mt-1">Atlas Mountains Spice</p>
+                            </div>
+                        </div>
+                        <div class="mt-4 pt-4 border-t border-stone-100 flex items-center justify-between">
+                            <span class="text-xs font-medium text-stone-400 uppercase tracking-wider">Pantry / Spices</span>
+                            <button class="text-stone-400 hover:text-olive transition-colors flex items-center gap-1 text-sm font-medium">
+                                View Certificate
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. Call to Action -->
+    <section class="bg-stone-900 border-stone-800 border-t pt-24 pr-6 pb-24 pl-6">
+        <div class="max-w-4xl mx-auto text-center">
+            <div class="inline-block p-3 rounded-full bg-white/5 mb-6">
+                <iconify-icon icon="lucide:star" class="text-gold" width="24"></iconify-icon>
+            </div>
+            <h2 class="font-serif text-4xl md:text-5xl text-[#F2F0E9] tracking-tight mb-6">Recognize Your Quality.</h2>
+            <p class="text-lg text-stone-400 mb-10 max-w-xl mx-auto font-light">Join a distinguished community of producers who value transparency, craftsmanship, and verified excellence.</p>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="#submit" class="w-full sm:w-auto px-8 py-4 bg-olive hover:bg-[#465a26] text-white rounded-lg font-medium text-lg transition-all shadow-lg hover:shadow-olive/20">
+                    Submit Product
+                </a>
+                <a href="#directory" class="w-full sm:w-auto px-8 py-4 bg-transparent border border-stone-700 hover:bg-stone-800 text-stone-300 hover:text-white rounded-lg font-medium text-lg transition-all">
+                    Explore Winners
+                </a>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-white border-t border-stone-100 pt-20 pb-10">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-10 mb-16">
-                <div class="col-span-2 md:col-span-1">
-                    <a href="#" class="flex items-center gap-2 mb-6">
-                        <div class="h-8 w-8 bg-orange-600 rounded-full flex items-center justify-center text-white">
-                            <iconify-icon icon="lucide:chef-hat" width="16" height="16" stroke-width="1.5"></iconify-icon>
-                        </div>
-                        <span class="text-stone-900 font-semibold tracking-tight text-xl font-heading">Metric</span>
-                    </a>
-                    <p class="text-sm text-stone-400 leading-relaxed max-w-xs">
-                        Bringing transparency to the food industry through data science and sensory expertise.
-                    </p>
-                </div>
+    <footer class="bg-[#FDFBF7] text-stone-600 pt-16 pb-8 px-6 border-t border-stone-200">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
                 
+                <!-- Col 1: Brand -->
+                <div class="space-y-6">
+                    <div class="flex items-center gap-2">
+                        <div class="w-8 h-8 bg-stone-900 rounded-lg flex items-center justify-center text-white shadow-sm">
+                            <iconify-icon icon="lucide:award" width="16"></iconify-icon>
+                        </div>
+                        <span class="font-serif text-xl text-stone-900 font-medium tracking-tight">Tastecert</span>
+                    </div>
+                    <p class="text-sm leading-relaxed text-stone-500">
+                        The global authority on traditional product quality certification. Independent, transparent, and rigorously scientific since 2012.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-8 h-8 flex items-center justify-center rounded-full bg-stone-100 hover:bg-stone-200 text-stone-500 hover:text-stone-900 transition-colors">
+                            <iconify-icon icon="lucide:twitter" width="16"></iconify-icon>
+                        </a>
+                        <a href="#" class="w-8 h-8 flex items-center justify-center rounded-full bg-stone-100 hover:bg-stone-200 text-stone-500 hover:text-stone-900 transition-colors">
+                            <iconify-icon icon="lucide:linkedin" width="16"></iconify-icon>
+                        </a>
+                        <a href="#" class="w-8 h-8 flex items-center justify-center rounded-full bg-stone-100 hover:bg-stone-200 text-stone-500 hover:text-stone-900 transition-colors">
+                            <iconify-icon icon="lucide:instagram" width="16"></iconify-icon>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Col 2: Company -->
                 <div>
-                    <h4 class="text-sm font-semibold text-stone-900 mb-6 font-heading">Platform</h4>
-                    <ul class="space-y-4 text-sm text-stone-500 font-medium">
-                        <li><a href="#" class="hover:text-orange-600 transition-colors">Sensory Cloud</a></li>
-                        <li><a href="#" class="hover:text-orange-600 transition-colors">Panel Certification</a></li>
-                        <li><a href="#" class="hover:text-orange-600 transition-colors">Enterprise API</a></li>
+                    <h4 class="font-semibold text-stone-900 mb-6">Company</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="#" class="text-stone-500 hover:text-olive transition-colors">About Us</a></li>
+                        <li><a href="#" class="text-stone-500 hover:text-olive transition-colors">Our Methodology</a></li>
+                        <li><a href="#" class="text-stone-500 hover:text-olive transition-colors">Careers</a></li>
+                        <li><a href="#" class="text-stone-500 hover:text-olive transition-colors">Press &amp; Media</a></li>
+                        <li><a href="#" class="text-stone-500 hover:text-olive transition-colors">Contact</a></li>
                     </ul>
                 </div>
 
+                <!-- Col 3: Resources -->
                 <div>
-                    <h4 class="text-sm font-semibold text-stone-900 mb-6 font-heading">Resources</h4>
-                    <ul class="space-y-4 text-sm text-stone-500 font-medium">
-                        <li><a href="#" class="hover:text-orange-600 transition-colors">Methodology</a></li>
-                        <li><a href="#" class="hover:text-orange-600 transition-colors">Case Studies</a></li>
-                        <li><a href="#" class="hover:text-orange-600 transition-colors">Sample Reports</a></li>
+                    <h4 class="font-semibold text-stone-900 mb-6">Resources</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="#" class="text-stone-500 hover:text-olive transition-colors">Verification Lookup</a></li>
+                        <li><a href="#" class="text-stone-500 hover:text-olive transition-colors">Producer Guidelines</a></li>
+                        <li><a href="#" class="text-stone-500 hover:text-olive transition-colors">Success Stories</a></li>
+                        <li><a href="#" class="text-stone-500 hover:text-olive transition-colors">Help Center</a></li>
+                        <li><a href="#" class="text-stone-500 hover:text-olive transition-colors">Retailer Partners</a></li>
                     </ul>
                 </div>
 
+                <!-- Col 4: Legal/Subscribe -->
                 <div>
-                    <h4 class="text-sm font-semibold text-stone-900 mb-6 font-heading">Connect</h4>
-                    <ul class="space-y-4 text-sm text-stone-500 font-medium">
-                        <li class="flex items-center gap-2"><iconify-icon icon="lucide:map-pin" width="14" stroke-width="1.5"></iconify-icon> New York, NY</li>
-                        <li class="flex items-center gap-2"><iconify-icon icon="lucide:mail" width="14" stroke-width="1.5"></iconify-icon> hello@metric.ai</li>
+                    <h4 class="font-semibold text-stone-900 mb-6">Legal</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="#" class="text-stone-500 hover:text-olive transition-colors">Privacy Policy</a></li>
+                        <li><a href="#" class="text-stone-500 hover:text-olive transition-colors">Terms of Service</a></li>
+                        <li><a href="#" class="text-stone-500 hover:text-olive transition-colors">Cookie Policy</a></li>
+                        <li><a href="#" class="text-stone-500 hover:text-olive transition-colors">Dispute Resolution</a></li>
                     </ul>
                 </div>
             </div>
-            
-            <div class="pt-8 border-t border-stone-100 flex flex-col md:flex-row justify-between items-center gap-4">
-                <p class="text-xs text-stone-400 font-medium">© 2024 Metric Sensory Analytics. All rights reserved.</p>
-                <div class="flex gap-6">
-                    <a href="#" class="text-stone-400 hover:text-stone-900 transition-colors">
-                        <iconify-icon icon="lucide:instagram" width="20" height="20" stroke-width="1.5"></iconify-icon>
-                    </a>
-                    <a href="#" class="text-stone-400 hover:text-stone-900 transition-colors">
-                        <iconify-icon icon="lucide:twitter" width="20" height="20" stroke-width="1.5"></iconify-icon>
-                    </a>
-                    <a href="#" class="text-stone-400 hover:text-stone-900 transition-colors">
-                        <iconify-icon icon="lucide:linkedin" width="20" height="20" stroke-width="1.5"></iconify-icon>
-                    </a>
+
+            <div class="border-t border-stone-200 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-xs text-stone-400">
+                    © 2024 Tastecert International Ltd. All rights reserved.
+                </p>
+                <div class="flex items-center gap-6">
+                    <span class="flex items-center gap-2 text-xs text-stone-400">
+                        <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+                        Systems Operational
+                    </span>
+                    <div class="flex gap-4">
+                        <img src="https://img.icons8.com/color/48/visa.png" alt="Visa" class="h-6 opacity-50 grayscale hover:grayscale-0 transition-all">
+                        <img src="https://img.icons8.com/color/48/mastercard.png" alt="Mastercard" class="h-6 opacity-50 grayscale hover:grayscale-0 transition-all">
+                    </div>
                 </div>
             </div>
         </div>

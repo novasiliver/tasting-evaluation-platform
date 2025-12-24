@@ -20,7 +20,7 @@ export default async function AdminLayout({
   }
 
   return (
-    <div className="flex min-h-screen bg-zinc-50 text-zinc-600 antialiased">
+    <div className="flex min-h-screen bg-[#FDFBF7] text-stone-600 antialiased">
       <AdminSidebar />
       <main className="flex-1 ml-60">
         {children}

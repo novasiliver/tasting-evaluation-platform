@@ -88,7 +88,7 @@ export default function SignUpPage() {
         {/* Header */}
         <div className="text-center">
           <Link href="/" className="inline-flex items-center gap-2 mb-6">
-            <div className="h-12 w-12 bg-orange-600 rounded-full flex items-center justify-center text-white">
+            <div className="h-12 w-12 bg-olive-600 rounded-full flex items-center justify-center text-white">
               <iconify-icon icon="lucide:award" width="24" style={{ strokeWidth: 1.5 } as React.CSSProperties}></iconify-icon>
             </div>
             <span className="text-2xl font-bold text-stone-900 font-heading">Tastecert</span>
@@ -98,7 +98,7 @@ export default function SignUpPage() {
           </h2>
           <p className="mt-2 text-sm text-stone-500">
             Already have an account?{' '}
-            <Link href="/auth/signin" className="font-medium text-orange-600 hover:text-orange-500">
+            <Link href="/auth/signin" className="font-medium text-olive-600 hover:text-olive-500">
               Sign in
             </Link>
           </p>
@@ -125,7 +125,7 @@ export default function SignUpPage() {
                 required
                 value={formData.username}
                 onChange={(e) => setFormData({ ...formData, username: e.target.value })}
-                className="appearance-none relative block w-full px-4 py-3 border border-stone-200 placeholder-stone-400 text-stone-900 rounded-xl focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all"
+                className="appearance-none relative block w-full px-4 py-3 border border-stone-200 placeholder-stone-400 text-stone-900 rounded-xl focus:outline-none focus:ring-2 focus:ring-olive-500 focus:border-transparent transition-all"
                 placeholder="admin"
               />
             </div>
@@ -141,7 +141,7 @@ export default function SignUpPage() {
                 required
                 value={formData.name}
                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                className="appearance-none relative block w-full px-4 py-3 border border-stone-200 placeholder-stone-400 text-stone-900 rounded-xl focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all"
+                className="appearance-none relative block w-full px-4 py-3 border border-stone-200 placeholder-stone-400 text-stone-900 rounded-xl focus:outline-none focus:ring-2 focus:ring-olive-500 focus:border-transparent transition-all"
                 placeholder="John Doe"
               />
             </div>
@@ -158,7 +158,7 @@ export default function SignUpPage() {
                 required
                 value={formData.email}
                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                className="appearance-none relative block w-full px-4 py-3 border border-stone-200 placeholder-stone-400 text-stone-900 rounded-xl focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all"
+                className="appearance-none relative block w-full px-4 py-3 border border-stone-200 placeholder-stone-400 text-stone-900 rounded-xl focus:outline-none focus:ring-2 focus:ring-olive-500 focus:border-transparent transition-all"
                 placeholder="your@email.com"
               />
             </div>
@@ -174,7 +174,7 @@ export default function SignUpPage() {
                   type="text"
                   value={formData.company}
                   onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-                  className="appearance-none relative block w-full px-4 py-3 border border-stone-200 placeholder-stone-400 text-stone-900 rounded-xl focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all"
+                  className="appearance-none relative block w-full px-4 py-3 border border-stone-200 placeholder-stone-400 text-stone-900 rounded-xl focus:outline-none focus:ring-2 focus:ring-olive-500 focus:border-transparent transition-all"
                   placeholder="Your Company"
                 />
               </div>
@@ -189,7 +189,7 @@ export default function SignUpPage() {
                   type="tel"
                   value={formData.phone}
                   onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                  className="appearance-none relative block w-full px-4 py-3 border border-stone-200 placeholder-stone-400 text-stone-900 rounded-xl focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all"
+                  className="appearance-none relative block w-full px-4 py-3 border border-stone-200 placeholder-stone-400 text-stone-900 rounded-xl focus:outline-none focus:ring-2 focus:ring-olive-500 focus:border-transparent transition-all"
                   placeholder="+1 234 567 8900"
                 />
               </div>
@@ -207,7 +207,7 @@ export default function SignUpPage() {
                 required
                 value={formData.password}
                 onChange={(e) => setFormData({ ...formData, password: e.target.value })}
-                className="appearance-none relative block w-full px-4 py-3 border border-stone-200 placeholder-stone-400 text-stone-900 rounded-xl focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all"
+                className="appearance-none relative block w-full px-4 py-3 border border-stone-200 placeholder-stone-400 text-stone-900 rounded-xl focus:outline-none focus:ring-2 focus:ring-olive-500 focus:border-transparent transition-all"
                 placeholder="••••••••"
               />
               <p className="mt-1 text-xs text-stone-500">Must be at least 8 characters</p>
@@ -225,7 +225,7 @@ export default function SignUpPage() {
                 required
                 value={formData.confirmPassword}
                 onChange={(e) => setFormData({ ...formData, confirmPassword: e.target.value })}
-                className="appearance-none relative block w-full px-4 py-3 border border-stone-200 placeholder-stone-400 text-stone-900 rounded-xl focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all"
+                className="appearance-none relative block w-full px-4 py-3 border border-stone-200 placeholder-stone-400 text-stone-900 rounded-xl focus:outline-none focus:ring-2 focus:ring-olive-500 focus:border-transparent transition-all"
                 placeholder="••••••••"
               />
             </div>
@@ -237,15 +237,15 @@ export default function SignUpPage() {
               name="terms"
               type="checkbox"
               required
-              className="h-4 w-4 text-orange-600 focus:ring-orange-500 border-stone-300 rounded mt-1"
+              className="h-4 w-4 text-olive-600 focus:ring-olive-500 border-stone-300 rounded mt-1"
             />
             <label htmlFor="terms" className="ml-2 block text-sm text-stone-700">
               I agree to the{' '}
-              <Link href="/terms" className="font-medium text-orange-600 hover:text-orange-500">
+              <Link href="/terms" className="font-medium text-olive-600 hover:text-olive-500">
                 Terms of Service
               </Link>{' '}
               and{' '}
-              <Link href="/privacy" className="font-medium text-orange-600 hover:text-orange-500">
+              <Link href="/privacy" className="font-medium text-olive-600 hover:text-olive-500">
                 Privacy Policy
               </Link>
             </label>
@@ -254,7 +254,7 @@ export default function SignUpPage() {
           <button
             type="submit"
             disabled={isLoading}
-            className="group relative w-full flex justify-center py-3 px-4 border border-transparent text-sm font-semibold rounded-xl text-white bg-orange-600 hover:bg-orange-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500 disabled:opacity-50 disabled:cursor-not-allowed transition-all"
+            className="group relative w-full flex justify-center py-3 px-4 border border-transparent text-sm font-semibold rounded-xl text-white bg-olive-600 hover:bg-olive-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-olive-500 disabled:opacity-50 disabled:cursor-not-allowed transition-all"
           >
             {isLoading ? (
               <>
@@ -273,7 +273,7 @@ export default function SignUpPage() {
         {/* Footer */}
         <div className="text-center">
           <p className="text-sm text-stone-500">
-            <Link href="/" className="font-medium text-orange-600 hover:text-orange-500">
+            <Link href="/" className="font-medium text-olive-600 hover:text-olive-500">
               ← Back to home
             </Link>
           </p>

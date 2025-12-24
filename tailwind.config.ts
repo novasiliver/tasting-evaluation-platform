@@ -9,6 +9,32 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        olive: {
+          DEFAULT: '#556B2F',
+          50: '#E8EDE0',
+          100: '#D9E2C8',
+          200: '#BBC997',
+          300: '#9DB066',
+          400: '#7F9735',
+          500: '#556B2F',
+          600: '#445526',
+          700: '#33401D',
+          800: '#222A13',
+          900: '#11150A',
+        },
+        gold: {
+          DEFAULT: '#C5A059',
+          50: '#F8F3E8',
+          100: '#F0E8D4',
+          200: '#E5D0A1',
+          300: '#D9B876',
+          400: '#CEA04B',
+          500: '#C5A059',
+          600: '#A68244',
+          700: '#7D6233',
+          800: '#544122',
+          900: '#2B2111',
+        },
         primary: {
           50: '#f0f9ff',
           100: '#e0f2fe',
@@ -32,9 +58,9 @@ const config: Config = {
           700: '#92400e',
         },
         premium: {
-          gold: '#D4AF37',
-          'gold-light': '#F4E4B0',
-          'gold-dark': '#B8941F',
+          gold: '#C5A059',
+          'gold-light': '#F8E7AE',
+          'gold-dark': '#8C6A28',
           burgundy: '#800020',
           'burgundy-light': '#9B2847',
           'burgundy-dark': '#5C0015',

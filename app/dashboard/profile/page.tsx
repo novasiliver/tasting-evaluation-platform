@@ -149,18 +149,18 @@ export default function ProducerProfilePage() {
   if (isLoading) {
     return (
       <div className="min-h-screen flex items-center justify-center">
-        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-amber-600"></div>
+        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-gold-600"></div>
       </div>
     );
   }
 
   return (
-    <div className="antialiased min-h-screen flex flex-col text-zinc-600 bg-zinc-50">
+    <div className="antialiased min-h-screen flex flex-col text-stone-600 bg-stone-50">
       {/* Main Layout */}
       <main className="flex-grow sm:px-6 w-full max-w-5xl mx-auto px-4 py-10">
         <header className="mb-8">
-          <h1 className="text-2xl font-semibold text-zinc-900 tracking-tight">Settings</h1>
-          <p className="text-sm text-zinc-500 mt-1">Manage your producer profile and account preferences.</p>
+          <h1 className="text-2xl font-semibold text-stone-900 tracking-tight">Settings</h1>
+          <p className="text-sm text-stone-500 mt-1">Manage your producer profile and account preferences.</p>
         </header>
 
         {/* Message Alert */}
@@ -183,57 +183,57 @@ export default function ProducerProfilePage() {
 
         <div className="flex flex-col space-y-8">
           {/* Personal Information Section */}
-          <section className="bg-white border border-zinc-200 rounded-xl p-6 shadow-sm">
+          <section className="bg-white border border-stone-200 rounded-xl p-6 shadow-sm">
             <div className="mb-6">
-              <h2 className="text-base font-semibold text-zinc-900">Personal Information</h2>
-              <p className="text-xs text-zinc-500 mt-0.5">Contact details and public profile info.</p>
+              <h2 className="text-base font-semibold text-stone-900">Personal Information</h2>
+              <p className="text-xs text-stone-500 mt-0.5">Contact details and public profile info.</p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
               <div className="space-y-1.5">
-                <label className="text-xs font-medium text-zinc-700">
+                <label className="text-xs font-medium text-stone-700">
                   Full Name <span className="text-red-500">*</span>
                 </label>
                 <input
                   type="text"
                   value={profileData.name}
                   onChange={(e) => setProfileData({ ...profileData, name: e.target.value })}
-                  className="w-full px-3 py-2 bg-white border border-zinc-200 rounded-md text-sm text-zinc-900 placeholder-zinc-400 transition-all focus:outline-none focus:ring-2 focus:ring-amber-500/20 focus:border-amber-500"
+                  className="w-full px-3 py-2 bg-white border border-stone-200 rounded-md text-sm text-stone-900 placeholder-stone-400 transition-all focus:outline-none focus:ring-2 focus:ring-gold-500/20 focus:border-gold-500"
                 />
               </div>
 
               <div className="space-y-1.5">
-                <label className="text-xs font-medium text-zinc-700">
+                <label className="text-xs font-medium text-stone-700">
                   Email Address <span className="text-red-500">*</span>
                 </label>
                 <input
                   type="email"
                   value={profileData.email}
                   disabled
-                  className="w-full px-3 py-2 bg-zinc-50 border border-zinc-200 rounded-md text-sm text-zinc-500 cursor-not-allowed"
+                  className="w-full px-3 py-2 bg-stone-50 border border-stone-200 rounded-md text-sm text-stone-500 cursor-not-allowed"
                   title="Email cannot be changed"
                 />
               </div>
 
               <div className="space-y-1.5">
-                <label className="text-xs font-medium text-zinc-700">Company Name</label>
+                <label className="text-xs font-medium text-stone-700">Company Name</label>
                 <div className="relative">
-                  <span className="absolute left-3 top-1/2 -translate-y-1/2 text-zinc-400">
+                  <span className="absolute left-3 top-1/2 -translate-y-1/2 text-stone-400">
                     <iconify-icon icon="lucide:building-2" width="14"></iconify-icon>
                   </span>
                   <input
                     type="text"
                     value={profileData.company}
                     onChange={(e) => setProfileData({ ...profileData, company: e.target.value })}
-                    className="w-full pl-9 pr-3 py-2 bg-white border border-zinc-200 rounded-md text-sm text-zinc-900 placeholder-zinc-400 transition-all focus:outline-none focus:ring-2 focus:ring-amber-500/20 focus:border-amber-500"
+                    className="w-full pl-9 pr-3 py-2 bg-white border border-stone-200 rounded-md text-sm text-stone-900 placeholder-stone-400 transition-all focus:outline-none focus:ring-2 focus:ring-gold-500/20 focus:border-gold-500"
                   />
                 </div>
               </div>
 
               <div className="space-y-1.5">
-                <label className="text-xs font-medium text-zinc-700">Phone Number</label>
+                <label className="text-xs font-medium text-stone-700">Phone Number</label>
                 <div className="relative">
-                  <span className="absolute left-3 top-1/2 -translate-y-1/2 text-zinc-400">
+                  <span className="absolute left-3 top-1/2 -translate-y-1/2 text-stone-400">
                     <iconify-icon icon="lucide:phone" width="14"></iconify-icon>
                   </span>
                   <input
@@ -241,15 +241,15 @@ export default function ProducerProfilePage() {
                     value={profileData.phone}
                     onChange={(e) => setProfileData({ ...profileData, phone: e.target.value })}
                     placeholder="+1 234 567 8900"
-                    className="w-full pl-9 pr-3 py-2 bg-white border border-zinc-200 rounded-md text-sm text-zinc-900 placeholder-zinc-400 transition-all focus:outline-none focus:ring-2 focus:ring-amber-500/20 focus:border-amber-500"
+                    className="w-full pl-9 pr-3 py-2 bg-white border border-stone-200 rounded-md text-sm text-stone-900 placeholder-stone-400 transition-all focus:outline-none focus:ring-2 focus:ring-gold-500/20 focus:border-gold-500"
                   />
                 </div>
               </div>
 
               <div className="space-y-1.5">
-                <label className="text-xs font-medium text-zinc-700">Website</label>
+                <label className="text-xs font-medium text-stone-700">Website</label>
                 <div className="relative">
-                  <span className="absolute left-3 top-1/2 -translate-y-1/2 text-zinc-400">
+                  <span className="absolute left-3 top-1/2 -translate-y-1/2 text-stone-400">
                     <iconify-icon icon="lucide:globe" width="14"></iconify-icon>
                   </span>
                   <input
@@ -257,15 +257,15 @@ export default function ProducerProfilePage() {
                     value={profileData.website}
                     onChange={(e) => setProfileData({ ...profileData, website: e.target.value })}
                     placeholder="https://example.com"
-                    className="w-full pl-9 pr-3 py-2 bg-white border border-zinc-200 rounded-md text-sm text-zinc-900 placeholder-zinc-400 transition-all focus:outline-none focus:ring-2 focus:ring-amber-500/20 focus:border-amber-500"
+                    className="w-full pl-9 pr-3 py-2 bg-white border border-stone-200 rounded-md text-sm text-stone-900 placeholder-stone-400 transition-all focus:outline-none focus:ring-2 focus:ring-gold-500/20 focus:border-gold-500"
                   />
                 </div>
               </div>
 
               <div className="space-y-1.5">
-                <label className="text-xs font-medium text-zinc-700">Country</label>
+                <label className="text-xs font-medium text-stone-700">Country</label>
                 <div className="relative">
-                  <span className="absolute left-3 top-1/2 -translate-y-1/2 text-zinc-400">
+                  <span className="absolute left-3 top-1/2 -translate-y-1/2 text-stone-400">
                     <iconify-icon icon="lucide:map-pin" width="14"></iconify-icon>
                   </span>
                   <input
@@ -273,15 +273,15 @@ export default function ProducerProfilePage() {
                     value={profileData.country}
                     onChange={(e) => setProfileData({ ...profileData, country: e.target.value })}
                     placeholder="Country"
-                    className="w-full pl-9 pr-3 py-2 bg-white border border-zinc-200 rounded-md text-sm text-zinc-900 placeholder-zinc-400 transition-all focus:outline-none focus:ring-2 focus:ring-amber-500/20 focus:border-amber-500"
+                    className="w-full pl-9 pr-3 py-2 bg-white border border-stone-200 rounded-md text-sm text-stone-900 placeholder-stone-400 transition-all focus:outline-none focus:ring-2 focus:ring-gold-500/20 focus:border-gold-500"
                   />
                 </div>
               </div>
 
               <div className="space-y-1.5 md:col-span-2">
-                <label className="text-xs font-medium text-zinc-700">Address</label>
+                <label className="text-xs font-medium text-stone-700">Address</label>
                 <div className="relative">
-                  <span className="absolute left-3 top-3 text-zinc-400">
+                  <span className="absolute left-3 top-3 text-stone-400">
                     <iconify-icon icon="lucide:map" width="14"></iconify-icon>
                   </span>
                   <input
@@ -289,23 +289,23 @@ export default function ProducerProfilePage() {
                     value={profileData.address}
                     onChange={(e) => setProfileData({ ...profileData, address: e.target.value })}
                     placeholder="Full address"
-                    className="w-full pl-9 pr-3 py-2 bg-white border border-zinc-200 rounded-md text-sm text-zinc-900 placeholder-zinc-400 transition-all focus:outline-none focus:ring-2 focus:ring-amber-500/20 focus:border-amber-500"
+                    className="w-full pl-9 pr-3 py-2 bg-white border border-stone-200 rounded-md text-sm text-stone-900 placeholder-stone-400 transition-all focus:outline-none focus:ring-2 focus:ring-gold-500/20 focus:border-gold-500"
                   />
                 </div>
               </div>
             </div>
 
-            <div className="flex items-center justify-end gap-3 pt-6 mt-6 border-t border-zinc-200">
+            <div className="flex items-center justify-end gap-3 pt-6 mt-6 border-t border-stone-200">
               <button
                 onClick={() => router.push('/dashboard')}
-                className="px-4 py-2 text-xs font-medium text-zinc-600 hover:text-zinc-900 bg-transparent rounded-md transition-colors"
+                className="px-4 py-2 text-xs font-medium text-stone-600 hover:text-stone-900 bg-transparent rounded-md transition-colors"
               >
                 Cancel
               </button>
               <button
                 onClick={handleProfileSave}
                 disabled={isSaving}
-                className="px-4 py-2 text-xs font-medium text-white bg-amber-600 hover:bg-amber-700 rounded-md shadow-sm transition-all flex items-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="px-4 py-2 text-xs font-medium text-white bg-gold-600 hover:bg-gold-700 rounded-md shadow-sm transition-all flex items-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 <iconify-icon icon="lucide:save" width="14"></iconify-icon>
                 {isSaving ? 'Saving...' : 'Save Changes'}
@@ -314,43 +314,43 @@ export default function ProducerProfilePage() {
           </section>
 
           {/* Change Password Section */}
-          <section className="bg-white border border-zinc-200 rounded-xl p-6 shadow-sm">
+          <section className="bg-white border border-stone-200 rounded-xl p-6 shadow-sm">
             <div className="mb-6">
-              <h2 className="text-base font-semibold text-zinc-900">Change Password</h2>
-              <p className="text-xs text-zinc-500 mt-0.5">Ensure your account is secure with a strong password.</p>
+              <h2 className="text-base font-semibold text-stone-900">Change Password</h2>
+              <p className="text-xs text-stone-500 mt-0.5">Ensure your account is secure with a strong password.</p>
             </div>
 
             <div className="space-y-4 max-w-lg">
               <div className="space-y-1.5">
-                <label className="text-xs font-medium text-zinc-700">Current Password</label>
+                <label className="text-xs font-medium text-stone-700">Current Password</label>
                 <input
                   type="password"
                   value={passwordData.currentPassword}
                   onChange={(e) => setPasswordData({ ...passwordData, currentPassword: e.target.value })}
                   placeholder="••••••••"
-                  className="w-full px-3 py-2 bg-white border border-zinc-200 rounded-md text-sm text-zinc-900 placeholder-zinc-400 transition-all focus:outline-none focus:ring-2 focus:ring-amber-500/20 focus:border-amber-500"
+                  className="w-full px-3 py-2 bg-white border border-stone-200 rounded-md text-sm text-stone-900 placeholder-stone-400 transition-all focus:outline-none focus:ring-2 focus:ring-gold-500/20 focus:border-gold-500"
                 />
               </div>
 
               <div className="grid grid-cols-2 gap-5">
                 <div className="space-y-1.5">
-                  <label className="text-xs font-medium text-zinc-700">New Password</label>
+                  <label className="text-xs font-medium text-stone-700">New Password</label>
                   <input
                     type="password"
                     value={passwordData.newPassword}
                     onChange={(e) => setPasswordData({ ...passwordData, newPassword: e.target.value })}
                     placeholder="••••••••"
-                    className="w-full px-3 py-2 bg-white border border-zinc-200 rounded-md text-sm text-zinc-900 placeholder-zinc-400 transition-all focus:outline-none focus:ring-2 focus:ring-amber-500/20 focus:border-amber-500"
+                    className="w-full px-3 py-2 bg-white border border-stone-200 rounded-md text-sm text-stone-900 placeholder-stone-400 transition-all focus:outline-none focus:ring-2 focus:ring-gold-500/20 focus:border-gold-500"
                   />
                 </div>
                 <div className="space-y-1.5">
-                  <label className="text-xs font-medium text-zinc-700">Confirm Password</label>
+                  <label className="text-xs font-medium text-stone-700">Confirm Password</label>
                   <input
                     type="password"
                     value={passwordData.confirmPassword}
                     onChange={(e) => setPasswordData({ ...passwordData, confirmPassword: e.target.value })}
                     placeholder="••••••••"
-                    className="w-full px-3 py-2 bg-white border border-zinc-200 rounded-md text-sm text-zinc-900 placeholder-zinc-400 transition-all focus:outline-none focus:ring-2 focus:ring-amber-500/20 focus:border-amber-500"
+                    className="w-full px-3 py-2 bg-white border border-stone-200 rounded-md text-sm text-stone-900 placeholder-stone-400 transition-all focus:outline-none focus:ring-2 focus:ring-gold-500/20 focus:border-gold-500"
                   />
                 </div>
               </div>
@@ -358,7 +358,7 @@ export default function ProducerProfilePage() {
               <button
                 onClick={handlePasswordChange}
                 disabled={isSaving || !passwordData.currentPassword || !passwordData.newPassword}
-                className="px-4 py-2 text-xs font-medium text-white bg-zinc-900 hover:bg-zinc-800 rounded-md shadow-sm transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+                className="px-4 py-2 text-xs font-medium text-white bg-stone-900 hover:bg-stone-800 rounded-md shadow-sm transition-all disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {isSaving ? 'Updating...' : 'Update Password'}
               </button>

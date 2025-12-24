@@ -22,74 +22,20 @@ export default function CertificateTemplate({
   const getAwardTitle = () => {
     switch (awardLevel) {
       case 'GRAND_GOLD':
-        return 'GRAND GOLD AWARD';
+        return 'Grand Gold Award';
       case 'GOLD':
-        return 'GOLD AWARD';
+        return 'Gold Award';
       case 'SILVER':
-        return 'SILVER AWARD';
+        return 'Silver Award';
       case 'BRONZE':
-        return 'BRONZE AWARD';
+        return 'Bronze Award';
       case 'NONE':
-        return 'CERTIFICATE OF RECOGNITION';
+        return 'Recognition';
       default:
-        return 'GOLD AWARD';
+        return 'Gold Award';
     }
   };
 
-  const getTemplateColors = () => {
-    switch (awardLevel) {
-      case 'GRAND_GOLD':
-        return {
-          bg: 'from-yellow-50 to-yellow-100',
-          border: 'border-yellow-300',
-          badge: 'from-yellow-400 to-yellow-600',
-          icon: 'text-yellow-900',
-          textGradient: 'from-yellow-700 via-yellow-600 to-yellow-500',
-        };
-      case 'GOLD':
-        return {
-          bg: 'from-amber-50 to-amber-100',
-          border: 'border-amber-300',
-          badge: 'from-amber-400 to-amber-600',
-          icon: 'text-white',
-          textGradient: 'from-amber-600 via-amber-500 to-amber-400',
-        };
-      case 'SILVER':
-        return {
-          bg: 'from-zinc-100 to-zinc-200',
-          border: 'border-zinc-300',
-          badge: 'from-zinc-300 to-zinc-500',
-          icon: 'text-white',
-          textGradient: 'from-zinc-600 via-zinc-500 to-zinc-400',
-        };
-      case 'BRONZE':
-        return {
-          bg: 'from-orange-50 to-orange-100',
-          border: 'border-orange-300',
-          badge: 'from-orange-400 to-orange-600',
-          icon: 'text-orange-900',
-          textGradient: 'from-orange-600 via-orange-500 to-orange-400',
-        };
-      case 'NONE':
-        return {
-          bg: 'from-zinc-50 to-zinc-100',
-          border: 'border-zinc-200',
-          badge: 'from-zinc-300 to-zinc-400',
-          icon: 'text-zinc-700',
-          textGradient: 'from-zinc-600 via-zinc-500 to-zinc-400',
-        };
-      default:
-        return {
-          bg: 'from-amber-50 to-amber-100',
-          border: 'border-amber-300',
-          badge: 'from-amber-400 to-amber-600',
-          icon: 'text-white',
-          textGradient: 'from-amber-600 via-amber-500 to-amber-400',
-        };
-    }
-  };
-
-  const colors = getTemplateColors();
   const formattedDate = new Date(issueDate).toLocaleDateString('en-US', {
     month: 'long',
     day: 'numeric',
@@ -97,109 +43,77 @@ export default function CertificateTemplate({
   });
 
   return (
-    <div className="flex justify-center items-center min-h-screen bg-zinc-100 p-4">
-      <div className="w-full max-w-2xl aspect-[1/1.414] bg-white rounded-xl shadow-2xl overflow-hidden relative">
-        <div className={`absolute inset-4 border-4 ${colors.border} rounded-lg p-8 flex flex-col items-center bg-gradient-to-b ${colors.bg}`}>
-          {/* Decorative Corners */}
-          <div className={`absolute top-2 left-2 w-16 h-16 border-l-4 border-t-4 ${colors.border} rounded-tl-lg`}></div>
-          <div className={`absolute top-2 right-2 w-16 h-16 border-r-4 border-t-4 ${colors.border} rounded-tr-lg`}></div>
-          <div className={`absolute bottom-2 left-2 w-16 h-16 border-l-4 border-b-4 ${colors.border} rounded-bl-lg`}></div>
-          <div className={`absolute bottom-2 right-2 w-16 h-16 border-r-4 border-b-4 ${colors.border} rounded-br-lg`}></div>
+    <div className="flex justify-center items-center min-h-screen bg-stone-100 p-4 md:p-8">
+      {/* Certificate Container */}
+      <div className="relative paper-texture w-full aspect-[1/1.3] md:aspect-[1/1.4] max-w-2xl mx-auto p-6 md:p-8 lg:p-12 flex flex-col intricate-border shadow-xl">
+        
+        {/* Watermark */}
+        <div className="absolute inset-0 flex items-center justify-center opacity-[0.03] pointer-events-none">
+          <iconify-icon icon="lucide:award" width="200" height="200"></iconify-icon>
+        </div>
 
-          {/* Header */}
-          <div className="text-center mb-4">
-            <div className="flex items-center justify-center gap-2 mb-2">
-              <div className="w-8 h-8 bg-gradient-to-br from-amber-500 to-orange-600 rounded-lg flex items-center justify-center">
-                <iconify-icon icon="lucide:award" width="16" className="text-white" style={{ strokeWidth: 1.5 } as React.CSSProperties}></iconify-icon>
-              </div>
-              <span className="text-lg font-semibold text-zinc-800 tracking-tight">Tastecert</span>
-            </div>
-            <p className="text-xs text-zinc-500 tracking-widest uppercase">International Food Quality Awards</p>
+        {/* Certificate Header */}
+        <div className="text-center border-b border-stone-200 pb-4 relative z-10">
+          <div className="flex justify-center mb-2">
+            <iconify-icon icon="lucide:award" className="text-stone-800" width="32"></iconify-icon>
           </div>
+          <h2 className="font-display text-2xl md:text-3xl text-stone-900 uppercase tracking-widest font-semibold mb-2">Certificate</h2>
+          <p className="font-serif text-sm text-stone-500 italic">of Quality & Authenticity</p>
+        </div>
 
-          {/* Award Badge */}
-          <div className="relative mb-4">
-            <div className={`w-24 h-24 rounded-full bg-gradient-to-br ${colors.badge} flex items-center justify-center shadow-lg`}>
-              <div className={`w-20 h-20 rounded-full bg-gradient-to-br ${colors.badge} flex items-center justify-center border-2 border-white/30`}>
-                <iconify-icon icon="lucide:award" width="40" className={colors.icon} style={{ strokeWidth: 1.5 } as React.CSSProperties}></iconify-icon>
-              </div>
-            </div>
-          </div>
-
-          {/* Certificate Title */}
-          <p className="text-sm text-zinc-500 tracking-widest uppercase mb-1">Certificate of</p>
-          <h2 className={`text-3xl font-bold tracking-tight mb-4 bg-gradient-to-r ${colors.textGradient} bg-clip-text text-transparent`}>
-            {getAwardTitle()}
-          </h2>
-
-          {/* Recipient */}
-          <p className="text-sm text-zinc-500 mb-1">Awarded to</p>
-          <h3 className="text-xl font-semibold text-zinc-900 text-center mb-1">
+        {/* Certificate Body */}
+        <div className="flex-grow flex flex-col justify-center text-center py-4 relative z-10 space-y-3 md:space-y-4">
+          <p className="text-[10px] md:text-xs uppercase tracking-[0.2em] text-stone-400 font-medium">This document certifies that</p>
+          
+          <h3 className="font-serif text-2xl md:text-3xl lg:text-4xl text-stone-900 font-medium italic leading-tight px-4">
             {productName}
           </h3>
-          <p className="text-sm text-zinc-600 mb-1">
-            by {producerName}
-          </p>
-          <p className="text-xs text-zinc-400 mb-4">
-            {categoryName}
-          </p>
-
-          {/* Score Badge */}
-          <div className="flex items-center gap-2 px-4 py-2 bg-white/80 rounded-full shadow-sm border border-amber-200 mb-4">
-            <iconify-icon icon="lucide:star" width="16" className="text-amber-500" style={{ strokeWidth: 1.5 } as React.CSSProperties}></iconify-icon>
-            <span className="text-sm font-semibold text-zinc-800">
-              Score: {score.toFixed(1)}/10
-            </span>
+          
+          <p className="text-[10px] md:text-xs uppercase tracking-[0.2em] text-stone-400 font-medium">Produced by {producerName}</p>
+          
+          <div className="text-xs md:text-sm text-stone-600 font-light leading-relaxed px-4 max-w-lg mx-auto">
+            has successfully met the rigorous standards of the Tastecert Quality Institute, achieving a verified score of <span className="font-semibold text-stone-800">{score.toFixed(1)}/10</span> in the {categoryName} category, earning the distinction of <span className="font-semibold text-stone-800">{getAwardTitle()}</span>.
           </div>
+        </div>
 
-          {/* Recognition Message */}
-          <p className="text-sm text-zinc-600 text-center max-w-md mb-6 leading-relaxed">
-            In recognition of exceptional quality and excellence in artisan food production.
-          </p>
-
-          {/* Signatures */}
-          <div className="flex items-center justify-center gap-12 mb-4">
+        {/* Certificate Footer */}
+        <div className="mt-auto pt-4 border-t border-stone-200 relative z-10">
+          <div className="grid grid-cols-2 gap-8 items-end mb-6">
             <div className="text-center">
-              <div className="w-20 h-12 border-b-2 border-zinc-300 mb-2 flex items-center justify-center">
-                <span className="text-zinc-400 italic text-lg font-serif">J. Smith</span>
+              <div className="h-12 flex items-end justify-center mb-1">
+                <span className="font-signature text-2xl md:text-3xl text-stone-800 transform -rotate-6 block">James Miller</span>
               </div>
-              <p className="text-xs text-zinc-500">Chief Judge</p>
+              <div className="h-px w-full bg-stone-300"></div>
+              <p className="text-[9px] uppercase tracking-wider text-stone-400 mt-1">Director of Evaluation</p>
             </div>
             <div className="text-center">
-              <div className="w-16 h-16 rounded-full bg-zinc-100 flex items-center justify-center border-2 border-zinc-200">
-                <iconify-icon icon="lucide:stamp" width="28" className="text-zinc-400" style={{ strokeWidth: 1.5 } as React.CSSProperties}></iconify-icon>
+              <div className="h-12 flex items-end justify-center mb-1">
+                <span className="font-signature text-2xl md:text-3xl text-stone-800 block">Elena Ross</span>
               </div>
-              <p className="text-xs text-zinc-500 mt-1">Official Seal</p>
-            </div>
-            <div className="text-center">
-              <div className="w-20 h-12 border-b-2 border-zinc-300 mb-2 flex items-center justify-center">
-                <span className="text-zinc-400 italic text-lg font-serif">M. Chen</span>
-              </div>
-              <p className="text-xs text-zinc-500">Director</p>
+              <div className="h-px w-full bg-stone-300"></div>
+              <p className="text-[9px] uppercase tracking-wider text-stone-400 mt-1">Compliance Officer</p>
             </div>
           </div>
 
-          {/* Footer */}
-          <div className="mt-auto flex items-center justify-between w-full pt-4 border-t border-amber-200">
-            <div className="text-left">
-              <p className="text-xs text-zinc-500">Issue Date</p>
-              <p className="text-sm font-medium text-zinc-700">
-                {formattedDate}
-              </p>
+          <div className="flex justify-between items-center">
+            <div className="flex flex-col">
+              <span className="text-[9px] text-stone-400 uppercase tracking-wide">Issue Date</span>
+              <span className="text-xs md:text-sm text-stone-800 font-medium">{formattedDate}</span>
             </div>
-            <div className="w-16 h-16 bg-white p-1 rounded border border-zinc-200">
-              <div className="w-full h-full bg-zinc-100 flex items-center justify-center">
-                <iconify-icon icon="lucide:qr-code" width="32" className="text-zinc-400" style={{ strokeWidth: 1.5 } as React.CSSProperties}></iconify-icon>
-              </div>
+            
+            {/* Gold Seal */}
+            <div className="w-16 h-16 md:w-20 md:h-20 rounded-full gold-foil flex items-center justify-center shadow-lg relative">
+              <div className="absolute inset-1 border border-white/30 rounded-full"></div>
+              <iconify-icon icon="lucide:ribbon" className="text-white/90 drop-shadow-md" width="32"></iconify-icon>
             </div>
-            <div className="text-right">
-              <p className="text-xs text-zinc-500">Certificate ID</p>
-              <p className="text-sm font-medium text-zinc-700">
-                {certificateNumber}
-              </p>
+
+            <div className="flex flex-col text-right">
+              <span className="text-[9px] text-stone-400 uppercase tracking-wide">Registration No.</span>
+              <span className="font-mono text-xs md:text-sm text-stone-800 font-medium">{certificateNumber}</span>
             </div>
           </div>
         </div>
+
       </div>
     </div>
   );

@@ -18,7 +18,7 @@ export default function CookiesPage() {
       <section className="pt-36 pb-12 md:pt-40 md:pb-16">
         <div className="max-w-3xl mx-auto px-6">
           <div className="flex items-center gap-2 text-sm text-stone-400 mb-6">
-            <Link href="/" className="hover:text-orange-600 transition-colors">Home</Link>
+            <Link href="/" className="hover:text-olive-600 transition-colors">Home</Link>
             <iconify-icon icon="lucide:chevron-right" width="14" style={{ strokeWidth: 1.5 } as React.CSSProperties}></iconify-icon>
             <span className="text-stone-600">Cookie Policy</span>
           </div>
@@ -47,7 +47,7 @@ export default function CookiesPage() {
       {/* Quick Actions */}
       <section className="pb-12">
         <div className="max-w-3xl mx-auto px-6">
-          <div className="bg-gradient-to-br from-amber-50 to-orange-50 rounded-2xl border border-amber-100 p-6">
+          <div className="bg-gradient-to-br from-amber-50 to-olive-50 rounded-2xl border border-amber-100 p-6">
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
               <div className="flex items-start gap-4">
                 <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center shrink-0 shadow-sm">
@@ -71,19 +71,19 @@ export default function CookiesPage() {
         <div className="max-w-3xl mx-auto px-6">
           <div className="bg-white rounded-2xl border border-stone-100 p-6">
             <h2 className="text-sm font-semibold text-stone-900 mb-4 font-heading flex items-center gap-2">
-              <iconify-icon icon="lucide:list" width="16" style={{ strokeWidth: 1.5 } as React.CSSProperties} className="text-orange-600"></iconify-icon>
+              <iconify-icon icon="lucide:list" width="16" style={{ strokeWidth: 1.5 } as React.CSSProperties} className="text-olive-600"></iconify-icon>
               Table of Contents
             </h2>
             <nav className="grid grid-cols-1 md:grid-cols-2 gap-2">
-              <a href="#what-are-cookies" className="text-sm text-stone-500 hover:text-orange-600 transition-colors py-1">1. What Are Cookies?</a>
-              <a href="#why-we-use" className="text-sm text-stone-500 hover:text-orange-600 transition-colors py-1">2. Why We Use Cookies</a>
-              <a href="#types-of-cookies" className="text-sm text-stone-500 hover:text-orange-600 transition-colors py-1">3. Types of Cookies We Use</a>
-              <a href="#third-party" className="text-sm text-stone-500 hover:text-orange-600 transition-colors py-1">4. Third-Party Cookies</a>
-              <a href="#cookie-duration" className="text-sm text-stone-500 hover:text-orange-600 transition-colors py-1">5. Cookie Duration</a>
-              <a href="#managing-cookies" className="text-sm text-stone-500 hover:text-orange-600 transition-colors py-1">6. Managing Cookies</a>
-              <a href="#browser-settings" className="text-sm text-stone-500 hover:text-orange-600 transition-colors py-1">7. Browser Settings</a>
-              <a href="#cookie-updates" className="text-sm text-stone-500 hover:text-orange-600 transition-colors py-1">8. Updates to This Policy</a>
-              <a href="#contact-cookies" className="text-sm text-stone-500 hover:text-orange-600 transition-colors py-1">9. Contact Us</a>
+              <a href="#what-are-cookies" className="text-sm text-stone-500 hover:text-olive-600 transition-colors py-1">1. What Are Cookies?</a>
+              <a href="#why-we-use" className="text-sm text-stone-500 hover:text-olive-600 transition-colors py-1">2. Why We Use Cookies</a>
+              <a href="#types-of-cookies" className="text-sm text-stone-500 hover:text-olive-600 transition-colors py-1">3. Types of Cookies We Use</a>
+              <a href="#third-party" className="text-sm text-stone-500 hover:text-olive-600 transition-colors py-1">4. Third-Party Cookies</a>
+              <a href="#cookie-duration" className="text-sm text-stone-500 hover:text-olive-600 transition-colors py-1">5. Cookie Duration</a>
+              <a href="#managing-cookies" className="text-sm text-stone-500 hover:text-olive-600 transition-colors py-1">6. Managing Cookies</a>
+              <a href="#browser-settings" className="text-sm text-stone-500 hover:text-olive-600 transition-colors py-1">7. Browser Settings</a>
+              <a href="#cookie-updates" className="text-sm text-stone-500 hover:text-olive-600 transition-colors py-1">8. Updates to This Policy</a>
+              <a href="#contact-cookies" className="text-sm text-stone-500 hover:text-olive-600 transition-colors py-1">9. Contact Us</a>
             </nav>
           </div>
         </div>
@@ -131,8 +131,8 @@ export default function CookiesPage() {
                 </div>
 
                 <div className="bg-white rounded-xl border border-stone-100 p-5">
-                  <div className="w-10 h-10 rounded-lg bg-orange-50 flex items-center justify-center mb-3">
-                    <iconify-icon icon="lucide:user" width="20" className="text-orange-600" style={{ strokeWidth: 1.5 } as React.CSSProperties}></iconify-icon>
+                  <div className="w-10 h-10 rounded-lg bg-olive-50 flex items-center justify-center mb-3">
+                    <iconify-icon icon="lucide:user" width="20" className="text-olive-600" style={{ strokeWidth: 1.5 } as React.CSSProperties}></iconify-icon>
                   </div>
                   <h4 className="text-sm font-semibold text-stone-900 mb-2 font-heading">Remember You</h4>
                   <p className="text-xs text-stone-500">Help us recognize you and remember your preferences.</p>
@@ -191,8 +191,8 @@ export default function CookiesPage() {
                 </div>
 
                 <div className="flex items-start gap-4 p-4 bg-white rounded-xl border border-stone-100">
-                  <div className="w-10 h-10 rounded-full bg-orange-50 flex items-center justify-center shrink-0">
-                    <iconify-icon icon="lucide:megaphone" width="20" className="text-orange-600" style={{ strokeWidth: 1.5 } as React.CSSProperties}></iconify-icon>
+                  <div className="w-10 h-10 rounded-full bg-olive-50 flex items-center justify-center shrink-0">
+                    <iconify-icon icon="lucide:megaphone" width="20" className="text-olive-600" style={{ strokeWidth: 1.5 } as React.CSSProperties}></iconify-icon>
                   </div>
                   <div>
                     <h4 className="text-sm font-semibold text-stone-900 font-heading">Marketing & Advertising</h4>
@@ -255,8 +255,8 @@ export default function CookiesPage() {
 
                 <div className="bg-white rounded-xl border border-stone-100 p-5">
                   <div className="flex items-center gap-3 mb-3">
-                    <div className="w-8 h-8 rounded-lg bg-orange-100 flex items-center justify-center">
-                      <iconify-icon icon="lucide:megaphone" width="18" className="text-orange-600" style={{ strokeWidth: 1.5 } as React.CSSProperties}></iconify-icon>
+                    <div className="w-8 h-8 rounded-lg bg-olive-100 flex items-center justify-center">
+                      <iconify-icon icon="lucide:megaphone" width="18" className="text-olive-600" style={{ strokeWidth: 1.5 } as React.CSSProperties}></iconify-icon>
                     </div>
                     <h4 className="text-sm font-semibold text-stone-900 font-heading">Marketing Cookies</h4>
                   </div>
@@ -343,11 +343,11 @@ export default function CookiesPage() {
               <div className="bg-white rounded-xl border border-stone-100 p-5">
                 <div className="space-y-3 text-sm">
                   <div className="flex items-center gap-2">
-                    <iconify-icon icon="lucide:mail" width="16" className="text-orange-600" style={{ strokeWidth: 1.5 } as React.CSSProperties}></iconify-icon>
-                    <a href="mailto:privacy@tastecert.com" className="text-orange-600 hover:underline">privacy@tastecert.com</a>
+                    <iconify-icon icon="lucide:mail" width="16" className="text-olive-600" style={{ strokeWidth: 1.5 } as React.CSSProperties}></iconify-icon>
+                    <a href="mailto:privacy@tastecert.com" className="text-olive-600 hover:underline">privacy@tastecert.com</a>
                   </div>
                   <div className="flex items-center gap-2">
-                    <iconify-icon icon="lucide:phone" width="16" className="text-orange-600" style={{ strokeWidth: 1.5 } as React.CSSProperties}></iconify-icon>
+                    <iconify-icon icon="lucide:phone" width="16" className="text-olive-600" style={{ strokeWidth: 1.5 } as React.CSSProperties}></iconify-icon>
                     <span className="text-stone-600">+1 (555) 123-4567</span>
                   </div>
                 </div>
