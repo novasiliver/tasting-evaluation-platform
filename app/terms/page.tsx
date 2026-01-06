@@ -82,7 +82,7 @@ export default function TermsPage() {
                 <div>
                   <h3 className="text-base font-semibold text-stone-900 mb-2 font-heading">Agreement to Terms</h3>
                   <p className="text-sm text-stone-600 leading-relaxed">
-                    These Terms of Service ("Terms") constitute a legally binding agreement between you and Tastecert, Inc. ("Tastecert," "we," "us," or "our"). By accessing or using our services, you agree to be bound by these Terms. If you do not agree to these Terms, please do not use our services.
+                    These Terms of Service ("Terms") constitute a legally binding agreement between you and NETSELINE LTD, operating as Tastecert ("Tastecert," "Company," "we," "us," or "our"). By accessing or using our services, you agree to be bound by these Terms. If you do not agree to these Terms, please do not use our services.
                   </p>
                 </div>
               </div>
@@ -255,7 +255,7 @@ export default function TermsPage() {
                 <h2 className="text-xl font-semibold text-stone-900 tracking-tight font-heading">Intellectual Property</h2>
               </div>
               <p className="text-stone-600 leading-relaxed">
-                All content, features, and functionality of our services are owned by Tastecert and are protected by copyright, trademark, and other intellectual property laws.
+                All content, features, and functionality of our services are owned by NETSELINE LTD and its licensors, and are protected by copyright, trademark, and other intellectual property laws. The Tastecert name, logo, and certification marks are proprietary to NETSELINE LTD.
               </p>
             </div>
 
@@ -305,7 +305,7 @@ export default function TermsPage() {
                 <h2 className="text-xl font-semibold text-stone-900 tracking-tight font-heading">Limitation of Liability</h2>
               </div>
               <p className="text-stone-600 leading-relaxed">
-                To the maximum extent permitted by law, Tastecert shall not be liable for any indirect, incidental, special, or consequential damages.
+                To the maximum extent permitted by law, NETSELINE LTD (operating as Tastecert) shall not be liable for any indirect, incidental, special, or consequential damages arising from your use of our services.
               </p>
             </div>
 
@@ -315,7 +315,7 @@ export default function TermsPage() {
                 <h2 className="text-xl font-semibold text-stone-900 tracking-tight font-heading">Indemnification</h2>
               </div>
               <p className="text-stone-600 leading-relaxed">
-                You agree to indemnify and hold harmless Tastecert from any claims arising from your use of our services or violation of these Terms.
+                You agree to indemnify and hold harmless NETSELINE LTD, its affiliates, and the Tastecert brand from any claims, damages, or expenses arising from your use of our services or violation of these Terms.
               </p>
             </div>
 
@@ -334,9 +334,15 @@ export default function TermsPage() {
                 <div className="w-8 h-8 rounded-full bg-stone-900 text-white flex items-center justify-center text-sm font-semibold">13</div>
                 <h2 className="text-xl font-semibold text-stone-900 tracking-tight font-heading">Governing Law</h2>
               </div>
-              <p className="text-stone-600 leading-relaxed">
-                These Terms shall be governed by and construed in accordance with the laws of the State of New York, without regard to its conflict of law principles.
+              <p className="text-stone-600 leading-relaxed mb-4">
+                These Terms shall be governed by and construed in accordance with the applicable laws governing NETSELINE LTD, without regard to conflict of law principles.
               </p>
+              <div className="bg-blue-50 border border-blue-100 rounded-xl p-4 flex gap-3">
+                <iconify-icon icon="lucide:building-2" width="20" className="text-blue-600 shrink-0 mt-0.5" style={{ strokeWidth: 1.5 } as React.CSSProperties}></iconify-icon>
+                <p className="text-sm text-stone-600">
+                  <strong>Company Information:</strong> Tastecert is a brand and service operated by NETSELINE LTD. All legal agreements are with NETSELINE LTD.
+                </p>
+              </div>
             </div>
 
             <div id="changes-terms" className="mb-12 scroll-mt-32">
@@ -369,7 +375,7 @@ export default function TermsPage() {
                   </div>
                   <div className="flex items-start gap-2">
                     <iconify-icon icon="lucide:map-pin" width="16" className="text-olive-600 mt-0.5" style={{ strokeWidth: 1.5 } as React.CSSProperties}></iconify-icon>
-                    <span className="text-stone-600">Tastecert, Inc.<br />New York, NY</span>
+                    <span className="text-stone-600">NETSELINE LTD (Tastecert)<br />Company Registration Required</span>
                   </div>
                 </div>
               </div>

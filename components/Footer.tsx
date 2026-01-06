@@ -32,45 +32,45 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Col 2: Company */}
+          {/* Col 2: For Producers */}
+          <div>
+            <h4 className="font-semibold text-stone-900 mb-6">For Producers</h4>
+            <ul className="space-y-3 text-sm">
+              <li><Link href="/services" className="text-stone-500 hover:text-olive transition-colors">How It Works</Link></li>
+              <li><Link href="/methodology" className="text-stone-500 hover:text-olive transition-colors">Methodology</Link></li>
+              <li><Link href="/submit" className="text-stone-500 hover:text-olive transition-colors">Submit Product</Link></li>
+              <li><Link href="/winners" className="text-stone-500 hover:text-olive transition-colors">Certified Products</Link></li>
+              <li><Link href="/contact" className="text-stone-500 hover:text-olive transition-colors">Producer Support</Link></li>
+            </ul>
+          </div>
+
+          {/* Col 3: For Retailers */}
+          <div>
+            <h4 className="font-semibold text-stone-900 mb-6">For Retailers</h4>
+            <ul className="space-y-3 text-sm">
+              <li><Link href="/retailers" className="text-stone-500 hover:text-olive transition-colors">Why Retailers Trust Us</Link></li>
+              <li><Link href="/winners" className="text-stone-500 hover:text-olive transition-colors">Browse Directory</Link></li>
+              <li><Link href="/retailers#verify" className="text-stone-500 hover:text-olive transition-colors">Verify Certificate</Link></li>
+              <li><Link href="/contact" className="text-stone-500 hover:text-olive transition-colors">Buyer Access</Link></li>
+            </ul>
+          </div>
+
+          {/* Col 4: Company */}
           <div>
             <h4 className="font-semibold text-stone-900 mb-6">Company</h4>
             <ul className="space-y-3 text-sm">
               <li><Link href="/about" className="text-stone-500 hover:text-olive transition-colors">About Us</Link></li>
-              <li><Link href="/services" className="text-stone-500 hover:text-olive transition-colors">Our Methodology</Link></li>
-              <li><Link href="/about" className="text-stone-500 hover:text-olive transition-colors">Careers</Link></li>
-              <li><Link href="/contact" className="text-stone-500 hover:text-olive transition-colors">Press & Media</Link></li>
+              <li><Link href="/methodology" className="text-stone-500 hover:text-olive transition-colors">Our Methodology</Link></li>
               <li><Link href="/contact" className="text-stone-500 hover:text-olive transition-colors">Contact</Link></li>
-            </ul>
-          </div>
-
-          {/* Col 3: Resources */}
-          <div>
-            <h4 className="font-semibold text-stone-900 mb-6">Resources</h4>
-            <ul className="space-y-3 text-sm">
-              <li><Link href="/winners" className="text-stone-500 hover:text-olive transition-colors">Verification Lookup</Link></li>
-              <li><Link href="/submit" className="text-stone-500 hover:text-olive transition-colors">Producer Guidelines</Link></li>
-              <li><Link href="/winners" className="text-stone-500 hover:text-olive transition-colors">Success Stories</Link></li>
-              <li><Link href="/contact" className="text-stone-500 hover:text-olive transition-colors">Help Center</Link></li>
-              <li><Link href="/contact" className="text-stone-500 hover:text-olive transition-colors">Retailer Partners</Link></li>
-            </ul>
-          </div>
-
-          {/* Col 4: Legal */}
-          <div>
-            <h4 className="font-semibold text-stone-900 mb-6">Legal</h4>
-            <ul className="space-y-3 text-sm">
-              <li><Link href="/privacy" className="text-stone-500 hover:text-olive transition-colors">Privacy Policy</Link></li>
               <li><Link href="/terms" className="text-stone-500 hover:text-olive transition-colors">Terms of Service</Link></li>
-              <li><Link href="/cookies" className="text-stone-500 hover:text-olive transition-colors">Cookie Policy</Link></li>
-              <li><Link href="/contact" className="text-stone-500 hover:text-olive transition-colors">Dispute Resolution</Link></li>
+              <li><Link href="/privacy" className="text-stone-500 hover:text-olive transition-colors">Privacy Policy</Link></li>
             </ul>
           </div>
         </div>
 
         <div className="border-t border-stone-200 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-xs text-stone-400">
-            © {currentYear} Tastecert International Ltd. All rights reserved.
+          <p className="text-xs text-stone-400 text-center md:text-left">
+            © {currentYear} Tastecert. Operated by <strong className="text-stone-500">NETSELINE LTD</strong>. All rights reserved.
           </p>
           <div className="flex items-center gap-6">
             <span className="flex items-center gap-2 text-xs text-stone-400">

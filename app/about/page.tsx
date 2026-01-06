@@ -19,15 +19,15 @@ export default function AboutPage() {
         <div className="max-w-4xl mx-auto text-center">
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white border border-stone-200 mb-8 shadow-sm">
             <span className="w-2 h-2 rounded-full bg-olive"></span>
-            <span className="text-xs font-semibold uppercase tracking-widest text-stone-600">Founded 2012</span>
+            <span className="text-xs font-semibold uppercase tracking-widest text-stone-600">Operated by NETSELINE LTD</span>
           </div>
           
           <h1 className="font-serif text-5xl md:text-7xl text-[#1C1917] leading-[1.05] tracking-tight mb-8">
-            The science behind<br/>every flavor.
+            Independent certification<br/>you can trust.
           </h1>
           
           <p className="text-lg md:text-xl text-stone-600 font-light leading-relaxed max-w-2xl mx-auto mb-12">
-            We exist to provide an objective truth in a subjective world. By combining sensory expertise with chemical analysis, we are building the world's most trusted food quality database.
+            Tastecert, operated by NETSELINE LTD, provides transparent, scientifically rigorous certification for artisan food and beverage producers. We combine expert sensory panels with laboratory analysis to deliver independent verification that retailers and consumers trust.
           </p>
 
           {/* Abstract Visual: The "Spectrum" */}
@@ -88,10 +88,6 @@ export default function AboutPage() {
               </div>
 
               <div className="mt-10 flex gap-4">
-                <div className="flex items-center gap-2 text-sm font-medium text-olive">
-                  <iconify-icon icon="lucide:check-circle" width="16"></iconify-icon>
-                  <span>ISO 9001 Certified</span>
-                </div>
                 <div className="flex items-center gap-2 text-sm font-medium text-olive">
                   <iconify-icon icon="lucide:check-circle" width="16"></iconify-icon>
                   <span>Independent Labs</span>

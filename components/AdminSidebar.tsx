@@ -34,7 +34,6 @@ export default function AdminSidebar() {
     },
     { href: '/admin/categories', icon: 'lucide:folder', label: 'Categories' },
     { href: '/admin/certificates', icon: 'lucide:scroll-text', label: 'Certificates' },
-    { href: '/admin/certificates/generate', icon: 'lucide:file-text', label: 'Templates' },
     { href: '/admin/winners', icon: 'lucide:image', label: 'Winners Gallery' },
   ];
 
@@ -44,9 +43,6 @@ export default function AdminSidebar() {
 
   const isActive = (href: string) => {
     if (href === '/admin') return pathname === '/admin';
-    // Special handling for certificates vs generator
-    if (href === '/admin/certificates') return pathname === '/admin/certificates';
-    if (href === '/admin/certificates/generate') return pathname === '/admin/certificates/generate';
     return pathname.startsWith(href);
   };
 

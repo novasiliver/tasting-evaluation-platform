@@ -78,7 +78,7 @@ export default function PrivacyPolicyPage() {
                 <div>
                   <h3 className="text-base font-semibold text-stone-900 mb-2 font-heading">Our Commitment to Privacy</h3>
                   <p className="text-sm text-stone-600 leading-relaxed">
-                    At Tastecert ("Tastecert," "we," "us," or "our"), we are committed to protecting your privacy and ensuring the security of your personal information. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our services.
+                    At Tastecert, operated by NETSELINE LTD ("Tastecert," "Company," "we," "us," or "our"), we are committed to protecting your privacy and ensuring the security of your personal information. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our services.
                   </p>
                 </div>
               </div>
@@ -329,9 +329,15 @@ export default function PrivacyPolicyPage() {
                 <div className="w-8 h-8 rounded-full bg-stone-900 text-white flex items-center justify-center text-sm font-semibold">8</div>
                 <h2 className="text-xl font-semibold text-stone-900 tracking-tight font-heading">International Transfers</h2>
               </div>
-              <p className="text-stone-600 leading-relaxed">
-                Your information may be transferred to and maintained on servers located outside of your state, province, country, or other governmental jurisdiction where data protection laws may differ.
+              <p className="text-stone-600 leading-relaxed mb-4">
+                Your information may be transferred to and maintained on servers located outside of your state, province, country, or other governmental jurisdiction where data protection laws may differ. NETSELINE LTD operates internationally and takes appropriate measures to protect your data.
               </p>
+              <div className="bg-blue-50 border border-blue-100 rounded-xl p-4 flex gap-3">
+                <iconify-icon icon="lucide:building-2" width="20" className="text-blue-600 shrink-0 mt-0.5" style={{ strokeWidth: 1.5 } as React.CSSProperties}></iconify-icon>
+                <p className="text-sm text-stone-600">
+                  <strong>Data Controller:</strong> NETSELINE LTD, operating as Tastecert, is the data controller responsible for your personal information.
+                </p>
+              </div>
             </div>
 
             <div id="children" className="mb-12 scroll-mt-32">
@@ -374,7 +380,7 @@ export default function PrivacyPolicyPage() {
                   </div>
                   <div className="flex items-start gap-2">
                     <iconify-icon icon="lucide:map-pin" width="16" className="text-olive-600 mt-0.5" style={{ strokeWidth: 1.5 } as React.CSSProperties}></iconify-icon>
-                    <span className="text-stone-600">Tastecert, Inc.<br />New York, NY</span>
+                    <span className="text-stone-600">NETSELINE LTD (Tastecert)<br />Company Registration Required</span>
                   </div>
                 </div>
               </div>

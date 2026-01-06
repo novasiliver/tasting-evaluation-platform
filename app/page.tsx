@@ -2,12 +2,12 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 export const metadata = {
-  title: 'Tastecert | Independent Quality Certification',
-  description: 'Independent certification for exceptional specialty products. Rigorous blind-tested evaluation and verified documentation.',
-  keywords: ['quality certification', 'product evaluation', 'specialty food certification', 'independent testing'],
+  title: 'Tastecert | Independent Sensory & Technical Certification for Artisan CPG Brands',
+  description: 'Earn an impartial seal through blind expert sensory panels and laboratory analysis. Build retailer trust, consumer confidence, and market differentiation.',
+  keywords: ['sensory certification', 'artisan food certification', 'CPG certification', 'quality seal', 'independent testing'],
   openGraph: {
-    title: 'Tastecert - Independent Quality Certification',
-    description: 'The definitive seal of quality for artisan producers.',
+    title: 'Tastecert - Independent Sensory & Technical Certification',
+    description: 'Build retailer trust and consumer confidence with our scientific certification process.',
     type: 'website',
   },
 };
@@ -15,420 +15,411 @@ export const metadata = {
 export default function Home() {
   return (
     <>
-      {/* 1. Introduction / Hero */}
-      <header className="overflow-hidden pt-20 pr-6 pb-24 pl-6">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 max-w-7xl mr-auto ml-auto gap-x-16 gap-y-16 items-center">
-          <div className="space-y-8 max-w-xl">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-stone-200/50 text-stone-600 text-xs font-medium uppercase tracking-wider border border-stone-200">
-              <span className="w-1.5 h-1.5 rounded-full bg-olive"></span>
-              Global Standard
-            </div>
-            <h1 className="font-serif text-5xl lg:text-6xl text-stone-900 leading-[1.1] tracking-tight">
-              Independent Certification for Exceptional Products
-            </h1>
-            <p className="text-lg text-stone-600 leading-relaxed font-light">
-              Tastecert provides the definitive seal of quality for artisan producers. We connect traditional craftsmanship with modern market trust through rigorous, blind-tested evaluation and verified documentation.
-            </p>
-            <div className="pt-2 flex flex-col sm:flex-row gap-4">
-              <Link href="/submit" className="inline-flex items-center justify-center bg-olive hover:bg-[#465a26] text-white px-8 py-3.5 rounded-lg text-base font-medium transition-all shadow-sm hover:shadow-md">
-                Start Certification
-              </Link>
-              <a href="#works" className="inline-flex items-center justify-center bg-white border border-stone-200 hover:border-stone-300 text-stone-700 px-8 py-3.5 rounded-lg text-base font-medium transition-all">
-                How it Works
-              </a>
-            </div>
-            <div className="flex items-center gap-6 pt-4 text-sm text-stone-500">
-              <div className="flex items-center gap-2">
-                <iconify-icon icon="lucide:check" className="text-olive"></iconify-icon>
-                <span>ISO 9001 Compliant</span>
+      {/* 1. HERO SECTION - Above the Fold */}
+      <header className="overflow-hidden pt-20 pr-6 pb-24 pl-6 bg-gradient-to-b from-[#FDFBF7] to-white">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div className="space-y-8 max-w-2xl">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-stone-200/50 text-stone-600 text-xs font-medium uppercase tracking-wider border border-stone-200">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#D4AF37]"></span>
+                Independent Certification
               </div>
-              <div className="flex items-center gap-2">
-                <iconify-icon icon="lucide:check" className="text-olive"></iconify-icon>
-                <span>Global Recognition</span>
-              </div>
-            </div>
-          </div>
-          
-          <div className="relative">
-            <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl bg-stone-100 relative z-10">
-              <Image 
-                src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/da6a5e12-2657-426e-8b86-6c8b45764c78_1600w.webp" 
-                alt="Artisan inspecting product quality in natural light" 
-                fill
-                className="opacity-95 object-cover"
-              />
-              {/* Overlay Card */}
-              <div className="absolute bottom-6 left-6 right-6 bg-white/95 backdrop-blur rounded-xl p-5 shadow-lg border border-white/50 flex items-center gap-4">
-                <div className="w-12 h-12 rounded-full bg-olive/10 text-olive flex items-center justify-center shrink-0">
-                  <iconify-icon icon="lucide:shield-check" width="24" style={{ strokeWidth: 1.5 } as React.CSSProperties}></iconify-icon>
+              
+              <h1 className="font-serif text-5xl lg:text-6xl text-stone-900 leading-[1.1] tracking-tight">
+                Independent Sensory & Technical Certification for Artisan CPG Brands
+              </h1>
+              
+              <p className="text-xl text-stone-600 leading-relaxed font-light">
+                Earn an impartial seal through blind expert sensory panels and laboratory analysis — proven to build retailer trust, consumer confidence, and market differentiation.
+              </p>
+
+              {/* Key Benefits Bullets */}
+              <div className="space-y-3 pt-2">
+                <div className="flex items-start gap-3">
+                  <div className="mt-1 w-5 h-5 rounded-full bg-[#2E4F3A] flex items-center justify-center shrink-0">
+                    <iconify-icon icon="lucide:check" width="14" className="text-white" style={{ strokeWidth: 2 } as React.CSSProperties}></iconify-icon>
+                  </div>
+                  <p className="text-base text-stone-700">For artisan food & beverage producers</p>
                 </div>
-                <div>
-                  <p className="text-sm font-semibold text-stone-900">Verified Excellence</p>
-                  <p className="text-xs text-stone-500">Every product undergoes double-blind chemical & sensory analysis.</p>
+                <div className="flex items-start gap-3">
+                  <div className="mt-1 w-5 h-5 rounded-full bg-[#2E4F3A] flex items-center justify-center shrink-0">
+                    <iconify-icon icon="lucide:check" width="14" className="text-white" style={{ strokeWidth: 2 } as React.CSSProperties}></iconify-icon>
+                  </div>
+                  <p className="text-base text-stone-700">Scientific 100-point scoring with clear benchmarks</p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="mt-1 w-5 h-5 rounded-full bg-[#2E4F3A] flex items-center justify-center shrink-0">
+                    <iconify-icon icon="lucide:check" width="14" className="text-white" style={{ strokeWidth: 2 } as React.CSSProperties}></iconify-icon>
+                  </div>
+                  <p className="text-base text-stone-700">Stand out from superficial paid awards</p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="mt-1 w-5 h-5 rounded-full bg-[#2E4F3A] flex items-center justify-center shrink-0">
+                    <iconify-icon icon="lucide:check" width="14" className="text-white" style={{ strokeWidth: 2 } as React.CSSProperties}></iconify-icon>
+                  </div>
+                  <p className="text-base text-stone-700">Real outcomes: increased retailer adoption and sales uplift</p>
                 </div>
               </div>
+
+              {/* CTAs */}
+              <div className="pt-4 flex flex-col sm:flex-row gap-4">
+                <Link href="/submit" className="inline-flex items-center justify-center bg-[#D4AF37] hover:bg-[#b08d4b] text-white px-8 py-4 rounded-lg text-base font-semibold transition-all shadow-lg hover:shadow-xl">
+                  Start Your Submission
+                </Link>
+                <Link href="/services" className="inline-flex items-center justify-center bg-white border-2 border-stone-300 hover:border-[#2E4F3A] text-stone-700 hover:text-[#2E4F3A] px-8 py-4 rounded-lg text-base font-semibold transition-all">
+                  See Pricing & Process
+                </Link>
+              </div>
             </div>
-            {/* Decorative subtle element */}
-            <div className="absolute -top-6 -right-6 w-32 h-32 bg-olive/5 rounded-full blur-3xl -z-10"></div>
-            <div className="absolute -bottom-8 -left-8 w-64 h-64 bg-gold/10 rounded-full blur-3xl -z-10"></div>
+            
+            {/* Hero Image */}
+            <div className="relative">
+              <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl bg-stone-100 relative z-10">
+                <Image 
+                  src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/da6a5e12-2657-426e-8b86-6c8b45764c78_1600w.webp" 
+                  alt="Artisan food producer inspecting quality" 
+                  fill
+                  className="opacity-95 object-cover"
+                />
+              </div>
+              <div className="absolute -top-6 -right-6 w-32 h-32 bg-[#D4AF37]/10 rounded-full blur-3xl -z-10"></div>
+              <div className="absolute -bottom-8 -left-8 w-64 h-64 bg-[#2E4F3A]/10 rounded-full blur-3xl -z-10"></div>
+            </div>
           </div>
         </div>
       </header>
 
-      {/* 2. Official Documentation */}
-      <section className="py-24 bg-white border-y border-stone-200">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-            
-            {/* Visual: Realistic Legal Certificate */}
-            <div className="relative order-2 lg:order-1 bg-stone-100 rounded-2xl p-8 lg:p-12 flex items-center justify-center">
-              
-              {/* Certificate Container */}
-              <div className="relative paper-texture w-full aspect-[1/1.3] md:aspect-[1/1.4] max-w-md mx-auto p-6 md:p-8 flex flex-col intricate-border shadow-xl transform rotate-1 transition hover:rotate-0 duration-500">
-                
-                {/* Watermark */}
-                <div className="absolute inset-0 flex items-center justify-center opacity-[0.03] pointer-events-none">
-                  <iconify-icon icon="lucide:award" width="200" height="200"></iconify-icon>
-                </div>
-
-                {/* Certificate Header */}
-                <div className="text-center border-b border-stone-200 pb-6 relative z-10">
-                  <div className="flex justify-center mb-3">
-                    <iconify-icon icon="lucide:award" className="text-stone-800" width="32"></iconify-icon>
-                  </div>
-                  <h2 className="font-display text-2xl md:text-3xl text-stone-900 uppercase tracking-widest font-semibold mb-2">Certificate</h2>
-                  <p className="font-serif text-sm text-stone-500 italic">of Quality & Authenticity</p>
-                </div>
-
-                {/* Certificate Body */}
-                <div className="flex-grow flex flex-col justify-center text-center py-6 relative z-10 space-y-6">
-                  <p className="text-[10px] md:text-xs uppercase tracking-[0.2em] text-stone-400 font-medium">This document certifies that</p>
-                  
-                  <h3 className="font-serif text-2xl md:text-3xl text-stone-900 font-medium italic leading-tight">
-                    Highland Estate Reserve
-                  </h3>
-                  
-                  <p className="text-[10px] md:text-xs uppercase tracking-[0.2em] text-stone-400 font-medium">Produced by Green Valley Roasters</p>
-                  
-                  <div className="text-sm md:text-base text-stone-600 font-light leading-relaxed px-4">
-                    has successfully met the rigorous standards of the Tastecert Quality Institute, achieving a verified score in the Coffee (Single Origin) category.
-                  </div>
-                </div>
-
-                {/* Certificate Footer */}
-                <div className="mt-auto pt-6 border-t border-stone-200 relative z-10">
-                  <div className="grid grid-cols-2 gap-8 items-end">
-                    <div className="text-center">
-                      <div className="h-12 flex items-end justify-center mb-1">
-                        <span className="font-signature text-2xl md:text-3xl text-stone-800 transform -rotate-6 block">James Miller</span>
-                      </div>
-                      <div className="h-px w-full bg-stone-300"></div>
-                      <p className="text-[9px] uppercase tracking-wider text-stone-400 mt-1">Director of Evaluation</p>
-                    </div>
-                    <div className="text-center">
-                      <div className="h-12 flex items-end justify-center mb-1">
-                        <span className="font-signature text-2xl md:text-3xl text-stone-800 block">Elena Ross</span>
-                      </div>
-                      <div className="h-px w-full bg-stone-300"></div>
-                      <p className="text-[9px] uppercase tracking-wider text-stone-400 mt-1">Compliance Officer</p>
-                    </div>
-                  </div>
-
-                  <div className="mt-8 flex justify-between items-center">
-                    <div className="flex flex-col">
-                      <span className="text-[9px] text-stone-400 uppercase tracking-wide">Registration No.</span>
-                      <span className="font-mono text-xs text-stone-800">TC-2024-8892</span>
-                    </div>
-                    
-                    {/* Gold Seal */}
-                    <div className="w-16 h-16 md:w-20 md:h-20 rounded-full gold-foil flex items-center justify-center shadow-lg relative -mr-2">
-                      <div className="absolute inset-1 border border-white/30 rounded-full"></div>
-                      <iconify-icon icon="lucide:ribbon" className="text-white/90 drop-shadow-md" width="32"></iconify-icon>
-                    </div>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-
-            {/* Text Content */}
-            <div className="order-1 lg:order-2 space-y-8">
-              <h2 className="font-serif text-4xl text-stone-900 tracking-tight">Legally Binding Proof of Quality</h2>
-              <p className="text-lg text-stone-600 leading-relaxed font-light">
-                The Tastecert certificate is more than a marketing asset; it is a formal declaration of adherence to international quality standards. Each document is uniquely serialised, digitally verifiable, and signed by accredited sensory analysts.
-              </p>
-              
-              <div className="space-y-6">
-                <div className="flex gap-4">
-                  <div className="mt-1 w-10 h-10 rounded-full bg-stone-100 flex items-center justify-center text-olive shrink-0 border border-stone-200">
-                    <iconify-icon icon="lucide:scale" width="20" style={{ strokeWidth: 1.5 } as React.CSSProperties}></iconify-icon>
-                  </div>
-                  <div>
-                    <h4 className="font-medium text-stone-900 text-lg">Rigorous Compliance</h4>
-                    <p className="text-stone-600 mt-1">Aligned with ISO sensory analysis standards. Our process withstands scrutiny from global retailers.</p>
-                  </div>
-                </div>
-                
-                <div className="flex gap-4">
-                  <div className="mt-1 w-10 h-10 rounded-full bg-stone-100 flex items-center justify-center text-olive shrink-0 border border-stone-200">
-                    <iconify-icon icon="lucide:fingerprint" width="20" style={{ strokeWidth: 1.5 } as React.CSSProperties}></iconify-icon>
-                  </div>
-                  <div>
-                    <h4 className="font-medium text-stone-900 text-lg">Anti-Counterfeit Protection</h4>
-                    <p className="text-stone-600 mt-1">Certificates feature unique QR verification codes linked to our immutable blockchain registry.</p>
-                  </div>
-                </div>
-
-                <div className="flex gap-4">
-                  <div className="mt-1 w-10 h-10 rounded-full bg-stone-100 flex items-center justify-center text-olive shrink-0 border border-stone-200">
-                    <iconify-icon icon="lucide:history" width="20" style={{ strokeWidth: 1.5 } as React.CSSProperties}></iconify-icon>
-                  </div>
-                  <div>
-                    <h4 className="font-medium text-stone-900 text-lg">3-Year Validity</h4>
-                    <p className="text-stone-600 mt-1">Unlike one-off awards, our certification ensures sustained quality control with regular spot-checks.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </section>
-
-      {/* 3. Detailed How It Works */}
-      <section id="works" className="py-24 px-6 bg-[#FDFBF7]">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="font-serif text-3xl md:text-4xl text-stone-900 tracking-tight">Certification Process</h2>
-            <p className="text-stone-600 mt-4 max-w-2xl mx-auto font-light text-lg">A comprehensive four-week journey from submission to global recognition.</p>
-          </div>
-
-          <div className="relative">
-            {/* Vertical Line (Desktop & Mobile) */}
-            <div className="absolute top-0 bottom-0 left-[27px] md:left-1/2 w-px timeline-line md:-translate-x-1/2"></div>
-
-            <div className="space-y-12">
-              
-              {/* Step 1 */}
-              <div className="relative grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-start group">
-                {/* Connector Dot */}
-                <div className="absolute left-[27px] md:left-1/2 w-3 h-3 bg-stone-900 rounded-full border-2 border-[#FDFBF7] md:-translate-x-1/2 mt-6 z-10 shadow-sm"></div>
-                
-                {/* Content Box (Left on Desktop) */}
-                <div className="pl-16 md:pl-0 md:text-right md:pr-4">
-                  <span className="text-xs font-bold text-olive uppercase tracking-wider mb-2 block">Step 01 — Days 1-3</span>
-                  <h3 className="text-xl font-serif text-stone-900 font-medium mb-3">Application & Pre-Screening</h3>
-                  <p className="text-stone-600 text-sm leading-relaxed mb-4">Submit your producer profile and product specifications via our secure portal. Our team reviews your eligibility and assigns a category specialist.</p>
-                  <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-white border border-stone-200 rounded text-xs text-stone-500 shadow-sm">
-                    <iconify-icon icon="lucide:file-text" width="14"></iconify-icon> Requirements: Lab Reports, Origin Docs
-                  </div>
-                </div>
-                
-                {/* Icon Box (Right on Desktop) */}
-                <div className="hidden md:flex justify-start pl-4">
-                  <div className="w-16 h-16 bg-white border border-stone-200 rounded-2xl flex items-center justify-center text-stone-900 shadow-sm group-hover:shadow-md transition-all group-hover:-translate-y-1">
-                    <iconify-icon icon="lucide:clipboard-check" width="28" style={{ strokeWidth: 1.2 } as React.CSSProperties}></iconify-icon>
-                  </div>
-                </div>
-              </div>
-
-              {/* Step 2 */}
-              <div className="relative grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-start group">
-                {/* Connector Dot */}
-                <div className="absolute left-[27px] md:left-1/2 w-3 h-3 bg-olive rounded-full border-2 border-[#FDFBF7] md:-translate-x-1/2 mt-6 z-10 shadow-sm"></div>
-                
-                {/* Icon Box (Left on Desktop) */}
-                <div className="hidden md:flex justify-end pr-4">
-                  <div className="w-16 h-16 bg-white border border-stone-200 rounded-2xl flex items-center justify-center text-olive shadow-sm group-hover:shadow-md transition-all group-hover:-translate-y-1">
-                    <iconify-icon icon="lucide:package-search" width="28" style={{ strokeWidth: 1.2 } as React.CSSProperties}></iconify-icon>
-                  </div>
-                </div>
-                
-                {/* Content Box (Right on Desktop) */}
-                <div className="pl-16 md:pl-4 md:text-left">
-                  <span className="text-xs font-bold text-olive uppercase tracking-wider mb-2 block">Step 02 — Days 4-10</span>
-                  <h3 className="text-xl font-serif text-stone-900 font-medium mb-3">Logistics & Chain of Custody</h3>
-                  <p className="text-stone-600 text-sm leading-relaxed mb-4">You ship 3 randomized samples to our central laboratory. We employ strict cold-chain monitoring and anonymize samples upon arrival to ensure blind testing.</p>
-                  <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-white border border-stone-200 rounded text-xs text-stone-500 shadow-sm">
-                    <iconify-icon icon="lucide:truck" width="14"></iconify-icon> Action: Ship 3 Units
-                  </div>
-                </div>
-              </div>
-
-              {/* Step 3 */}
-              <div className="relative grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-start group">
-                {/* Connector Dot */}
-                <div className="absolute left-[27px] md:left-1/2 w-3 h-3 bg-stone-900 rounded-full border-2 border-[#FDFBF7] md:-translate-x-1/2 mt-6 z-10 shadow-sm"></div>
-                
-                {/* Content Box (Left on Desktop) */}
-                <div className="pl-16 md:pl-0 md:text-right md:pr-4">
-                  <span className="text-xs font-bold text-olive uppercase tracking-wider mb-2 block">Step 03 — Days 11-21</span>
-                  <h3 className="text-xl font-serif text-stone-900 font-medium mb-3">Sensory & Chemical Analysis</h3>
-                  <p className="text-stone-600 text-sm leading-relaxed mb-4">Two parallel tests occur: a chemical purity test to verify ingredients, and a sensory panel (5 experts) evaluating taste, texture, and aroma against category benchmarks.</p>
-                  <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-white border border-stone-200 rounded text-xs text-stone-500 shadow-sm">
-                    <iconify-icon icon="lucide:microscope" width="14"></iconify-icon> Outcome: Detailed Technical Report
-                  </div>
-                </div>
-                
-                {/* Icon Box (Right on Desktop) */}
-                <div className="hidden md:flex justify-start pl-4">
-                  <div className="w-16 h-16 bg-white border border-stone-200 rounded-2xl flex items-center justify-center text-stone-900 shadow-sm group-hover:shadow-md transition-all group-hover:-translate-y-1">
-                    <iconify-icon icon="lucide:flask-conical" width="28" style={{ strokeWidth: 1.2 } as React.CSSProperties}></iconify-icon>
-                  </div>
-                </div>
-              </div>
-
-              {/* Step 4 */}
-              <div className="relative grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-start group">
-                {/* Connector Dot */}
-                <div className="absolute left-[27px] md:left-1/2 w-3 h-3 bg-gold rounded-full border-2 border-[#FDFBF7] md:-translate-x-1/2 mt-6 z-10 shadow-sm ring-4 ring-gold/20"></div>
-                
-                {/* Icon Box (Left on Desktop) */}
-                <div className="hidden md:flex justify-end pr-4">
-                  <div className="w-16 h-16 bg-gradient-to-br from-stone-900 to-stone-700 rounded-2xl flex items-center justify-center text-white shadow-lg group-hover:shadow-xl transition-all group-hover:-translate-y-1">
-                    <iconify-icon icon="lucide:medal" width="28" style={{ strokeWidth: 1.2 } as React.CSSProperties}></iconify-icon>
-                  </div>
-                </div>
-                
-                {/* Content Box (Right on Desktop) */}
-                <div className="pl-16 md:pl-4 md:text-left">
-                  <span className="text-xs font-bold text-olive uppercase tracking-wider mb-2 block">Step 04 — Day 28</span>
-                  <h3 className="text-xl font-serif text-stone-900 font-medium mb-3">Certification & Issuance</h3>
-                  <p className="text-stone-600 text-sm leading-relaxed mb-4">Products scoring above 85/100 are granted the Tastecert Seal. You receive digital assets, the physical certificate, and listing in our buyer directory.</p>
-                  <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-white border border-stone-200 rounded text-xs text-stone-500 shadow-sm">
-                    <iconify-icon icon="lucide:check-circle-2" width="14"></iconify-icon> Deliverable: License & Seal
-                  </div>
-                </div>
-              </div>
-
-            </div>
-          </div>
-          
-          <div className="mt-16 text-center">
-             <Link href="/about" className="inline-flex items-center justify-center gap-2 text-stone-900 font-medium border-b border-stone-900 pb-0.5 hover:text-olive hover:border-olive transition-colors">
-              Learn More About Our Methodology <iconify-icon icon="lucide:arrow-right" width="16"></iconify-icon>
-             </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* 4. Why Producers Choose Tastecert */}
-      <section className="py-24 px-6 bg-[#FDFBF7] border-t border-stone-200">
+      {/* 2. QUICK BENEFITS GRID */}
+      <section className="py-20 px-6 bg-white border-y border-stone-200">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center max-w-2xl mx-auto mb-16">
+          <div className="text-center max-w-2xl mx-auto mb-12">
             <h2 className="font-serif text-3xl md:text-4xl text-stone-900 tracking-tight mb-4">Why Producers Choose Tastecert</h2>
-            <p className="text-stone-600 font-light text-lg">We help exceptional producers bridge the gap between craftsmanship and commercial success.</p>
+            <p className="text-lg text-stone-600 font-light">Trusted by artisan brands to validate exceptional quality and unlock market opportunities.</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {/* Card 1 */}
-            <div className="bg-white p-8 rounded-xl border border-stone-200 shadow-sm hover:shadow-md transition-shadow">
-              <div className="w-12 h-12 bg-olive/5 text-olive rounded-lg flex items-center justify-center mb-6">
-                <iconify-icon icon="lucide:handshake" width="24" style={{ strokeWidth: 1.5 } as React.CSSProperties}></iconify-icon>
+            {/* Benefit 1 */}
+            <div className="bg-[#FDFBF7] p-8 rounded-xl border border-stone-200 hover:shadow-lg transition-all">
+              <div className="w-14 h-14 bg-[#D4AF37]/10 text-[#D4AF37] rounded-xl flex items-center justify-center mb-6">
+                <iconify-icon icon="lucide:building-2" width="28" style={{ strokeWidth: 1.5 } as React.CSSProperties}></iconify-icon>
               </div>
-              <h3 className="font-serif text-lg font-medium text-stone-900 mb-3">Trust from Buyers</h3>
-              <p className="text-sm text-stone-600 leading-relaxed">Retailers and distributors use our registry to vet new suppliers, reducing friction in new partnerships.</p>
+              <h3 className="font-serif text-xl font-medium text-stone-900 mb-3">Retailer Trust</h3>
+              <p className="text-sm text-stone-600 leading-relaxed">Buyers use our independent verification to vet new suppliers, reducing friction and accelerating shelf placement.</p>
             </div>
 
-            {/* Card 2 */}
-            <div className="bg-white p-8 rounded-xl border border-stone-200 shadow-sm hover:shadow-md transition-shadow">
-              <div className="w-12 h-12 bg-stone-100 text-stone-600 rounded-lg flex items-center justify-center mb-6">
-                <iconify-icon icon="lucide:eye" width="24" style={{ strokeWidth: 1.5 } as React.CSSProperties}></iconify-icon>
+            {/* Benefit 2 */}
+            <div className="bg-[#FDFBF7] p-8 rounded-xl border border-stone-200 hover:shadow-lg transition-all">
+              <div className="w-14 h-14 bg-[#2E4F3A]/10 text-[#2E4F3A] rounded-xl flex items-center justify-center mb-6">
+                <iconify-icon icon="lucide:flask-conical" width="28" style={{ strokeWidth: 1.5 } as React.CSSProperties}></iconify-icon>
               </div>
-              <h3 className="font-serif text-lg font-medium text-stone-900 mb-3">Market Visibility</h3>
-              <p className="text-sm text-stone-600 leading-relaxed">Stand out on crowded shelves. Our seal is a visual cue for quality that consumers recognize instantly.</p>
+              <h3 className="font-serif text-xl font-medium text-stone-900 mb-3">Scientific Rigor</h3>
+              <p className="text-sm text-stone-600 leading-relaxed">Blind sensory panels + lab analysis deliver credible 100-point scores that stand up to scrutiny.</p>
             </div>
 
-            {/* Card 3 */}
-            <div className="bg-white p-8 rounded-xl border border-stone-200 shadow-sm hover:shadow-md transition-shadow">
-              <div className="w-12 h-12 bg-gold/10 text-gold rounded-lg flex items-center justify-center mb-6">
-                <iconify-icon icon="lucide:upload-cloud" width="24" style={{ strokeWidth: 1.5 } as React.CSSProperties}></iconify-icon>
+            {/* Benefit 3 */}
+            <div className="bg-[#FDFBF7] p-8 rounded-xl border border-stone-200 hover:shadow-lg transition-all">
+              <div className="w-14 h-14 bg-[#D4AF37]/10 text-[#D4AF37] rounded-xl flex items-center justify-center mb-6">
+                <iconify-icon icon="lucide:trending-up" width="28" style={{ strokeWidth: 1.5 } as React.CSSProperties}></iconify-icon>
               </div>
-              <h3 className="font-serif text-lg font-medium text-stone-900 mb-3">Simple Submission</h3>
-              <p className="text-sm text-stone-600 leading-relaxed">Our digital platform makes the application process streamlined, handling logistics for samples efficiently.</p>
+              <h3 className="font-serif text-xl font-medium text-stone-900 mb-3">Market Differentiation</h3>
+              <p className="text-sm text-stone-600 leading-relaxed">Stand out from pay-to-play awards. Our seal signals true excellence to discerning consumers.</p>
             </div>
 
-            {/* Card 4 */}
-            <div className="bg-white p-8 rounded-xl border border-stone-200 shadow-sm hover:shadow-md transition-shadow">
-              <div className="w-12 h-12 bg-stone-100 text-stone-600 rounded-lg flex items-center justify-center mb-6">
-                <iconify-icon icon="lucide:trophy" width="24" style={{ strokeWidth: 1.5 } as React.CSSProperties}></iconify-icon>
+            {/* Benefit 4 */}
+            <div className="bg-[#FDFBF7] p-8 rounded-xl border border-stone-200 hover:shadow-lg transition-all">
+              <div className="w-14 h-14 bg-[#2E4F3A]/10 text-[#2E4F3A] rounded-xl flex items-center justify-center mb-6">
+                <iconify-icon icon="lucide:bar-chart-4" width="28" style={{ strokeWidth: 1.5 } as React.CSSProperties}></iconify-icon>
               </div>
-              <h3 className="font-serif text-lg font-medium text-stone-900 mb-3">Reliable Recognition</h3>
-              <p className="text-sm text-stone-600 leading-relaxed">Unlike marketing awards, our certification is data-backed and valid for 3 years, providing lasting value.</p>
+              <h3 className="font-serif text-xl font-medium text-stone-900 mb-3">Measurable Results</h3>
+              <p className="text-sm text-stone-600 leading-relaxed">Certified brands report increased distribution, premium pricing power, and consumer recognition.</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* 5. Awards & Seal */}
-      <section className="py-24 bg-[#2C2C24] text-white overflow-hidden relative">
-        <div className="max-w-7xl mx-auto px-6 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div>
-              <span className="text-gold font-medium tracking-wide text-sm uppercase">The Mark of Distinction</span>
-              <h2 className="font-serif text-4xl lg:text-5xl tracking-tight mt-4 mb-6 text-[#F2F0E9]">A Symbol of Confirmed Quality</h2>
-              <p className="text-lg text-stone-300 mb-8 font-light leading-relaxed">
-                The Tastecert Seal is not sold; it is earned. Only products scoring above 85 points in our independent evaluation are granted the right to display this mark. It serves as a silent salesperson, communicating excellence before the package is even opened.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <div className="flex items-center gap-3 bg-white/5 border border-white/10 px-4 py-3 rounded-lg">
-                  <iconify-icon icon="lucide:package-check" className="text-gold" width="20"></iconify-icon>
-                  <span className="text-sm font-medium text-stone-200">Packaging License</span>
-                </div>
-                <div className="flex items-center gap-3 bg-white/5 border border-white/10 px-4 py-3 rounded-lg">
-                  <iconify-icon icon="lucide:monitor-check" className="text-gold" width="20"></iconify-icon>
-                  <span className="text-sm font-medium text-stone-200">Digital Badge</span>
-                </div>
-                <div className="flex items-center gap-3 bg-white/5 border border-white/10 px-4 py-3 rounded-lg">
-                  <iconify-icon icon="lucide:file-check" className="text-gold" width="20"></iconify-icon>
-                  <span className="text-sm font-medium text-stone-200">Printed Marketing</span>
-                </div>
-              </div>
-            </div>
-            
-            <div className="flex justify-center lg:justify-end">
-              {/* The Seal Visual */}
-              <div className="relative w-72 h-72 rounded-full bg-[radial-gradient(circle_at_30%_30%,_#556B2F,_#3A4A20)] shadow-[0_0_60px_-15px_rgba(197,160,89,0.3)] flex items-center justify-center border-[8px] border-[#2C2C24] outline outline-1 outline-stone-600">
-                <div className="absolute inset-3 rounded-full border border-white/20"></div>
-                <div className="text-center text-[#F2F0E9]">
-                  <div className="flex justify-center mb-2">
-                    <iconify-icon icon="lucide:wheat" width="48" height="48" style={{ strokeWidth: 1 } as React.CSSProperties} className="text-gold"></iconify-icon>
-                  </div>
-                  <h3 className="font-serif text-3xl font-medium tracking-wide">TASTECERT</h3>
-                  <div className="h-px w-16 bg-white/30 mx-auto my-2"></div>
-                  <p className="text-xs uppercase tracking-[0.2em] font-medium text-stone-300">Certified Quality</p>
-                  <p className="text-[10px] mt-2 text-stone-400">Est. 2012</p>
-                </div>
-                
-                {/* Floating Badges */}
-                <div className="absolute -right-4 top-10 bg-[#F2F0E9] text-[#2C2C24] px-4 py-2 rounded shadow-lg text-xs font-bold uppercase tracking-wide">
-                  Top 5%
-                </div>
-                <div className="absolute -left-4 bottom-10 bg-[#2C2C24] border border-stone-600 text-white px-4 py-2 rounded shadow-lg text-xs font-bold uppercase tracking-wide flex items-center gap-2">
-                  <iconify-icon icon="lucide:check" className="text-green-500"></iconify-icon> Verified
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 6. Award-Winning Products */}
-      <section className="bg-[#FDFBF7] pt-24 pr-6 pb-24 pl-6">
+      {/* 3. HOW IT WORKS SECTION */}
+      <section id="works" className="py-24 px-6 bg-[#FDFBF7]">
         <div className="max-w-7xl mx-auto">
-          <div className="flex flex-col md:flex-row gap-6 mb-12 gap-x-6 gap-y-6 items-end justify-between">
-            <div>
-              <h2 className="font-serif text-3xl md:text-4xl text-stone-900 tracking-tight">Award-Winning Products</h2>
-              <p className="text-stone-600 mt-3 font-light">Discover recently certified excellence from around the globe.</p>
+          <div className="text-center mb-16">
+            <h2 className="font-serif text-3xl md:text-4xl text-stone-900 tracking-tight mb-4">How It Works</h2>
+            <p className="text-lg text-stone-600 max-w-2xl mx-auto font-light">A transparent, rigorous evaluation process from submission to certification.</p>
+          </div>
+
+          {/* Step Flow Design */}
+          <div className="relative max-w-6xl mx-auto">
+            {/* Connection Line - Desktop */}
+            <div className="hidden lg:block absolute top-24 left-0 right-0 h-1">
+              <div className="relative w-full h-full">
+                <div className="absolute inset-0 bg-gradient-to-r from-[#D4AF37] via-[#2E4F3A] to-[#D4AF37] opacity-20 rounded-full"></div>
+              </div>
             </div>
-            <Link href="/winners" className="text-olive hover:text-stone-900 font-medium text-sm flex items-center gap-1 transition-colors">
-              View Full Directory <iconify-icon icon="lucide:arrow-right" width="16"></iconify-icon>
+
+            <div className="relative space-y-12 lg:space-y-0 lg:flex lg:items-start lg:justify-between">
+              {/* Step 1 */}
+              <div className="relative flex flex-col items-center lg:w-1/5">
+                <div className="relative z-10 mb-6">
+                  <div className="w-24 h-24 bg-white rounded-2xl shadow-xl border-4 border-[#D4AF37] flex items-center justify-center transform hover:scale-105 transition-transform duration-300">
+                    <svg className="w-10 h-10 text-[#2E4F3A]" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.5">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5m-13.5-9L12 3m0 0l4.5 4.5M12 3v13.5" />
+                    </svg>
+                  </div>
+                  <div className="absolute -top-2 -right-2 w-8 h-8 bg-[#D4AF37] rounded-full flex items-center justify-center shadow-lg">
+                    <span className="text-white text-sm font-bold">1</span>
+                  </div>
+                </div>
+                {/* Arrow - Mobile */}
+                <div className="lg:hidden flex justify-center mb-4">
+                  <svg className="w-6 h-6 text-[#D4AF37]" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                  </svg>
+                </div>
+                <div className="text-center">
+                  <h3 className="font-serif text-xl font-semibold text-stone-900 mb-3">Submit Product</h3>
+                  <p className="text-sm text-stone-600 leading-relaxed">Complete online form and ship 3 sample units to our facility</p>
+                  <div className="mt-4 inline-flex items-center gap-2 text-xs text-[#D4AF37] font-medium">
+                    <iconify-icon icon="lucide:clock" width="14"></iconify-icon>
+                    Days 1-3
+                  </div>
+                </div>
+              </div>
+
+              {/* Arrow - Desktop */}
+              <div className="hidden lg:flex items-center justify-center lg:w-12 relative z-0 -mt-6">
+                <svg className="w-8 h-8 text-[#D4AF37]" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                </svg>
+              </div>
+
+              {/* Step 2 */}
+              <div className="relative flex flex-col items-center lg:w-1/5">
+                <div className="relative z-10 mb-6">
+                  <div className="w-24 h-24 bg-gradient-to-br from-[#2E4F3A] to-[#1a2e23] rounded-2xl shadow-xl flex items-center justify-center transform hover:scale-105 transition-transform duration-300">
+                    <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.5">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M3.98 8.223A10.477 10.477 0 001.934 12C3.226 16.338 7.244 19.5 12 19.5c.993 0 1.953-.138 2.863-.395M6.228 6.228A10.45 10.45 0 0112 4.5c4.756 0 8.773 3.162 10.065 7.498a10.523 10.523 0 01-4.293 5.774M6.228 6.228L3 3m3.228 3.228l3.65 3.65m7.894 7.894L21 21m-3.228-3.228l-3.65-3.65m0 0a3 3 0 10-4.243-4.243m4.242 4.242L9.88 9.88" />
+                    </svg>
+                  </div>
+                  <div className="absolute -top-2 -right-2 w-8 h-8 bg-[#D4AF37] rounded-full flex items-center justify-center shadow-lg">
+                    <span className="text-white text-sm font-bold">2</span>
+                  </div>
+                </div>
+                <div className="lg:hidden flex justify-center mb-4">
+                  <svg className="w-6 h-6 text-[#D4AF37]" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                  </svg>
+                </div>
+                <div className="text-center">
+                  <h3 className="font-serif text-xl font-semibold text-stone-900 mb-3">Blind Sensory Panel</h3>
+                  <p className="text-sm text-stone-600 leading-relaxed">5-7 certified experts evaluate anonymized samples</p>
+                  <div className="mt-4 inline-flex items-center gap-2 text-xs text-[#D4AF37] font-medium">
+                    <iconify-icon icon="lucide:clock" width="14"></iconify-icon>
+                    Days 4-10
+                  </div>
+                </div>
+              </div>
+
+              <div className="hidden lg:flex items-center justify-center lg:w-12 relative z-0 -mt-6">
+                <svg className="w-8 h-8 text-[#D4AF37]" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                </svg>
+              </div>
+
+              {/* Step 3 */}
+              <div className="relative flex flex-col items-center lg:w-1/5">
+                <div className="relative z-10 mb-6">
+                  <div className="w-24 h-24 bg-white rounded-2xl shadow-xl border-4 border-[#2E4F3A] flex items-center justify-center transform hover:scale-105 transition-transform duration-300">
+                    <svg className="w-10 h-10 text-[#2E4F3A]" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.5">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0112 15a9.065 9.065 0 00-6.23-.693L5 14.5m14.8.8l1.402 1.402c1.232 1.232.65 3.318-1.067 3.611A48.309 48.309 0 0112 21c-2.773 0-5.491-.235-8.135-.687-1.718-.293-2.3-2.379-1.067-3.61L5 14.5" />
+                    </svg>
+                  </div>
+                  <div className="absolute -top-2 -right-2 w-8 h-8 bg-[#D4AF37] rounded-full flex items-center justify-center shadow-lg">
+                    <span className="text-white text-sm font-bold">3</span>
+                  </div>
+                </div>
+                <div className="lg:hidden flex justify-center mb-4">
+                  <svg className="w-6 h-6 text-[#D4AF37]" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                  </svg>
+                </div>
+                <div className="text-center">
+                  <h3 className="font-serif text-xl font-semibold text-stone-900 mb-3">Lab Analysis</h3>
+                  <p className="text-sm text-stone-600 leading-relaxed">Technical tests verify composition, purity, and authenticity</p>
+                  <div className="mt-4 inline-flex items-center gap-2 text-xs text-[#D4AF37] font-medium">
+                    <iconify-icon icon="lucide:clock" width="14"></iconify-icon>
+                    Days 11-21
+                  </div>
+                </div>
+              </div>
+
+              <div className="hidden lg:flex items-center justify-center lg:w-12 relative z-0 -mt-6">
+                <svg className="w-8 h-8 text-[#D4AF37]" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                </svg>
+              </div>
+
+              {/* Step 4 */}
+              <div className="relative flex flex-col items-center lg:w-1/5">
+                <div className="relative z-10 mb-6">
+                  <div className="w-24 h-24 bg-gradient-to-br from-[#2E4F3A] to-[#1a2e23] rounded-2xl shadow-xl flex items-center justify-center transform hover:scale-105 transition-transform duration-300">
+                    <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.5">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z" />
+                    </svg>
+                  </div>
+                  <div className="absolute -top-2 -right-2 w-8 h-8 bg-[#D4AF37] rounded-full flex items-center justify-center shadow-lg">
+                    <span className="text-white text-sm font-bold">4</span>
+                  </div>
+                </div>
+                <div className="lg:hidden flex justify-center mb-4">
+                  <svg className="w-6 h-6 text-[#D4AF37]" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                  </svg>
+                </div>
+                <div className="text-center">
+                  <h3 className="font-serif text-xl font-semibold text-stone-900 mb-3">Score & Feedback</h3>
+                  <p className="text-sm text-stone-600 leading-relaxed">Receive detailed 100-point score with actionable insights</p>
+                  <div className="mt-4 inline-flex items-center gap-2 text-xs text-[#D4AF37] font-medium">
+                    <iconify-icon icon="lucide:clock" width="14"></iconify-icon>
+                    Days 22-25
+                  </div>
+                </div>
+              </div>
+
+              <div className="hidden lg:flex items-center justify-center lg:w-12 relative z-0 -mt-6">
+                <svg className="w-8 h-8 text-[#D4AF37]" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                </svg>
+              </div>
+
+              {/* Step 5 */}
+              <div className="relative flex flex-col items-center lg:w-1/5">
+                <div className="relative z-10 mb-6">
+                  <div className="w-24 h-24 bg-gradient-to-br from-[#D4AF37] to-[#b08d4b] rounded-2xl shadow-2xl flex items-center justify-center transform hover:scale-105 transition-transform duration-300">
+                    <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.5">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M16.5 18.75h-9m9 0a3 3 0 013 3h-15a3 3 0 013-3m9 0v-3.375c0-.621-.503-1.125-1.125-1.125h-.871M7.5 18.75v-3.375c0-.621.504-1.125 1.125-1.125h.872m5.007 0H9.497m5.007 0a7.454 7.454 0 01-.982-3.172M9.497 14.25a7.454 7.454 0 00.981-3.172M5.25 4.236c-.982.143-1.954.317-2.916.52A6.003 6.003 0 007.73 9.728M5.25 4.236V4.5c0 2.108.966 3.99 2.48 5.228M5.25 4.236V2.721C7.456 2.41 9.71 2.25 12 2.25c2.291 0 4.545.16 6.75.47v1.516M7.73 9.728a6.726 6.726 0 002.748 1.35m8.272-6.842V4.5c0 2.108-.966 3.99-2.48 5.228m2.48-5.492a46.32 46.32 0 012.916.52 6.003 6.003 0 01-5.395 4.972m0 0a6.726 6.726 0 01-2.749 1.35m0 0a6.772 6.772 0 01-3.044 0" />
+                    </svg>
+                  </div>
+                  <div className="absolute -top-2 -right-2 w-8 h-8 bg-[#2E4F3A] rounded-full flex items-center justify-center shadow-lg">
+                    <span className="text-white text-sm font-bold">5</span>
+                  </div>
+                </div>
+                <div className="text-center">
+                  <h3 className="font-serif text-xl font-semibold text-stone-900 mb-3">Earn Your Seal</h3>
+                  <p className="text-sm text-stone-600 leading-relaxed">85+ score earns Gold Seal for exceptional products</p>
+                  <div className="mt-4 inline-flex items-center gap-2 text-xs text-[#D4AF37] font-medium">
+                    <iconify-icon icon="lucide:award" width="14"></iconify-icon>
+                    Day 28
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-16 text-center">
+            <Link href="/methodology" className="inline-flex items-center justify-center gap-2 text-[#2E4F3A] font-semibold hover:text-[#D4AF37] transition-colors">
+              View Full Methodology <iconify-icon icon="lucide:arrow-right" width="20"></iconify-icon>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* 4. TRUST & CREDIBILITY SECTION */}
+      <section className="py-24 px-6 bg-white border-t border-stone-200">
+        <div className="max-w-7xl mx-auto">
+          {/* Testimonials Carousel */}
+          <div className="mb-20">
+            <h2 className="font-serif text-3xl text-center text-stone-900 mb-12">What Producers Say</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {/* Testimonial 1 */}
+              <div className="bg-[#FDFBF7] p-8 rounded-xl border border-stone-200">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-14 h-14 rounded-full bg-[#D4AF37]/20 flex items-center justify-center text-[#D4AF37] font-serif text-xl font-bold">
+                    SC
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-stone-900">Sarah Chen</h4>
+                    <p className="text-xs text-stone-500">Founder, Mountain Olive Co.</p>
+                  </div>
+                </div>
+                <p className="text-sm text-stone-600 leading-relaxed italic">"The Tastecert Gold Seal opened doors with specialty retailers who previously wouldn't take our calls. It's been transformational for our distribution."</p>
+              </div>
+
+              {/* Testimonial 2 */}
+              <div className="bg-[#FDFBF7] p-8 rounded-xl border border-stone-200">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-14 h-14 rounded-full bg-[#2E4F3A]/20 flex items-center justify-center text-[#2E4F3A] font-serif text-xl font-bold">
+                    MR
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-stone-900">Marcus Rodriguez</h4>
+                    <p className="text-xs text-stone-500">Master Distiller, Heritage Spirits</p>
+                  </div>
+                </div>
+                <p className="text-sm text-stone-600 leading-relaxed italic">"Unlike other awards, Tastecert's blind process and scientific scoring gave us credible proof of quality. Buyers actually respect this certification."</p>
+              </div>
+
+              {/* Testimonial 3 */}
+              <div className="bg-[#FDFBF7] p-8 rounded-xl border border-stone-200">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-14 h-14 rounded-full bg-[#D4AF37]/20 flex items-center justify-center text-[#D4AF37] font-serif text-xl font-bold">
+                    EP
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-stone-900">Elena Petrov</h4>
+                    <p className="text-xs text-stone-500">Co-Founder, Artisan Honey Collective</p>
+                  </div>
+                </div>
+                <p className="text-sm text-stone-600 leading-relaxed italic">"The detailed feedback helped us refine our process. Six months later, we achieved Gold certification and saw a 40% increase in wholesale orders."</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+       {/* 5. LEAD MAGNET / MID-PAGE CTA */}
+      <section className="py-20 px-6 bg-gradient-to-br from-[#2E4F3A] to-[#1a2e23]">
+        <div className="max-w-4xl mx-auto text-center">
+          <div className="inline-flex items-center justify-center w-16 h-16 bg-[#D4AF37] rounded-2xl mb-6">
+            <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.5">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" />
+            </svg>
+          </div>
+          
+          <h2 className="font-serif text-3xl md:text-4xl text-white mb-4">Free Certification Guide</h2>
+          <p className="text-lg text-white/80 mb-10 max-w-2xl mx-auto">
+            Download our comprehensive playbook for artisan brands seeking independent quality certification.
+          </p>
+
+          <a 
+            href="/guides/tastecert-certification-guide.pdf" 
+            download="Tastecert-Certification-Guide.pdf"
+            className="inline-flex items-center justify-center gap-3 bg-[#D4AF37] hover:bg-[#b08d4b] text-white px-10 py-4 rounded-lg font-semibold text-lg transition-all shadow-xl hover:shadow-2xl"
+          >
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3" />
+            </svg>
+            Download Free Guide
+          </a>
+
+          <p className="text-xs text-white/60 mt-6">PDF • No signup required • Instant download</p>
+        </div>
+      </section>
+
+      {/* 6. AWARD-WINNING PRODUCTS */}
+      <section className="bg-[#FDFBF7] py-24 px-6">
+        <div className="max-w-7xl mx-auto">
+          <div className="flex flex-col md:flex-row gap-6 mb-12 items-end justify-between">
+            <div>
+              <h2 className="font-serif text-3xl md:text-4xl text-stone-900 tracking-tight">Recently Certified Products</h2>
+              <p className="text-stone-600 mt-3 font-light">Discover excellence from artisan producers worldwide.</p>
+            </div>
+            <Link href="/winners" className="text-[#2E4F3A] hover:text-[#D4AF37] font-semibold text-sm flex items-center gap-1 transition-colors">
+              Browse Full Directory <iconify-icon icon="lucide:arrow-right" width="16"></iconify-icon>
             </Link>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Product 1 */}
-            <div className="group bg-white rounded-xl overflow-hidden border border-stone-200 shadow-sm hover:shadow-md transition-all duration-300">
+            <div className="group bg-white rounded-xl overflow-hidden border border-stone-200 shadow-sm hover:shadow-lg transition-all duration-300">
               <div className="aspect-[16/10] overflow-hidden relative">
                 <Image 
                   src="https://images.unsplash.com/photo-1524222717473-730000096953?w=1600&q=80" 
@@ -436,11 +427,11 @@ export default function Home() {
                   fill
                   className="group-hover:scale-105 transition-transform duration-700 object-cover"
                 />
-                <div className="absolute top-4 right-4 bg-white/95 backdrop-blur px-3 py-1 rounded text-xs font-bold text-olive uppercase tracking-wide shadow-sm border border-stone-100">
-                  Gold Standard
+                <div className="absolute top-4 right-4 bg-gradient-to-br from-[#D4AF37] to-[#b08d4b] px-3 py-1.5 rounded-full text-xs font-bold text-white uppercase tracking-wide shadow-lg">
+                  Gold Seal
                 </div>
               </div>
-              <div className="pt-6 pr-6 pb-6 pl-6">
+              <div className="p-6">
                 <div className="flex justify-between items-start mb-2">
                   <div>
                     <h3 className="font-serif text-xl text-stone-900 font-medium">Single Origin Robusta</h3>
@@ -448,16 +439,16 @@ export default function Home() {
                   </div>
                 </div>
                 <div className="mt-4 pt-4 border-t border-stone-100 flex items-center justify-between">
-                  <span className="text-xs font-medium text-stone-400 uppercase tracking-wider">Beverage / Coffee</span>
-                  <Link href="/winners" className="text-stone-400 hover:text-olive transition-colors flex items-center gap-1 text-sm font-medium">
-                    View Certificate
+                  <span className="text-xs font-medium text-stone-400 uppercase tracking-wider">Coffee / Single Origin</span>
+                  <Link href="/winners" className="text-stone-400 hover:text-[#2E4F3A] transition-colors flex items-center gap-1 text-sm font-medium">
+                    View Details
                   </Link>
                 </div>
               </div>
             </div>
 
             {/* Product 2 */}
-            <div className="group bg-white rounded-xl overflow-hidden border border-stone-200 shadow-sm hover:shadow-md transition-all duration-300">
+            <div className="group bg-white rounded-xl overflow-hidden border border-stone-200 shadow-sm hover:shadow-lg transition-all duration-300">
               <div className="aspect-[16/10] overflow-hidden relative">
                 <Image 
                   src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/df8bd7cd-7cbb-4b65-8e22-3e966cd83b1c_1600w.jpg" 
@@ -465,8 +456,8 @@ export default function Home() {
                   fill
                   className="group-hover:scale-105 transition-transform duration-700 object-cover"
                 />
-                <div className="absolute top-4 right-4 bg-white/95 backdrop-blur px-3 py-1 rounded text-xs font-bold text-stone-800 uppercase tracking-wide shadow-sm border border-stone-100">
-                  Silver Standard
+                <div className="absolute top-4 right-4 bg-gradient-to-br from-stone-400 to-stone-600 px-3 py-1.5 rounded-full text-xs font-bold text-white uppercase tracking-wide shadow-lg">
+                  Silver Seal
                 </div>
               </div>
               <div className="p-6">
@@ -478,15 +469,15 @@ export default function Home() {
                 </div>
                 <div className="mt-4 pt-4 border-t border-stone-100 flex items-center justify-between">
                   <span className="text-xs font-medium text-stone-400 uppercase tracking-wider">Pantry / Sweetener</span>
-                  <Link href="/winners" className="text-stone-400 hover:text-olive transition-colors flex items-center gap-1 text-sm font-medium">
-                    View Certificate
+                  <Link href="/winners" className="text-stone-400 hover:text-[#2E4F3A] transition-colors flex items-center gap-1 text-sm font-medium">
+                    View Details
                   </Link>
                 </div>
               </div>
             </div>
 
             {/* Product 3 */}
-            <div className="group bg-white rounded-xl overflow-hidden border border-stone-200 shadow-sm hover:shadow-md transition-all duration-300">
+            <div className="group bg-white rounded-xl overflow-hidden border border-stone-200 shadow-sm hover:shadow-lg transition-all duration-300">
               <div className="aspect-[16/10] overflow-hidden relative">
                 <Image 
                   src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/4376fa83-b9cb-4b88-b256-86cb4e040344_1600w.jpg" 
@@ -494,8 +485,8 @@ export default function Home() {
                   fill
                   className="group-hover:scale-105 transition-transform duration-700 object-cover"
                 />
-                <div className="absolute top-4 right-4 bg-white/95 backdrop-blur px-3 py-1 rounded text-xs font-bold text-olive uppercase tracking-wide shadow-sm border border-stone-100">
-                  Platinum Standard
+                <div className="absolute top-4 right-4 bg-gradient-to-br from-[#D4AF37] to-[#b08d4b] px-3 py-1.5 rounded-full text-xs font-bold text-white uppercase tracking-wide shadow-lg">
+                  Gold Seal
                 </div>
               </div>
               <div className="p-6">
@@ -507,8 +498,8 @@ export default function Home() {
                 </div>
                 <div className="mt-4 pt-4 border-t border-stone-100 flex items-center justify-between">
                   <span className="text-xs font-medium text-stone-400 uppercase tracking-wider">Pantry / Spices</span>
-                  <Link href="/winners" className="text-stone-400 hover:text-olive transition-colors flex items-center gap-1 text-sm font-medium">
-                    View Certificate
+                  <Link href="/winners" className="text-stone-400 hover:text-[#2E4F3A] transition-colors flex items-center gap-1 text-sm font-medium">
+                    View Details
                   </Link>
                 </div>
               </div>
@@ -517,20 +508,20 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 7. Call to Action */}
-      <section className="bg-stone-900 border-stone-800 border-t pt-24 pr-6 pb-24 pl-6">
+      {/* 7. FINAL STRONG CTA BLOCK */}
+      <section className="py-24 px-6 bg-gradient-to-br from-[#2E4F3A] to-[#1a2e23]">
         <div className="max-w-4xl mx-auto text-center">
-          <div className="inline-block p-3 rounded-full bg-white/5 mb-6">
-            <iconify-icon icon="lucide:star" className="text-gold" width="24"></iconify-icon>
+          <div className="inline-block p-3 rounded-full bg-white/10 mb-6">
+            <iconify-icon icon="lucide:award" className="text-[#D4AF37]" width="28"></iconify-icon>
           </div>
-          <h2 className="font-serif text-4xl md:text-5xl text-[#F2F0E9] tracking-tight mb-6">Recognize Your Quality.</h2>
-          <p className="text-lg text-stone-400 mb-10 max-w-xl mx-auto font-light">Join a distinguished community of producers who value transparency, craftsmanship, and verified excellence.</p>
+          <h2 className="font-serif text-4xl md:text-5xl text-white tracking-tight mb-6">Ready to Certify Your Exceptional Product?</h2>
+          <p className="text-lg text-white/80 mb-10 max-w-2xl mx-auto">Join hundreds of artisan producers who've validated their quality and unlocked new market opportunities.</p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Link href="/submit" className="w-full sm:w-auto px-8 py-4 bg-olive hover:bg-[#465a26] text-white rounded-lg font-medium text-lg transition-all shadow-lg hover:shadow-olive/20">
-              Submit Product
+            <Link href="/submit" className="w-full sm:w-auto px-10 py-4 bg-[#D4AF37] hover:bg-[#b08d4b] text-white rounded-lg font-semibold text-lg transition-all shadow-xl hover:shadow-2xl">
+              Start Your Submission
             </Link>
-            <Link href="/winners" className="w-full sm:w-auto px-8 py-4 bg-transparent border border-stone-700 hover:bg-stone-800 text-stone-300 hover:text-white rounded-lg font-medium text-lg transition-all">
-              Explore Winners
+            <Link href="/contact" className="w-full sm:w-auto px-10 py-4 bg-transparent border-2 border-white/30 hover:bg-white/10 text-white rounded-lg font-semibold text-lg transition-all">
+              Contact Us
             </Link>
           </div>
         </div>

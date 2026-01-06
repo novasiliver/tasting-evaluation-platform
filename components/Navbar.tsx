@@ -30,9 +30,12 @@ export default function Navbar() {
   }, [isUserMenuOpen]);
 
   const navLinks = [
-    { href: '/services', label: 'Services' },
-    { href: '/about', label: 'About Us' },
+    { href: '/', label: 'Home' },
+    { href: '/services', label: 'How It Works' },
+    { href: '/methodology', label: 'Methodology' },
     { href: '/winners', label: 'Directory' },
+    { href: '/retailers', label: 'For Retailers' },
+    { href: '/about', label: 'About' },
     { href: '/contact', label: 'Contact' },
   ];
 
@@ -153,8 +156,8 @@ export default function Navbar() {
               <Link href="/auth/signin" className="hidden sm:block text-sm font-medium text-stone-600 hover:text-[#1C1917] transition-colors">
                 Login
               </Link>
-              <Link href="/submit" className="bg-[#1C1917] hover:bg-stone-800 text-white px-5 py-2.5 rounded-lg text-sm font-medium transition-all shadow-sm">
-                Get Certified
+              <Link href="/submit" className="bg-[#D4AF37] hover:bg-[#b08d4b] text-white px-5 py-2.5 rounded-lg text-sm font-semibold transition-all shadow-sm">
+                Start Your Submission
               </Link>
             </>
           )}
@@ -227,10 +230,10 @@ export default function Navbar() {
                   </Link>
                   <Link
                     href="/submit"
-                    className="block px-3 py-2 text-base font-medium rounded-lg bg-[#1C1917] text-white hover:bg-stone-800 transition-colors"
+                    className="block px-3 py-2 text-base font-medium rounded-lg bg-[#D4AF37] text-white hover:bg-[#b08d4b] transition-colors"
                     onClick={() => setIsOpen(false)}
                   >
-                    Get Certified
+                    Start Your Submission
                   </Link>
                 </>
               )}
