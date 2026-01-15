@@ -45,6 +45,7 @@ export default function SubmissionsPage() {
   const [submissions, setSubmissions] = useState<Submission[]>([]);
   const [categories, setCategories] = useState<{ id: string; name: string }[]>([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [deletingProductId, setDeletingProductId] = useState<string | null>(null);
   const [stats, setStats] = useState({
     total: 0,
     pending: 0,
@@ -245,6 +246,40 @@ export default function SubmissionsPage() {
     linkElement.setAttribute('href', dataUri);
     linkElement.setAttribute('download', exportFileDefaultName);
     linkElement.click();
+  };
+
+  // Delete product
+  const handleDeleteProduct = async (productId: string, productName: string) => {
+    if (!confirm(`⚠️ Are you sure you want to delete "${productName}"?\n\nThis will permanently delete:\n- The product\n- All evaluations\n- All certificates\n- All QR codes\n\nThis action CANNOT be undone!`)) {
+      return;
+    }
+
+    // Double confirmation
+    const confirmText = prompt('Type "DELETE" to confirm:');
+    if (confirmText !== 'DELETE') {
+      alert('Deletion cancelled.');
+      return;
+    }
+
+    try {
+      setDeletingProductId(productId);
+      const response = await fetch(`/api/products/${productId}`, {
+        method: 'DELETE',
+      });
+
+      if (response.ok) {
+        alert('Product deleted successfully!');
+        fetchSubmissions(); // Refresh the list
+      } else {
+        const error = await response.json();
+        throw new Error(error.error || 'Failed to delete product');
+      }
+    } catch (error: any) {
+      console.error('Error deleting product:', error);
+      alert(error.message || 'Failed to delete product');
+    } finally {
+      setDeletingProductId(null);
+    }
   };
 
   const getStatusBadge = (status: string, color: string) => {
@@ -565,13 +600,26 @@ export default function SubmissionsPage() {
                           <p className="text-xs text-stone-400">{item.time}</p>
                         </td>
                         <td className="px-6 py-4 text-right">
-                          <Link
-                            href={`/admin/submissions/${item.id}/evaluate`}
-                            className="inline-flex items-center gap-1.5 px-3.5 py-2 text-sm font-medium text-white bg-stone-900 rounded-lg hover:bg-stone-800 transition-colors"
-                          >
-                            <iconify-icon icon="lucide:clipboard-check" width="16" style={{ strokeWidth: 1.5 } as React.CSSProperties}></iconify-icon>
-                            Evaluate
-                          </Link>
+                          <div className="flex items-center justify-end gap-2">
+                            <Link
+                              href={`/admin/submissions/${item.id}/evaluate`}
+                              className="inline-flex items-center gap-1.5 px-3.5 py-2 text-sm font-medium text-white bg-stone-900 rounded-lg hover:bg-stone-800 transition-colors"
+                            >
+                              <iconify-icon icon="lucide:clipboard-check" width="16" style={{ strokeWidth: 1.5 } as React.CSSProperties}></iconify-icon>
+                              Evaluate
+                            </Link>
+                            <button
+                              onClick={(e) => {
+                                e.preventDefault();
+                                handleDeleteProduct(item.id, item.name);
+                              }}
+                              disabled={deletingProductId === item.id}
+                              className="inline-flex items-center gap-1.5 px-3.5 py-2 text-sm font-medium text-red-600 bg-red-50 rounded-lg hover:bg-red-100 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                            >
+                              <iconify-icon icon="lucide:trash-2" width="16" style={{ strokeWidth: 1.5 } as React.CSSProperties}></iconify-icon>
+                              {deletingProductId === item.id ? 'Deleting...' : 'Delete'}
+                            </button>
+                          </div>
                         </td>
                       </tr>
                     );

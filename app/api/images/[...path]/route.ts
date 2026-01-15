@@ -2,19 +2,21 @@ import { readFile } from 'fs/promises';
 import { join } from 'path';
 import { NextRequest, NextResponse } from 'next/server';
 
+// Use UPLOAD_DIR from environment, fallback to production path or local uploads
 const UPLOAD_DIR = process.env.UPLOAD_DIR || (process.env.NODE_ENV === 'production' ? '/var/www/tastecert-uploads' : join(process.cwd(), 'uploads'));
 
 export const dynamic = 'force-dynamic';
 
 export async function GET(
   request: NextRequest,
-  { params }: { params: { path: string[] } }
+  { params }: { params: Promise<{ path: string[] }> }
 ) {
   try {
-    const filepath = join(UPLOAD_DIR, ...params.path);
+    const { path } = await params;
+    const filepath = join(UPLOAD_DIR, ...path);
     
     // Security: Prevent directory traversal
-    const resolvedPath = join(UPLOAD_DIR, ...params.path);
+    const resolvedPath = join(UPLOAD_DIR, ...path);
     if (!resolvedPath.startsWith(UPLOAD_DIR)) {
       return NextResponse.json({ error: 'Invalid path' }, { status: 400 });
     }
@@ -22,7 +24,7 @@ export async function GET(
     const file = await readFile(filepath);
 
     // Determine content type
-    const ext = params.path[params.path.length - 1].split('.').pop()?.toLowerCase();
+    const ext = path[path.length - 1].split('.').pop()?.toLowerCase();
     const contentType = 
       ext === 'jpg' || ext === 'jpeg' ? 'image/jpeg' :
       ext === 'png' ? 'image/png' :
