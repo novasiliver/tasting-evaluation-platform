@@ -14,6 +14,23 @@ const nextConfig = {
         protocol: 'https',
         hostname: 'hoirqrkdgbmvpwutwuwj.supabase.co',
       },
+      // Allow images from API route
+      {
+        protocol: 'https',
+        hostname: 'tastecert.com',
+        pathname: '/api/images/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'www.tastecert.com',
+        pathname: '/api/images/**',
+      },
+      // Allow localhost for development
+      {
+        protocol: 'http',
+        hostname: 'localhost',
+        pathname: '/api/images/**',
+      },
     ],
     unoptimized: false,
   },
