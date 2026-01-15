@@ -3,6 +3,7 @@ import { getServerSession } from 'next-auth';
 import { authOptions } from '@/lib/auth';
 import { prisma } from '@/lib/prisma';
 import { generateAndSaveQRCode } from '@/lib/qrcode';
+import { getBaseUrl } from '@/lib/baseUrl';
 import path from 'path';
 import fs from 'fs';
 
@@ -189,14 +190,15 @@ export async function POST(request: Request) {
     }
 
     // Generate redirect URL (public product page with QR tracking)
-    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000';
+    const baseUrl = getBaseUrl(request);
     const redirectUrl = `${baseUrl}/products/${productId}?qr=true`;
 
     // Generate QR code image
     const qrCodeFileName = `qr-${productId}-${Date.now()}.png`;
     const qrCodeDir = path.join(process.cwd(), 'public', 'qrcodes');
     const qrCodePath = path.join(qrCodeDir, qrCodeFileName);
-    const qrCodeUrl = `/qrcodes/${qrCodeFileName}`;
+    // Use API route instead of static file for dynamic serving
+    const qrCodeUrl = `/api/qrcodes/image/${qrCodeFileName}`;
 
     // Logo path (if available)
     const logoPath = path.join(process.cwd(), 'public', 'logo.png');

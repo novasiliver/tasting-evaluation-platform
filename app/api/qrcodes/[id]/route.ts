@@ -3,6 +3,7 @@ import { getServerSession } from 'next-auth';
 import { authOptions } from '@/lib/auth';
 import { prisma } from '@/lib/prisma';
 import { generateAndSaveQRCode } from '@/lib/qrcode';
+import { getBaseUrl } from '@/lib/baseUrl';
 import path from 'path';
 import fs from 'fs';
 
@@ -111,20 +112,32 @@ export async function PATCH(
 
     // Regenerate QR code if requested
     if (regenerate) {
-      const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000';
+      const baseUrl = getBaseUrl(request);
       const redirectUrl = `${baseUrl}/products/${qrCode.productId}?qr=true`;
 
-      // Delete old QR code file
-      const oldFilePath = path.join(process.cwd(), 'public', qrCode.qrCodeUrl);
-      if (fs.existsSync(oldFilePath)) {
-        fs.unlinkSync(oldFilePath);
+      // Delete old QR code file (handle both old static path and new API path)
+      const oldUrl = qrCode.qrCodeUrl;
+      if (oldUrl.startsWith('/api/qrcodes/image/')) {
+        // Extract filename from API path
+        const oldFileName = oldUrl.replace('/api/qrcodes/image/', '');
+        const oldFilePath = path.join(process.cwd(), 'public', 'qrcodes', oldFileName);
+        if (fs.existsSync(oldFilePath)) {
+          fs.unlinkSync(oldFilePath);
+        }
+      } else if (oldUrl.startsWith('/qrcodes/')) {
+        // Old static path
+        const oldFilePath = path.join(process.cwd(), 'public', oldUrl);
+        if (fs.existsSync(oldFilePath)) {
+          fs.unlinkSync(oldFilePath);
+        }
       }
 
       // Generate new QR code
       const qrCodeFileName = `qr-${qrCode.productId}-${Date.now()}.png`;
       const qrCodeDir = path.join(process.cwd(), 'public', 'qrcodes');
       const qrCodePath = path.join(qrCodeDir, qrCodeFileName);
-      const qrCodeUrl = `/qrcodes/${qrCodeFileName}`;
+      // Use API route instead of static file for dynamic serving
+      const qrCodeUrl = `/api/qrcodes/image/${qrCodeFileName}`;
 
       const logoPath = path.join(process.cwd(), 'public', 'logo.png');
       const logoExists = fs.existsSync(logoPath);
@@ -204,10 +217,21 @@ export async function DELETE(
       return NextResponse.json({ error: 'QR code not found' }, { status: 404 });
     }
 
-    // Delete QR code file
-    const filePath = path.join(process.cwd(), 'public', qrCode.qrCodeUrl);
-    if (fs.existsSync(filePath)) {
-      fs.unlinkSync(filePath);
+    // Delete QR code file (handle both old static path and new API path)
+    const qrCodeUrl = qrCode.qrCodeUrl;
+    if (qrCodeUrl.startsWith('/api/qrcodes/image/')) {
+      // Extract filename from API path
+      const fileName = qrCodeUrl.replace('/api/qrcodes/image/', '');
+      const filePath = path.join(process.cwd(), 'public', 'qrcodes', fileName);
+      if (fs.existsSync(filePath)) {
+        fs.unlinkSync(filePath);
+      }
+    } else if (qrCodeUrl.startsWith('/qrcodes/')) {
+      // Old static path
+      const filePath = path.join(process.cwd(), 'public', qrCodeUrl);
+      if (fs.existsSync(filePath)) {
+        fs.unlinkSync(filePath);
+      }
     }
 
     // Delete from database

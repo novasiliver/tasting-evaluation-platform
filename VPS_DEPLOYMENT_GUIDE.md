@@ -96,6 +96,9 @@ NEXT_PUBLIC_UPLOAD_BASE_URL=https://yourdomain.com/uploads
 MAX_FILE_SIZE=5242880
 ALLOWED_IMAGE_TYPES=image/jpeg,image/png,image/webp
 
+# Base URL (for QR codes and redirects)
+NEXT_PUBLIC_BASE_URL=https://yourdomain.com
+
 # Node Environment
 NODE_ENV=production
 ```
