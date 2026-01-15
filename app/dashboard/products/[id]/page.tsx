@@ -50,10 +50,20 @@ interface Product {
   };
 }
 
+interface QRCode {
+  id: string;
+  qrCodeUrl: string;
+  redirectUrl: string;
+  isActive: boolean;
+  scanCount: number;
+  lastScannedAt: string | null;
+}
+
 export default function ProductDetailPage() {
   const params = useParams();
   const router = useRouter();
   const [product, setProduct] = useState<Product | null>(null);
+  const [qrCode, setQrCode] = useState<QRCode | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [isDeleting, setIsDeleting] = useState(false);
 
@@ -70,6 +80,11 @@ export default function ProductDetailPage() {
       if (response.ok) {
         const data = await response.json();
         setProduct(data);
+        
+        // Fetch QR code if product has certificate
+        if (data.certificate) {
+          fetchQRCode();
+        }
       } else {
         router.push('/dashboard/products');
       }
@@ -80,6 +95,21 @@ export default function ProductDetailPage() {
       setIsLoading(false);
     }
   };
+
+  const fetchQRCode = async () => {
+    try {
+      const response = await fetch(`/api/qrcodes?productId=${params.id}`, {
+        credentials: 'include',
+      });
+      if (response.ok) {
+        const data = await response.json();
+        setQrCode(data);
+      }
+    } catch (error) {
+      console.error('Error fetching QR code:', error);
+    }
+  };
+
 
   const handleDelete = async () => {
     if (!confirm('Are you sure you want to delete this product? This action cannot be undone.')) {
@@ -294,7 +324,7 @@ export default function ProductDetailPage() {
 
         {/* Certificate */}
         {product.certificate && (
-          <div className="bg-white rounded-xl border border-stone-200/80 p-6">
+          <div className="bg-white rounded-xl border border-stone-200/80 p-6 mb-6">
             <div className="flex items-center justify-between mb-6">
               <h2 className="text-base font-semibold text-stone-900">Certificate</h2>
               <span className={`inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium rounded-full ${
@@ -352,6 +382,105 @@ export default function ProductDetailPage() {
                 View Certificate
               </Link>
             </div>
+          </div>
+        )}
+
+        {/* QR Code */}
+        {product.certificate && (
+          <div className="bg-white rounded-xl border border-stone-200/80 p-6">
+            <div className="flex items-center justify-between mb-6">
+              <div>
+                <h2 className="text-base font-semibold text-stone-900">QR Code</h2>
+                <p className="text-xs text-stone-500 mt-1">Share your certification with customers</p>
+              </div>
+              {qrCode && (
+                <span className={`inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium rounded-full ${
+                  qrCode.isActive ? 'bg-green-50 text-green-700' : 'bg-stone-100 text-stone-600'
+                }`}>
+                  {qrCode.isActive ? 'Active' : 'Inactive'}
+                </span>
+              )}
+            </div>
+
+            {qrCode ? (
+              <div className="flex flex-col md:flex-row gap-6">
+                <div className="flex-shrink-0">
+                  <div className="relative w-48 h-48 border-2 border-stone-200 rounded-lg p-4 bg-white">
+                    <Image
+                      src={qrCode.qrCodeUrl}
+                      alt="QR Code"
+                      fill
+                      className="object-contain"
+                    />
+                  </div>
+                  {qrCode.scanCount > 0 && (
+                    <p className="text-xs text-stone-500 mt-2 text-center">
+                      {qrCode.scanCount} scan{qrCode.scanCount !== 1 ? 's' : ''}
+                    </p>
+                  )}
+                </div>
+                <div className="flex-1">
+                  <div className="space-y-4">
+                    <div>
+                      <p className="text-xs font-medium text-stone-400 uppercase tracking-wider mb-1">Redirect URL</p>
+                      <a
+                        href={qrCode.redirectUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-sm text-[#2E4F3A] hover:text-[#D4AF37] break-all"
+                      >
+                        {qrCode.redirectUrl}
+                      </a>
+                    </div>
+                    {qrCode.lastScannedAt && (
+                      <div>
+                        <p className="text-xs font-medium text-stone-400 uppercase tracking-wider mb-1">Last Scanned</p>
+                        <p className="text-sm text-stone-900">
+                          {new Date(qrCode.lastScannedAt).toLocaleDateString('en-US', {
+                            month: 'long',
+                            day: 'numeric',
+                            year: 'numeric',
+                            hour: 'numeric',
+                            minute: '2-digit',
+                          })}
+                        </p>
+                      </div>
+                    )}
+                  </div>
+                  <div className="mt-6 flex gap-3">
+                    <a
+                      href={qrCode.qrCodeUrl}
+                      download={`qr-code-${product.name.replace(/\s+/g, '-')}.png`}
+                      className="flex-1 flex items-center justify-center gap-2 px-4 py-3 text-sm font-medium text-white bg-[#2E4F3A] rounded-lg hover:bg-[#1e3a2a] transition-colors"
+                    >
+                      <iconify-icon icon="lucide:download" width="16" style={{ strokeWidth: 1.5 } as React.CSSProperties}></iconify-icon>
+                      Download QR Code
+                    </a>
+                    <a
+                      href={qrCode.redirectUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex-1 flex items-center justify-center gap-2 px-4 py-3 text-sm font-medium text-stone-700 bg-stone-100 rounded-lg hover:bg-stone-200 transition-colors"
+                    >
+                      <iconify-icon icon="lucide:external-link" width="16" style={{ strokeWidth: 1.5 } as React.CSSProperties}></iconify-icon>
+                      View Product Page
+                    </a>
+                  </div>
+                </div>
+              </div>
+            ) : (
+              <div className="text-center py-8">
+                <div className="mb-4">
+                  <svg className="w-16 h-16 text-stone-300 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 4v1m6 11h2m-6 0h-2v4m0-11v3m0 0h.01M12 12h4.01M16 20h4M4 12h4m12 0h.01M5 8h2a1 1 0 001-1V5a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1zm12 0h2a1 1 0 001-1V5a1 1 0 00-1-1h-2a1 1 0 00-1 1v2a1 1 0 001 1zM5 20h2a1 1 0 001-1v-2a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1z" />
+                  </svg>
+                </div>
+                <p className="text-sm text-stone-600 mb-2">No QR code generated yet</p>
+                <p className="text-xs text-stone-500 mb-4">
+                  Please contact an administrator to generate a QR code for this product.
+                </p>
+              </div>
+            )}
           </div>
         )}
 

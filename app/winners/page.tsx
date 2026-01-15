@@ -21,6 +21,13 @@ interface Product {
   judges: string[];
 }
 
+interface QRCode {
+  id: string;
+  qrCodeUrl: string;
+  redirectUrl: string;
+  isActive: boolean;
+}
+
 interface Category {
   id: string;
   name: string;
@@ -35,6 +42,7 @@ export default function WinnersGalleryPage() {
   const [awardFilter, setAwardFilter] = useState('');
   const [yearFilter, setYearFilter] = useState('');
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
+  const [selectedProductQRCode, setSelectedProductQRCode] = useState<QRCode | null>(null);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -111,6 +119,21 @@ export default function WinnersGalleryPage() {
     setCategoryFilter('');
     setAwardFilter('');
     setYearFilter('');
+  };
+
+  const fetchQRCode = async (productId: string) => {
+    try {
+      const response = await fetch(`/api/qrcodes/public?productId=${productId}`);
+      if (response.ok) {
+        const data = await response.json();
+        setSelectedProductQRCode(data);
+      } else {
+        setSelectedProductQRCode(null);
+      }
+    } catch (error) {
+      console.error('Error fetching QR code:', error);
+      setSelectedProductQRCode(null);
+    }
   };
 
   const getAwardBadge = (award: string) => {
@@ -325,7 +348,10 @@ export default function WinnersGalleryPage() {
                 <div
                   key={product.id}
                   className="bg-white rounded-xl border border-stone-200 hover:shadow-lg transition-all duration-300 overflow-hidden cursor-pointer group"
-                  onClick={() => setSelectedProduct(product)}
+                  onClick={() => {
+                    setSelectedProduct(product);
+                    fetchQRCode(product.id);
+                  }}
                 >
                   {/* Image */}
                   <div className="relative aspect-square overflow-hidden bg-stone-100">
@@ -375,7 +401,10 @@ export default function WinnersGalleryPage() {
               <div className="p-6 lg:p-8">
                 {/* Close Button */}
                 <button
-                  onClick={() => setSelectedProduct(null)}
+                  onClick={() => {
+                    setSelectedProduct(null);
+                    setSelectedProductQRCode(null);
+                  }}
                   className="absolute top-4 right-4 p-2 rounded-lg bg-stone-100 hover:bg-stone-200 transition-colors"
                 >
                   <iconify-icon icon="lucide:x" width="20" style={{ strokeWidth: 1.5 } as React.CSSProperties}></iconify-icon>
@@ -405,44 +434,89 @@ export default function WinnersGalleryPage() {
                   </div>
 
                   {/* Details */}
-                  <div>
-                    <h2 className="text-2xl font-semibold text-stone-900 mb-2">{selectedProduct.name}</h2>
-                    <p className="text-stone-500 mb-6">{selectedProduct.producer}</p>
+                  <div className="flex flex-col h-full">
+                    <div className="flex-1">
+                      <h2 className="text-2xl font-semibold text-stone-900 mb-2">{selectedProduct.name}</h2>
+                      <p className="text-stone-500 mb-6">{selectedProduct.producer}</p>
 
-                    <div className="space-y-4 mb-6">
-                      <div className="flex items-center gap-3">
-                        <iconify-icon icon="lucide:tag" width="18" className="text-stone-400" style={{ strokeWidth: 1.5 } as React.CSSProperties}></iconify-icon>
-                        <span className="text-sm text-stone-600">{selectedProduct.categoryLabel}</span>
+                      <div className="space-y-3 mb-6">
+                        <div className="flex items-center gap-3">
+                          <iconify-icon icon="lucide:tag" width="18" className="text-stone-400" style={{ strokeWidth: 1.5 } as React.CSSProperties}></iconify-icon>
+                          <span className="text-sm text-stone-600">{selectedProduct.categoryLabel}</span>
+                        </div>
+                        <div className="flex items-center gap-3">
+                          <iconify-icon icon="lucide:map-pin" width="18" className="text-stone-400" style={{ strokeWidth: 1.5 } as React.CSSProperties}></iconify-icon>
+                          <span className="text-sm text-stone-600">{selectedProduct.origin}</span>
+                        </div>
+                        <div className="flex items-center gap-3">
+                          <iconify-icon icon="lucide:calendar" width="18" className="text-stone-400" style={{ strokeWidth: 1.5 } as React.CSSProperties}></iconify-icon>
+                          <span className="text-sm text-stone-600">Certified: {selectedProduct.certDate}</span>
+                        </div>
+                        <div className="flex items-center gap-3">
+                          <iconify-icon icon="lucide:bar-chart-3" width="18" className="text-stone-400" style={{ strokeWidth: 1.5 } as React.CSSProperties}></iconify-icon>
+                          <span className="text-sm text-stone-600">Score: {selectedProduct.score}/100</span>
+                        </div>
                       </div>
-                      <div className="flex items-center gap-3">
-                        <iconify-icon icon="lucide:map-pin" width="18" className="text-stone-400" style={{ strokeWidth: 1.5 } as React.CSSProperties}></iconify-icon>
-                        <span className="text-sm text-stone-600">{selectedProduct.origin}</span>
+
+                      <div className="mb-6">
+                        <h3 className="text-sm font-semibold text-stone-900 mb-2">About This Product</h3>
+                        <p className="text-sm text-stone-600 leading-relaxed">{selectedProduct.description}</p>
                       </div>
-                      <div className="flex items-center gap-3">
-                        <iconify-icon icon="lucide:calendar" width="18" className="text-stone-400" style={{ strokeWidth: 1.5 } as React.CSSProperties}></iconify-icon>
-                        <span className="text-sm text-stone-600">Certified: {selectedProduct.certDate}</span>
-                      </div>
-                      <div className="flex items-center gap-3">
-                        <iconify-icon icon="lucide:bar-chart-3" width="18" className="text-stone-400" style={{ strokeWidth: 1.5 } as React.CSSProperties}></iconify-icon>
-                        <span className="text-sm text-stone-600">Score: {selectedProduct.score}/100</span>
-                      </div>
+
+                      {selectedProduct.judges && selectedProduct.judges.length > 0 && (
+                        <div className="mb-6">
+                          <h3 className="text-sm font-semibold text-stone-900 mb-2">Evaluation Panel</h3>
+                          <div className="flex flex-wrap gap-2">
+                            {selectedProduct.judges.map((judge, index) => (
+                              <span key={index} className="px-3 py-1.5 bg-stone-100 rounded-lg text-xs text-stone-600">
+                                {judge}
+                              </span>
+                            ))}
+                          </div>
+                        </div>
+                      )}
                     </div>
 
-                    <div className="mb-6">
-                      <h3 className="text-sm font-semibold text-stone-900 mb-2">About This Product</h3>
-                      <p className="text-sm text-stone-600 leading-relaxed">{selectedProduct.description}</p>
-                    </div>
-
-                    <div>
-                      <h3 className="text-sm font-semibold text-stone-900 mb-2">Evaluation Panel</h3>
-                      <div className="flex flex-wrap gap-2">
-                        {selectedProduct.judges.map((judge, index) => (
-                          <span key={index} className="px-3 py-1.5 bg-stone-100 rounded-lg text-xs text-stone-600">
-                            {judge}
-                          </span>
-                        ))}
+                    {/* QR Code Section */}
+                    {selectedProductQRCode ? (
+                      <div className="bg-stone-50 rounded-xl p-6 border border-stone-200 mb-6">
+                        <h3 className="text-sm font-semibold text-stone-900 mb-4">QR Code</h3>
+                        <div className="flex items-start gap-4">
+                          <div className="relative w-32 h-32 border-2 border-stone-200 rounded-lg p-2 bg-white flex-shrink-0">
+                            <Image
+                              src={selectedProductQRCode.qrCodeUrl}
+                              alt="QR Code"
+                              fill
+                              className="object-contain"
+                            />
+                          </div>
+                          <div className="flex-1 flex flex-col gap-3">
+                            <p className="text-xs text-stone-600">Scan this QR code to verify this product's certification</p>
+                            <a
+                              href={selectedProductQRCode.qrCodeUrl}
+                              download={`qr-code-${selectedProduct.name.replace(/\s+/g, '-')}.png`}
+                              className="inline-flex items-center justify-center gap-2 px-4 py-2.5 text-sm font-medium text-white bg-[#2E4F3A] rounded-lg hover:bg-[#1e3a2a] transition-colors"
+                              onClick={(e) => e.stopPropagation()}
+                            >
+                              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                              </svg>
+                              Download QR Code
+                            </a>
+                          </div>
+                        </div>
                       </div>
-                    </div>
+                    ) : null}
+
+                    {/* View Product Page Link */}
+                    <Link
+                      href={`/products/${selectedProduct.id}`}
+                      className="inline-flex items-center justify-center gap-2 w-full px-4 py-3 text-sm font-medium text-white bg-[#D4AF37] rounded-lg hover:bg-[#b08d4b] transition-colors"
+                      onClick={(e) => e.stopPropagation()}
+                    >
+                      <iconify-icon icon="lucide:external-link" width="16" style={{ strokeWidth: 1.5 } as React.CSSProperties}></iconify-icon>
+                      View Full Product Page
+                    </Link>
                   </div>
                 </div>
               </div>

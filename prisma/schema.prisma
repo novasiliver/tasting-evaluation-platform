@@ -129,6 +129,7 @@ model Product {
   category    Category     @relation(fields: [categoryId], references: [id])
   evaluation  Evaluation?
   certificate Certificate?
+  qrCode      QRCode?
 
   @@index([userId])
   @@index([categoryId])
@@ -215,4 +216,23 @@ model Contact {
   updatedAt DateTime @updatedAt
 
   @@map("contacts")
+}
+
+// QR Code model for product certification
+model QRCode {
+  id            String   @id @default(cuid())
+  productId     String   @unique
+  qrCodeUrl     String   // URL to the generated QR code image
+  redirectUrl   String   // URL that QR code points to (product page)
+  isActive      Boolean  @default(true)
+  scanCount     Int      @default(0) // Track number of scans
+  lastScannedAt DateTime?
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  product Product @relation(fields: [productId], references: [id], onDelete: Cascade)
+
+  @@index([productId])
+  @@index([isActive])
+  @@map("qr_codes")
 }

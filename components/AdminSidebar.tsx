@@ -34,6 +34,7 @@ export default function AdminSidebar() {
     },
     { href: '/admin/categories', icon: 'lucide:folder', label: 'Categories' },
     { href: '/admin/certificates', icon: 'lucide:scroll-text', label: 'Certificates' },
+    { href: '/admin/qrcodes', icon: 'lucide:qr-code', label: 'QR Codes' },
     { href: '/admin/winners', icon: 'lucide:image', label: 'Winners Gallery' },
   ];
 

@@ -63,6 +63,7 @@ export async function GET(
       overallScore: certificate.overallScore,
       issueDate: certificate.issueDate,
       product: {
+        id: certificate.productId,
         name: certificate.product.name,
         category: {
           name: certificate.product.category.name,
